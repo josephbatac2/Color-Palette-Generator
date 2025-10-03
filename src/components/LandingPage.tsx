@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Palette, Sparkles, Eye, Shield, Download, ArrowRight, Play, Star, Users, Zap, Heart, Github, Twitter } from 'lucide-react';
+import { Palette, Sparkles, Eye, Shield, Download, ArrowRight, Play, Star, Users, Zap, Heart, Github, Twitter, Sun, Moon } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -10,6 +11,7 @@ interface LandingPageProps {
 export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const demoColors = [
     ['#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe'],
@@ -57,27 +59,39 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+    <div className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100'}`}>
+      {/* Theme Toggle */}
+      <div className="fixed top-6 right-6 z-50">
+        <Button
+          onClick={toggleTheme}
+          variant="outline"
+          size="icon"
+          className={`w-12 h-12 rounded-full shadow-lg transition-all ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white hover:bg-white/20' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'}`}
+        >
+          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        </Button>
+      </div>
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-pink-400/20 to-orange-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className={`absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl animate-pulse ${theme === 'dark' ? 'bg-gradient-to-br from-blue-400/20 to-purple-400/20' : 'bg-gradient-to-br from-blue-200/40 to-purple-200/40'}`}></div>
+        <div className={`absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl animate-pulse delay-1000 ${theme === 'dark' ? 'bg-gradient-to-br from-pink-400/20 to-orange-400/20' : 'bg-gradient-to-br from-pink-200/40 to-orange-200/40'}`}></div>
+        <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse delay-2000 ${theme === 'dark' ? 'bg-gradient-to-br from-cyan-400/10 to-blue-400/10' : 'bg-gradient-to-br from-cyan-200/30 to-blue-200/30'}`}></div>
       </div>
 
       {/* Hero Section */}
       <div className="relative z-10 container mx-auto px-6 pt-20 pb-32">
         <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Logo */}
-          <div className="inline-flex items-center gap-3 mb-8 p-4 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl">
+          <div className={`inline-flex items-center gap-3 mb-8 p-4 backdrop-blur-xl rounded-2xl shadow-2xl ${theme === 'dark' ? 'bg-white/10 border border-white/20' : 'bg-white border border-gray-200'}`}>
             <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg">
               <Palette className="w-8 h-8 text-white" />
             </div>
-            <span className="text-2xl font-bold text-white">Color Palette Generator</span>
+            <span className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Color Palette Generator</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className={`text-5xl md:text-7xl font-bold mb-6 leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             Create
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
               {' '}Beautiful{' '}
@@ -86,7 +100,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             Color Palettes
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className={`text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
             Professional-grade color palette generator with advanced harmony algorithms, 
             accessibility checking, and color blindness simulation. Perfect for designers and developers.
           </p>
@@ -115,8 +129,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
 
           {/* Demo Palette Animation */}
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-2xl">
-              <h3 className="text-white text-lg font-semibold mb-4">Live Preview</h3>
+            <div className={`backdrop-blur-xl rounded-2xl p-8 shadow-2xl ${theme === 'dark' ? 'bg-white/10 border border-white/20' : 'bg-white border border-gray-200'}`}>
+              <h3 className={`text-lg font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Live Preview</h3>
               <div className="flex rounded-xl overflow-hidden shadow-2xl h-20 transition-all duration-1000">
                 {demoColors[currentColorIndex].map((color, index) => (
                   <div
@@ -126,20 +140,20 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
                   />
                 ))}
               </div>
-              <p className="text-gray-300 text-sm mt-4">Colors change automatically every 3 seconds</p>
+              <p className={`text-sm mt-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>Colors change automatically every 3 seconds</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Stats Section */}
-      <div className="relative z-10 bg-white/5 backdrop-blur-xl border-y border-white/10">
+      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5 border-y border-white/10' : 'bg-white/50 border-y border-gray-200'}`}>
         <div className="container mx-auto px-6 py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-gray-300 text-sm md:text-base">{stat.label}</div>
+                <div className={`text-4xl md:text-5xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{stat.number}</div>
+                <div className={`text-sm md:text-base ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -149,27 +163,27 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       {/* Features Section */}
       <div className="relative z-10 container mx-auto px-6 py-32">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             Powerful Features for
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {' '}Modern Design
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className={`text-xl max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
             Everything you need to create accessible, beautiful color palettes for your projects
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="p-6 bg-white/10 backdrop-blur-xl border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
-              <div className="p-3 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-xl w-fit mb-4 border border-white/10">
+            <Card key={index} className={`p-6 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl ${theme === 'dark' ? 'bg-white/10 border-white/20 hover:bg-white/15 hover:shadow-purple-500/20' : 'bg-white border-gray-200 hover:bg-gray-50 hover:shadow-purple-500/10'}`}>
+              <div className={`p-3 rounded-xl w-fit mb-4 ${theme === 'dark' ? 'bg-gradient-to-br from-blue-500/20 to-purple-600/20 border border-white/10' : 'bg-gradient-to-br from-blue-100 to-purple-100 border border-gray-200'}`}>
                 <div className="text-blue-400">
                   {feature.icon}
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">{feature.description}</p>
+              <h3 className={`text-xl font-semibold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{feature.title}</h3>
+              <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{feature.description}</p>
             </Card>
           ))}
         </div>
@@ -253,22 +267,22 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-white/10 bg-black/20 backdrop-blur-xl">
+      <footer className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'border-t border-white/10 bg-black/20' : 'border-t border-gray-200 bg-white/50'}`}>
         <div className="container mx-auto px-6 py-12">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center gap-3 mb-4 md:mb-0">
               <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg">
                 <Palette className="w-5 h-5 text-white" />
               </div>
-              <span className="text-white font-semibold">Color Palette Generator</span>
+              <span className={`font-semibold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Color Palette Generator</span>
             </div>
-            
+
             <div className="flex items-center gap-6">
               <a
                 href="https://ajbatac.github.io/?=colorpalettegen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
+                className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
               >
                 Created by AJ Batac
               </a>
@@ -277,7 +291,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
                   href="https://github.com/ajbatac"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
                 >
                   <Github className="w-5 h-5" />
                 </a>
@@ -285,7 +299,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
                   href="https://twitter.com/ajbatac"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
                 >
                   <Twitter className="w-5 h-5" />
                 </a>
@@ -293,11 +307,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             </div>
           </div>
 
-          <div className="mt-8 pt-8 border-t border-white/10 text-center">
+          <div className={`mt-8 pt-8 text-center ${theme === 'dark' ? 'border-t border-white/10' : 'border-t border-gray-200'}`}>
             <a href="https://www.buymeacoffee.com/emailsig" target="_blank" rel="noopener noreferrer" className="inline-block mb-6">
               <img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style={{ height: '60px', width: '217px' }} />
             </a>
-            <p className="text-gray-400 text-sm">© 2025 Color Palette Generator. Made with ❤️ for designers and developers.</p>
+            <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>© 2025 Color Palette Generator. Made with ❤️ for designers and developers.</p>
           </div>
         </div>
       </footer>

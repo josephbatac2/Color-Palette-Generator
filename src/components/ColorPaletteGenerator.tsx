@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ColorHarmony } from '../types/color';
 import { ColorUtils } from '../utils/colorUtils';
 import { useColorPalette } from '../hooks/useColorPalette';
+import { useTheme } from '../contexts/ThemeContext';
 import { StableColorPicker } from './ui/stable-color-picker';
 import { HarmonySelector } from './ui/harmony-selector';
 import { PaletteDisplay } from './ui/palette-display';
@@ -11,7 +12,7 @@ import { CuratedPalettes } from './ui/curated-palettes';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
-import { Palette, Wand2, Save, Eye, Shield, Sparkles } from 'lucide-react';
+import { Palette, Wand2, Save, Eye, Shield, Sparkles, Sun, Moon } from 'lucide-react';
 
 export const ColorPaletteGenerator: React.FC = () => {
   const {
@@ -27,6 +28,7 @@ export const ColorPaletteGenerator: React.FC = () => {
     isCurrentPaletteSaved,
   } = useColorPalette();
 
+  const { theme, toggleTheme } = useTheme();
   const [selectedHarmony, setSelectedHarmony] = useState<ColorHarmony>('analogous');
   const [activeTab, setActiveTab] = useState<string>('curated');
 
@@ -47,26 +49,38 @@ export const ColorPaletteGenerator: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+    <div className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100'}`}>
+      {/* Theme Toggle */}
+      <div className="fixed top-6 right-6 z-50">
+        <Button
+          onClick={toggleTheme}
+          variant="outline"
+          size="icon"
+          className={`w-12 h-12 rounded-full shadow-lg transition-all ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white hover:bg-white/20' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'}`}
+        >
+          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        </Button>
+      </div>
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-pink-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className={`absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl ${theme === 'dark' ? 'bg-gradient-to-br from-blue-400/20 to-purple-400/20' : 'bg-gradient-to-br from-blue-200/40 to-purple-200/40'}`}></div>
+        <div className={`absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl ${theme === 'dark' ? 'bg-gradient-to-br from-pink-400/20 to-orange-400/20' : 'bg-gradient-to-br from-pink-200/40 to-orange-200/40'}`}></div>
+        <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse delay-2000 ${theme === 'dark' ? 'bg-gradient-to-br from-cyan-400/10 to-blue-400/10' : 'bg-gradient-to-br from-cyan-200/30 to-blue-200/30'}`}></div>
       </div>
-      
+
       {/* Header */}
-      <div className="border-b border-white/10 bg-white/5 backdrop-blur-xl sticky top-0 z-10 shadow-lg shadow-black/20">
+      <div className={`backdrop-blur-xl sticky top-0 z-10 shadow-lg ${theme === 'dark' ? 'border-b border-white/10 bg-white/5 shadow-black/20' : 'border-b border-gray-200 bg-white/50 shadow-gray-200'}`}>
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col items-center gap-3 text-center">
             <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg shadow-blue-500/25">
               <Palette className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-white">
+              <h1 className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 Color Palette Generator
               </h1>
-              <p className="text-gray-300 text-sm">
+              <p className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
                 Create beautiful, accessible color palettes with advanced harmony algorithms
               </p>
             </div>
@@ -102,8 +116,8 @@ export const ColorPaletteGenerator: React.FC = () => {
 
           <TabsContent value="curated" className="space-y-6">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-white mb-2">Curated Palettes</h2>
-              <p className="text-gray-300">Professionally designed color combinations ready to use</p>
+              <h2 className={`text-2xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Curated Palettes</h2>
+              <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>Professionally designed color combinations ready to use</p>
             </div>
             <CuratedPalettes
               onPaletteSelect={handlePaletteSelect}
@@ -177,8 +191,8 @@ export const ColorPaletteGenerator: React.FC = () => {
 
           <TabsContent value="saved" className="space-y-6">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-white mb-2">Saved Palettes</h2>
-              <p className="text-gray-300">Your personal collection of color palettes</p>
+              <h2 className={`text-2xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Saved Palettes</h2>
+              <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>Your personal collection of color palettes</p>
             </div>
             
             {savedPalettes.length > 0 ? (
@@ -215,8 +229,8 @@ export const ColorPaletteGenerator: React.FC = () => {
 
           <TabsContent value="accessibility" className="space-y-6">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-white mb-2">Accessibility Report</h2>
-              <p className="text-gray-300">Check WCAG compliance and contrast ratios</p>
+              <h2 className={`text-2xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Accessibility Report</h2>
+              <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>Check WCAG compliance and contrast ratios</p>
             </div>
             
             {currentPalette ? (
@@ -247,8 +261,8 @@ export const ColorPaletteGenerator: React.FC = () => {
 
           <TabsContent value="simulator" className="space-y-6">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-white mb-2">Color Vision Simulator</h2>
-              <p className="text-gray-300">See how your palette appears to people with different types of color vision</p>
+              <h2 className={`text-2xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Color Vision Simulator</h2>
+              <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>See how your palette appears to people with different types of color vision</p>
             </div>
             
             {currentPalette ? (
@@ -280,26 +294,26 @@ export const ColorPaletteGenerator: React.FC = () => {
       </div>
       
       {/* Footer */}
-      <footer className="border-t border-white/10 bg-black/20 backdrop-blur-xl mt-16">
+      <footer className={`backdrop-blur-xl mt-16 ${theme === 'dark' ? 'border-t border-white/10 bg-black/20' : 'border-t border-gray-200 bg-white/50'}`}>
         <div className="container mx-auto px-6 py-8">
           <div className="text-center">
             <a href="https://www.buymeacoffee.com/emailsig" target="_blank" rel="noopener noreferrer" className="inline-block mb-6">
               <img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style={{ height: '60px', width: '217px' }} />
             </a>
-            <div className="text-sm text-gray-300">
+            <div className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
               Created with ❤️ by{' '}
               <a
                 href="https://ajbatac.github.io/?=colorpalettegen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-blue-400 hover:text-blue-300 transition-colors hover:underline"
+                className={`font-medium transition-colors hover:underline ${theme === 'dark' ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}`}
               >
                 AJ Batac (@ajbatac)
               </a>
               {' '}- v1.1.0 ({' '}
               <a
                 href="/changelog.html"
-                className="font-medium text-purple-400 hover:text-purple-300 transition-colors hover:underline"
+                className={`font-medium transition-colors hover:underline ${theme === 'dark' ? 'text-purple-400 hover:text-purple-300' : 'text-purple-600 hover:text-purple-700'}`}
               >
                 changelog
               </a>
