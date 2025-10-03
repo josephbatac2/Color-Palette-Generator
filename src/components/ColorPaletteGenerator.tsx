@@ -1,0 +1,313 @@
+import React, { useState } from 'react';
+import { ColorHarmony } from '../types/color';
+import { ColorUtils } from '../utils/colorUtils';
+import { useColorPalette } from '../hooks/useColorPalette';
+import { StableColorPicker } from './ui/stable-color-picker';
+import { HarmonySelector } from './ui/harmony-selector';
+import { PaletteDisplay } from './ui/palette-display';
+import { AccessibilityChecker } from './ui/accessibility-checker';
+import { ColorBlindnessSimulator } from './ui/color-blindness-simulator';
+import { CuratedPalettes } from './ui/curated-palettes';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+import { Button } from './ui/button';
+import { Card } from './ui/card';
+import { Palette, Wand2, Save, Eye, Shield, Sparkles } from 'lucide-react';
+
+export const ColorPaletteGenerator: React.FC = () => {
+  const {
+    currentPalette,
+    savedPalettes,
+    baseColor,
+    generatePalette,
+    savePalette,
+    deletePalette,
+    updateBaseColor,
+    loadPalette,
+    isSaving,
+    isCurrentPaletteSaved,
+  } = useColorPalette();
+
+  const [selectedHarmony, setSelectedHarmony] = useState<ColorHarmony>('analogous');
+  const [activeTab, setActiveTab] = useState<string>('curated');
+
+  const handleGeneratePalette = () => {
+    const palette = generatePalette(selectedHarmony);
+    return palette;
+  };
+
+  const handleSavePalette = async () => {
+    if (currentPalette) {
+      await savePalette(currentPalette);
+    }
+  };
+
+  const handlePaletteSelect = (palette: ColorPalette) => {
+    loadPalette(palette);
+    setActiveTab('generator');
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-pink-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      </div>
+      
+      {/* Header */}
+      <div className="border-b border-white/10 bg-white/5 backdrop-blur-xl sticky top-0 z-10 shadow-lg shadow-black/20">
+        <div className="container mx-auto px-6 py-6">
+          <div className="flex flex-col items-center gap-3 text-center">
+            <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg shadow-blue-500/25">
+              <Palette className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-white">
+                Color Palette Generator
+              </h1>
+              <p className="text-gray-300 text-sm">
+                Create beautiful, accessible color palettes with advanced harmony algorithms
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 py-8 relative z-10">
+
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
+          <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-5 h-12 bg-white/10 backdrop-blur-xl shadow-xl shadow-black/20 border border-white/20">
+            <TabsTrigger value="curated" className="flex items-center gap-2 text-sm">
+              <Sparkles className="w-4 h-4" />
+              <span className="hidden sm:inline">Curated</span>
+            </TabsTrigger>
+            <TabsTrigger value="generator" className="flex items-center gap-2 text-sm">
+              <Palette className="w-4 h-4" />
+              <span className="hidden sm:inline">Generator</span>
+            </TabsTrigger>
+            <TabsTrigger value="saved" className="flex items-center gap-2 text-sm">
+              <Save className="w-4 h-4" />
+              <span className="hidden sm:inline">Saved</span>
+            </TabsTrigger>
+            <TabsTrigger value="accessibility" className="flex items-center gap-2 text-sm">
+              <Shield className="w-4 h-4" />
+              <span className="hidden sm:inline">A11y</span>
+            </TabsTrigger>
+            <TabsTrigger value="simulator" className="flex items-center gap-2 text-sm">
+              <Eye className="w-4 h-4" />
+              <span className="hidden sm:inline">Vision</span>
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="curated" className="space-y-6">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-white mb-2">Curated Palettes</h2>
+              <p className="text-gray-300">Professionally designed color combinations ready to use</p>
+            </div>
+            <CuratedPalettes
+              onPaletteSelect={handlePaletteSelect}
+              className="mx-auto max-w-6xl"
+            />
+          </TabsContent>
+
+          <TabsContent value="generator" className="space-y-8">
+            <div className="max-w-4xl mx-auto space-y-6">
+              {/* Step 1: Choose Harmony */}
+              <Card className="p-6 bg-white/10 backdrop-blur-xl border-white/20">
+                <h3 className="text-lg font-semibold text-white mb-4">Step 1: Choose Color Harmony</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {[
+                    { value: 'monochromatic', label: 'Monochromatic' },
+                    { value: 'analogous', label: 'Analogous' },
+                    { value: 'complementary', label: 'Complementary' },
+                    { value: 'triadic', label: 'Triadic' },
+                    { value: 'tetradic', label: 'Tetradic' },
+                    { value: 'split-complementary', label: 'Split Complementary' },
+                  ].map((harmony) => (
+                    <Button
+                      key={harmony.value}
+                      variant={selectedHarmony === harmony.value ? 'default' : 'outline'}
+                      onClick={() => setSelectedHarmony(harmony.value as ColorHarmony)}
+                      className="h-12"
+                    >
+                      {harmony.label}
+                    </Button>
+                  ))}
+                </div>
+              </Card>
+
+              {/* Step 2: Pick Base Color */}
+              <Card className="p-6 bg-white/10 backdrop-blur-xl border-white/20">
+                <h3 className="text-lg font-semibold text-white mb-4">Step 2: Pick Base Color</h3>
+                <StableColorPicker
+                  color={baseColor}
+                  onChange={updateBaseColor}
+                />
+              </Card>
+
+              {/* Step 3: Generate */}
+              <div className="text-center">
+                <Button
+                  onClick={handleGeneratePalette}
+                  size="lg"
+                  className="px-8 py-3"
+                  disabled={!selectedHarmony}
+                >
+                  <Wand2 className="w-5 h-5 mr-2" />
+                  {selectedHarmony ? 'Generate Palette' : 'Select Harmony First'}
+                </Button>
+              </div>
+
+              {/* Generated Palette */}
+              {currentPalette && (
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-white">Your Generated Palette</h3>
+                  <PaletteDisplay
+                    palette={currentPalette}
+                    onSave={savePalette}
+                    isSaving={isSaving}
+                    isAlreadySaved={isCurrentPaletteSaved}
+                    showActions={true}
+                  />
+                </div>
+              )}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="saved" className="space-y-6">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-white mb-2">Saved Palettes</h2>
+              <p className="text-gray-300">Your personal collection of color palettes</p>
+            </div>
+            
+            {savedPalettes.length > 0 ? (
+              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+                {savedPalettes.map((palette) => (
+                  <PaletteDisplay
+                    key={palette.id}
+                    palette={palette}
+                    onDelete={deletePalette}
+                    showActions={true}
+                  />
+                ))}
+              </div>
+            ) : (
+              <Card className="p-16 text-center bg-white/10 backdrop-blur-xl border-white/20 shadow-xl shadow-black/20">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-white/10 to-white/20 rounded-2xl flex items-center justify-center">
+                  <Save className="w-10 h-10 text-white/60" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">No Saved Palettes</h3>
+                <p className="text-gray-300 mb-6">
+                  Generate and save palettes to build your personal collection
+                </p>
+                <Button
+                  onClick={() => setActiveTab('generator')}
+                  variant="outline"
+                  className="bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20 text-white shadow-lg shadow-black/20"
+                >
+                  <Palette className="w-4 h-4 mr-2" />
+                  Create Palette
+                </Button>
+              </Card>
+            )}
+          </TabsContent>
+
+          <TabsContent value="accessibility" className="space-y-6">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-white mb-2">Accessibility Report</h2>
+              <p className="text-gray-300">Check WCAG compliance and contrast ratios</p>
+            </div>
+            
+            {currentPalette ? (
+              <AccessibilityChecker
+                colors={currentPalette.colors}
+                className="mx-auto max-w-4xl"
+              />
+            ) : (
+              <Card className="p-16 text-center bg-white/10 backdrop-blur-xl border-white/20 shadow-xl shadow-black/20">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-white/10 to-white/20 rounded-2xl flex items-center justify-center">
+                  <Shield className="w-10 h-10 text-white/60" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">No Palette Selected</h3>
+                <p className="text-gray-300 mb-6">
+                  Generate or select a palette to check its accessibility compliance
+                </p>
+                <Button
+                  onClick={() => setActiveTab('generator')}
+                  variant="outline"
+                  className="bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20 text-white shadow-lg shadow-black/20"
+                >
+                  <Palette className="w-4 h-4 mr-2" />
+                  Generate Palette
+                </Button>
+              </Card>
+            )}
+          </TabsContent>
+
+          <TabsContent value="simulator" className="space-y-6">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-white mb-2">Color Vision Simulator</h2>
+              <p className="text-gray-300">See how your palette appears to people with different types of color vision</p>
+            </div>
+            
+            {currentPalette ? (
+              <ColorBlindnessSimulator
+                colors={currentPalette.colors}
+                className="mx-auto max-w-4xl"
+              />
+            ) : (
+              <Card className="p-16 text-center bg-white/10 backdrop-blur-xl border-white/20 shadow-xl shadow-black/20">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-white/10 to-white/20 rounded-2xl flex items-center justify-center">
+                  <Eye className="w-10 h-10 text-white/60" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">No Palette Selected</h3>
+                <p className="text-gray-300 mb-6">
+                  Generate or select a palette to simulate different types of color vision
+                </p>
+                <Button
+                  onClick={() => setActiveTab('generator')}
+                  variant="outline"
+                  className="bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20 text-white shadow-lg shadow-black/20"
+                >
+                  <Palette className="w-4 h-4 mr-2" />
+                  Generate Palette
+                </Button>
+              </Card>
+            )}
+          </TabsContent>
+        </Tabs>
+      </div>
+      
+      {/* Footer */}
+      <footer className="border-t border-white/10 bg-black/20 backdrop-blur-xl mt-16">
+        <div className="container mx-auto px-6 py-8">
+          <div className="text-center">
+            <a href="https://www.buymeacoffee.com/emailsig" target="_blank" rel="noopener noreferrer" className="inline-block mb-6">
+              <img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style={{ height: '60px', width: '217px' }} />
+            </a>
+            <div className="text-sm text-gray-300">
+              Created with ❤️ by{' '}
+              <a
+                href="https://ajbatac.github.io/?=colorpalettegen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-blue-400 hover:text-blue-300 transition-colors hover:underline"
+              >
+                AJ Batac (@ajbatac)
+              </a>
+              {' '}- v1.1.0 ({' '}
+              <a
+                href="/changelog.html"
+                className="font-medium text-purple-400 hover:text-purple-300 transition-colors hover:underline"
+              >
+                changelog
+              </a>
+              )
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};

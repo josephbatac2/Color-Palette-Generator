@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - Color Palette Generator</title>
+    <meta name="description" content="Version history and updates for the Color Palette Generator">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            color: #6b7280;
+            font-size: 1.1rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .changelog {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .version {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .version:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .version-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .version-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .version-date {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .version-type {
+            background: #10b981;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .version-type.major {
+            background: #ef4444;
+        }
+        
+        .version-type.minor {
+            background: #f59e0b;
+        }
+        
+        .changes {
+            list-style: none;
+        }
+        
+        .changes li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .changes li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+        }
+        
+        .changes li.fix::before {
+            content: "🔧";
+        }
+        
+        .changes li.feature::before {
+            content: "🎉";
+        }
+        
+        .changes li.improvement::before {
+            content: "⚡";
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">
+            ← Back to Color Palette Generator
+        </a>
+        
+        <div class="header">
+            <h1>Changelog</h1>
+            <p>Version history and updates for the Color Palette Generator</p>
+        </div>
+        
+        <div class="changelog">
+            <div class="version">
+                <div class="version-header">
+                    <span class="version-number">v1.1.0</span>
+                    <span class="version-date">September 21, 2025</span>
+                    <span class="version-type minor">Minor Release</span>
+                </div>
+                <ul class="changes">
+                    <li class="feature">🎨 Redesigned Color Picker Interface - Massive 160x160px circular picker with glowing animated background</li>
+                    <li class="improvement">⚡ Enhanced Visual Prominence - Color picker is now the main focal point with clear instructions</li>
+                    <li class="improvement">✨ Better User Experience - Obvious interaction patterns with hover effects and smooth animations</li>
+                    <li class="fix">🔧 Fixed Color Display - Completely filled color circles with no gaps or transparency</li>
+                    <li class="improvement">📱 Streamlined Layout - Compact HEX display with prominent color selection interface</li>
+                    <li class="improvement">🎯 Improved Accessibility - Clearer visual hierarchy and interaction feedback</li>
+                </ul>
+            </div>
+            
+            <div class="version">
+                <div class="version-header">
+                    <span class="version-number">v1.0.0</span>
+                    <span class="version-date">January 2025</span>
+                    <span class="version-type major">Major Release</span>
+                </div>
+                <ul class="changes">
+                    <li class="feature">🎉 Initial release of Color Palette Generator</li>
+                    <li class="feature">🎨 Advanced color harmony algorithms (Monochromatic, Analogous, Complementary, Triadic, Tetradic, Split-Complementary)</li>
+                    <li class="feature">🌈 160+ professionally curated color palettes across 8 categories</li>
+                    <li class="feature">♿ WCAG accessibility checker with contrast ratio analysis</li>
+                    <li class="feature">👁️ Color blindness simulator for inclusive design</li>
+                    <li class="feature">🎯 Interactive HSL color picker with real-time updates</li>
+                    <li class="feature">💾 Save and manage personal palette collections</li>
+                    <li class="feature">📱 Fully responsive design with glass morphism UI</li>
+                    <li class="feature">🔍 Color lightbox for detailed color inspection</li>
+                    <li class="feature">📋 One-click color copying and CSS export</li>
+                    <li class="feature">✨ Beautiful animations and micro-interactions</li>
+                    <li class="improvement">⚡ Optimized performance with React hooks</li>
+                    <li class="improvement">🎨 Modern gradient-based design system</li>
+                </ul>
+            </div>
+            
+            <div class="version">
+                <div class="version-header">
+                    <span class="version-number">v0.9.0</span>
+                    <span class="version-date">December 2024</span>
+                    <span class="version-type minor">Beta Release</span>
+                </div>
+                <ul class="changes">
+                    <li class="feature">🧪 Beta testing with core functionality</li>
+                    <li class="feature">🎨 Basic color palette generation</li>
+                    <li class="feature">🌈 Initial curated palette collection</li>
+                    <li class="improvement">🔧 Performance optimizations</li>
+                    <li class="fix">🐛 Fixed color picker synchronization issues</li>
+                </ul>
+            </div>
+            
+            <div class="version">
+                <div class="version-header">
+                    <span class="version-number">v0.5.0</span>
+                    <span class="version-date">November 2024</span>
+                    <span class="version-type minor">Alpha Release</span>
+                </div>
+                <ul class="changes">
+                    <li class="feature">🚀 Project initialization</li>
+                    <li class="feature">🎨 Basic color theory implementation</li>
+                    <li class="feature">🔧 Core architecture setup</li>
+                    <li class="improvement">📐 TypeScript integration</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>
+                Created with ❤️ by 
+                <a href="https://ajbatac.github.io/?=colorpalettegen" target="_blank" rel="noopener noreferrer">
+                    AJ Batac (@ajbatac)
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
