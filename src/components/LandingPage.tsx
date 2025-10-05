@@ -190,13 +190,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* How It Works Section */}
-      <div className="relative z-10 bg-white/5 backdrop-blur-xl">
+      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5' : 'bg-white/50'}`}>
         <div className="container mx-auto px-6 py-32">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
               How It Works
             </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className={`text-xl max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
               Create professional color palettes in just three simple steps
             </p>
           </div>
@@ -233,8 +233,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
                     {item.step}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
-                <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
+                <h3 className={`text-xl font-semibold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{item.title}</h3>
+                <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{item.description}</p>
               </div>
             ))}
           </div>
@@ -243,15 +243,15 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
 
       {/* CTA Section */}
       <div className="relative z-10 container mx-auto px-6 py-32">
-        <div className="text-center bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-xl rounded-3xl p-16 border border-white/20 shadow-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <div className={`text-center backdrop-blur-xl rounded-3xl p-16 shadow-2xl ${theme === 'dark' ? 'bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-white/20' : 'bg-gradient-to-r from-blue-100 to-purple-100 border border-gray-200'}`}>
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             Ready to Create Amazing
             <br />
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Color Palettes?
             </span>
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className={`text-xl mb-8 max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
             Join thousands of designers and developers who trust our color palette generator
           </p>
           <Button

@@ -91,7 +91,7 @@ export const ColorPaletteGenerator: React.FC = () => {
       <div className="container mx-auto px-6 py-8 relative z-10">
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
-          <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-5 h-12 bg-white/10 backdrop-blur-xl shadow-xl shadow-black/20 border border-white/20">
+          <TabsList className={`grid w-full max-w-2xl mx-auto grid-cols-5 h-12 backdrop-blur-xl shadow-xl ${theme === 'dark' ? 'bg-white/10 shadow-black/20 border border-white/20' : 'bg-white shadow-gray-200 border border-gray-200'}`}>
             <TabsTrigger value="curated" className="flex items-center gap-2 text-sm">
               <Sparkles className="w-4 h-4" />
               <span className="hidden sm:inline">Curated</span>
@@ -128,8 +128,8 @@ export const ColorPaletteGenerator: React.FC = () => {
           <TabsContent value="generator" className="space-y-8">
             <div className="max-w-4xl mx-auto space-y-6">
               {/* Step 1: Choose Harmony */}
-              <Card className="p-6 bg-white/10 backdrop-blur-xl border-white/20">
-                <h3 className="text-lg font-semibold text-white mb-4">Step 1: Choose Color Harmony</h3>
+              <Card className={`p-6 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/10 border-white/20' : 'bg-white border-gray-200'}`}>
+                <h3 className={`text-lg font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Step 1: Choose Color Harmony</h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {[
                     { value: 'monochromatic', label: 'Monochromatic' },
@@ -152,8 +152,8 @@ export const ColorPaletteGenerator: React.FC = () => {
               </Card>
 
               {/* Step 2: Pick Base Color */}
-              <Card className="p-6 bg-white/10 backdrop-blur-xl border-white/20">
-                <h3 className="text-lg font-semibold text-white mb-4">Step 2: Pick Base Color</h3>
+              <Card className={`p-6 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/10 border-white/20' : 'bg-white border-gray-200'}`}>
+                <h3 className={`text-lg font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Step 2: Pick Base Color</h3>
                 <StableColorPicker
                   color={baseColor}
                   onChange={updateBaseColor}
@@ -176,7 +176,7 @@ export const ColorPaletteGenerator: React.FC = () => {
               {/* Generated Palette */}
               {currentPalette && (
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-white">Your Generated Palette</h3>
+                  <h3 className={`text-lg font-semibold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Your Generated Palette</h3>
                   <PaletteDisplay
                     palette={currentPalette}
                     onSave={savePalette}
@@ -207,18 +207,18 @@ export const ColorPaletteGenerator: React.FC = () => {
                 ))}
               </div>
             ) : (
-              <Card className="p-16 text-center bg-white/10 backdrop-blur-xl border-white/20 shadow-xl shadow-black/20">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-white/10 to-white/20 rounded-2xl flex items-center justify-center">
-                  <Save className="w-10 h-10 text-white/60" />
+              <Card className={`p-16 text-center backdrop-blur-xl shadow-xl ${theme === 'dark' ? 'bg-white/10 border-white/20 shadow-black/20' : 'bg-white border-gray-200 shadow-gray-200'}`}>
+                <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center ${theme === 'dark' ? 'bg-gradient-to-br from-white/10 to-white/20' : 'bg-gradient-to-br from-gray-100 to-gray-200'}`}>
+                  <Save className={`w-10 h-10 ${theme === 'dark' ? 'text-white/60' : 'text-gray-400'}`} />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">No Saved Palettes</h3>
-                <p className="text-gray-300 mb-6">
+                <h3 className={`text-xl font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>No Saved Palettes</h3>
+                <p className={`mb-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
                   Generate and save palettes to build your personal collection
                 </p>
                 <Button
                   onClick={() => setActiveTab('generator')}
                   variant="outline"
-                  className="bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20 text-white shadow-lg shadow-black/20"
+                  className={`shadow-lg ${theme === 'dark' ? 'bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20 text-white shadow-black/20' : 'bg-gray-100 border-gray-300 hover:bg-gray-200 text-gray-900 shadow-gray-200'}`}
                 >
                   <Palette className="w-4 h-4 mr-2" />
                   Create Palette
@@ -239,18 +239,18 @@ export const ColorPaletteGenerator: React.FC = () => {
                 className="mx-auto max-w-4xl"
               />
             ) : (
-              <Card className="p-16 text-center bg-white/10 backdrop-blur-xl border-white/20 shadow-xl shadow-black/20">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-white/10 to-white/20 rounded-2xl flex items-center justify-center">
-                  <Shield className="w-10 h-10 text-white/60" />
+              <Card className={`p-16 text-center backdrop-blur-xl shadow-xl ${theme === 'dark' ? 'bg-white/10 border-white/20 shadow-black/20' : 'bg-white border-gray-200 shadow-gray-200'}`}>
+                <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center ${theme === 'dark' ? 'bg-gradient-to-br from-white/10 to-white/20' : 'bg-gradient-to-br from-gray-100 to-gray-200'}`}>
+                  <Shield className={`w-10 h-10 ${theme === 'dark' ? 'text-white/60' : 'text-gray-400'}`} />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">No Palette Selected</h3>
-                <p className="text-gray-300 mb-6">
+                <h3 className={`text-xl font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>No Palette Selected</h3>
+                <p className={`mb-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
                   Generate or select a palette to check its accessibility compliance
                 </p>
                 <Button
                   onClick={() => setActiveTab('generator')}
                   variant="outline"
-                  className="bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20 text-white shadow-lg shadow-black/20"
+                  className={`shadow-lg ${theme === 'dark' ? 'bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20 text-white shadow-black/20' : 'bg-gray-100 border-gray-300 hover:bg-gray-200 text-gray-900 shadow-gray-200'}`}
                 >
                   <Palette className="w-4 h-4 mr-2" />
                   Generate Palette
@@ -271,18 +271,18 @@ export const ColorPaletteGenerator: React.FC = () => {
                 className="mx-auto max-w-4xl"
               />
             ) : (
-              <Card className="p-16 text-center bg-white/10 backdrop-blur-xl border-white/20 shadow-xl shadow-black/20">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-white/10 to-white/20 rounded-2xl flex items-center justify-center">
-                  <Eye className="w-10 h-10 text-white/60" />
+              <Card className={`p-16 text-center backdrop-blur-xl shadow-xl ${theme === 'dark' ? 'bg-white/10 border-white/20 shadow-black/20' : 'bg-white border-gray-200 shadow-gray-200'}`}>
+                <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center ${theme === 'dark' ? 'bg-gradient-to-br from-white/10 to-white/20' : 'bg-gradient-to-br from-gray-100 to-gray-200'}`}>
+                  <Eye className={`w-10 h-10 ${theme === 'dark' ? 'text-white/60' : 'text-gray-400'}`} />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">No Palette Selected</h3>
-                <p className="text-gray-300 mb-6">
+                <h3 className={`text-xl font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>No Palette Selected</h3>
+                <p className={`mb-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
                   Generate or select a palette to simulate different types of color vision
                 </p>
                 <Button
                   onClick={() => setActiveTab('generator')}
                   variant="outline"
-                  className="bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20 text-white shadow-lg shadow-black/20"
+                  className={`shadow-lg ${theme === 'dark' ? 'bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20 text-white shadow-black/20' : 'bg-gray-100 border-gray-300 hover:bg-gray-200 text-gray-900 shadow-gray-200'}`}
                 >
                   <Palette className="w-4 h-4 mr-2" />
                   Generate Palette
