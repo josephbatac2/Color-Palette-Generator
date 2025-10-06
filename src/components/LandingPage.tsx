@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Palette, Sparkles, Eye, Shield, Download, ArrowRight, Play, Star, Users, Zap, Heart, Github, Twitter, Sun, Moon } from 'lucide-react';
+import { Palette, Sparkles, Eye, Shield, Download, ArrowRight, Play, Star, Users, Zap, Heart, Github, Twitter, Sun, Moon, Instagram, Linkedin, Youtube, Link2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { useTheme } from '../contexts/ThemeContext';
@@ -286,12 +286,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               >
                 Created by AJ Batac
               </a>
-              <div className="flex gap-4">
+              <div className="flex gap-3">
                 <a
                   href="https://github.com/ajbatac"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                  title="GitHub"
                 >
                   <Github className="w-5 h-5" />
                 </a>
@@ -300,8 +301,54 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                  title="Twitter"
                 >
                   <Twitter className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://instagram.com/ajbatac"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                  title="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ajbatac/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                  title="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.youtube.com/@AJBatac"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                  title="YouTube"
+                >
+                  <Youtube className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://linkn.ca/ajbatac"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                  title="linkn.ca"
+                >
+                  <Link2 className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://linktr.ee/ajbatac"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                  title="Linktree"
+                >
+                  <Link2 className="w-5 h-5" />
                 </a>
               </div>
             </div>
