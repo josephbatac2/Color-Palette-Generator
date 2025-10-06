@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Color, ColorBlindnessType } from '../../types/color';
 import { ColorUtils } from '../../utils/colorUtils';
+import { useTheme } from '../../contexts/ThemeContext';
 import { Card } from './card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select';
 import { Eye, Info } from 'lucide-react';
@@ -28,6 +29,7 @@ export const ColorBlindnessSimulator: React.FC<ColorBlindnessSimulatorProps> = (
   colors,
   className,
 }) => {
+  const { theme } = useTheme();
   const [selectedType, setSelectedType] = useState<string>('protanopia');
 
   const simulatedColors = useMemo(() => {
@@ -38,9 +40,9 @@ export const ColorBlindnessSimulator: React.FC<ColorBlindnessSimulatorProps> = (
 
   return (
     <div className={`space-y-8 ${className}`}>
-      <Card className="p-6 bg-white/90 backdrop-blur-xl border-white/20">
+      <Card className={`p-6 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/90 border-white/20' : 'bg-white border-gray-200'}`}>
       <div className="flex items-center gap-3 mb-6">
-        <Eye className="w-6 h-6 text-gray-600" />
+        <Eye className={`w-6 h-6 ${theme === 'dark' ? 'text-gray-600' : 'text-gray-700'}`} />
         <h3 className="text-xl font-semibold text-gray-900">Color Vision Simulator</h3>
       </div>
 
@@ -85,7 +87,7 @@ export const ColorBlindnessSimulator: React.FC<ColorBlindnessSimulatorProps> = (
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Original Colors */}
-        <Card className="p-6 bg-white/90 backdrop-blur-xl border-white/20">
+        <Card className={`p-6 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/90 border-white/20' : 'bg-white border-gray-200'}`}>
           <h4 className="font-medium text-gray-900 mb-4">Original Colors</h4>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {colors.map((color, index) => (
@@ -104,7 +106,7 @@ export const ColorBlindnessSimulator: React.FC<ColorBlindnessSimulatorProps> = (
         </Card>
 
         {/* Simulated Colors */}
-        <Card className="p-6 bg-white/90 backdrop-blur-xl border-white/20">
+        <Card className={`p-6 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/90 border-white/20' : 'bg-white border-gray-200'}`}>
           <h4 className="font-medium text-gray-900 mb-4">
             Simulated View ({selectedTypeInfo?.name})
           </h4>
@@ -126,11 +128,11 @@ export const ColorBlindnessSimulator: React.FC<ColorBlindnessSimulatorProps> = (
       </div>
 
       {/* Comparison View */}
-      <Card className="p-6 bg-white/60 backdrop-blur-xl border-white/20">
+      <Card className={`p-6 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/60 border-white/20' : 'bg-white border-gray-200'}`}>
         <h4 className="font-medium text-gray-900 mb-4">Side-by-Side Comparison</h4>
         <div className="space-y-3">
           {colors.map((originalColor, index) => (
-            <div key={index} className="flex items-center gap-6 p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg shadow-black/5 hover:shadow-xl hover:shadow-black/10 transition-all duration-300 border border-white/20">
+            <div key={index} className={`flex items-center gap-6 p-4 backdrop-blur-sm rounded-xl shadow-lg transition-all duration-300 ${theme === 'dark' ? 'bg-white/80 shadow-black/5 hover:shadow-xl hover:shadow-black/10 border border-white/20' : 'bg-gray-50 shadow-gray-200 hover:shadow-xl hover:shadow-gray-300 border border-gray-200'}`}>
               <div className="text-sm font-semibold text-gray-700 w-20">
                 Color {index + 1}
               </div>
