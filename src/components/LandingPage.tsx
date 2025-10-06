@@ -119,7 +119,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             <Button
               variant="outline"
               size="lg"
-              className="px-8 py-4 text-lg bg-white/10 backdrop-blur-xl border-white/20 text-white hover:bg-white/20 shadow-2xl transform hover:scale-105 transition-all duration-300"
+              className={`px-8 py-4 text-lg backdrop-blur-xl shadow-2xl transform hover:scale-105 transition-all duration-300 ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white hover:bg-white/20' : 'bg-white border-gray-300 text-gray-900 hover:bg-gray-50'}`}
               onClick={() => window.open('https://github.com/ajbatac/color-palette-generator', '_blank')}
             >
               <Github className="w-5 h-5 mr-2" />
