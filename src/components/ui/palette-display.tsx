@@ -112,38 +112,38 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
                 openLightbox(color);
               }}
             >
-              <div 
-                className="absolute inset-0 flex flex-col justify-between p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/20"
+              <div
+                className="absolute inset-0 flex flex-col justify-between p-2 md:p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/20"
                 style={{ color: textColor }}
               >
-                <div className="text-sm font-medium bg-black/30 rounded-full px-3 py-2 self-start backdrop-blur-sm">
+                <div className="text-xs md:text-sm font-medium bg-black/30 rounded-full px-2 py-1 md:px-3 md:py-2 self-start backdrop-blur-sm">
                   #{index + 1}
                 </div>
                 <div className="text-center">
-                  <div className="font-mono text-lg font-bold mb-2 drop-shadow-sm">{color.hex}</div>
-                  <div className="text-sm opacity-90 bg-black/20 rounded-lg px-3 py-1 backdrop-blur-sm">
+                  <div className="font-mono text-xs md:text-lg font-bold mb-1 md:mb-2 drop-shadow-sm">{color.hex}</div>
+                  <div className="text-xs md:text-sm opacity-90 bg-black/20 rounded-lg px-2 py-0.5 md:px-3 md:py-1 backdrop-blur-sm">
                     HSL({color.h}, {color.s}%, {color.l}%)
                   </div>
                 </div>
                 <div className="self-center">
-                  <div className="w-12 h-12 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                    <div className="w-4 h-4 rounded-full bg-white/90" />
+                  <div className="w-6 h-6 md:w-12 md:h-12 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center shadow-lg">
+                    <div className="w-2 h-2 md:w-4 md:h-4 rounded-full bg-white/90" />
                   </div>
                 </div>
               </div>
               
               {/* Copy button - separate click handler */}
               <button
-                className="absolute top-4 right-4 p-3 rounded-full bg-black/30 hover:bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 backdrop-blur-sm shadow-lg"
+                className="absolute top-2 right-2 md:top-4 md:right-4 p-1.5 md:p-3 rounded-full bg-black/30 hover:bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 backdrop-blur-sm shadow-lg"
                 onClick={(e) => {
                   e.stopPropagation();
                   copyToClipboard(color.hex, index);
                 }}
               >
                 {copiedIndex === index ? (
-                  <Check className="w-5 h-5" />
+                  <Check className="w-3 h-3 md:w-5 md:h-5" />
                 ) : (
-                  <Copy className="w-5 h-5" />
+                  <Copy className="w-3 h-3 md:w-5 md:h-5" />
                 )}
               </button>
             </div>
@@ -158,18 +158,18 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
 
   return (
     <>
-      <Card className="overflow-hidden bg-white/90 backdrop-blur-xl border-white/20 shadow-xl shadow-black/5 hover:shadow-2xl hover:shadow-black/10 transition-all duration-300 hover:scale-[1.01] min-h-[600px]">
-      <div className="flex h-[500px]">
+      <Card className="overflow-hidden bg-white/90 backdrop-blur-xl border-white/20 shadow-xl shadow-black/5 hover:shadow-2xl hover:shadow-black/10 transition-all duration-300 hover:scale-[1.01] min-h-[400px] md:min-h-[600px]">
+      <div className="flex h-[250px] md:h-[500px]">
         {palette.colors.map((color, index) => (
           <ColorSwatch key={index} color={color} index={index} />
         ))}
       </div>
       
-      <div className="p-8 border-t border-white/20 bg-white/50 backdrop-blur-sm flex-1 flex flex-col justify-between min-h-[200px]">
-        <div className="flex items-start justify-between mb-4">
+      <div className="p-4 md:p-8 border-t border-white/20 bg-white/50 backdrop-blur-sm flex-1 flex flex-col justify-between min-h-[150px] md:min-h-[200px]">
+        <div className="flex items-start justify-between mb-3 md:mb-4">
           <div>
-            <h3 className="font-semibold text-xl text-gray-900 mb-2">{palette.name}</h3>
-            <div className="flex items-center gap-3 text-sm text-gray-500">
+            <h3 className="font-semibold text-base md:text-xl text-gray-900 mb-1 md:mb-2">{palette.name}</h3>
+            <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-gray-500">
               <span>{palette.colors.length} colors</span>
               {palette.harmony && (
                 <>
@@ -183,29 +183,29 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
           </div>
           
           {palette.type && (
-            <div className="bg-white/60 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-xs font-medium capitalize border border-white/30 shadow-sm">
+            <div className="bg-white/60 backdrop-blur-sm text-gray-700 px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-medium capitalize border border-white/30 shadow-sm">
               {palette.type}
             </div>
           )}
         </div>
 
         {showActions && (
-          <div className="flex gap-3 mt-8">
+          <div className="flex flex-wrap gap-2 md:gap-3 mt-4 md:mt-8">
             <Button
               disabled={isExporting}
               variant="outline"
-              size="lg"
+              size="sm"
               onClick={exportPalette}
-              className="flex items-center gap-2 bg-white/60 backdrop-blur-sm border-white/40 hover:bg-white/80 px-8 py-4 text-base"
+              className="flex items-center gap-1 md:gap-2 bg-white/60 backdrop-blur-sm border-white/40 hover:bg-white/80 px-3 py-2 md:px-8 md:py-4 text-xs md:text-base"
             >
               {isExporting ? (
                 <>
-                  <Loader2 className="w-5 h-5 animate-spin" />
+                  <Loader2 className="w-3 h-3 md:w-5 md:h-5 animate-spin" />
                   {isExporting ? 'Copied!' : 'Copying...'}
                 </>
               ) : (
                 <>
-                  <Download className="w-5 h-5" />
+                  <Download className="w-3 h-3 md:w-5 md:h-5" />
                   Export CSS
                 </>
               )}
@@ -215,18 +215,18 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
               <Button
                 disabled={isSaving || isAlreadySaved}
                 variant="outline"
-                size="lg"
+                size="sm"
                 onClick={handleSave}
-                className="flex items-center gap-2 bg-white/60 backdrop-blur-sm border-white/40 hover:bg-white/80 px-8 py-4 text-base"
+                className="flex items-center gap-1 md:gap-2 bg-white/60 backdrop-blur-sm border-white/40 hover:bg-white/80 px-3 py-2 md:px-8 md:py-4 text-xs md:text-base"
               >
                 {isSaving ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <Loader2 className="w-3 h-3 md:w-5 md:h-5 animate-spin" />
                     Saving...
                   </>
                 ) : (
                   <>
-                    <Heart className="w-5 h-5" />
+                    <Heart className="w-3 h-3 md:w-5 md:h-5" />
                     Save Palette
                   </>
                 )}
@@ -237,10 +237,10 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
               <Button
                 disabled
                 variant="outline"
-                size="lg"
-                className="flex items-center gap-2 bg-green-50/80 backdrop-blur-sm border-green-200/50 text-green-700 px-8 py-4 text-base cursor-not-allowed"
+                size="sm"
+                className="flex items-center gap-1 md:gap-2 bg-green-50/80 backdrop-blur-sm border-green-200/50 text-green-700 px-3 py-2 md:px-8 md:py-4 text-xs md:text-base cursor-not-allowed"
               >
-                <Check className="w-5 h-5" />
+                <Check className="w-3 h-3 md:w-5 md:h-5" />
                 Already Saved
               </Button>
             )}
@@ -248,11 +248,11 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
             {onDelete && (
               <Button
                 variant="outline"
-                size="lg"
+                size="sm"
                 onClick={handleDelete}
-                className="flex items-center gap-2 text-red-600 hover:text-red-700 hover:border-red-300 bg-white/60 backdrop-blur-sm border-white/40 hover:bg-red-50/80 px-8 py-4 text-base"
+                className="flex items-center gap-1 md:gap-2 text-red-600 hover:text-red-700 hover:border-red-300 bg-white/60 backdrop-blur-sm border-white/40 hover:bg-red-50/80 px-3 py-2 md:px-8 md:py-4 text-xs md:text-base"
               >
-                <Trash2 className="w-5 h-5" />
+                <Trash2 className="w-3 h-3 md:w-5 md:h-5" />
                 Delete
               </Button>
             )}
