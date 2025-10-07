@@ -32,9 +32,16 @@ A professional-grade color palette generator with advanced harmony algorithms, a
 - **Smooth Animations**: Micro-interactions and hover effects throughout
 - **Intuitive Navigation**: Tab-based interface with clear visual hierarchy
 
-## 🚀 Recent Updates (v1.1.0)
+## 🚀 Recent Updates (v1.2.0 - October 2025)
 
-### Enhanced Color Picker Interface
+### Theme System & UI Enhancements
+- **Dark/Light Mode Toggle**: Full theme support with smooth transitions
+- **Enhanced Landing Page**: Beautiful gradient backgrounds with animated elements
+- **Responsive Design Improvements**: Fixed button overflow issues on mobile devices
+- **Social Media Integration**: Added comprehensive social links in footer (Instagram, LinkedIn, YouTube, linkn.ca, Linktree)
+- **Improved Button Visibility**: Fixed contrast issues in light mode for better accessibility
+
+### Previous Updates (v1.1.0)
 - **Redesigned Color Picker**: Massive 160x160px circular color picker with glowing animated background
 - **Visual Prominence**: Color picker is now the main focal point with clear instructions
 - **Improved User Experience**: Obvious interaction patterns with hover effects and animations
@@ -96,7 +103,9 @@ MIT License - feel free to use this project for personal or commercial purposes.
 
 **AJ Batac (@ajbatac)**
 - Portfolio: [ajbatac.github.io](https://ajbatac.github.io/?=colorpalettegen)
-- Version: 1.1.0 (September 2025)
+- GitHub: [github.com/ajbatac](https://github.com/ajbatac)
+- LinkedIn: [linkedin.com/in/ajbatac](https://www.linkedin.com/in/ajbatac/)
+- Version: 1.2.0 (October 2025)
 
 ---
 

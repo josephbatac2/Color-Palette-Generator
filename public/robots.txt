@@ -1,0 +1,11 @@
+# robots.txt for Color Palette Generator
+# Allow all search engines to index the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://colorpalettegenerator.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

@@ -358,7 +358,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             <a href="https://www.buymeacoffee.com/emailsig" target="_blank" rel="noopener noreferrer" className="inline-block mb-6">
               <img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style={{ height: '60px', width: '217px' }} />
             </a>
-            <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>© 2025 Color Palette Generator. Made with ❤️ for designers and developers.</p>
+            <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>© 2025 Color Palette Generator v1.2.0. Made with ❤️ for designers and developers.</p>
           </div>
         </div>
       </footer>
