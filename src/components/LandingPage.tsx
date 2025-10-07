@@ -242,26 +242,26 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* CTA Section */}
-      <div className="relative z-10 container mx-auto px-6 py-32">
-        <div className={`text-center backdrop-blur-xl rounded-3xl p-16 shadow-2xl ${theme === 'dark' ? 'bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-white/20' : 'bg-gradient-to-r from-blue-100 to-purple-100 border border-gray-200'}`}>
-          <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+      <div className="relative z-10 container mx-auto px-6 py-16 md:py-32">
+        <div className={`text-center backdrop-blur-xl rounded-3xl p-6 md:p-16 shadow-2xl ${theme === 'dark' ? 'bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-white/20' : 'bg-gradient-to-r from-blue-100 to-purple-100 border border-gray-200'}`}>
+          <h2 className={`text-3xl md:text-5xl font-bold mb-4 md:mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             Ready to Create Amazing
             <br />
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Color Palettes?
             </span>
           </h2>
-          <p className={`text-xl mb-8 max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+          <p className={`text-base md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
             Join thousands of designers and developers who trust our color palette generator
           </p>
           <Button
             onClick={onGetStarted}
             size="lg"
-            className="px-12 py-6 text-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transform hover:scale-105 transition-all duration-300"
+            className="w-full md:w-auto px-6 md:px-12 py-4 md:py-6 text-base md:text-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transform hover:scale-105 transition-all duration-300"
           >
-            <Heart className="w-6 h-6 mr-3" />
+            <Heart className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3" />
             Start Creating Now
-            <ArrowRight className="w-6 h-6 ml-3" />
+            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-2 md:ml-3" />
           </Button>
         </div>
       </div>
