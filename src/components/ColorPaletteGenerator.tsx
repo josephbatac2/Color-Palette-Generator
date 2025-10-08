@@ -9,6 +9,7 @@ import { PaletteDisplay } from './ui/palette-display';
 import { AccessibilityChecker } from './ui/accessibility-checker';
 import { ColorBlindnessSimulator } from './ui/color-blindness-simulator';
 import { CuratedPalettes } from './ui/curated-palettes';
+import { Footer } from './ui/footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
@@ -293,35 +294,7 @@ export const ColorPaletteGenerator: React.FC = () => {
         </Tabs>
       </div>
       
-      {/* Footer */}
-      <footer className={`backdrop-blur-xl mt-16 ${theme === 'dark' ? 'border-t border-white/10 bg-black/20' : 'border-t border-gray-200 bg-white/50'}`}>
-        <div className="container mx-auto px-6 py-8">
-          <div className="text-center">
-            <a href="https://www.buymeacoffee.com/emailsig" target="_blank" rel="noopener noreferrer" className="inline-block mb-6">
-              <img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style={{ height: '60px', width: '217px' }} />
-            </a>
-            <div className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-              Created with ❤️ by{' '}
-              <a
-                href="https://ajbatac.github.io/?=colorpalettegen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`font-medium transition-colors hover:underline ${theme === 'dark' ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}`}
-              >
-                AJ Batac (@ajbatac)
-              </a>
-              {' '}- v1.1.0 ({' '}
-              <a
-                href="/changelog.html"
-                className={`font-medium transition-colors hover:underline ${theme === 'dark' ? 'text-purple-400 hover:text-purple-300' : 'text-purple-600 hover:text-purple-700'}`}
-              >
-                changelog
-              </a>
-              )
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer variant="compact" className="mt-16" />
     </div>
   );
 };

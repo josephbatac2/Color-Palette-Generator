@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Palette, Sparkles, Eye, Shield, Download, ArrowRight, Play, Star, Users, Zap, Heart, Github, Twitter, Sun, Moon, Instagram, Linkedin, Youtube, Link2 } from 'lucide-react';
+import { Palette, Sparkles, Eye, Shield, Download, ArrowRight, Play, Zap, Heart, Sun, Moon } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
+import { Footer } from './ui/footer';
 import { useTheme } from '../contexts/ThemeContext';
 
 interface LandingPageProps {
@@ -266,102 +267,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'border-t border-white/10 bg-black/20' : 'border-t border-gray-200 bg-white/50'}`}>
-        <div className="container mx-auto px-6 py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center gap-3 mb-4 md:mb-0">
-              <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg">
-                <Palette className="w-5 h-5 text-white" />
-              </div>
-              <span className={`font-semibold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Color Palette Generator</span>
-            </div>
-
-            <div className="flex items-center gap-6">
-              <a
-                href="https://ajbatac.github.io/?=colorpalettegen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
-              >
-                Created by AJ Batac
-              </a>
-              <div className="flex gap-3">
-                <a
-                  href="https://github.com/ajbatac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
-                  title="GitHub"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://twitter.com/ajbatac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
-                  title="Twitter"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://instagram.com/ajbatac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
-                  title="Instagram"
-                >
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/ajbatac/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
-                  title="LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://www.youtube.com/@AJBatac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
-                  title="YouTube"
-                >
-                  <Youtube className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://linkn.ca/ajbatac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
-                  title="linkn.ca"
-                >
-                  <Link2 className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://linktr.ee/ajbatac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
-                  title="Linktree"
-                >
-                  <Link2 className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className={`mt-8 pt-8 text-center ${theme === 'dark' ? 'border-t border-white/10' : 'border-t border-gray-200'}`}>
-            <a href="https://www.buymeacoffee.com/emailsig" target="_blank" rel="noopener noreferrer" className="inline-block mb-6">
-              <img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style={{ height: '60px', width: '217px' }} />
-            </a>
-            <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>© 2025 Color Palette Generator v1.2.0. Made with ❤️ for designers and developers.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer variant="full" />
     </div>
   );
 };
