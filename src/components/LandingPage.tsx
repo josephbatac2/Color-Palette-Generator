@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Palette, Sparkles, Eye, Shield, Download, ArrowRight, Play, Zap, Heart, Sun, Moon } from 'lucide-react';
+import { Palette, Sparkles, Eye, Shield, Download, ArrowRight, Play, Zap, Heart, Github, Sun, Moon } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Footer } from './ui/footer';
