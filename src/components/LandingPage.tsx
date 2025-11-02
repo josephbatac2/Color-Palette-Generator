@@ -62,12 +62,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   return (
     <div className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100'}`}>
       {/* Theme Toggle */}
-      <div className="fixed top-6 right-6 z-50">
+      <div className="fixed bottom-6 left-6 z-50">
         <Button
           onClick={toggleTheme}
           variant="outline"
           size="icon"
           className={`w-12 h-12 rounded-full shadow-lg transition-all ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white hover:bg-white/20' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'}`}
+          aria-label="Toggle dark mode"
         >
           {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
         </Button>
