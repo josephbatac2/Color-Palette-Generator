@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://colorpalettegenerator.com/sitemap.xml
+Sitemap: https://colourpalettes.netlify.app/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1
