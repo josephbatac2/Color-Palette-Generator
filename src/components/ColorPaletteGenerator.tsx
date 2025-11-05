@@ -299,7 +299,7 @@ export const ColorPaletteGenerator: React.FC = () => {
         </Tabs>
       </div>
       
-      <Footer variant="compact" className="mt-16" />
+      <Footer variant="full" className="mt-16" />
     </div>
   );
 };
