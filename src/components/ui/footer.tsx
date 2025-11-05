@@ -174,6 +174,21 @@ export const Footer: React.FC<FooterProps> = ({ variant = 'full', className = ''
               style={{ height: '60px', width: '217px' }}
             />
           </a>
+
+          <a
+            href="https://ko-fi.com/N4N11N420X"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mb-6"
+          >
+            <img
+              src="https://storage.ko-fi.com/cdn/kofi2.png?v=6"
+              alt="Buy Me A Coffee"
+              style={{ height: '60px', width: '217px' }}
+            />
+          </a>
+
+          
           <p className={`text-sm ${subtleTextClasses}`}>
             © 2025 Color Palette Generator v1.2.0. Made with ❤️ for designers and developers.
           </p>
