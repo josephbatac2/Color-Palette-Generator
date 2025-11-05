@@ -92,23 +92,23 @@ export const ColorPaletteGenerator: React.FC = () => {
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
           <TabsList className={`grid w-full max-w-2xl mx-auto grid-cols-5 h-12 backdrop-blur-xl shadow-xl ${theme === 'dark' ? 'bg-white/10 shadow-black/20 border border-white/20' : 'bg-white shadow-gray-200 border border-gray-200'}`}>
-            <TabsTrigger value="curated" className="flex items-center gap-2 text-sm">
+            <TabsTrigger value="curated" className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-gray-200 data-[state=active]:text-white' : 'text-gray-700 data-[state=active]:text-gray-900'}`}>
               <Sparkles className="w-4 h-4" />
               <span className="hidden sm:inline">Curated</span>
             </TabsTrigger>
-            <TabsTrigger value="generator" className="flex items-center gap-2 text-sm">
+            <TabsTrigger value="generator" className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-gray-200 data-[state=active]:text-white' : 'text-gray-700 data-[state=active]:text-gray-900'}`}>
               <Palette className="w-4 h-4" />
               <span className="hidden sm:inline">Generator</span>
             </TabsTrigger>
-            <TabsTrigger value="saved" className="flex items-center gap-2 text-sm">
+            <TabsTrigger value="saved" className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-gray-200 data-[state=active]:text-white' : 'text-gray-700 data-[state=active]:text-gray-900'}`}>
               <Save className="w-4 h-4" />
               <span className="hidden sm:inline">Saved</span>
             </TabsTrigger>
-            <TabsTrigger value="accessibility" className="flex items-center gap-2 text-sm">
+            <TabsTrigger value="accessibility" className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-gray-200 data-[state=active]:text-white' : 'text-gray-700 data-[state=active]:text-gray-900'}`}>
               <Shield className="w-4 h-4" />
               <span className="hidden sm:inline">A11y</span>
             </TabsTrigger>
-            <TabsTrigger value="simulator" className="flex items-center gap-2 text-sm">
+            <TabsTrigger value="simulator" className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-gray-200 data-[state=active]:text-white' : 'text-gray-700 data-[state=active]:text-gray-900'}`}>
               <Eye className="w-4 h-4" />
               <span className="hidden sm:inline">Vision</span>
             </TabsTrigger>
