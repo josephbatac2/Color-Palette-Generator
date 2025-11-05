@@ -126,8 +126,10 @@ export const Footer: React.FC<FooterProps> = ({ variant = 'full', className = ''
       <div className="container mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center gap-3 mb-4 md:mb-0">
-            <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg">
-              <Palette className="w-5 h-5 text-white" />
+            <div className="p-3 bg-gradient-to-br from-white-500 to-purple-600 rounded-xl shadow-lg">
+              <a href="/" title="Color Palette Generator" target="_self">
+              <img src="/logo.png" alt="Color Palette Generator" className="w-16 h-16 rounded-xl shadow-lg" />
+              </a>
             </div>
             <span className={`font-semibold ${textClasses}`}>Color Palette Generator</span>
           </div>
