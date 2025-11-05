@@ -75,12 +75,18 @@ export const ColorPaletteGenerator: React.FC = () => {
       <div className={`backdrop-blur-xl sticky top-0 z-10 shadow-lg ${theme === 'dark' ? 'border-b border-white/10 bg-white/5 shadow-black/20' : 'border-b border-gray-200 bg-white/50 shadow-gray-200'}`}>
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col items-center gap-3 text-center">
-            <div className="flex items-center gap-4">
+
+          {/* Logo */}
+          <div className={`inline-flex items-center gap-3 mb-8 p-4 backdrop-blur-xl rounded-2xl shadow-2xl ${theme === 'dark' ? 'bg-white/10 border border-white/20' : 'bg-white border border-gray-200'}`}>
+            <div className="p-3 bg-gradient-to-br from-white-500 to-purple-600 rounded-xl shadow-lg">
+              <a href="/" title="Color Palette Generator" target="_self">
               <img src="/logo.png" alt="Color Palette Generator" className="w-16 h-16 rounded-xl shadow-lg" />
-              <h1 className={`text-3xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                Color Palette Generator
-              </h1>
+              </a>
             </div>
+            <span className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Color Palette Generator</span>
+          </div>
+
+            
             <p className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
               Create beautiful, accessible color palettes with advanced harmony algorithms
             </p>
