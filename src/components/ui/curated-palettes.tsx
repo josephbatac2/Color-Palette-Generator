@@ -2372,20 +2372,34 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 ${
-                  selectedCategory === category.id 
-                    ? 'ring-4 ring-white/50 scale-105' 
+                  selectedCategory === category.id
+                    ? 'ring-4 ring-white/50 scale-105'
                     : 'hover:ring-2 hover:ring-white/30'
                 } ${category.textColor}`}
-                style={{ 
+                style={{
                   background: category.color,
-                  boxShadow: selectedCategory === category.id 
-                    ? '0 10px 25px rgba(0,0,0,0.2)' 
+                  boxShadow: selectedCategory === category.id
+                    ? '0 10px 25px rgba(0,0,0,0.2)'
                     : '0 4px 15px rgba(0,0,0,0.1)'
                 }}
               >
                 {category.name}
                 <span className="ml-2 opacity-75">
-                  ({category.id === 'all' ? allPalettes.length : filteredPalettes.length})
+                  ({category.id === 'all' ? allPalettes.length : (() => {
+                    const count = allPalettes.filter(palette => {
+                      if (category.id === 'blues') return palette.category === 'blues' || palette.category === 'teals';
+                      if (category.id === 'greens') return palette.category === 'greens' || palette.category === 'nature';
+                      if (category.id === 'reds') return palette.category === 'reds' || palette.category === 'pinks';
+                      if (category.id === 'purples') return palette.category === 'purples' || palette.category === 'violets';
+                      if (category.id === 'oranges') return palette.category === 'oranges' || palette.category === 'yellows';
+                      if (category.id === 'neutrals') return palette.category === 'neutrals' || palette.category === 'grays';
+                      if (category.id === 'vibrant') return palette.category === 'vibrant' || palette.category === 'neon';
+                      if (category.id === 'pastels') return palette.category === 'pastels';
+                      if (category.id === 'complementary') return palette.category === 'complementary';
+                      return false;
+                    }).length;
+                    return count;
+                  })()})
                 </span>
               </button>
             ))}
