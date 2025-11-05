@@ -179,7 +179,7 @@ export const Footer: React.FC<FooterProps> = ({ variant = 'full', className = ''
             href="https://ko-fi.com/N4N11N420X"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mb-6"
+            className="inline-block mb-6 pl-6"
           >
             <img
               src="https://storage.ko-fi.com/cdn/kofi2.png?v=6"
