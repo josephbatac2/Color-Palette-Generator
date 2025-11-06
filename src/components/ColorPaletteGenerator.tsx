@@ -132,46 +132,47 @@ export const ColorPaletteGenerator: React.FC = () => {
           </TabsContent>
 
           <TabsContent value="generator" className="space-y-8">
-            <div className="max-w-4xl mx-auto space-y-6">
-              {/* Step 1: Choose Harmony */}
-              <Card className={`p-6 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/10 border-white/20' : 'bg-white border-gray-200'}`}>
-                <h3 className={`text-lg font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Step 1: Choose Color Harmony</h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {[
-                    { value: 'monochromatic', label: 'Monochromatic' },
-                    { value: 'analogous', label: 'Analogous' },
-                    { value: 'complementary', label: 'Complementary' },
-                    { value: 'triadic', label: 'Triadic' },
-                    { value: 'tetradic', label: 'Tetradic' },
-                    { value: 'split-complementary', label: 'Split Complementary' },
-                  ].map((harmony) => (
-                    <Button
-                      key={harmony.value}
-                      variant={selectedHarmony === harmony.value ? 'default' : 'outline'}
-                      onClick={() => setSelectedHarmony(harmony.value as ColorHarmony)}
-                      className="h-12"
-                    >
-                      {harmony.label}
-                    </Button>
-                  ))}
-                </div>
-              </Card>
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Left Column: Input Controls */}
+              <div className="space-y-6">
+                {/* Step 1: Choose Harmony */}
+                <Card className={`p-6 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/10 border-white/20' : 'bg-white border-gray-200'}`}>
+                  <h3 className={`text-lg font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Step 1: Choose Color Harmony</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {[
+                      { value: 'monochromatic', label: 'Monochromatic' },
+                      { value: 'analogous', label: 'Analogous' },
+                      { value: 'complementary', label: 'Complementary' },
+                      { value: 'triadic', label: 'Triadic' },
+                      { value: 'tetradic', label: 'Tetradic' },
+                      { value: 'split-complementary', label: 'Split Complementary' },
+                    ].map((harmony) => (
+                      <Button
+                        key={harmony.value}
+                        variant={selectedHarmony === harmony.value ? 'default' : 'outline'}
+                        onClick={() => setSelectedHarmony(harmony.value as ColorHarmony)}
+                        className="h-12"
+                      >
+                        {harmony.label}
+                      </Button>
+                    ))}
+                  </div>
+                </Card>
 
-              {/* Step 2: Pick Base Color */}
-              <Card className={`p-6 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/10 border-white/20' : 'bg-white border-gray-200'}`}>
-                <h3 className={`text-lg font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Step 2: Pick Base Color</h3>
-                <StableColorPicker
-                  color={baseColor}
-                  onChange={updateBaseColor}
-                />
-              </Card>
+                {/* Step 2: Pick Base Color */}
+                <Card className={`p-6 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/10 border-white/20' : 'bg-white border-gray-200'}`}>
+                  <h3 className={`text-lg font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Step 2: Pick Base Color</h3>
+                  <StableColorPicker
+                    color={baseColor}
+                    onChange={updateBaseColor}
+                  />
+                </Card>
 
-              {/* Step 3: Generate */}
-              <div className="text-center">
+                {/* Step 3: Generate Button */}
                 <Button
                   onClick={handleGeneratePalette}
                   size="lg"
-                  className="px-8 py-3"
+                  className="w-full py-6 text-lg font-semibold"
                   disabled={!selectedHarmony}
                 >
                   <Wand2 className="w-5 h-5 mr-2" />
@@ -179,19 +180,31 @@ export const ColorPaletteGenerator: React.FC = () => {
                 </Button>
               </div>
 
-              {/* Generated Palette */}
-              {currentPalette && (
-                <div className="space-y-4">
-                  <h3 className={`text-lg font-semibold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Your Generated Palette</h3>
-                  <PaletteDisplay
-                    palette={currentPalette}
-                    onSave={savePalette}
-                    isSaving={isSaving}
-                    isAlreadySaved={isCurrentPaletteSaved}
-                    showActions={true}
-                  />
-                </div>
-              )}
+              {/* Right Column: Generated Palette */}
+              <div className="space-y-4 flex flex-col">
+                {currentPalette ? (
+                  <>
+                    <h3 className={`text-lg font-semibold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Your Generated Palette</h3>
+                    <PaletteDisplay
+                      palette={currentPalette}
+                      onSave={savePalette}
+                      isSaving={isSaving}
+                      isAlreadySaved={isCurrentPaletteSaved}
+                      showActions={true}
+                    />
+                  </>
+                ) : (
+                  <Card className={`p-12 text-center backdrop-blur-xl flex-1 flex flex-col items-center justify-center ${theme === 'dark' ? 'bg-white/10 border-white/20' : 'bg-white border-gray-200'}`}>
+                    <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center ${theme === 'dark' ? 'bg-gradient-to-br from-white/10 to-white/20' : 'bg-gradient-to-br from-gray-100 to-gray-200'}`}>
+                      <Palette className={`w-8 h-8 ${theme === 'dark' ? 'text-white/60' : 'text-gray-400'}`} />
+                    </div>
+                    <h4 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Ready to Generate</h4>
+                    <p className={theme === 'dark' ? 'text-gray-300 text-sm' : 'text-gray-600 text-sm'}>
+                      Select a harmony and color to create your palette
+                    </p>
+                  </Card>
+                )}
+              </div>
             </div>
           </TabsContent>
 
