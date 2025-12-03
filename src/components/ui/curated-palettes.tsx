@@ -3014,6 +3014,7 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                       if (category.id === 'vibrant') return palette.category === 'vibrant' || palette.category === 'neon';
                       if (category.id === 'pastels') return palette.category === 'pastels';
                       if (category.id === 'complementary') return palette.category === 'complementary';
+                      if (category.id === 'holidays') return palette.category === 'holidays';
                       return false;
                     }).length;
                     return count;
