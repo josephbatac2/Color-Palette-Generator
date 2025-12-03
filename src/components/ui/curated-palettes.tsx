@@ -68,10 +68,16 @@ const categories = [
     color: 'linear-gradient(135deg, #ffeef8 0%, #f0e6ff 100%)',
     textColor: 'text-black'
   },
-  { 
-    id: 'complementary', 
-    name: 'Complementary', 
+  {
+    id: 'complementary',
+    name: 'Complementary',
     color: 'linear-gradient(135deg, #ff6b35 0%, #4facfe 100%)',
+    textColor: 'text-black'
+  },
+  {
+    id: 'holidays',
+    name: 'Holiday & Seasonal',
+    color: 'linear-gradient(135deg, #c41e3a 0%, #165b33 50%, #ffd700 100%)',
     textColor: 'text-black'
   }
 ];
@@ -2314,6 +2320,620 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   },
 ];
 
+// Holiday & Seasonal Palettes - 50 new palettes
+const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  // Christmas & Winter Holidays (8 palettes)
+  {
+    name: 'Classic Christmas',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(0, 100, 35),
+      ColorUtils.createColor(130, 80, 40),
+      ColorUtils.createColor(0, 100, 50),
+      ColorUtils.createColor(130, 80, 55),
+      ColorUtils.createColor(0, 0, 95),
+    ],
+  },
+  {
+    name: 'Festive Red & Gold',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(0, 100, 40),
+      ColorUtils.createColor(45, 100, 50),
+      ColorUtils.createColor(45, 100, 65),
+      ColorUtils.createColor(0, 100, 25),
+      ColorUtils.createColor(45, 100, 35),
+    ],
+  },
+  {
+    name: 'Winter Elegance',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(220, 50, 90),
+      ColorUtils.createColor(220, 30, 75),
+      ColorUtils.createColor(220, 10, 95),
+      ColorUtils.createColor(220, 40, 65),
+      ColorUtils.createColor(0, 0, 30),
+    ],
+  },
+  {
+    name: 'Cozy Cabin Vibes',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(30, 60, 45),
+      ColorUtils.createColor(15, 70, 50),
+      ColorUtils.createColor(40, 50, 60),
+      ColorUtils.createColor(0, 80, 45),
+      ColorUtils.createColor(30, 40, 35),
+    ],
+  },
+  {
+    name: 'Frosty Snowflake',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(210, 100, 90),
+      ColorUtils.createColor(200, 80, 80),
+      ColorUtils.createColor(240, 100, 95),
+      ColorUtils.createColor(200, 100, 70),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Candy Cane Sweet',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(350, 100, 50),
+      ColorUtils.createColor(0, 100, 60),
+      ColorUtils.createColor(350, 100, 65),
+      ColorUtils.createColor(0, 0, 95),
+      ColorUtils.createColor(0, 100, 35),
+    ],
+  },
+  {
+    name: 'Elegant Noir Gold',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(0, 0, 15),
+      ColorUtils.createColor(45, 100, 50),
+      ColorUtils.createColor(0, 0, 30),
+      ColorUtils.createColor(45, 100, 60),
+      ColorUtils.createColor(0, 0, 5),
+    ],
+  },
+  {
+    name: 'Warm Fireplace',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(10, 90, 50),
+      ColorUtils.createColor(30, 80, 55),
+      ColorUtils.createColor(0, 100, 45),
+      ColorUtils.createColor(40, 70, 65),
+      ColorUtils.createColor(15, 85, 40),
+    ],
+  },
+
+  // Halloween & Fall (6 palettes)
+  {
+    name: 'Classic Halloween',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(30, 100, 50),
+      ColorUtils.createColor(0, 100, 30),
+      ColorUtils.createColor(30, 100, 35),
+      ColorUtils.createColor(0, 0, 20),
+      ColorUtils.createColor(280, 80, 40),
+    ],
+  },
+  {
+    name: 'Spooky Purple',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(270, 100, 45),
+      ColorUtils.createColor(120, 100, 40),
+      ColorUtils.createColor(280, 80, 35),
+      ColorUtils.createColor(130, 90, 50),
+      ColorUtils.createColor(0, 0, 15),
+    ],
+  },
+  {
+    name: 'Autumn Leaves',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(10, 90, 45),
+      ColorUtils.createColor(30, 85, 50),
+      ColorUtils.createColor(20, 95, 40),
+      ColorUtils.createColor(0, 100, 35),
+      ColorUtils.createColor(40, 75, 55),
+    ],
+  },
+  {
+    name: 'Candy Corn Dreams',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(45, 100, 60),
+      ColorUtils.createColor(30, 100, 50),
+      ColorUtils.createColor(0, 100, 55),
+      ColorUtils.createColor(45, 100, 45),
+      ColorUtils.createColor(30, 100, 35),
+    ],
+  },
+  {
+    name: 'Dark Gothic',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(280, 60, 25),
+      ColorUtils.createColor(0, 100, 25),
+      ColorUtils.createColor(260, 50, 30),
+      ColorUtils.createColor(0, 0, 10),
+      ColorUtils.createColor(320, 70, 35),
+    ],
+  },
+  {
+    name: 'Pumpkin Patch',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(25, 100, 50),
+      ColorUtils.createColor(15, 90, 45),
+      ColorUtils.createColor(35, 85, 55),
+      ColorUtils.createColor(120, 80, 45),
+      ColorUtils.createColor(10, 95, 35),
+    ],
+  },
+
+  // Thanksgiving (5 palettes)
+  {
+    name: 'Harvest Warm',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(20, 85, 50),
+      ColorUtils.createColor(30, 80, 55),
+      ColorUtils.createColor(45, 90, 60),
+      ColorUtils.createColor(10, 75, 45),
+      ColorUtils.createColor(0, 80, 40),
+    ],
+  },
+  {
+    name: 'Cornucopia Colors',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(15, 90, 50),
+      ColorUtils.createColor(120, 70, 50),
+      ColorUtils.createColor(30, 85, 55),
+      ColorUtils.createColor(0, 100, 45),
+      ColorUtils.createColor(45, 80, 60),
+    ],
+  },
+  {
+    name: 'Rustic Brown Tones',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(30, 50, 40),
+      ColorUtils.createColor(20, 60, 45),
+      ColorUtils.createColor(10, 55, 50),
+      ColorUtils.createColor(35, 45, 55),
+      ColorUtils.createColor(25, 70, 35),
+    ],
+  },
+  {
+    name: 'Grateful Golds',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(45, 100, 55),
+      ColorUtils.createColor(40, 90, 60),
+      ColorUtils.createColor(50, 95, 50),
+      ColorUtils.createColor(35, 80, 65),
+      ColorUtils.createColor(45, 100, 40),
+    ],
+  },
+  {
+    name: 'Earth Tones Grateful',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(30, 60, 45),
+      ColorUtils.createColor(20, 70, 50),
+      ColorUtils.createColor(120, 50, 45),
+      ColorUtils.createColor(40, 65, 55),
+      ColorUtils.createColor(15, 75, 40),
+    ],
+  },
+
+  // Easter & Spring (6 palettes)
+  {
+    name: 'Pastel Easter Eggs',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(340, 60, 85),
+      ColorUtils.createColor(280, 50, 80),
+      ColorUtils.createColor(200, 40, 85),
+      ColorUtils.createColor(120, 45, 80),
+      ColorUtils.createColor(50, 50, 85),
+    ],
+  },
+  {
+    name: 'Spring Renewal',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(120, 70, 55),
+      ColorUtils.createColor(100, 75, 60),
+      ColorUtils.createColor(140, 65, 50),
+      ColorUtils.createColor(80, 70, 65),
+      ColorUtils.createColor(160, 60, 55),
+    ],
+  },
+  {
+    name: 'Soft Pink Easter',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(350, 55, 80),
+      ColorUtils.createColor(330, 50, 85),
+      ColorUtils.createColor(320, 45, 80),
+      ColorUtils.createColor(0, 50, 85),
+      ColorUtils.createColor(10, 45, 80),
+    ],
+  },
+  {
+    name: 'Tulip Garden',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(330, 80, 65),
+      ColorUtils.createColor(15, 90, 60),
+      ColorUtils.createColor(280, 70, 70),
+      ColorUtils.createColor(120, 75, 60),
+      ColorUtils.createColor(45, 85, 65),
+    ],
+  },
+  {
+    name: 'Bunny Pastels',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(350, 40, 90),
+      ColorUtils.createColor(280, 35, 88),
+      ColorUtils.createColor(200, 30, 92),
+      ColorUtils.createColor(120, 35, 90),
+      ColorUtils.createColor(80, 40, 88),
+    ],
+  },
+  {
+    name: 'Floral Spring',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(310, 60, 70),
+      ColorUtils.createColor(30, 70, 70),
+      ColorUtils.createColor(120, 65, 65),
+      ColorUtils.createColor(200, 55, 75),
+      ColorUtils.createColor(260, 50, 75),
+    ],
+  },
+
+  // Valentine's Day (5 palettes)
+  {
+    name: 'Romantic Reds',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(0, 100, 40),
+      ColorUtils.createColor(330, 90, 50),
+      ColorUtils.createColor(0, 100, 55),
+      ColorUtils.createColor(330, 80, 60),
+      ColorUtils.createColor(0, 80, 30),
+    ],
+  },
+  {
+    name: 'Rose Gold Luxury',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(330, 70, 65),
+      ColorUtils.createColor(45, 80, 70),
+      ColorUtils.createColor(330, 60, 75),
+      ColorUtils.createColor(0, 70, 60),
+      ColorUtils.createColor(45, 85, 60),
+    ],
+  },
+  {
+    name: 'Playful Hearts',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(340, 85, 60),
+      ColorUtils.createColor(350, 75, 70),
+      ColorUtils.createColor(330, 80, 65),
+      ColorUtils.createColor(0, 100, 50),
+      ColorUtils.createColor(350, 90, 55),
+    ],
+  },
+  {
+    name: 'Romantic Pastels',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(350, 40, 88),
+      ColorUtils.createColor(10, 35, 90),
+      ColorUtils.createColor(330, 30, 85),
+      ColorUtils.createColor(280, 35, 87),
+      ColorUtils.createColor(0, 45, 89),
+    ],
+  },
+  {
+    name: 'Dark Romance',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(330, 90, 35),
+      ColorUtils.createColor(0, 100, 30),
+      ColorUtils.createColor(270, 70, 40),
+      ColorUtils.createColor(0, 80, 25),
+      ColorUtils.createColor(330, 85, 45),
+    ],
+  },
+
+  // New Year & Winter (4 palettes)
+  {
+    name: 'Midnight Glamour',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(0, 0, 15),
+      ColorUtils.createColor(200, 100, 85),
+      ColorUtils.createColor(270, 80, 70),
+      ColorUtils.createColor(0, 0, 20),
+      ColorUtils.createColor(200, 100, 95),
+    ],
+  },
+  {
+    name: 'Champagne Celebration',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(45, 100, 60),
+      ColorUtils.createColor(40, 90, 70),
+      ColorUtils.createColor(50, 95, 50),
+      ColorUtils.createColor(0, 0, 95),
+      ColorUtils.createColor(45, 100, 45),
+    ],
+  },
+  {
+    name: 'Sparkle & Shine',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(300, 100, 70),
+      ColorUtils.createColor(200, 100, 75),
+      ColorUtils.createColor(45, 100, 70),
+      ColorUtils.createColor(0, 0, 100),
+      ColorUtils.createColor(270, 90, 65),
+    ],
+  },
+  {
+    name: 'Countdown Colors',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(0, 100, 50),
+      ColorUtils.createColor(120, 100, 50),
+      ColorUtils.createColor(240, 100, 55),
+      ColorUtils.createColor(60, 100, 55),
+      ColorUtils.createColor(300, 100, 60),
+    ],
+  },
+
+  // Independence Day & Patriotic (4 palettes)
+  {
+    name: 'Classic Patriotic',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(0, 100, 35),
+      ColorUtils.createColor(210, 100, 40),
+      ColorUtils.createColor(0, 0, 95),
+      ColorUtils.createColor(0, 100, 50),
+      ColorUtils.createColor(210, 100, 55),
+    ],
+  },
+  {
+    name: 'Modern Flag',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(0, 100, 40),
+      ColorUtils.createColor(210, 90, 50),
+      ColorUtils.createColor(0, 0, 100),
+      ColorUtils.createColor(0, 100, 55),
+      ColorUtils.createColor(210, 100, 60),
+    ],
+  },
+  {
+    name: 'Fireworks Sky',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(0, 100, 45),
+      ColorUtils.createColor(280, 100, 50),
+      ColorUtils.createColor(210, 100, 50),
+      ColorUtils.createColor(60, 100, 55),
+      ColorUtils.createColor(320, 100, 55),
+    ],
+  },
+  {
+    name: 'Liberty Torch',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(0, 100, 50),
+      ColorUtils.createColor(40, 100, 50),
+      ColorUtils.createColor(210, 100, 45),
+      ColorUtils.createColor(30, 90, 55),
+      ColorUtils.createColor(0, 100, 35),
+    ],
+  },
+
+  // St. Patrick's Day (3 palettes)
+  {
+    name: 'Lucky Greens',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(140, 80, 40),
+      ColorUtils.createColor(120, 70, 35),
+      ColorUtils.createColor(160, 75, 50),
+      ColorUtils.createColor(100, 80, 45),
+      ColorUtils.createColor(140, 85, 55),
+    ],
+  },
+  {
+    name: 'Leprechaun Gold',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(140, 70, 45),
+      ColorUtils.createColor(45, 100, 60),
+      ColorUtils.createColor(120, 80, 50),
+      ColorUtils.createColor(50, 95, 50),
+      ColorUtils.createColor(130, 75, 40),
+    ],
+  },
+  {
+    name: 'Irish Charm',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(150, 60, 50),
+      ColorUtils.createColor(130, 80, 45),
+      ColorUtils.createColor(45, 100, 55),
+      ColorUtils.createColor(140, 70, 60),
+      ColorUtils.createColor(0, 0, 20),
+    ],
+  },
+
+  // Summer & Beach (5 palettes)
+  {
+    name: 'Tropical Sunset',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(15, 95, 55),
+      ColorUtils.createColor(30, 100, 50),
+      ColorUtils.createColor(200, 80, 60),
+      ColorUtils.createColor(250, 70, 65),
+      ColorUtils.createColor(280, 60, 70),
+    ],
+  },
+  {
+    name: 'Beach Sand & Sea',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(40, 70, 70),
+      ColorUtils.createColor(200, 60, 70),
+      ColorUtils.createColor(180, 50, 75),
+      ColorUtils.createColor(45, 65, 75),
+      ColorUtils.createColor(210, 70, 60),
+    ],
+  },
+  {
+    name: 'Ice Cream Colors',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(30, 100, 70),
+      ColorUtils.createColor(350, 70, 75),
+      ColorUtils.createColor(220, 90, 80),
+      ColorUtils.createColor(280, 70, 75),
+      ColorUtils.createColor(120, 80, 75),
+    ],
+  },
+  {
+    name: 'BBQ Vibes',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(15, 90, 55),
+      ColorUtils.createColor(30, 85, 50),
+      ColorUtils.createColor(120, 60, 55),
+      ColorUtils.createColor(0, 80, 45),
+      ColorUtils.createColor(210, 70, 65),
+    ],
+  },
+  {
+    name: 'Poolside Party',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(200, 100, 70),
+      ColorUtils.createColor(280, 90, 75),
+      ColorUtils.createColor(50, 100, 70),
+      ColorUtils.createColor(320, 100, 75),
+      ColorUtils.createColor(180, 80, 65),
+    ],
+  },
+
+  // General Seasonal (3 palettes)
+  {
+    name: 'Spring Energy',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(120, 75, 55),
+      ColorUtils.createColor(80, 70, 60),
+      ColorUtils.createColor(160, 65, 50),
+      ColorUtils.createColor(100, 80, 65),
+      ColorUtils.createColor(45, 85, 70),
+    ],
+  },
+  {
+    name: 'Summer Heat',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(0, 100, 55),
+      ColorUtils.createColor(30, 100, 60),
+      ColorUtils.createColor(45, 95, 55),
+      ColorUtils.createColor(60, 100, 50),
+      ColorUtils.createColor(15, 90, 65),
+    ],
+  },
+  {
+    name: 'Autumn Vibes',
+    type: 'curated',
+    category: 'holidays',
+    colors: [
+      ColorUtils.createColor(20, 85, 50),
+      ColorUtils.createColor(30, 80, 55),
+      ColorUtils.createColor(10, 90, 45),
+      ColorUtils.createColor(140, 60, 50),
+      ColorUtils.createColor(0, 100, 35),
+    ],
+  },
+];
+
+// Merge all palettes
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes];
+
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
   className,
@@ -2321,8 +2941,6 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [lightboxPalette, setLightboxPalette] = React.useState<ColorPalette | null>(null);
   const [isLightboxOpen, setIsLightboxOpen] = React.useState(false);
-
-  const allPalettes = [...curatedPalettes, ...complementaryPalettes];
   
   const filteredPalettes = selectedCategory === 'all' 
     ? allPalettes 
