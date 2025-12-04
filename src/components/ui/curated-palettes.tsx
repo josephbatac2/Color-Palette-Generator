@@ -79,6 +79,12 @@ const categories = [
     name: 'Holiday & Seasonal',
     color: 'linear-gradient(135deg, #c41e3a 0%, #165b33 50%, #ffd700 100%)',
     textColor: 'text-black'
+  },
+  {
+    id: 'blackswhites',
+    name: 'Blacks & Whites',
+    color: 'linear-gradient(135deg, #000000 0%, #808080 50%, #ffffff 100%)',
+    textColor: 'text-black'
   }
 ];
 
@@ -2931,8 +2937,609 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   },
 ];
 
+// Blacks & Whites Palettes - 50 new palettes
+const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  // Pure Black & White (5)
+  {
+    name: 'Pure Contrast',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 100),
+      ColorUtils.createColor(0, 0, 50),
+      ColorUtils.createColor(0, 0, 75),
+      ColorUtils.createColor(0, 0, 25),
+    ],
+  },
+  {
+    name: 'Classic Monochrome',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 100),
+      ColorUtils.createColor(0, 0, 40),
+      ColorUtils.createColor(0, 0, 70),
+      ColorUtils.createColor(0, 0, 85),
+    ],
+  },
+  {
+    name: 'Elegant Black',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 5),
+      ColorUtils.createColor(0, 0, 15),
+      ColorUtils.createColor(0, 0, 35),
+      ColorUtils.createColor(0, 0, 95),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Midnight to Dawn',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 10),
+      ColorUtils.createColor(0, 0, 30),
+      ColorUtils.createColor(0, 0, 50),
+      ColorUtils.createColor(0, 0, 80),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Neutral Foundation',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 33),
+      ColorUtils.createColor(0, 0, 50),
+      ColorUtils.createColor(0, 0, 67),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+
+  // Sophisticated Grays (10)
+  {
+    name: 'Steel Gray Tones',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(200, 20, 30),
+      ColorUtils.createColor(200, 15, 50),
+      ColorUtils.createColor(200, 10, 70),
+      ColorUtils.createColor(200, 5, 85),
+      ColorUtils.createColor(200, 0, 100),
+    ],
+  },
+  {
+    name: 'Warm Grays',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(30, 15, 25),
+      ColorUtils.createColor(30, 12, 45),
+      ColorUtils.createColor(30, 8, 65),
+      ColorUtils.createColor(30, 5, 80),
+      ColorUtils.createColor(30, 2, 95),
+    ],
+  },
+  {
+    name: 'Cool Silver',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(220, 25, 20),
+      ColorUtils.createColor(220, 20, 40),
+      ColorUtils.createColor(220, 15, 60),
+      ColorUtils.createColor(220, 10, 80),
+      ColorUtils.createColor(220, 5, 100),
+    ],
+  },
+  {
+    name: 'Charcoal Palette',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 5, 15),
+      ColorUtils.createColor(0, 8, 30),
+      ColorUtils.createColor(0, 10, 50),
+      ColorUtils.createColor(0, 5, 75),
+      ColorUtils.createColor(0, 0, 95),
+    ],
+  },
+  {
+    name: 'Smoke & Ash',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(200, 10, 20),
+      ColorUtils.createColor(200, 8, 40),
+      ColorUtils.createColor(0, 0, 60),
+      ColorUtils.createColor(200, 5, 80),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Slate Stones',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(220, 20, 25),
+      ColorUtils.createColor(220, 15, 42),
+      ColorUtils.createColor(220, 10, 58),
+      ColorUtils.createColor(220, 8, 75),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Taupe Dreams',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(30, 20, 28),
+      ColorUtils.createColor(30, 15, 45),
+      ColorUtils.createColor(30, 10, 62),
+      ColorUtils.createColor(30, 5, 80),
+      ColorUtils.createColor(0, 0, 98),
+    ],
+  },
+  {
+    name: 'Pearl & Platinum',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(220, 5, 40),
+      ColorUtils.createColor(220, 3, 60),
+      ColorUtils.createColor(220, 2, 75),
+      ColorUtils.createColor(0, 0, 88),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Granite Base',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 8, 22),
+      ColorUtils.createColor(0, 6, 38),
+      ColorUtils.createColor(0, 4, 55),
+      ColorUtils.createColor(0, 2, 75),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Stone & Marble',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(220, 15, 35),
+      ColorUtils.createColor(220, 12, 50),
+      ColorUtils.createColor(220, 8, 65),
+      ColorUtils.createColor(220, 4, 85),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+
+  // High Contrast Pairs (10)
+  {
+    name: 'Bold Statement',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 20),
+      ColorUtils.createColor(0, 0, 100),
+      ColorUtils.createColor(0, 0, 80),
+      ColorUtils.createColor(0, 0, 40),
+    ],
+  },
+  {
+    name: 'Shadow & Light',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 15),
+      ColorUtils.createColor(0, 0, 35),
+      ColorUtils.createColor(0, 0, 70),
+      ColorUtils.createColor(0, 0, 90),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Ink to Paper',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 5),
+      ColorUtils.createColor(0, 0, 25),
+      ColorUtils.createColor(0, 0, 50),
+      ColorUtils.createColor(0, 0, 85),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Photographic',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 8),
+      ColorUtils.createColor(0, 0, 30),
+      ColorUtils.createColor(0, 0, 55),
+      ColorUtils.createColor(0, 0, 80),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Print Perfect',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 40),
+      ColorUtils.createColor(0, 0, 60),
+      ColorUtils.createColor(0, 0, 85),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Typography Bold',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 2),
+      ColorUtils.createColor(0, 0, 15),
+      ColorUtils.createColor(0, 0, 50),
+      ColorUtils.createColor(0, 0, 90),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Minimal Clean',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 33),
+      ColorUtils.createColor(0, 0, 66),
+      ColorUtils.createColor(0, 0, 88),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Designer Black',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 10),
+      ColorUtils.createColor(0, 0, 30),
+      ColorUtils.createColor(0, 0, 60),
+      ColorUtils.createColor(0, 0, 85),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Printer Friendly',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 25),
+      ColorUtils.createColor(0, 0, 50),
+      ColorUtils.createColor(0, 0, 75),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Cinema Noir',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 20),
+      ColorUtils.createColor(0, 0, 45),
+      ColorUtils.createColor(0, 0, 75),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+
+  // Off-Blacks & Off-Whites (10)
+  {
+    name: 'Creamy White',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(30, 5, 15),
+      ColorUtils.createColor(30, 8, 35),
+      ColorUtils.createColor(30, 10, 60),
+      ColorUtils.createColor(30, 3, 88),
+      ColorUtils.createColor(30, 2, 99),
+    ],
+  },
+  {
+    name: 'Ivory Black',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(40, 10, 12),
+      ColorUtils.createColor(40, 12, 28),
+      ColorUtils.createColor(40, 8, 55),
+      ColorUtils.createColor(40, 4, 80),
+      ColorUtils.createColor(40, 2, 98),
+    ],
+  },
+  {
+    name: 'Soft Monochrome',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(30, 8, 18),
+      ColorUtils.createColor(30, 10, 38),
+      ColorUtils.createColor(30, 12, 58),
+      ColorUtils.createColor(30, 5, 80),
+      ColorUtils.createColor(30, 2, 97),
+    ],
+  },
+  {
+    name: 'Bone & Coal',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(40, 5, 10),
+      ColorUtils.createColor(40, 8, 30),
+      ColorUtils.createColor(40, 12, 55),
+      ColorUtils.createColor(40, 3, 85),
+      ColorUtils.createColor(40, 1, 99),
+    ],
+  },
+  {
+    name: 'Linen & Ebony',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(20, 8, 15),
+      ColorUtils.createColor(20, 10, 35),
+      ColorUtils.createColor(20, 12, 60),
+      ColorUtils.createColor(20, 4, 85),
+      ColorUtils.createColor(20, 1, 98),
+    ],
+  },
+  {
+    name: 'Canvas & Charcoal',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(35, 6, 14),
+      ColorUtils.createColor(35, 9, 32),
+      ColorUtils.createColor(35, 11, 58),
+      ColorUtils.createColor(35, 3, 82),
+      ColorUtils.createColor(35, 1, 99),
+    ],
+  },
+  {
+    name: 'Parchment & Soot',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(25, 7, 16),
+      ColorUtils.createColor(25, 10, 36),
+      ColorUtils.createColor(25, 13, 61),
+      ColorUtils.createColor(25, 4, 84),
+      ColorUtils.createColor(25, 2, 97),
+    ],
+  },
+  {
+    name: 'Cream to Ash',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(45, 5, 12),
+      ColorUtils.createColor(45, 8, 32),
+      ColorUtils.createColor(45, 10, 57),
+      ColorUtils.createColor(45, 3, 80),
+      ColorUtils.createColor(45, 1, 99),
+    ],
+  },
+  {
+    name: 'Vanilla Night',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(50, 6, 13),
+      ColorUtils.createColor(50, 9, 33),
+      ColorUtils.createColor(50, 12, 59),
+      ColorUtils.createColor(50, 4, 83),
+      ColorUtils.createColor(50, 2, 98),
+    ],
+  },
+  {
+    name: 'Pearl Noir',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(220, 5, 14),
+      ColorUtils.createColor(220, 8, 34),
+      ColorUtils.createColor(220, 10, 60),
+      ColorUtils.createColor(220, 2, 85),
+      ColorUtils.createColor(220, 1, 99),
+    ],
+  },
+
+  // Minimalist Collections (15)
+  {
+    name: 'Two Tone Simple',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 100),
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 100),
+      ColorUtils.createColor(0, 0, 50),
+    ],
+  },
+  {
+    name: 'Three Gray Steps',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 50),
+      ColorUtils.createColor(0, 0, 100),
+      ColorUtils.createColor(0, 0, 25),
+      ColorUtils.createColor(0, 0, 75),
+    ],
+  },
+  {
+    name: 'Corporate Gray',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 10),
+      ColorUtils.createColor(0, 0, 40),
+      ColorUtils.createColor(0, 0, 70),
+      ColorUtils.createColor(0, 0, 90),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Legal Documents',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 30),
+      ColorUtils.createColor(0, 0, 70),
+      ColorUtils.createColor(0, 0, 85),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Formal Attire',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 5),
+      ColorUtils.createColor(0, 0, 20),
+      ColorUtils.createColor(0, 0, 60),
+      ColorUtils.createColor(0, 0, 90),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Scientific Data',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 33),
+      ColorUtils.createColor(0, 0, 66),
+      ColorUtils.createColor(0, 0, 90),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Technical Specs',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 25),
+      ColorUtils.createColor(0, 0, 50),
+      ColorUtils.createColor(0, 0, 75),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Architecture Plans',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 8),
+      ColorUtils.createColor(0, 0, 32),
+      ColorUtils.createColor(0, 0, 60),
+      ColorUtils.createColor(0, 0, 82),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Blueprint Vision',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 10),
+      ColorUtils.createColor(0, 0, 35),
+      ColorUtils.createColor(0, 0, 65),
+      ColorUtils.createColor(0, 0, 85),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'News Print',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 2),
+      ColorUtils.createColor(0, 0, 20),
+      ColorUtils.createColor(0, 0, 50),
+      ColorUtils.createColor(0, 0, 80),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Museum Piece',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 15),
+      ColorUtils.createColor(0, 0, 40),
+      ColorUtils.createColor(0, 0, 60),
+      ColorUtils.createColor(0, 0, 80),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Gallery White',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 15),
+      ColorUtils.createColor(0, 0, 50),
+      ColorUtils.createColor(0, 0, 85),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Studio Neutral',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 5),
+      ColorUtils.createColor(0, 0, 30),
+      ColorUtils.createColor(0, 0, 55),
+      ColorUtils.createColor(0, 0, 80),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+  {
+    name: 'Fashion Show',
+    type: 'curated',
+    category: 'blackswhites',
+    colors: [
+      ColorUtils.createColor(0, 0, 0),
+      ColorUtils.createColor(0, 0, 10),
+      ColorUtils.createColor(0, 0, 50),
+      ColorUtils.createColor(0, 0, 90),
+      ColorUtils.createColor(0, 0, 100),
+    ],
+  },
+];
+
 // Merge all palettes
-const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes];
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
@@ -3015,6 +3622,7 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                       if (category.id === 'pastels') return palette.category === 'pastels';
                       if (category.id === 'complementary') return palette.category === 'complementary';
                       if (category.id === 'holidays') return palette.category === 'holidays';
+                      if (category.id === 'blackswhites') return palette.category === 'blackswhites';
                       return false;
                     }).length;
                     return count;
