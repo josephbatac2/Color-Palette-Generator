@@ -37,7 +37,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     },
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "160+ Curated Palettes",
+      title: "280+ Curated Palettes",
       description: "Professional color combinations across 8 categories"
     },
     {
@@ -53,7 +53,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   ];
 
   const stats = [
-    { number: "160+", label: "Curated Palettes" },
+    { number: "280+", label: "Curated Palettes" },
     { number: "6", label: "Harmony Types" },
     { number: "4", label: "Vision Types" },
     { number: "100%", label: "Free to Use" }
