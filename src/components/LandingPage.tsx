@@ -60,7 +60,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   ];
 
   return (
-    <div className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100'}`}>
+    <div className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-900 via-green-900 to-slate-900' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100'}`}>
       {/* Theme Toggle */}
       <div className="fixed bottom-6 left-6 z-50">
         <Button
@@ -76,7 +76,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className={`absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl animate-pulse ${theme === 'dark' ? 'bg-gradient-to-br from-blue-400/20 to-purple-400/20' : 'bg-gradient-to-br from-blue-200/40 to-purple-200/40'}`}></div>
+        <div className={`absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl animate-pulse ${theme === 'dark' ? 'bg-gradient-to-br from-green-400/20 to-lime-400/20' : 'bg-gradient-to-br from-green-200/40 to-lime-200/40'}`}></div>
         <div className={`absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl animate-pulse delay-1000 ${theme === 'dark' ? 'bg-gradient-to-br from-pink-400/20 to-orange-400/20' : 'bg-gradient-to-br from-pink-200/40 to-orange-200/40'}`}></div>
         <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse delay-2000 ${theme === 'dark' ? 'bg-gradient-to-br from-cyan-400/10 to-blue-400/10' : 'bg-gradient-to-br from-cyan-200/30 to-blue-200/30'}`}></div>
       </div>
@@ -97,7 +97,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           {/* Main Headline */}
           <h1 className={`text-5xl md:text-7xl font-bold mb-6 leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             Create
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
+            <span className="bg-gradient-to-r from-green-400 via-lime-400 to-green-500 bg-clip-text text-transparent animate-pulse">
               {' '}Beautiful{' '}
             </span>
             <br />
@@ -114,7 +114,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             <Button
               onClick={onGetStarted}
               size="xlg"
-              className="px-8 py-4 text-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transform hover:scale-105 transition-all duration-300"
+              className="px-8 py-4 text-lg bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 shadow-2xl shadow-green-500/25 hover:shadow-green-500/40 transform hover:scale-105 transition-all duration-300"
             >
               <Play className="w-5 h-5 mr-2" />
               Get Started. It's Free!
@@ -160,7 +160,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
         <div className="text-center mb-16">
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             Powerful Features for
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-green-400 to-lime-400 bg-clip-text text-transparent">
               {' '}Modern Design
             </span>
           </h2>
@@ -171,8 +171,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className={`p-6 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl ${theme === 'dark' ? 'bg-white/10 border-white/20 hover:bg-white/15 hover:shadow-purple-500/20' : 'bg-white border-gray-200 hover:bg-gray-50 hover:shadow-purple-500/10'}`}>
-              <div className={`p-3 rounded-xl w-fit mb-4 ${theme === 'dark' ? 'bg-gradient-to-br from-blue-500/20 to-purple-600/20 border border-white/10' : 'bg-gradient-to-br from-blue-100 to-purple-100 border border-gray-200'}`}>
+            <Card key={index} className={`p-6 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl ${theme === 'dark' ? 'bg-white/10 border-white/20 hover:bg-white/15 hover:shadow-green-500/20' : 'bg-white border-gray-200 hover:bg-gray-50 hover:shadow-green-500/10'}`}>
+              <div className={`p-3 rounded-xl w-fit mb-4 ${theme === 'dark' ? 'bg-gradient-to-br from-green-500/20 to-lime-600/20 border border-white/10' : 'bg-gradient-to-br from-green-100 to-lime-100 border border-gray-200'}`}>
                 <div className="text-blue-400">
                   {feature.icon}
                 </div>
@@ -219,7 +219,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             ].map((item, index) => (
               <div key={index} className="text-center">
                 <div className="relative mb-6">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-500/25">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-green-500 to-lime-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-green-500/25">
                     <div className="text-white">
                       {item.icon}
                     </div>
@@ -238,11 +238,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
 
       {/* CTA Section */}
       <div className="relative z-10 container mx-auto px-6 py-16 md:py-32">
-        <div className={`text-center backdrop-blur-xl rounded-3xl p-6 md:p-16 shadow-2xl ${theme === 'dark' ? 'bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-white/20' : 'bg-gradient-to-r from-blue-100 to-purple-100 border border-gray-200'}`}>
+        <div className={`text-center backdrop-blur-xl rounded-3xl p-6 md:p-16 shadow-2xl ${theme === 'dark' ? 'bg-gradient-to-r from-green-600/20 to-lime-600/20 border border-white/20' : 'bg-gradient-to-r from-green-100 to-lime-100 border border-gray-200'}`}>
           <h2 className={`text-3xl md:text-5xl font-bold mb-4 md:mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             Ready to Create Amazing
             <br />
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-green-400 to-lime-400 bg-clip-text text-transparent">
               Color Palettes?
             </span>
           </h2>
@@ -252,7 +252,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           <Button
             onClick={onGetStarted}
             size="lg"
-            className="w-full md:w-auto px-6 md:px-12 py-4 md:py-6 text-base md:text-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transform hover:scale-105 transition-all duration-300"
+            className="w-full md:w-auto px-6 md:px-12 py-4 md:py-6 text-base md:text-xl bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 shadow-2xl shadow-green-500/25 hover:shadow-green-500/40 transform hover:scale-105 transition-all duration-300"
           >
             <Heart className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3" />
             Start Creating Now
