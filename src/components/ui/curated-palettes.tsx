@@ -91,6 +91,12 @@ const categories = [
     name: 'Warm & Cool',
     color: 'linear-gradient(135deg, #ff8c42 0%, #a8e6cf 100%)',
     textColor: 'text-black'
+  },
+  {
+    id: 'tealorange',
+    name: 'Teal & Orange',
+    color: 'linear-gradient(135deg, #17a2b8 0%, #ff9800 100%)',
+    textColor: 'text-white'
   }
 ];
 
@@ -3668,8 +3674,132 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   },
 ];
 
+// Teal & Orange Palettes - 10 new palettes with complementary teal and orange relationship
+const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Tropical Sunset',
+    type: 'curated',
+    category: 'tealorange',
+    colors: [
+      ColorUtils.createColor(180, 70, 45),
+      ColorUtils.createColor(190, 75, 50),
+      ColorUtils.createColor(20, 80, 55),
+      ColorUtils.createColor(30, 85, 60),
+      ColorUtils.createColor(40, 80, 65),
+    ],
+  },
+  {
+    name: 'Coastal Energy',
+    type: 'curated',
+    category: 'tealorange',
+    colors: [
+      ColorUtils.createColor(180, 85, 50),
+      ColorUtils.createColor(185, 80, 55),
+      ColorUtils.createColor(15, 95, 65),
+      ColorUtils.createColor(25, 90, 70),
+      ColorUtils.createColor(35, 85, 72),
+    ],
+  },
+  {
+    name: 'Aqua Flame',
+    type: 'curated',
+    category: 'tealorange',
+    colors: [
+      ColorUtils.createColor(175, 75, 48),
+      ColorUtils.createColor(180, 80, 52),
+      ColorUtils.createColor(10, 100, 60),
+      ColorUtils.createColor(25, 95, 65),
+      ColorUtils.createColor(40, 90, 68),
+    ],
+  },
+  {
+    name: 'Ocean Blaze',
+    type: 'curated',
+    category: 'tealorange',
+    colors: [
+      ColorUtils.createColor(185, 70, 55),
+      ColorUtils.createColor(195, 75, 50),
+      ColorUtils.createColor(5, 90, 60),
+      ColorUtils.createColor(20, 95, 65),
+      ColorUtils.createColor(35, 92, 68),
+    ],
+  },
+  {
+    name: 'Reef Paradise',
+    type: 'curated',
+    category: 'tealorange',
+    colors: [
+      ColorUtils.createColor(180, 80, 50),
+      ColorUtils.createColor(190, 85, 48),
+      ColorUtils.createColor(30, 100, 62),
+      ColorUtils.createColor(20, 95, 65),
+      ColorUtils.createColor(10, 90, 68),
+    ],
+  },
+  {
+    name: 'Sunset Lagoon',
+    type: 'curated',
+    category: 'tealorange',
+    colors: [
+      ColorUtils.createColor(170, 65, 55),
+      ColorUtils.createColor(180, 70, 58),
+      ColorUtils.createColor(35, 100, 60),
+      ColorUtils.createColor(25, 95, 62),
+      ColorUtils.createColor(15, 90, 65),
+    ],
+  },
+  {
+    name: 'Vibrant Waters',
+    type: 'curated',
+    category: 'tealorange',
+    colors: [
+      ColorUtils.createColor(175, 85, 50),
+      ColorUtils.createColor(185, 80, 55),
+      ColorUtils.createColor(20, 98, 62),
+      ColorUtils.createColor(30, 95, 65),
+      ColorUtils.createColor(40, 92, 68),
+    ],
+  },
+  {
+    name: 'Tropical Heat',
+    type: 'curated',
+    category: 'tealorange',
+    colors: [
+      ColorUtils.createColor(180, 75, 45),
+      ColorUtils.createColor(190, 70, 50),
+      ColorUtils.createColor(25, 100, 65),
+      ColorUtils.createColor(15, 95, 68),
+      ColorUtils.createColor(5, 90, 70),
+    ],
+  },
+  {
+    name: 'Turquoise Inferno',
+    type: 'curated',
+    category: 'tealorange',
+    colors: [
+      ColorUtils.createColor(185, 80, 52),
+      ColorUtils.createColor(175, 85, 55),
+      ColorUtils.createColor(10, 100, 65),
+      ColorUtils.createColor(30, 98, 62),
+      ColorUtils.createColor(40, 95, 60),
+    ],
+  },
+  {
+    name: 'Teal Amber',
+    type: 'curated',
+    category: 'tealorange',
+    colors: [
+      ColorUtils.createColor(180, 70, 50),
+      ColorUtils.createColor(190, 75, 48),
+      ColorUtils.createColor(35, 95, 60),
+      ColorUtils.createColor(20, 90, 65),
+      ColorUtils.createColor(10, 85, 68),
+    ],
+  },
+];
+
 // Merge all palettes
-const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes];
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
@@ -3754,6 +3884,7 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                       if (category.id === 'holidays') return palette.category === 'holidays';
                       if (category.id === 'blackswhites') return palette.category === 'blackswhites';
                       if (category.id === 'analogous') return palette.category === 'analogous';
+                      if (category.id === 'tealorange') return palette.category === 'tealorange';
                       return false;
                     }).length;
                     return count;
