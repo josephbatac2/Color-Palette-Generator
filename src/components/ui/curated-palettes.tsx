@@ -85,6 +85,12 @@ const categories = [
     name: 'Blacks & Whites',
     color: 'linear-gradient(135deg, #000000 0%, #808080 50%, #ffffff 100%)',
     textColor: 'text-black'
+  },
+  {
+    id: 'analogous',
+    name: 'Warm & Cool',
+    color: 'linear-gradient(135deg, #ff8c42 0%, #a8e6cf 100%)',
+    textColor: 'text-black'
   }
 ];
 
@@ -3538,8 +3544,132 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   },
 ];
 
+// Analogous & Warm-Cool Palettes - 10 new palettes with analogous color relationships
+const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Sunset Warmth',
+    type: 'curated',
+    category: 'analogous',
+    colors: [
+      ColorUtils.createColor(10, 100, 50),
+      ColorUtils.createColor(30, 100, 55),
+      ColorUtils.createColor(45, 100, 60),
+      ColorUtils.createColor(60, 100, 65),
+      ColorUtils.createColor(80, 100, 70),
+    ],
+  },
+  {
+    name: 'Ocean Drift',
+    type: 'curated',
+    category: 'analogous',
+    colors: [
+      ColorUtils.createColor(180, 80, 55),
+      ColorUtils.createColor(190, 85, 50),
+      ColorUtils.createColor(200, 90, 45),
+      ColorUtils.createColor(210, 75, 50),
+      ColorUtils.createColor(220, 70, 55),
+    ],
+  },
+  {
+    name: 'Citrus Bloom',
+    type: 'curated',
+    category: 'analogous',
+    colors: [
+      ColorUtils.createColor(35, 95, 55),
+      ColorUtils.createColor(50, 98, 58),
+      ColorUtils.createColor(65, 100, 62),
+      ColorUtils.createColor(80, 95, 65),
+      ColorUtils.createColor(95, 90, 68),
+    ],
+  },
+  {
+    name: 'Forest to Sky',
+    type: 'curated',
+    category: 'analogous',
+    colors: [
+      ColorUtils.createColor(100, 60, 45),
+      ColorUtils.createColor(130, 65, 48),
+      ColorUtils.createColor(160, 70, 52),
+      ColorUtils.createColor(190, 75, 56),
+      ColorUtils.createColor(210, 80, 60),
+    ],
+  },
+  {
+    name: 'Twilight Essence',
+    type: 'curated',
+    category: 'analogous',
+    colors: [
+      ColorUtils.createColor(250, 85, 50),
+      ColorUtils.createColor(270, 80, 45),
+      ColorUtils.createColor(290, 75, 42),
+      ColorUtils.createColor(310, 70, 40),
+      ColorUtils.createColor(330, 75, 45),
+    ],
+  },
+  {
+    name: 'Spring Renewal',
+    type: 'curated',
+    category: 'analogous',
+    colors: [
+      ColorUtils.createColor(120, 70, 50),
+      ColorUtils.createColor(140, 75, 52),
+      ColorUtils.createColor(160, 80, 54),
+      ColorUtils.createColor(180, 75, 56),
+      ColorUtils.createColor(200, 70, 58),
+    ],
+  },
+  {
+    name: 'Ember Glow',
+    type: 'curated',
+    category: 'analogous',
+    colors: [
+      ColorUtils.createColor(5, 100, 55),
+      ColorUtils.createColor(20, 95, 58),
+      ColorUtils.createColor(35, 90, 62),
+      ColorUtils.createColor(45, 85, 65),
+      ColorUtils.createColor(55, 80, 68),
+    ],
+  },
+  {
+    name: 'Cool Wave',
+    type: 'curated',
+    category: 'analogous',
+    colors: [
+      ColorUtils.createColor(170, 70, 50),
+      ColorUtils.createColor(190, 75, 48),
+      ColorUtils.createColor(210, 80, 46),
+      ColorUtils.createColor(230, 75, 48),
+      ColorUtils.createColor(250, 70, 52),
+    ],
+  },
+  {
+    name: 'Peach to Mint',
+    type: 'curated',
+    category: 'analogous',
+    colors: [
+      ColorUtils.createColor(20, 85, 65),
+      ColorUtils.createColor(50, 80, 62),
+      ColorUtils.createColor(100, 75, 60),
+      ColorUtils.createColor(150, 70, 60),
+      ColorUtils.createColor(170, 80, 62),
+    ],
+  },
+  {
+    name: 'Berry Harmony',
+    type: 'curated',
+    category: 'analogous',
+    colors: [
+      ColorUtils.createColor(280, 75, 48),
+      ColorUtils.createColor(300, 80, 50),
+      ColorUtils.createColor(320, 85, 52),
+      ColorUtils.createColor(340, 80, 54),
+      ColorUtils.createColor(10, 75, 56),
+    ],
+  },
+];
+
 // Merge all palettes
-const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes];
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
@@ -3623,6 +3753,7 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                       if (category.id === 'complementary') return palette.category === 'complementary';
                       if (category.id === 'holidays') return palette.category === 'holidays';
                       if (category.id === 'blackswhites') return palette.category === 'blackswhites';
+                      if (category.id === 'analogous') return palette.category === 'analogous';
                       return false;
                     }).length;
                     return count;
