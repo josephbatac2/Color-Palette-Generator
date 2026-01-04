@@ -97,6 +97,36 @@ const categories = [
     name: 'Teal & Orange',
     color: 'linear-gradient(135deg, #17a2b8 0%, #ff9800 100%)',
     textColor: 'text-white'
+  },
+  {
+    id: 'triadic',
+    name: 'Triadic',
+    color: 'linear-gradient(135deg, #ff3333 0%, #33ff33 50%, #3333ff 100%)',
+    textColor: 'text-white'
+  },
+  {
+    id: 'analogous-scheme',
+    name: 'Analogous',
+    color: 'linear-gradient(135deg, #ff6600 0%, #ffcc00 50%, #ffff00 100%)',
+    textColor: 'text-black'
+  },
+  {
+    id: 'split-complementary',
+    name: 'Split-Complementary',
+    color: 'linear-gradient(135deg, #3366ff 0%, #ff33cc 50%, #33ff66 100%)',
+    textColor: 'text-white'
+  },
+  {
+    id: 'tetradic',
+    name: 'Tetradic',
+    color: 'linear-gradient(135deg, #ff0066 0%, #ffcc00 33%, #00cc66 66%, #0066ff 100%)',
+    textColor: 'text-white'
+  },
+  {
+    id: 'square',
+    name: 'Square',
+    color: 'linear-gradient(135deg, #ff3366 0%, #33ff66 33%, #3366ff 66%, #ffff33 100%)',
+    textColor: 'text-black'
   }
 ];
 
@@ -3798,8 +3828,548 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   },
 ];
 
+// Triadic Palettes - 10 palettes with 3 colors evenly spaced on color wheel
+const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Primary Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(0, 100, 50),
+      ColorUtils.createColor(120, 100, 50),
+      ColorUtils.createColor(240, 100, 50),
+    ],
+  },
+  {
+    name: 'Vibrant Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(10, 90, 55),
+      ColorUtils.createColor(130, 85, 50),
+      ColorUtils.createColor(250, 95, 55),
+    ],
+  },
+  {
+    name: 'Bold Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(350, 95, 52),
+      ColorUtils.createColor(110, 100, 45),
+      ColorUtils.createColor(230, 98, 48),
+    ],
+  },
+  {
+    name: 'Warm Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(30, 85, 55),
+      ColorUtils.createColor(150, 75, 50),
+      ColorUtils.createColor(270, 80, 55),
+    ],
+  },
+  {
+    name: 'Sunset Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(20, 100, 60),
+      ColorUtils.createColor(140, 90, 48),
+      ColorUtils.createColor(260, 85, 52),
+    ],
+  },
+  {
+    name: 'Jewel Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(0, 100, 45),
+      ColorUtils.createColor(120, 100, 40),
+      ColorUtils.createColor(240, 100, 45),
+    ],
+  },
+  {
+    name: 'Pastel Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(10, 70, 70),
+      ColorUtils.createColor(130, 60, 70),
+      ColorUtils.createColor(250, 65, 70),
+    ],
+  },
+  {
+    name: 'Deep Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(350, 95, 35),
+      ColorUtils.createColor(110, 100, 30),
+      ColorUtils.createColor(230, 98, 35),
+    ],
+  },
+  {
+    name: 'Energetic Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(15, 100, 58),
+      ColorUtils.createColor(135, 95, 55),
+      ColorUtils.createColor(255, 100, 60),
+    ],
+  },
+  {
+    name: 'Balanced Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(25, 80, 52),
+      ColorUtils.createColor(145, 75, 48),
+      ColorUtils.createColor(265, 80, 50),
+    ],
+  },
+];
+
+// Analogous Scheme Palettes - 10 palettes with colors next to each other on color wheel
+const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Warm Harmony',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(10, 90, 55),
+      ColorUtils.createColor(30, 95, 60),
+      ColorUtils.createColor(50, 85, 58),
+    ],
+  },
+  {
+    name: 'Cool Harmony',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(200, 80, 50),
+      ColorUtils.createColor(220, 75, 52),
+      ColorUtils.createColor(240, 85, 55),
+    ],
+  },
+  {
+    name: 'Sunset Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(340, 100, 55),
+      ColorUtils.createColor(0, 100, 60),
+      ColorUtils.createColor(20, 95, 58),
+    ],
+  },
+  {
+    name: 'Forest Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(100, 70, 45),
+      ColorUtils.createColor(120, 75, 50),
+      ColorUtils.createColor(140, 65, 48),
+    ],
+  },
+  {
+    name: 'Ocean Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(180, 85, 48),
+      ColorUtils.createColor(200, 80, 50),
+      ColorUtils.createColor(220, 75, 52),
+    ],
+  },
+  {
+    name: 'Vibrant Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(40, 100, 60),
+      ColorUtils.createColor(60, 95, 65),
+      ColorUtils.createColor(80, 90, 62),
+    ],
+  },
+  {
+    name: 'Soft Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(280, 60, 65),
+      ColorUtils.createColor(300, 55, 70),
+      ColorUtils.createColor(320, 65, 68),
+    ],
+  },
+  {
+    name: 'Spicy Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(350, 100, 52),
+      ColorUtils.createColor(10, 98, 58),
+      ColorUtils.createColor(30, 95, 60),
+    ],
+  },
+  {
+    name: 'Purple Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(240, 80, 55),
+      ColorUtils.createColor(260, 75, 58),
+      ColorUtils.createColor(280, 70, 60),
+    ],
+  },
+  {
+    name: 'Citrus Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(50, 100, 58),
+      ColorUtils.createColor(70, 95, 62),
+      ColorUtils.createColor(90, 85, 60),
+    ],
+  },
+];
+
+// Split-Complementary Palettes - 10 palettes using a color and adjacent colors to its complement
+const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Blue Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(240, 85, 55),
+      ColorUtils.createColor(30, 90, 60),
+      ColorUtils.createColor(60, 85, 58),
+    ],
+  },
+  {
+    name: 'Red Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(0, 95, 55),
+      ColorUtils.createColor(110, 80, 50),
+      ColorUtils.createColor(150, 75, 48),
+    ],
+  },
+  {
+    name: 'Green Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(120, 85, 50),
+      ColorUtils.createColor(350, 90, 58),
+      ColorUtils.createColor(280, 80, 55),
+    ],
+  },
+  {
+    name: 'Yellow Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(60, 100, 58),
+      ColorUtils.createColor(210, 85, 50),
+      ColorUtils.createColor(270, 80, 48),
+    ],
+  },
+  {
+    name: 'Orange Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(30, 95, 60),
+      ColorUtils.createColor(160, 75, 50),
+      ColorUtils.createColor(200, 80, 52),
+    ],
+  },
+  {
+    name: 'Purple Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(280, 80, 55),
+      ColorUtils.createColor(50, 90, 58),
+      ColorUtils.createColor(100, 85, 52),
+    ],
+  },
+  {
+    name: 'Teal Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(180, 85, 50),
+      ColorUtils.createColor(340, 95, 58),
+      ColorUtils.createColor(20, 90, 60),
+    ],
+  },
+  {
+    name: 'Magenta Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(300, 85, 55),
+      ColorUtils.createColor(80, 90, 58),
+      ColorUtils.createColor(140, 80, 50),
+    ],
+  },
+  {
+    name: 'Emerald Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(140, 85, 48),
+      ColorUtils.createColor(350, 90, 58),
+      ColorUtils.createColor(10, 95, 60),
+    ],
+  },
+  {
+    name: 'Coral Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(15, 100, 62),
+      ColorUtils.createColor(170, 80, 50),
+      ColorUtils.createColor(220, 75, 48),
+    ],
+  },
+];
+
+// Tetradic Palettes - 10 palettes with 4 colors evenly spaced on color wheel
+const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Primary Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(0, 100, 55),
+      ColorUtils.createColor(90, 95, 50),
+      ColorUtils.createColor(180, 90, 50),
+      ColorUtils.createColor(270, 95, 55),
+    ],
+  },
+  {
+    name: 'Warm Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(20, 95, 60),
+      ColorUtils.createColor(110, 85, 50),
+      ColorUtils.createColor(200, 80, 50),
+      ColorUtils.createColor(290, 90, 58),
+    ],
+  },
+  {
+    name: 'Vibrant Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(10, 100, 58),
+      ColorUtils.createColor(100, 95, 55),
+      ColorUtils.createColor(190, 95, 52),
+      ColorUtils.createColor(280, 100, 58),
+    ],
+  },
+  {
+    name: 'Cool Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(340, 85, 55),
+      ColorUtils.createColor(70, 75, 50),
+      ColorUtils.createColor(160, 85, 50),
+      ColorUtils.createColor(250, 80, 55),
+    ],
+  },
+  {
+    name: 'Pastel Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(15, 70, 72),
+      ColorUtils.createColor(105, 60, 70),
+      ColorUtils.createColor(195, 65, 68),
+      ColorUtils.createColor(285, 70, 72),
+    ],
+  },
+  {
+    name: 'Deep Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(350, 95, 38),
+      ColorUtils.createColor(80, 90, 35),
+      ColorUtils.createColor(170, 95, 35),
+      ColorUtils.createColor(260, 98, 40),
+    ],
+  },
+  {
+    name: 'Bright Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(0, 100, 62),
+      ColorUtils.createColor(90, 100, 58),
+      ColorUtils.createColor(180, 95, 55),
+      ColorUtils.createColor(270, 100, 60),
+    ],
+  },
+  {
+    name: 'Muted Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(25, 50, 55),
+      ColorUtils.createColor(115, 45, 50),
+      ColorUtils.createColor(205, 50, 48),
+      ColorUtils.createColor(295, 48, 52),
+    ],
+  },
+  {
+    name: 'Sunset Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(30, 100, 58),
+      ColorUtils.createColor(120, 85, 52),
+      ColorUtils.createColor(210, 80, 50),
+      ColorUtils.createColor(300, 90, 58),
+    ],
+  },
+  {
+    name: 'Fresh Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(120, 95, 52),
+      ColorUtils.createColor(30, 90, 58),
+      ColorUtils.createColor(300, 85, 55),
+      ColorUtils.createColor(210, 80, 50),
+    ],
+  },
+];
+
+// Square Palettes - 10 palettes with color balance and harmony
+const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Rainbow Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(0, 100, 55),
+      ColorUtils.createColor(90, 100, 55),
+      ColorUtils.createColor(180, 100, 55),
+      ColorUtils.createColor(270, 100, 55),
+    ],
+  },
+  {
+    name: 'Sunset Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(350, 100, 60),
+      ColorUtils.createColor(80, 90, 55),
+      ColorUtils.createColor(170, 85, 50),
+      ColorUtils.createColor(260, 80, 55),
+    ],
+  },
+  {
+    name: 'Ocean Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(180, 95, 50),
+      ColorUtils.createColor(270, 90, 55),
+      ColorUtils.createColor(0, 100, 58),
+      ColorUtils.createColor(90, 85, 52),
+    ],
+  },
+  {
+    name: 'Forest Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(120, 85, 45),
+      ColorUtils.createColor(210, 80, 50),
+      ColorUtils.createColor(300, 85, 55),
+      ColorUtils.createColor(30, 90, 58),
+    ],
+  },
+  {
+    name: 'Urban Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(0, 95, 52),
+      ColorUtils.createColor(100, 75, 48),
+      ColorUtils.createColor(200, 80, 50),
+      ColorUtils.createColor(300, 70, 55),
+    ],
+  },
+  {
+    name: 'Jewel Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(340, 100, 45),
+      ColorUtils.createColor(70, 95, 40),
+      ColorUtils.createColor(160, 100, 40),
+      ColorUtils.createColor(250, 98, 45),
+    ],
+  },
+  {
+    name: 'Pastel Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(10, 65, 72),
+      ColorUtils.createColor(100, 60, 70),
+      ColorUtils.createColor(190, 65, 68),
+      ColorUtils.createColor(280, 60, 72),
+    ],
+  },
+  {
+    name: 'Modern Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(250, 85, 52),
+      ColorUtils.createColor(20, 100, 60),
+      ColorUtils.createColor(120, 80, 48),
+      ColorUtils.createColor(350, 90, 58),
+    ],
+  },
+  {
+    name: 'Tropical Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(40, 100, 62),
+      ColorUtils.createColor(130, 95, 55),
+      ColorUtils.createColor(220, 85, 50),
+      ColorUtils.createColor(310, 90, 58),
+    ],
+  },
+  {
+    name: 'Balanced Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(30, 85, 55),
+      ColorUtils.createColor(120, 75, 50),
+      ColorUtils.createColor(210, 80, 50),
+      ColorUtils.createColor(300, 85, 55),
+    ],
+  },
+];
+
 // Merge all palettes
-const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes];
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
@@ -3885,6 +4455,11 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                       if (category.id === 'blackswhites') return palette.category === 'blackswhites';
                       if (category.id === 'analogous') return palette.category === 'analogous';
                       if (category.id === 'tealorange') return palette.category === 'tealorange';
+                      if (category.id === 'triadic') return palette.category === 'triadic';
+                      if (category.id === 'analogous-scheme') return palette.category === 'analogous-scheme';
+                      if (category.id === 'split-complementary') return palette.category === 'split-complementary';
+                      if (category.id === 'tetradic') return palette.category === 'tetradic';
+                      if (category.id === 'square') return palette.category === 'square';
                       return false;
                     }).length;
                     return count;
