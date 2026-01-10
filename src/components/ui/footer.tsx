@@ -102,7 +102,7 @@ export const Footer: React.FC<FooterProps> = ({ variant = 'full', className = ''
               >
                 AJ Batac (@ajbatac)
               </a>
-              {' '}- v1.2.0 ({' '}
+              {' '}- v1.3.0 ({' '}
               <a
                 href="/changelog.html"
                 className={`font-medium transition-colors hover:underline ${
@@ -190,7 +190,7 @@ export const Footer: React.FC<FooterProps> = ({ variant = 'full', className = ''
 
           
           <p className={`text-sm ${subtleTextClasses}`}>
-            © 2025 Color Palette Generator v1.2.0. Made with ❤️ for designers and developers.
+            © 2026 Color Palette Generator v1.3.0. Made with ❤️ for designers and developers.
           </p>
         </div>
       </div>

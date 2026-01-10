@@ -8,8 +8,14 @@
   </url>
   <url>
     <loc>https://colourpalettes.netlify.app/changelog.html</loc>
-    <lastmod>2025-10-06</lastmod>
+    <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://colourpalettes.netlify.app/changelog/rss.xml</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

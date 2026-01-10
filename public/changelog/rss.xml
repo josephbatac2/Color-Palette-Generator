@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Color Palette Generator - Changelog</title>
+    <link>https://colourpalettes.netlify.app</link>
+    <description>Version history and updates for the Color Palette Generator</description>
+    <language>en-us</language>
+    <copyright>2026 Color Palette Generator</copyright>
+    <lastBuildDate>Fri, 03 Jan 2026 00:00:00 GMT</lastBuildDate>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <managingEditor>contact@colourpalettes.netlify.app</managingEditor>
+
+    <item>
+      <title>v1.3.0 - Advanced Color Harmony Expansion</title>
+      <link>https://colourpalettes.netlify.app/changelog.html</link>
+      <guid>https://colourpalettes.netlify.app/changelog/v1.3.0</guid>
+      <pubDate>Fri, 03 Jan 2026 00:00:00 GMT</pubDate>
+      <description>New harmony types, 50 new palettes, and improved color science algorithms.</description>
+      <content:encoded><![CDATA[
+        <h3>Advanced Color Harmony Expansion</h3>
+        <ul>
+          <li><strong>5 New Color Harmony Types:</strong> Added Triadic, Analogous, Split-Complementary, Tetradic, and Square harmonies for more color combination options</li>
+          <li><strong>50 New Curated Palettes:</strong> Expanded palette library with additional professional color schemes</li>
+          <li><strong>Enhanced Color Science:</strong> Improved harmony algorithms for more accurate color relationships</li>
+          <li><strong>Better User Guidance:</strong> Clear descriptions for each harmony type to help users choose the right combination</li>
+          <li><strong>Harmony Selector UI:</strong> Updated interface for selecting and previewing all harmony types</li>
+        </ul>
+      ]]></content:encoded>
+    </item>
+
+    <item>
+      <title>v1.2.0 - Theme System & UI Enhancements</title>
+      <link>https://colourpalettes.netlify.app/changelog.html</link>
+      <guid>https://colourpalettes.netlify.app/changelog/v1.2.0</guid>
+      <pubDate>Wed, 06 Oct 2025 00:00:00 GMT</pubDate>
+      <description>Full dark/light mode support, enhanced landing page, and social media integration.</description>
+      <content:encoded><![CDATA[
+        <h3>Theme System & UI Enhancements</h3>
+        <ul>
+          <li><strong>Dark/Light Mode Toggle:</strong> Full theme support with smooth transitions</li>
+          <li><strong>Enhanced Landing Page:</strong> Beautiful gradient backgrounds with animated elements</li>
+          <li><strong>Responsive Design Improvements:</strong> Fixed button overflow issues on mobile devices</li>
+          <li><strong>Social Media Integration:</strong> Added comprehensive social links in footer (Instagram, LinkedIn, YouTube, linkn.ca, Linktree)</li>
+          <li><strong>Improved Button Visibility:</strong> Fixed contrast issues in light mode for better accessibility</li>
+        </ul>
+      ]]></content:encoded>
+    </item>
+
+    <item>
+      <title>v1.1.0 - Color Picker Redesign</title>
+      <link>https://colourpalettes.netlify.app/changelog.html</link>
+      <guid>https://colourpalettes.netlify.app/changelog/v1.1.0</guid>
+      <pubDate>Sun, 21 Sep 2025 00:00:00 GMT</pubDate>
+      <description>Redesigned color picker interface with improved visual prominence and user experience.</description>
+      <content:encoded><![CDATA[
+        <h3>Color Picker Interface Redesign</h3>
+        <ul>
+          <li><strong>Redesigned Color Picker:</strong> Massive 160x160px circular color picker with glowing animated background</li>
+          <li><strong>Visual Prominence:</strong> Color picker is now the main focal point with clear instructions</li>
+          <li><strong>Improved User Experience:</strong> Obvious interaction patterns with hover effects and animations</li>
+          <li><strong>Better Color Display:</strong> Completely filled color circles with no gaps or transparency</li>
+          <li><strong>Streamlined Layout:</strong> Compact HEX display with prominent color selection interface</li>
+        </ul>
+      ]]></content:encoded>
+    </item>
+
+    <item>
+      <title>v1.0.0 - Initial Release</title>
+      <link>https://colourpalettes.netlify.app/changelog.html</link>
+      <guid>https://colourpalettes.netlify.app/changelog/v1.0.0</guid>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Initial release of Color Palette Generator with core features and 160+ professional palettes.</description>
+      <content:encoded><![CDATA[
+        <h3>Initial Release Features</h3>
+        <ul>
+          <li><strong>6 Color Harmony Types:</strong> Monochromatic, Analogous, Complementary, Triadic, Tetradic, and Split-Complementary</li>
+          <li><strong>160+ Professional Palettes:</strong> Across 8 categories (Web, Brand, Nature, Vintage, Modern, Pastel, Bold, Monochrome)</li>
+          <li><strong>WCAG Accessibility Checker:</strong> Automatic contrast ratio analysis</li>
+          <li><strong>Color Blindness Simulator:</strong> Test palettes for multiple types of color vision deficiency</li>
+          <li><strong>Interactive HSL Color Picker:</strong> Real-time color updates with smooth animations</li>
+          <li><strong>Palette Management:</strong> Save, organize, and export personal collections</li>
+          <li><strong>Glass Morphism UI:</strong> Modern, translucent design with backdrop blur effects</li>
+          <li><strong>Fully Responsive Design:</strong> Optimized for desktop, tablet, and mobile devices</li>
+        </ul>
+      ]]></content:encoded>
+    </item>
+
+  </channel>
+</rss>
