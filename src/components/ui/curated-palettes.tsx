@@ -127,6 +127,12 @@ const categories = [
     name: 'Square',
     color: 'linear-gradient(135deg, #ff3366 0%, #33ff66 33%, #3366ff 66%, #ffff33 100%)',
     textColor: 'text-black'
+  },
+  {
+    id: 'valentines',
+    name: 'Valentines & Love',
+    color: 'linear-gradient(135deg, #ff1493 0%, #ff69b4 100%)',
+    textColor: 'text-white'
   }
 ];
 
@@ -4368,8 +4374,131 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   },
 ];
 
+const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Cupid\'s Arrow',
+    type: 'curated',
+    category: 'valentines',
+    colors: [
+      ColorUtils.createColor(0, 100, 50),
+      ColorUtils.createColor(350, 90, 60),
+      ColorUtils.createColor(330, 80, 55),
+      ColorUtils.createColor(10, 95, 45),
+      ColorUtils.createColor(340, 70, 65),
+    ],
+  },
+  {
+    name: 'Rose Gold Romance',
+    type: 'curated',
+    category: 'valentines',
+    colors: [
+      ColorUtils.createColor(10, 85, 55),
+      ColorUtils.createColor(35, 75, 70),
+      ColorUtils.createColor(340, 60, 75),
+      ColorUtils.createColor(0, 80, 40),
+      ColorUtils.createColor(350, 65, 65),
+    ],
+  },
+  {
+    name: 'Love at First Sight',
+    type: 'curated',
+    category: 'valentines',
+    colors: [
+      ColorUtils.createColor(0, 100, 35),
+      ColorUtils.createColor(330, 95, 50),
+      ColorUtils.createColor(280, 70, 55),
+      ColorUtils.createColor(10, 90, 45),
+      ColorUtils.createColor(340, 75, 60),
+    ],
+  },
+  {
+    name: 'Romantic Blush',
+    type: 'curated',
+    category: 'valentines',
+    colors: [
+      ColorUtils.createColor(350, 85, 70),
+      ColorUtils.createColor(10, 90, 65),
+      ColorUtils.createColor(0, 100, 58),
+      ColorUtils.createColor(330, 70, 75),
+      ColorUtils.createColor(5, 65, 70),
+    ],
+  },
+  {
+    name: 'Heart\'s Desire',
+    type: 'curated',
+    category: 'valentines',
+    colors: [
+      ColorUtils.createColor(350, 90, 35),
+      ColorUtils.createColor(0, 100, 45),
+      ColorUtils.createColor(340, 75, 55),
+      ColorUtils.createColor(10, 85, 50),
+      ColorUtils.createColor(330, 65, 65),
+    ],
+  },
+  {
+    name: 'Sweetheart Pink',
+    type: 'curated',
+    category: 'valentines',
+    colors: [
+      ColorUtils.createColor(340, 100, 62),
+      ColorUtils.createColor(350, 90, 70),
+      ColorUtils.createColor(330, 75, 68),
+      ColorUtils.createColor(5, 85, 72),
+      ColorUtils.createColor(345, 70, 75),
+    ],
+  },
+  {
+    name: 'Passionate Red',
+    type: 'curated',
+    category: 'valentines',
+    colors: [
+      ColorUtils.createColor(0, 100, 32),
+      ColorUtils.createColor(10, 95, 40),
+      ColorUtils.createColor(350, 90, 50),
+      ColorUtils.createColor(5, 85, 60),
+      ColorUtils.createColor(340, 75, 65),
+    ],
+  },
+  {
+    name: 'Love\'s Garden',
+    type: 'curated',
+    category: 'valentines',
+    colors: [
+      ColorUtils.createColor(340, 82, 52),
+      ColorUtils.createColor(350, 78, 58),
+      ColorUtils.createColor(330, 75, 60),
+      ColorUtils.createColor(10, 85, 50),
+      ColorUtils.createColor(345, 65, 65),
+    ],
+  },
+  {
+    name: 'Elegant Embrace',
+    type: 'curated',
+    category: 'valentines',
+    colors: [
+      ColorUtils.createColor(0, 100, 38),
+      ColorUtils.createColor(10, 90, 55),
+      ColorUtils.createColor(45, 85, 65),
+      ColorUtils.createColor(340, 80, 48),
+      ColorUtils.createColor(350, 70, 62),
+    ],
+  },
+  {
+    name: 'Crimson Whisper',
+    type: 'curated',
+    category: 'valentines',
+    colors: [
+      ColorUtils.createColor(350, 95, 42),
+      ColorUtils.createColor(5, 80, 60),
+      ColorUtils.createColor(340, 75, 70),
+      ColorUtils.createColor(10, 70, 50),
+      ColorUtils.createColor(0, 85, 55),
+    ],
+  },
+];
+
 // Merge all palettes
-const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes];
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
