@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Footer } from './ui/footer';
 import { useTheme } from '../contexts/ThemeContext';
+import { HARMONY_TYPES, calculateStats } from '../constants/colorData';
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -32,13 +33,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const features = [
     {
       icon: <Palette className="w-6 h-6" />,
-      title: "6 Harmony Types",
+      title: `${HARMONY_TYPES.length} Harmony Types`,
       description: "Advanced color theory algorithms for perfect palettes"
     },
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "280+ Curated Palettes",
-      description: "Professional color combinations across 8 categories"
+      title: "370 Curated Palettes",
+      description: "Professional color combinations across 20+ categories"
     },
     {
       icon: <Shield className="w-6 h-6" />,
@@ -52,12 +53,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     }
   ];
 
-  const stats = [
-    { number: "280+", label: "Curated Palettes" },
-    { number: "6", label: "Harmony Types" },
-    { number: "4", label: "Vision Types" },
-    { number: "100%", label: "Free to Use" }
-  ];
+  const stats = calculateStats();
 
   return (
     <div className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-900 via-green-900 to-slate-900' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100'}`}>
@@ -201,7 +197,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               {
                 step: "01",
                 title: "Choose Harmony",
-                description: "Select from 6 color harmony types based on color theory",
+                description: `Select from ${HARMONY_TYPES.length} color harmony types based on color theory`,
                 icon: <Palette className="w-8 h-8" />
               },
               {
