@@ -4718,6 +4718,8 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                       if (category.id === 'split-complementary') return palette.category === 'split-complementary';
                       if (category.id === 'tetradic') return palette.category === 'tetradic';
                       if (category.id === 'square') return palette.category === 'square';
+                      if (category.id === 'valentines') return palette.category === 'valentines';
+                      if (category.id === 'mothersday') return palette.category === 'mothersday';
                       return false;
                     }).length;
                     return count;
