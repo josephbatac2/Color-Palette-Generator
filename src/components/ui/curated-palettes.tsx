@@ -133,6 +133,12 @@ const categories = [
     name: 'Valentines & Love',
     color: 'linear-gradient(135deg, #ff1493 0%, #ff69b4 100%)',
     textColor: 'text-white'
+  },
+  {
+    id: 'mothersday',
+    name: 'Mother\'s Day',
+    color: 'linear-gradient(135deg, #f5a3c7 0%, #ffd700 100%)',
+    textColor: 'text-black'
   }
 ];
 
@@ -4497,8 +4503,131 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   },
 ];
 
+const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Golden Gratitude',
+    type: 'curated',
+    category: 'mothersday',
+    colors: [
+      ColorUtils.createColor(40, 100, 55),
+      ColorUtils.createColor(45, 95, 70),
+      ColorUtils.createColor(50, 85, 65),
+      ColorUtils.createColor(35, 90, 60),
+      ColorUtils.createColor(55, 80, 75),
+    ],
+  },
+  {
+    name: 'Tender Tulips',
+    type: 'curated',
+    category: 'mothersday',
+    colors: [
+      ColorUtils.createColor(350, 90, 65),
+      ColorUtils.createColor(10, 85, 68),
+      ColorUtils.createColor(30, 80, 70),
+      ColorUtils.createColor(340, 75, 72),
+      ColorUtils.createColor(20, 90, 66),
+    ],
+  },
+  {
+    name: 'Soft Petals',
+    type: 'curated',
+    category: 'mothersday',
+    colors: [
+      ColorUtils.createColor(340, 100, 70),
+      ColorUtils.createColor(350, 95, 72),
+      ColorUtils.createColor(30, 85, 75),
+      ColorUtils.createColor(10, 80, 70),
+      ColorUtils.createColor(0, 90, 68),
+    ],
+  },
+  {
+    name: 'Elegant Garden',
+    type: 'curated',
+    category: 'mothersday',
+    colors: [
+      ColorUtils.createColor(350, 80, 58),
+      ColorUtils.createColor(45, 75, 65),
+      ColorUtils.createColor(120, 60, 70),
+      ColorUtils.createColor(10, 85, 60),
+      ColorUtils.createColor(30, 70, 68),
+    ],
+  },
+  {
+    name: 'Rose & Lace',
+    type: 'curated',
+    category: 'mothersday',
+    colors: [
+      ColorUtils.createColor(0, 85, 55),
+      ColorUtils.createColor(340, 80, 65),
+      ColorUtils.createColor(10, 75, 62),
+      ColorUtils.createColor(350, 70, 72),
+      ColorUtils.createColor(30, 65, 70),
+    ],
+  },
+  {
+    name: 'Lavender Love',
+    type: 'curated',
+    category: 'mothersday',
+    colors: [
+      ColorUtils.createColor(270, 60, 70),
+      ColorUtils.createColor(280, 65, 68),
+      ColorUtils.createColor(350, 75, 68),
+      ColorUtils.createColor(300, 55, 72),
+      ColorUtils.createColor(330, 70, 70),
+    ],
+  },
+  {
+    name: 'Peach Blossom',
+    type: 'curated',
+    category: 'mothersday',
+    colors: [
+      ColorUtils.createColor(30, 90, 68),
+      ColorUtils.createColor(20, 85, 70),
+      ColorUtils.createColor(10, 80, 65),
+      ColorUtils.createColor(40, 75, 72),
+      ColorUtils.createColor(350, 70, 70),
+    ],
+  },
+  {
+    name: 'Sunshine & Grace',
+    type: 'curated',
+    category: 'mothersday',
+    colors: [
+      ColorUtils.createColor(45, 100, 60),
+      ColorUtils.createColor(40, 95, 70),
+      ColorUtils.createColor(50, 85, 75),
+      ColorUtils.createColor(35, 90, 68),
+      ColorUtils.createColor(55, 80, 72),
+    ],
+  },
+  {
+    name: 'Blush & Bloom',
+    type: 'curated',
+    category: 'mothersday',
+    colors: [
+      ColorUtils.createColor(350, 85, 72),
+      ColorUtils.createColor(10, 80, 75),
+      ColorUtils.createColor(330, 75, 70),
+      ColorUtils.createColor(30, 70, 73),
+      ColorUtils.createColor(0, 85, 68),
+    ],
+  },
+  {
+    name: 'Mother\'s Embrace',
+    type: 'curated',
+    category: 'mothersday',
+    colors: [
+      ColorUtils.createColor(340, 75, 65),
+      ColorUtils.createColor(30, 80, 70),
+      ColorUtils.createColor(10, 75, 68),
+      ColorUtils.createColor(45, 70, 72),
+      ColorUtils.createColor(350, 80, 70),
+    ],
+  },
+];
+
 // Merge all palettes
-const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes];
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
