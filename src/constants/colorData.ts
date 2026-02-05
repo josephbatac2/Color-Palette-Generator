@@ -14,7 +14,7 @@ export interface VisionType {
 }
 
 export const PALETTE_CATEGORIES: PaletteCategory[] = [
-  { name: "All Palettes", count: 390 },
+  { name: "All Palettes", count: 400 },
   { name: "Blues & Teals", count: 24 },
   { name: "Greens & Nature", count: 21 },
   { name: "Reds & Pinks", count: 20 },
@@ -36,7 +36,8 @@ export const PALETTE_CATEGORIES: PaletteCategory[] = [
   { name: "Valentines & Love", count: 10 },
   { name: "Mother's Day", count: 10 },
   { name: "Father's Day", count: 10 },
-  { name: "Halloween", count: 10 }
+  { name: "Halloween", count: 10 },
+  { name: "St. Patrick's Day", count: 10 }
 ];
 
 export const HARMONY_TYPES: HarmonyType[] = [
