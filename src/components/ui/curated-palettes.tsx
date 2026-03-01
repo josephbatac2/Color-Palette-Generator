@@ -139,6 +139,18 @@ const categories = [
     name: 'Mother\'s Day',
     color: 'linear-gradient(135deg, #f5a3c7 0%, #ffd700 100%)',
     textColor: 'text-black'
+  },
+  {
+    id: 'stpatricks',
+    name: 'St. Patrick\'s Day',
+    color: 'linear-gradient(135deg, #165b33 0%, #ffd700 100%)',
+    textColor: 'text-white'
+  },
+  {
+    id: 'fathersday',
+    name: 'Father\'s Day',
+    color: 'linear-gradient(135deg, #1a3a52 0%, #8b7355 100%)',
+    textColor: 'text-white'
   }
 ];
 
@@ -4626,8 +4638,158 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   },
 ];
 
+const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Lucky Green',
+    type: 'curated',
+    category: 'stpatricks',
+    colors: [
+      ColorUtils.createColor(160, 100, 30),
+      ColorUtils.createColor(150, 90, 45),
+      ColorUtils.createColor(155, 85, 60),
+      ColorUtils.createColor(145, 80, 50),
+      ColorUtils.createColor(165, 75, 35),
+    ],
+  },
+  {
+    name: 'Irish Emerald',
+    type: 'curated',
+    category: 'stpatricks',
+    colors: [
+      ColorUtils.createColor(140, 100, 25),
+      ColorUtils.createColor(145, 95, 40),
+      ColorUtils.createColor(150, 90, 55),
+      ColorUtils.createColor(135, 85, 35),
+      ColorUtils.createColor(155, 80, 50),
+    ],
+  },
+  {
+    name: 'Gold & Green',
+    type: 'curated',
+    category: 'stpatricks',
+    colors: [
+      ColorUtils.createColor(150, 100, 40),
+      ColorUtils.createColor(50, 100, 50),
+      ColorUtils.createColor(160, 85, 55),
+      ColorUtils.createColor(45, 90, 65),
+      ColorUtils.createColor(155, 75, 45),
+    ],
+  },
+  {
+    name: 'Shamrock & Clover',
+    type: 'curated',
+    category: 'stpatricks',
+    colors: [
+      ColorUtils.createColor(145, 95, 35),
+      ColorUtils.createColor(155, 90, 50),
+      ColorUtils.createColor(140, 85, 45),
+      ColorUtils.createColor(150, 80, 60),
+      ColorUtils.createColor(160, 75, 40),
+    ],
+  },
+  {
+    name: 'Celtic Pride',
+    type: 'curated',
+    category: 'stpatricks',
+    colors: [
+      ColorUtils.createColor(160, 100, 25),
+      ColorUtils.createColor(145, 90, 50),
+      ColorUtils.createColor(150, 85, 60),
+      ColorUtils.createColor(155, 80, 45),
+      ColorUtils.createColor(140, 75, 35),
+    ],
+  },
+  {
+    name: 'Green & Gold Fantasy',
+    type: 'curated',
+    category: 'stpatricks',
+    colors: [
+      ColorUtils.createColor(150, 100, 45),
+      ColorUtils.createColor(50, 95, 55),
+      ColorUtils.createColor(155, 90, 50),
+      ColorUtils.createColor(45, 85, 70),
+      ColorUtils.createColor(160, 80, 40),
+    ],
+  },
+];
+
+const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Navy & Brass',
+    type: 'curated',
+    category: 'fathersday',
+    colors: [
+      ColorUtils.createColor(210, 80, 25),
+      ColorUtils.createColor(40, 70, 50),
+      ColorUtils.createColor(205, 75, 40),
+      ColorUtils.createColor(35, 65, 65),
+      ColorUtils.createColor(215, 70, 35),
+    ],
+  },
+  {
+    name: 'Classic Gentleman',
+    type: 'curated',
+    category: 'fathersday',
+    colors: [
+      ColorUtils.createColor(210, 85, 30),
+      ColorUtils.createColor(0, 50, 40),
+      ColorUtils.createColor(205, 80, 45),
+      ColorUtils.createColor(10, 45, 50),
+      ColorUtils.createColor(215, 75, 35),
+    ],
+  },
+  {
+    name: 'Strong & Steady',
+    type: 'curated',
+    category: 'fathersday',
+    colors: [
+      ColorUtils.createColor(205, 90, 25),
+      ColorUtils.createColor(0, 60, 35),
+      ColorUtils.createColor(210, 85, 40),
+      ColorUtils.createColor(5, 55, 55),
+      ColorUtils.createColor(215, 80, 45),
+    ],
+  },
+  {
+    name: 'Bronze & Navy',
+    type: 'curated',
+    category: 'fathersday',
+    colors: [
+      ColorUtils.createColor(25, 75, 45),
+      ColorUtils.createColor(210, 80, 30),
+      ColorUtils.createColor(30, 70, 55),
+      ColorUtils.createColor(205, 75, 50),
+      ColorUtils.createColor(20, 65, 60),
+    ],
+  },
+  {
+    name: 'Heritage Colors',
+    type: 'curated',
+    category: 'fathersday',
+    colors: [
+      ColorUtils.createColor(210, 85, 35),
+      ColorUtils.createColor(35, 75, 50),
+      ColorUtils.createColor(0, 55, 45),
+      ColorUtils.createColor(205, 80, 45),
+      ColorUtils.createColor(30, 70, 60),
+    ],
+  },
+  {
+    name: 'Timeless Tribute',
+    type: 'curated',
+    category: 'fathersday',
+    colors: [
+      ColorUtils.createColor(215, 90, 30),
+      ColorUtils.createColor(25, 80, 45),
+      ColorUtils.createColor(210, 85, 50),
+      ColorUtils.createColor(35, 75, 55),
+      ColorUtils.createColor(0, 50, 40),
+    ],
+  },
+];
+
 // Merge all palettes
-const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes];
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes, ...stpatricksPalettes, ...fathersDayPalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
