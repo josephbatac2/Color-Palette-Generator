@@ -4882,6 +4882,8 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                       if (category.id === 'square') return palette.category === 'square';
                       if (category.id === 'valentines') return palette.category === 'valentines';
                       if (category.id === 'mothersday') return palette.category === 'mothersday';
+                      if (category.id === 'stpatricks') return palette.category === 'stpatricks';
+                      if (category.id === 'fathersday') return palette.category === 'fathersday';
                       return false;
                     }).length;
                     return count;
