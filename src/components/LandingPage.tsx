@@ -56,7 +56,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const stats = calculateStats();
 
   return (
-    <div className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-900 via-green-900 to-slate-900' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100'}`}>
+    <div className={`relative overflow-hidden transition-colors duration-300`}>
       {/* Theme Toggle */}
       <div className="fixed bottom-6 left-6 z-50">
         <Button
@@ -70,47 +70,60 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
         </Button>
       </div>
 
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className={`absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl animate-pulse ${theme === 'dark' ? 'bg-gradient-to-br from-green-400/20 to-lime-400/20' : 'bg-gradient-to-br from-green-200/40 to-lime-200/40'}`}></div>
-        <div className={`absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl animate-pulse delay-1000 ${theme === 'dark' ? 'bg-gradient-to-br from-pink-400/20 to-orange-400/20' : 'bg-gradient-to-br from-pink-200/40 to-orange-200/40'}`}></div>
-        <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse delay-2000 ${theme === 'dark' ? 'bg-gradient-to-br from-cyan-400/10 to-blue-400/10' : 'bg-gradient-to-br from-cyan-200/30 to-blue-200/30'}`}></div>
-      </div>
+      {/* Full-Screen Hero Live Preview */}
+      <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        {/* Animated Background - Full Screen Color Palette */}
+        <div className="absolute inset-0 flex transition-all duration-1000">
+          {demoColors[currentColorIndex].map((color, index) => (
+            <div
+              key={index}
+              className="flex-1 transition-all duration-1000"
+              style={{ backgroundColor: color }}
+            />
+          ))}
+        </div>
 
-      {/* Hero Section */}
-      <div className="relative z-10 container mx-auto px-6 pt-20 pb-32">
-        <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        {/* Dark Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+
+        {/* Content Overlay */}
+        <div className={`relative z-10 container mx-auto px-6 text-center ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000`}>
           {/* Logo */}
-          <div className={`inline-flex items-center gap-3 mb-8 p-4 backdrop-blur-xl rounded-2xl shadow-2xl ${theme === 'dark' ? 'bg-white/10 border border-white/20' : 'bg-white border border-gray-200'}`}>
+          <div className={`inline-flex items-center gap-3 mb-8 p-4 backdrop-blur-xl rounded-2xl shadow-2xl ${theme === 'dark' ? 'bg-white/10 border border-white/20' : 'bg-black/40 border border-white/20'}`}>
             <div className="p-3 bg-gradient-to-br from-white-500 to-purple-600 rounded-xl shadow-lg">
               <a href="/" title="Color Palette Generator" target="_self">
               <img src="/logo.png" alt="Color Palette Generator" className="w-16 h-16 rounded-xl shadow-lg" />
               </a>
             </div>
-            <span className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Color Palette Generator</span>
+            <span className={`text-2xl font-bold text-white`}>Color Palette Generator</span>
           </div>
 
-          {/* Main Headline */}
-          <h1 className={`text-5xl md:text-7xl font-bold mb-6 leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-            Create
-            <span className="bg-gradient-to-r from-green-400 via-lime-400 to-green-500 bg-clip-text text-transparent animate-pulse">
-              {' '}Beautiful{' '}
-            </span>
-            <br />
-            Color Palettes
-          </h1>
+          {/* Main Headline with Dark Background */}
+          <div className="mb-6 px-6 py-4 backdrop-blur-xl bg-black/40 rounded-2xl inline-block border border-white/20">
+            <h1 className={`text-5xl md:text-7xl font-bold leading-tight text-white`}>
+              Create
+              <span className="bg-gradient-to-r from-green-300 via-lime-300 to-green-400 bg-clip-text text-transparent animate-pulse">
+                {' '}Beautiful{' '}
+              </span>
+              <br />
+              Color Palettes
+            </h1>
+          </div>
 
-          <p className={`text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-            Professional-grade color palette generator with advanced harmony algorithms, 
-            accessibility checking, and color blindness simulation. Perfect for designers and developers.
-          </p>
+          {/* Description with Dark Background */}
+          <div className="max-w-3xl mx-auto mb-12 px-6 py-4 backdrop-blur-xl bg-black/40 rounded-2xl border border-white/20">
+            <p className={`text-xl md:text-2xl leading-relaxed text-white`}>
+              Professional-grade color palette generator with advanced harmony algorithms,
+              accessibility checking, and color blindness simulation. Perfect for designers and developers.
+            </p>
+          </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               onClick={onGetStarted}
               size="xlg"
-              className="px-8 py-4 text-lg bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 shadow-2xl shadow-green-500/25 hover:shadow-green-500/40 transform hover:scale-105 transition-all duration-300"
+              className="px-8 py-4 text-lg bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 shadow-2xl shadow-green-500/50 hover:shadow-green-500/60 transform hover:scale-105 transition-all duration-300"
             >
               <Play className="w-5 h-5 mr-2" />
               Get Started. It's Free!
@@ -118,41 +131,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             </Button>
           </div>
 
-          {/* Demo Palette Animation */}
-          <div className="max-w-2xl mx-auto">
-            <div className={`backdrop-blur-xl rounded-2xl p-8 shadow-2xl ${theme === 'dark' ? 'bg-white/10 border border-white/20' : 'bg-white border border-gray-200'}`}>
-              <h3 className={`text-lg font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Live Preview</h3>
-              <div className="flex rounded-xl overflow-hidden shadow-2xl h-20 transition-all duration-1000">
-                {demoColors[currentColorIndex].map((color, index) => (
-                  <div
-                    key={index}
-                    className="flex-1 transition-all duration-1000 hover:scale-110 hover:z-10 relative"
-                    style={{ backgroundColor: color }}
-                  />
-                ))}
-              </div>
-              <p className={`text-sm mt-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>Colors change automatically every 3 seconds</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Stats Section */}
-      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5 border-y border-white/10' : 'bg-white/50 border-y border-gray-200'}`}>
-        <div className="container mx-auto px-6 py-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className={`text-4xl md:text-5xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{stat.number}</div>
-                <div className={`text-sm md:text-base ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{stat.label}</div>
-              </div>
-            ))}
-          </div>
+          {/* Auto-rotate info */}
+          <p className="text-white/80 text-sm mt-8 backdrop-blur-sm">Colors change automatically every 3 seconds</p>
         </div>
       </div>
 
       {/* Features Section */}
-      <div className="relative z-10 container mx-auto px-6 py-32">
+      <div className={`relative z-10 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-900 via-green-900 to-slate-900' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100'}`}>
+        <div className="container mx-auto px-6 py-32">
         <div className="text-center mb-16">
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             Powerful Features for
@@ -177,6 +163,21 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{feature.description}</p>
             </Card>
           ))}
+        </div>
+        </div>
+      </div>
+
+      {/* Stats Section */}
+      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5 border-y border-white/10' : 'bg-white/50 border-y border-gray-200'}`}>
+        <div className="container mx-auto px-6 py-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className={`text-4xl md:text-5xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{stat.number}</div>
+                <div className={`text-sm md:text-base ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
