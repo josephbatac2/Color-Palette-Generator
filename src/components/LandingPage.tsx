@@ -155,7 +155,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           {features.map((feature, index) => (
             <Card key={index} className={`p-6 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl ${theme === 'dark' ? 'bg-white/10 border-white/20 hover:bg-white/15 hover:shadow-green-500/20' : 'bg-white border-gray-200 hover:bg-gray-50 hover:shadow-green-500/10'}`}>
               <div className={`p-3 rounded-xl w-fit mb-4 ${theme === 'dark' ? 'bg-gradient-to-br from-green-500/20 to-lime-600/20 border border-white/10' : 'bg-gradient-to-br from-green-100 to-lime-100 border border-gray-200'}`}>
-                <div className="text-blue-400">
+                <div className={`${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`}>
                   {feature.icon}
                 </div>
               </div>
