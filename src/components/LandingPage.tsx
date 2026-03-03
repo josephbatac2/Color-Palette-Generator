@@ -87,9 +87,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
         <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
 
         {/* Content Overlay */}
-        <div className={`relative z-10 container mx-auto px-6 text-center ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000`}>
+        <div className={`relative z-10 w-full h-full flex flex-col items-center justify-center px-6 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000`}>
           {/* Logo */}
-          <div className={`inline-flex items-center gap-3 mb-8 p-4 backdrop-blur-xl rounded-2xl shadow-2xl ${theme === 'dark' ? 'bg-white/10 border border-white/20' : 'bg-black/40 border border-white/20'}`}>
+          <div className={`inline-flex items-center gap-3 mb-12 p-4 backdrop-blur-xl rounded-2xl shadow-2xl ${theme === 'dark' ? 'bg-white/10 border border-white/20' : 'bg-black/40 border border-white/20'}`}>
             <div className="p-3 bg-gradient-to-br from-white-500 to-purple-600 rounded-xl shadow-lg">
               <a href="/" title="Color Palette Generator" target="_self">
               <img src="/logo.png" alt="Color Palette Generator" className="w-16 h-16 rounded-xl shadow-lg" />
@@ -99,7 +99,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           </div>
 
           {/* Main Headline with Dark Background */}
-          <div className="mb-6 px-6 py-4 backdrop-blur-xl bg-black/40 rounded-2xl inline-block border border-white/20">
+          <div className="mb-8 px-8 py-6 backdrop-blur-xl bg-black/40 rounded-3xl border border-white/20">
             <h1 className={`text-5xl md:text-7xl font-bold leading-tight text-white`}>
               Create
               <span className="bg-gradient-to-r from-green-300 via-lime-300 to-green-400 bg-clip-text text-transparent animate-pulse">
@@ -111,7 +111,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           </div>
 
           {/* Description with Dark Background */}
-          <div className="max-w-3xl mx-auto mb-12 px-6 py-4 backdrop-blur-xl bg-black/40 rounded-2xl border border-white/20">
+          <div className="w-full max-w-3xl mb-12 px-8 py-6 backdrop-blur-xl bg-black/40 rounded-3xl border border-white/20">
             <p className={`text-xl md:text-2xl leading-relaxed text-white`}>
               Professional-grade color palette generator with advanced harmony algorithms,
               accessibility checking, and color blindness simulation. Perfect for designers and developers.
@@ -119,7 +119,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button
               onClick={onGetStarted}
               size="xlg"
@@ -132,7 +132,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           </div>
 
           {/* Auto-rotate info */}
-          <p className="text-white/80 text-sm mt-8 backdrop-blur-sm">Colors change automatically every 3 seconds</p>
+          <p className="text-white/80 text-sm backdrop-blur-sm">Colors change automatically every 3 seconds</p>
         </div>
       </div>
 
