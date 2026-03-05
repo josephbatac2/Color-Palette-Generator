@@ -168,13 +168,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* Stats Section */}
-      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5 border-y border-white/10' : 'bg-gradient-to-br from-gray-100 to-gray-150 border-y border-gray-300'}`}>
+      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5 border-y border-white/10' : 'bg-gradient-to-br from-gray-900 to-gray-800 border-y border-gray-700'}`}>
         <div className="container mx-auto px-6 py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className={`text-4xl md:text-5xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{stat.number}</div>
-                <div className={`text-sm md:text-base ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>{stat.label}</div>
+                <div className={`text-4xl md:text-5xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-white'}`}>{stat.number}</div>
+                <div className={`text-sm md:text-base ${theme === 'dark' ? 'text-gray-300' : 'text-gray-200'}`}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -182,13 +182,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* How It Works Section */}
-      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5' : 'bg-gradient-to-br from-gray-100 to-gray-150'}`}>
+      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5' : 'bg-gradient-to-br from-gray-900 to-gray-800'}`}>
         <div className="container mx-auto px-6 py-32">
           <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-white'}`}>
               How It Works
             </h2>
-            <p className={`text-xl max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+            <p className={`text-xl max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-200'}`}>
               Create professional color palettes in just three simple steps
             </p>
           </div>
@@ -225,8 +225,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
                     {item.step}
                   </div>
                 </div>
-                <h3 className={`text-xl font-semibold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{item.title}</h3>
-                <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{item.description}</p>
+                <h3 className={`text-xl font-semibold mb-3 ${theme === 'dark' ? 'text-white' : 'text-white'}`}>{item.title}</h3>
+                <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-200'}`}>{item.description}</p>
               </div>
             ))}
           </div>
