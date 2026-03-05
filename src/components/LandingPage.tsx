@@ -168,13 +168,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* Stats Section */}
-      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5 border-y border-white/10' : 'bg-white/50 border-y border-gray-200'}`}>
+      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5 border-y border-white/10' : 'bg-gradient-to-br from-gray-100 to-gray-150 border-y border-gray-300'}`}>
         <div className="container mx-auto px-6 py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className={`text-4xl md:text-5xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{stat.number}</div>
-                <div className={`text-sm md:text-base ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{stat.label}</div>
+                <div className={`text-sm md:text-base ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -182,7 +182,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* How It Works Section */}
-      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5' : 'bg-white/50'}`}>
+      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5' : 'bg-gradient-to-br from-gray-100 to-gray-150'}`}>
         <div className="container mx-auto px-6 py-32">
           <div className="text-center mb-16">
             <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
