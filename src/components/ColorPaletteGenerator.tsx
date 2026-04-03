@@ -87,7 +87,7 @@ export const ColorPaletteGenerator: React.FC = () => {
           </div>
 
             
-            <p className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+            <p className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
               Create beautiful, accessible color palettes with advanced harmony algorithms
             </p>
           </div>

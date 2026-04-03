@@ -146,7 +146,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               {' '}Modern Design
             </span>
           </h2>
-          <p className={`text-xl max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+          <p className={`text-xl max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-800'}`}>
             Everything you need to create accessible, beautiful color palettes for your projects
           </p>
         </div>
@@ -160,7 +160,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
                 </div>
               </div>
               <h3 className={`text-xl font-semibold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{feature.title}</h3>
-              <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{feature.description}</p>
+              <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>{feature.description}</p>
             </Card>
           ))}
         </div>
@@ -243,7 +243,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               Color Palettes?
             </span>
           </h2>
-          <p className={`text-base md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+          <p className={`text-base md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-800'}`}>
             Join thousands of designers and developers who trust our color palette generator
           </p>
           <Button
