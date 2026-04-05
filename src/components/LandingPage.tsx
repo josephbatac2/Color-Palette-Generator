@@ -168,7 +168,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* Stats Section */}
-      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5 border-y border-white/10' : 'bg-gradient-to-br from-gray-900 to-gray-800 border-y border-gray-700'}`}>
+      <div className={`relative z-10 backdrop-blur-xl bg-gradient-to-br from-gray-900 to-gray-800 border-y border-gray-700`}>
         <div className="container mx-auto px-6 py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -182,7 +182,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* How It Works Section */}
-      <div className={`relative z-10 backdrop-blur-xl ${theme === 'dark' ? 'bg-white/5' : 'bg-gradient-to-br from-gray-900 to-gray-800'}`}>
+      <div className={`relative z-10 backdrop-blur-xl bg-gradient-to-br from-gray-900 to-gray-800`}>
         <div className="container mx-auto px-6 py-32">
           <div className="text-center mb-16">
             <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-lime-300'}`}>
@@ -234,8 +234,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* CTA Section */}
-      <div className="relative z-10 container mx-auto px-6 py-16 md:py-32">
-        <div className={`text-center backdrop-blur-xl rounded-3xl p-6 md:p-16 shadow-2xl ${theme === 'dark' ? 'bg-gradient-to-r from-green-600/20 to-lime-600/20 border border-white/20' : 'bg-gradient-to-r from-green-100 to-lime-100 border border-gray-200'}`}>
+      <div className="relative z-10 bg-gradient-to-br from-gray-900 to-gray-800">
+        <div className="container mx-auto px-6 py-16 md:py-32">
+        <div className={`text-center backdrop-blur-xl rounded-3xl p-6 md:p-16 shadow-2xl bg-gradient-to-r from-green-600/20 to-lime-600/20 border border-white/20`}>
           <h2 className={`text-3xl md:text-5xl font-bold mb-4 md:mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             Ready to Create Amazing
             <br />
@@ -243,7 +244,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               Color Palettes?
             </span>
           </h2>
-          <p className={`text-base md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-800'}`}>
+          <p className={`text-base md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto text-gray-300`}>
             Join thousands of designers and developers who trust our color palette generator
           </p>
           <Button
@@ -255,6 +256,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             Start Creating Now
             <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-2 md:ml-3" />
           </Button>
+        </div>
         </div>
       </div>
 

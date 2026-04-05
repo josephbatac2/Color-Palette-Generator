@@ -54,11 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ variant = 'full', className = ''
     },
   ];
 
-  const baseClasses = `relative z-10 backdrop-blur-xl ${
-    theme === 'dark'
-      ? 'border-t border-white/10 bg-black/20'
-      : 'border-t border-gray-200 bg-white/50'
-  }`;
+  const baseClasses = `relative z-10 backdrop-blur-xl border-t border-gray-700 bg-gradient-to-br from-gray-900 to-gray-800`;
 
   const linkClasses = `transition-colors ${
     theme === 'dark'
