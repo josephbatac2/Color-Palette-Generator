@@ -16,6 +16,7 @@
           <li><strong>Accessibility & Hero Polish</strong>: Thorough contrast improvements across stats, headers, footer navigation, and more. Colors perfectly match WCAG AA/AAA guidelines to support low-vision users.</li>
           <li><strong>Hero Revamp</strong>: Sleeker glassmorphic hero style, enhanced alignment, optimized fonts, and Open Source contributions highlighted.</li>
           <li><strong>SEO & Publishing Infrastructure</strong>: sitemap.xml, robots.txt, and active RSS feeds configured. Added a dedicated Changelog history page.</li>
+          <li><strong>Documentation Overhaul</strong>: Completely revamped the public README with shields.io badges, structured Markdown tables, and quick action banners.</li>
         </ul>
       ]]></description>
     </item>

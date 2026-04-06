@@ -9,3 +9,4 @@
 - **Paths Modified**: \`src/components/LandingPage.tsx\`, \`src/components/ui/footer.tsx\`, \`src/components/ColorPaletteGenerator.tsx\`, \`index.html\`, \`index.css\`.
 - **SEO & RSS**: Added \`sitemap.xml\`, \`robots.txt\`, and \`rss.xml\` to the \`public/\` folder.
 - **Routing**: Added light path-based routing in \`src/App.tsx\` to support the newly created \`src/pages/Changelog.tsx\` route.
+- **Documentation**: Overhauled public \`README.md\` incorporating shields.io badges, structured Markdown tables, precise alignment strategies, and prominent open-source contribution banners.

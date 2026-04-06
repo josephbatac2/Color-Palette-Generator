@@ -59,6 +59,12 @@ export const Changelog: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                   <strong className="text-white font-semibold">SEO & Publishing Infrastructure:</strong> sitemap.xml, robots.txt, and active RSS feeds configured. Added a dedicated Changelog history page.
                 </span>
               </li>
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Documentation Overhaul:</strong> Completely revamped the public README with shields.io badges, structured Markdown tables, and quick action banners.
+                </span>
+              </li>
             </ul>
           </section>
 
