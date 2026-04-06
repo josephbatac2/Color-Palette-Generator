@@ -1,11 +1,4 @@
-# robots.txt for Color Palette Generator
-# Allow all search engines to index the site
-
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://colourpalettes.netlify.app/sitemap.xml
-
-# Crawl-delay for polite crawling
-Crawl-delay: 1
+Sitemap: https://colourpalettes.techhive.net/sitemap.xml

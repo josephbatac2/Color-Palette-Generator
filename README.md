@@ -32,13 +32,20 @@ A professional-grade color palette generator with advanced harmony algorithms, a
 - **Smooth Animations**: Micro-interactions and hover effects throughout
 - **Intuitive Navigation**: Tab-based interface with clear visual hierarchy
 
-## 🚀 Recent Updates (v1.2.0 - October 2025)
+## 🚀 Recent Updates (v1.3.1 - April 5, 2026)
 
-### Theme System & UI Enhancements
+### Accessibility & Hero Polish
+- **WCAG Contrast Sweep**: Thorough contrast improvements across stats, headers, footer navigation, and more. Colors perfectly match WCAG AA/AAA guidelines to support low-vision users.
+- **Hero Revamp**: Sleeker glassmorphic hero style, enhanced alignment, optimized fonts, and Open Source contributions highlighted.
+- **SEO & Publishing Infrastructure**: `sitemap.xml`, `robots.txt`, and active RSS feeds configured. Added a dedicated Changelog history page.
+
+### Previous Updates (v1.2.0 - October 2025)
+
+#### Theme System & UI Enhancements
 - **Dark/Light Mode Toggle**: Full theme support with smooth transitions
 - **Enhanced Landing Page**: Beautiful gradient backgrounds with animated elements
 - **Responsive Design Improvements**: Fixed button overflow issues on mobile devices
-- **Social Media Integration**: Added comprehensive social links in footer (Instagram, LinkedIn, YouTube, linkn.ca, Linktree)
+- **Social Media Integration**: Added comprehensive social links in footer
 - **Improved Button Visibility**: Fixed contrast issues in light mode for better accessibility
 
 ### Previous Updates (v1.1.0)
@@ -105,7 +112,7 @@ MIT License - feel free to use this project for personal or commercial purposes.
 - Portfolio: [ajbatac.github.io](https://ajbatac.github.io/?=colorpalettegen)
 - GitHub: [github.com/ajbatac](https://github.com/ajbatac)
 - LinkedIn: [linkedin.com/in/ajbatac](https://www.linkedin.com/in/ajbatac/)
-- Version: 1.2.0 (October 2025)
+- Version: 1.3.1 (April 2026)
 
 ---
 

@@ -71,9 +71,9 @@ export const Footer: React.FC<FooterProps> = ({ variant = 'full', className = ''
               >
                 AJ Batac (@ajbatac)
               </a>
-              {' '}- v1.3.0 ({' '}
+              {' '}- v1.3.1 ({' '}
               <a
-                href="/changelog.html"
+                href="/changelog"
                 className={inlineLinkChangelog}
               >
                 changelog
@@ -166,7 +166,7 @@ export const Footer: React.FC<FooterProps> = ({ variant = 'full', className = ''
           </div>
 
           <p className={`text-sm ${mutedText}`}>
-            © 2026 Color Palette Generator v1.3.0. Made with ❤️ for designers and developers.
+            © 2026 Color Palette Generator v1.3.1 (<a href="/changelog" className="hover:text-white underline underline-offset-2 transition-colors">Changelog</a>). Made with ❤️ for designers and developers.
           </p>
         </div>
       </div>
