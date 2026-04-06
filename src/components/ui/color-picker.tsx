@@ -163,7 +163,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
       </div>
 
       {/* Color Values */}
-      <div className="grid grid-cols-1 gap-3 pt-4 border-t border-gray-100">
+      <div className="grid grid-cols-1 gap-3 pt-4">
         <div className="bg-white/60 backdrop-blur-sm rounded-lg p-3 border border-white/20 shadow-sm">
           <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">RGB</div>
           <div className="text-sm font-mono text-gray-900">

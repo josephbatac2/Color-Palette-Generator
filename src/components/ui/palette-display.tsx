@@ -165,7 +165,7 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
         ))}
       </div>
       
-      <div className="p-4 md:p-8 border-t border-white/20 bg-white/50 backdrop-blur-sm flex-1 flex flex-col justify-between min-h-[150px] md:min-h-[200px]">
+      <div className="p-4 md:p-8 bg-white/50 backdrop-blur-sm flex-1 flex flex-col justify-between min-h-[150px] md:min-h-[200px]">
         <div className="flex items-start justify-between mb-3 md:mb-4">
           <div>
             <h3 className="font-semibold text-base md:text-xl text-gray-900 mb-1 md:mb-2">{palette.name}</h3>

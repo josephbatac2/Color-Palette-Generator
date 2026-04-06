@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ variant = 'full', className = ''
     },
   ];
 
-  const baseClasses = `relative z-10 backdrop-blur-xl border-t border-gray-700 bg-gradient-to-br from-gray-900 to-gray-800`;
+  const baseClasses = `relative z-10 backdrop-blur-xl bg-gradient-to-br from-gray-900 to-gray-800`;
 
   const linkClasses = `transition-colors ${
     theme === 'dark'
@@ -65,7 +65,7 @@ export const Footer: React.FC<FooterProps> = ({ variant = 'full', className = ''
   const textClasses = theme === 'dark' ? 'text-white' : 'text-gray-900';
   const mutedTextClasses = theme === 'dark' ? 'text-gray-300' : 'text-gray-600';
   const subtleTextClasses = theme === 'dark' ? 'text-gray-400' : 'text-gray-600';
-  const borderClasses = theme === 'dark' ? 'border-t border-white/10' : 'border-t border-gray-200';
+  const borderClasses = '';
 
   if (variant === 'compact') {
     return (
