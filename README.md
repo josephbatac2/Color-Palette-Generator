@@ -121,7 +121,7 @@ npm run preview
 ## 🤝 Contribution & License
 This project is open-sourced under the **MIT License**. Feel absolutely free to clone, edit, commercialize, or build upon this project.
 
-An open-source contribution supported by [Kulay Canada](https://www.kulay.ca).
+An open-source contribution supported by [Kulay Canada](https://kulay.ca).
 
 ---
 
