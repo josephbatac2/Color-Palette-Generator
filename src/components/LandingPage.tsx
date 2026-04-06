@@ -56,14 +56,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const stats = calculateStats();
 
   return (
-    <div className={`relative overflow-hidden transition-colors duration-300`}>
+    <div id="main-content" className={`relative overflow-hidden transition-colors duration-300`}>
       {/* Theme Toggle */}
       <div className="fixed bottom-6 left-6 z-50">
         <Button
           onClick={toggleTheme}
           variant="outline"
           size="icon"
-          className={`w-12 h-12 rounded-full shadow-lg transition-all ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white hover:bg-white/20' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'}`}
+          className={`w-12 h-12 rounded-full shadow-lg transition-all ${theme === 'dark' ? 'bg-gray-700 border-gray-500 text-white hover:bg-gray-600' : 'bg-white border-gray-300 text-gray-900 hover:bg-gray-50'}`}
           aria-label="Toggle dark mode"
         >
           {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -73,7 +73,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       {/* Full-Screen Hero Live Preview */}
       <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background - Full Screen Color Palette */}
-        <div className="absolute inset-0 flex transition-all duration-1000">
+        <div className="absolute inset-0 flex transition-all duration-1000" aria-hidden="true">
           {demoColors[currentColorIndex].map((color, index) => (
             <div
               key={index}
@@ -83,56 +83,83 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           ))}
         </div>
 
-        {/* Dark Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+        {/* Overlay — heavier blur + darkening for guaranteed text contrast */}
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-md" aria-hidden="true" />
 
-        {/* Content Overlay */}
-        <div className={`relative z-10 w-full h-full flex flex-col items-center justify-center px-6 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000`}>
-          {/* Logo */}
-          <div className={`inline-flex items-center gap-3 mb-12 p-4 backdrop-blur-xl rounded-2xl shadow-2xl ${theme === 'dark' ? 'bg-white/10 border border-white/20' : 'bg-black/40 border border-white/20'}`}>
-            <div className="p-3 bg-gradient-to-br from-white-500 to-purple-600 rounded-xl shadow-lg">
-              <a href="/" title="Color Palette Generator" target="_self">
-              <img src="/logo.png" alt="Color Palette Generator" className="w-16 h-16 rounded-xl shadow-lg" />
+        {/* Content card */}
+        <div
+          className={`relative z-10 w-full max-w-2xl mx-auto px-6 flex flex-col items-center text-center
+            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+            transition-all duration-1000`}
+        >
+          {/* Logo + brand */}
+          <div className="inline-flex items-center gap-3 mb-8 px-5 py-3 bg-white/10 border border-white/20 rounded-2xl shadow-xl backdrop-blur-xl">
+            <a href="/" title="Color Palette Generator" className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:rounded-xl">
+              <img src="/logo.png" alt="Color Palette Generator" className="w-10 h-10 rounded-lg shadow-lg" />
+            </a>
+            <span className="text-lg font-medium text-white tracking-wide">Color Palette Generator</span>
+          </div>
+
+          {/* Headline — font-normal, clean sizing */}
+          <h1 className="text-4xl md:text-5xl font-normal leading-snug text-white mb-4 tracking-tight">
+            Create{' '}
+            <span className="font-medium bg-gradient-to-r from-green-300 via-lime-300 to-emerald-300 bg-clip-text text-transparent">
+              beautiful
+            </span>{' '}
+            color palettes
+          </h1>
+
+          {/* Description — normal size, comfortable line-height */}
+          <p className="text-base md:text-lg font-normal leading-relaxed text-gray-200 mb-8 max-w-lg">
+            Advanced harmony algorithms, accessibility checking, and color blindness simulation —
+            built for designers and developers.
+          </p>
+
+          {/* Attribution + GitHub */}
+          <div className="flex flex-col items-center gap-3 mb-6">
+            <p className="text-sm text-gray-300">
+              An open-source contribution by{' '}
+              <a
+                href="https://www.kulay.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-300 hover:text-green-200 underline underline-offset-2 transition-colors font-medium"
+              >
+                Kulay Canada
               </a>
-            </div>
-            <span className={`text-2xl font-bold text-white`}>Color Palette Generator</span>
-          </div>
-
-          {/* Main Headline with Dark Background */}
-          <div className="mb-8 px-8 py-6 backdrop-blur-xl bg-black/40 rounded-3xl border border-white/20">
-            <h1 className={`text-5xl md:text-7xl font-bold leading-tight text-white`}>
-              Create
-              <span className="bg-gradient-to-r from-green-300 via-lime-300 to-green-400 bg-clip-text text-transparent animate-pulse">
-                {' '}Beautiful{' '}
-              </span>
-              <br />
-              Color Palettes
-            </h1>
-          </div>
-
-          {/* Description with Dark Background */}
-          <div className="w-full max-w-3xl mb-12 px-8 py-6 backdrop-blur-xl bg-black/40 rounded-3xl border border-white/20">
-            <p className={`text-xl md:text-2xl leading-relaxed text-white`}>
-              Professional-grade color palette generator with advanced harmony algorithms,
-              accessibility checking, and color blindness simulation. Perfect for designers and developers.
             </p>
+            <a
+              href="https://github.com/josephbatac2/Color-Palette-Generator"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium hover:bg-white/20 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              aria-label="View source on GitHub"
+            >
+              <Github className="w-4 h-4" aria-hidden="true" />
+              /Color-Palette-Generator
+            </a>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
             <Button
               onClick={onGetStarted}
-              size="xlg"
-              className="px-8 py-4 text-lg bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 shadow-2xl shadow-green-500/50 hover:shadow-green-500/60 transform hover:scale-105 transition-all duration-300"
+              className="px-8 py-3 text-base font-semibold bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 shadow-2xl shadow-green-500/40 hover:shadow-green-500/50 transform hover:scale-[1.03] transition-all duration-300"
             >
-              <Play className="w-5 h-5 mr-2" />
-              Get Started. It's Free!
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <Play className="w-4 h-4 mr-2" aria-hidden="true" />
+              Get Started — It's Free
+              <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
             </Button>
           </div>
 
-          {/* Auto-rotate info */}
-          <p className="text-white/80 text-sm backdrop-blur-sm">Colors change automatically every 3 seconds</p>
+          {/* Auto-rotate note */}
+          <p className="text-gray-300 text-xs">Colors rotate every 3 seconds</p>
+        </div>
+
+        {/* Scroll hint */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce" aria-hidden="true">
+          <div className="w-px h-8 bg-white/40 rounded-full" />
+          <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
         </div>
       </div>
 
@@ -173,8 +200,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className={`text-4xl md:text-5xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-lime-300'}`}>{stat.number}</div>
-                <div className={`text-sm md:text-base ${theme === 'dark' ? 'text-gray-300' : 'text-gray-100'}`}>{stat.label}</div>
+                <div className={`text-4xl md:text-5xl font-bold mb-2 text-white`}>{stat.number}</div>
+                <div className={`text-sm md:text-base text-gray-200`}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -185,10 +212,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       <div className={`relative z-10 backdrop-blur-xl bg-gradient-to-br from-gray-900 to-gray-800`}>
         <div className="container mx-auto px-6 py-32">
           <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-lime-300'}`}>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 text-white`}>
               How It Works
             </h2>
-            <p className={`text-xl max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-100'}`}>
+            <p className={`text-xl max-w-2xl mx-auto text-gray-200`}>
               Create professional color palettes in just three simple steps
             </p>
           </div>
@@ -225,8 +252,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
                     {item.step}
                   </div>
                 </div>
-                <h3 className={`text-xl font-semibold mb-3 ${theme === 'dark' ? 'text-white' : 'text-lime-300'}`}>{item.title}</h3>
-                <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-100'}`}>{item.description}</p>
+                <h3 className={`text-xl font-semibold mb-3 text-white`}>{item.title}</h3>
+                <p className={`text-sm leading-relaxed text-gray-200`}>{item.description}</p>
               </div>
             ))}
           </div>

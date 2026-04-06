@@ -1,8 +1,20 @@
 {
   "name": "vite-react-typescript-starter",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "A professional-grade color palette generator with advanced harmony algorithms, accessibility checking, and color blindness simulation. Built with React, TypeScript, and modern web technologies.",
+  "homepage": "https://github.com/josephbatac2/Color-Palette-Generator#readme",
+  "bugs": {
+    "url": "https://github.com/josephbatac2/Color-Palette-Generator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephbatac2/Color-Palette-Generator.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "eslint.config.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -40,6 +52,6 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
-    "vite": "^5.4.2"
+    "vite": "^7.0.0"
   }
 }

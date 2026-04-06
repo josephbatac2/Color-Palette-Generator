@@ -57,7 +57,7 @@ export const ColorPaletteGenerator: React.FC = () => {
           onClick={toggleTheme}
           variant="outline"
           size="icon"
-          className={`w-12 h-12 rounded-full shadow-lg transition-all ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white hover:bg-white/20' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'}`}
+          className={`w-12 h-12 rounded-full shadow-lg transition-all ${theme === 'dark' ? 'bg-gray-700 border-gray-500 text-white hover:bg-gray-600' : 'bg-white border-gray-300 text-gray-900 hover:bg-gray-50'}`}
           aria-label="Toggle dark mode"
         >
           {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -94,7 +94,7 @@ export const ColorPaletteGenerator: React.FC = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-8 relative z-10">
+      <main id="main-content" className="container mx-auto px-6 py-8 relative z-10">
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
           <TabsList className={`grid w-full max-w-2xl mx-auto grid-cols-5 h-12 backdrop-blur-xl shadow-xl ${theme === 'dark' ? 'bg-white/10 shadow-black/20 border border-white/20' : 'bg-white shadow-gray-200 border border-gray-200'}`}>
@@ -196,7 +196,7 @@ export const ColorPaletteGenerator: React.FC = () => {
                 ) : (
                   <Card className={`p-12 text-center backdrop-blur-xl flex-1 flex flex-col items-center justify-center ${theme === 'dark' ? 'bg-white/10 border-white/20' : 'bg-white border-gray-200'}`}>
                     <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center ${theme === 'dark' ? 'bg-gradient-to-br from-white/10 to-white/20' : 'bg-gradient-to-br from-gray-100 to-gray-200'}`}>
-                      <Palette className={`w-8 h-8 ${theme === 'dark' ? 'text-white/60' : 'text-gray-400'}`} />
+                      <Palette className={`w-8 h-8 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-400'}`} aria-hidden="true" />
                     </div>
                     <h4 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Ready to Generate</h4>
                     <p className={theme === 'dark' ? 'text-gray-300 text-sm' : 'text-gray-600 text-sm'}>
@@ -228,7 +228,7 @@ export const ColorPaletteGenerator: React.FC = () => {
             ) : (
               <Card className={`p-16 text-center backdrop-blur-xl shadow-xl ${theme === 'dark' ? 'bg-white/10 border-white/20 shadow-black/20' : 'bg-white border-gray-200 shadow-gray-200'}`}>
                 <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center ${theme === 'dark' ? 'bg-gradient-to-br from-white/10 to-white/20' : 'bg-gradient-to-br from-gray-100 to-gray-200'}`}>
-                  <Save className={`w-10 h-10 ${theme === 'dark' ? 'text-white/60' : 'text-gray-400'}`} />
+                  <Save className={`w-10 h-10 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-400'}`} aria-hidden="true" />
                 </div>
                 <h3 className={`text-xl font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>No Saved Palettes</h3>
                 <p className={`mb-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -260,7 +260,7 @@ export const ColorPaletteGenerator: React.FC = () => {
             ) : (
               <Card className={`p-16 text-center backdrop-blur-xl shadow-xl ${theme === 'dark' ? 'bg-white/10 border-white/20 shadow-black/20' : 'bg-white border-gray-200 shadow-gray-200'}`}>
                 <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center ${theme === 'dark' ? 'bg-gradient-to-br from-white/10 to-white/20' : 'bg-gradient-to-br from-gray-100 to-gray-200'}`}>
-                  <Shield className={`w-10 h-10 ${theme === 'dark' ? 'text-white/60' : 'text-gray-400'}`} />
+                  <Shield className={`w-10 h-10 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-400'}`} aria-hidden="true" />
                 </div>
                 <h3 className={`text-xl font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>No Palette Selected</h3>
                 <p className={`mb-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -292,7 +292,7 @@ export const ColorPaletteGenerator: React.FC = () => {
             ) : (
               <Card className={`p-16 text-center backdrop-blur-xl shadow-xl ${theme === 'dark' ? 'bg-white/10 border-white/20 shadow-black/20' : 'bg-white border-gray-200 shadow-gray-200'}`}>
                 <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center ${theme === 'dark' ? 'bg-gradient-to-br from-white/10 to-white/20' : 'bg-gradient-to-br from-gray-100 to-gray-200'}`}>
-                  <Eye className={`w-10 h-10 ${theme === 'dark' ? 'text-white/60' : 'text-gray-400'}`} />
+                  <Eye className={`w-10 h-10 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-400'}`} aria-hidden="true" />
                 </div>
                 <h3 className={`text-xl font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>No Palette Selected</h3>
                 <p className={`mb-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -310,7 +310,7 @@ export const ColorPaletteGenerator: React.FC = () => {
             )}
           </TabsContent>
         </Tabs>
-      </div>
+      </main>
       
       <Footer variant="full" className="mt-16" />
     </div>

@@ -169,7 +169,7 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
         <div className="flex items-start justify-between mb-3 md:mb-4">
           <div>
             <h3 className="font-semibold text-base md:text-xl text-gray-900 mb-1 md:mb-2">{palette.name}</h3>
-            <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-gray-500">
+            <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-gray-600">
               <span>{palette.colors.length} colors</span>
               {palette.harmony && (
                 <>
@@ -183,7 +183,7 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
           </div>
           
           {palette.type && (
-            <div className="bg-white/60 backdrop-blur-sm text-gray-700 px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-medium capitalize border border-white/30 shadow-sm">
+            <div className="bg-gray-100 text-gray-800 px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs font-semibold capitalize border border-gray-300 shadow-sm">
               {palette.type}
             </div>
           )}
@@ -196,7 +196,7 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
               variant="outline"
               size="sm"
               onClick={exportPalette}
-              className="flex items-center gap-1 md:gap-2 bg-white/60 backdrop-blur-sm border-white/40 hover:bg-white/80 px-3 py-2 md:px-8 md:py-4 text-xs md:text-base"
+              className="flex items-center gap-1 md:gap-2 bg-white border-gray-300 text-gray-800 hover:bg-gray-50 px-3 py-2 md:px-8 md:py-4 text-xs md:text-base"
             >
               {isExporting ? (
                 <>
@@ -217,7 +217,7 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
                 variant="outline"
                 size="sm"
                 onClick={handleSave}
-                className="flex items-center gap-1 md:gap-2 bg-white/60 backdrop-blur-sm border-white/40 hover:bg-white/80 px-3 py-2 md:px-8 md:py-4 text-xs md:text-base"
+                className="flex items-center gap-1 md:gap-2 bg-white border-gray-300 text-gray-800 hover:bg-gray-50 px-3 py-2 md:px-8 md:py-4 text-xs md:text-base"
               >
                 {isSaving ? (
                   <>
@@ -238,7 +238,7 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
                 disabled
                 variant="outline"
                 size="sm"
-                className="flex items-center gap-1 md:gap-2 bg-green-50/80 backdrop-blur-sm border-green-200/50 text-green-700 px-3 py-2 md:px-8 md:py-4 text-xs md:text-base cursor-not-allowed"
+                className="flex items-center gap-1 md:gap-2 bg-green-50 border-green-300 text-green-800 px-3 py-2 md:px-8 md:py-4 text-xs md:text-base cursor-not-allowed"
               >
                 <Check className="w-3 h-3 md:w-5 md:h-5" />
                 Already Saved
@@ -250,7 +250,7 @@ export const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
                 variant="outline"
                 size="sm"
                 onClick={handleDelete}
-                className="flex items-center gap-1 md:gap-2 text-red-600 hover:text-red-700 hover:border-red-300 bg-white/60 backdrop-blur-sm border-white/40 hover:bg-red-50/80 px-3 py-2 md:px-8 md:py-4 text-xs md:text-base"
+                className="flex items-center gap-1 md:gap-2 text-red-700 hover:text-red-800 hover:border-red-400 bg-white border-gray-300 hover:bg-red-50 px-3 py-2 md:px-8 md:py-4 text-xs md:text-base"
               >
                 <Trash2 className="w-3 h-3 md:w-5 md:h-5" />
                 Delete
