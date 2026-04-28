@@ -113,12 +113,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             transition-all duration-1000`}
         >
           {/* Logo + brand */}
-          <div className="inline-flex items-center gap-3 mb-8 px-5 py-3 bg-white/10 border border-white/20 rounded-2xl shadow-xl backdrop-blur-xl">
-            <a href="/" title="Color Palette Generator" className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:rounded-xl">
-              <img src="/logo.png" alt="Color Palette Generator" className="w-10 h-10 rounded-lg shadow-lg" />
-            </a>
+          <a href="/" title="Color Palette Generator" className="inline-flex items-center gap-3 mb-8 px-5 py-3 bg-white/10 border border-white/20 rounded-2xl shadow-xl backdrop-blur-xl hover:bg-white/15 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:rounded-2xl">
+            <img src="/logo.png" alt="" className="w-10 h-10 rounded-lg shadow-lg" />
             <span className="text-lg font-medium text-white tracking-wide">Color Palette Generator</span>
-          </div>
+          </a>
 
           {/* Headline — font-normal, clean sizing */}
           <h1 className="text-4xl md:text-5xl font-normal leading-snug text-white mb-4 tracking-tight">
