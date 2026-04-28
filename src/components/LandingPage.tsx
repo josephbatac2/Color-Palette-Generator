@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Palette, Sparkles, Eye, Shield, Download, ArrowRight, Play, Zap, Heart, Github, Sun, Moon } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Footer } from './ui/footer';
 import { useTheme } from '../contexts/ThemeContext';
 import { HARMONY_TYPES, calculateStats } from '../constants/colorData';
+import { ColorUtils } from '../utils/colorUtils';
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -52,6 +53,25 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       description: "Test your palettes for inclusive design"
     }
   ];
+
+  const showcasePalettes = useMemo(() => {
+    const allShowcase = [
+      { name: 'Ocean Breeze', colors: [ColorUtils.createColor(195, 100, 85), ColorUtils.createColor(200, 85, 70), ColorUtils.createColor(210, 70, 55), ColorUtils.createColor(220, 55, 40), ColorUtils.createColor(230, 40, 25)] },
+      { name: 'Neon Jungle', colors: [ColorUtils.createColor(120, 100, 40), ColorUtils.createColor(125, 95, 45), ColorUtils.createColor(130, 90, 50), ColorUtils.createColor(135, 85, 55), ColorUtils.createColor(140, 80, 60)] },
+      { name: 'Cosmic Nebula', colors: [ColorUtils.createColor(220, 95, 15), ColorUtils.createColor(240, 85, 25), ColorUtils.createColor(260, 75, 35), ColorUtils.createColor(280, 65, 45), ColorUtils.createColor(300, 55, 55)] },
+      { name: 'Sunset Glow', colors: [ColorUtils.createColor(15, 90, 55), ColorUtils.createColor(25, 95, 60), ColorUtils.createColor(35, 100, 65), ColorUtils.createColor(45, 95, 70), ColorUtils.createColor(55, 85, 75)] },
+      { name: 'Arctic Ice', colors: [ColorUtils.createColor(200, 30, 92), ColorUtils.createColor(205, 35, 85), ColorUtils.createColor(210, 40, 78), ColorUtils.createColor(215, 45, 71), ColorUtils.createColor(220, 50, 64)] },
+      { name: 'Toxic Waste', colors: [ColorUtils.createColor(80, 100, 45), ColorUtils.createColor(90, 95, 50), ColorUtils.createColor(100, 90, 55), ColorUtils.createColor(110, 85, 60), ColorUtils.createColor(120, 80, 65)] },
+      { name: 'Cherry Blossom', colors: [ColorUtils.createColor(340, 80, 88), ColorUtils.createColor(345, 70, 78), ColorUtils.createColor(350, 60, 68), ColorUtils.createColor(355, 50, 58), ColorUtils.createColor(0, 40, 48)] },
+      { name: 'Digital Ocean', colors: [ColorUtils.createColor(190, 80, 25), ColorUtils.createColor(200, 85, 35), ColorUtils.createColor(210, 90, 45), ColorUtils.createColor(220, 95, 55), ColorUtils.createColor(230, 100, 65)] },
+      { name: 'Jade Empire', colors: [ColorUtils.createColor(160, 70, 30), ColorUtils.createColor(155, 75, 40), ColorUtils.createColor(150, 80, 50), ColorUtils.createColor(145, 85, 60), ColorUtils.createColor(140, 90, 70)] },
+      { name: 'Electric Blue', colors: [ColorUtils.createColor(210, 100, 40), ColorUtils.createColor(215, 95, 50), ColorUtils.createColor(220, 90, 60), ColorUtils.createColor(225, 85, 70), ColorUtils.createColor(230, 80, 80)] },
+      { name: 'Desert Sand', colors: [ColorUtils.createColor(35, 50, 85), ColorUtils.createColor(30, 55, 70), ColorUtils.createColor(25, 60, 55), ColorUtils.createColor(20, 65, 40), ColorUtils.createColor(15, 70, 25)] },
+      { name: 'Matrix Code', colors: [ColorUtils.createColor(120, 100, 25), ColorUtils.createColor(125, 90, 35), ColorUtils.createColor(130, 80, 45), ColorUtils.createColor(135, 70, 55), ColorUtils.createColor(140, 60, 65)] },
+    ];
+    const shuffled = [...allShowcase].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 6);
+  }, []);
 
   const stats = calculateStats();
 
@@ -160,6 +180,58 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce" aria-hidden="true">
           <div className="w-px h-8 bg-white/40 rounded-full" />
           <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
+        </div>
+      </div>
+
+      {/* Showcase Palettes Section */}
+      <div className={`relative z-10 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900' : 'bg-gradient-to-br from-white via-gray-50 to-white'}`}>
+        <div className="container mx-auto px-6 py-24 md:py-32">
+          <div className="text-center mb-12">
+            <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+              Explore Curated{' '}
+              <span className="bg-gradient-to-r from-green-400 to-lime-400 bg-clip-text text-transparent">
+                Palettes
+              </span>
+            </h2>
+            <p className={`text-base md:text-lg max-w-xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+              Hand-picked color combinations from our library of 400+ professional palettes
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+            {showcasePalettes.map((palette, index) => (
+              <div
+                key={index}
+                className={`group rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl ${theme === 'dark' ? 'bg-white/5 border border-white/10 hover:shadow-green-500/10' : 'bg-white border border-gray-200 hover:shadow-green-500/10'}`}
+              >
+                <div className="flex h-20">
+                  {palette.colors.map((color, colorIndex) => (
+                    <div
+                      key={colorIndex}
+                      className="flex-1 transition-all duration-500 group-hover:scale-110"
+                      style={{ backgroundColor: color.hex }}
+                    />
+                  ))}
+                </div>
+                <div className={`px-4 py-3 flex items-center justify-between ${theme === 'dark' ? 'bg-white/5' : 'bg-gray-50'}`}>
+                  <span className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-200' : 'text-gray-800'}`}>{palette.name}</span>
+                  <span className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>{palette.colors.length} colors</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button
+              onClick={onGetStarted}
+              size="lg"
+              className="px-10 py-4 text-base font-semibold bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 shadow-xl shadow-green-500/25 hover:shadow-green-500/40 transform hover:scale-105 transition-all duration-300"
+            >
+              <Sparkles className="w-5 h-5 mr-2" aria-hidden="true" />
+              Browse All Palettes
+              <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
+            </Button>
+          </div>
         </div>
       </div>
 
