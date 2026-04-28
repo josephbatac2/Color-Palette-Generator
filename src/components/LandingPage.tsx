@@ -6,6 +6,8 @@ import { Footer } from './ui/footer';
 import { useTheme } from '../contexts/ThemeContext';
 import { HARMONY_TYPES, calculateStats } from '../constants/colorData';
 import { ColorUtils } from '../utils/colorUtils';
+import { ColorPalette } from '../types/color';
+import { PaletteLightbox } from './ui/palette-lightbox';
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -14,6 +16,7 @@ interface LandingPageProps {
 export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [lightboxPalette, setLightboxPalette] = useState<ColorPalette | null>(null);
   const { theme, toggleTheme } = useTheme();
 
   const demoColors = [
@@ -200,7 +203,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             {showcasePalettes.map((palette, index) => (
               <div
                 key={index}
-                className={`group rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl ${theme === 'dark' ? 'bg-white/5 border border-white/10 hover:shadow-green-500/10' : 'bg-white border border-gray-200 hover:shadow-green-500/10'}`}
+                onClick={() => setLightboxPalette({
+                  id: crypto.randomUUID(),
+                  name: palette.name,
+                  colors: palette.colors,
+                  type: 'curated',
+                  createdAt: new Date(),
+                })}
+                className={`group rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl cursor-pointer ${theme === 'dark' ? 'bg-white/5 border border-white/10 hover:shadow-green-500/10' : 'bg-white border border-gray-200 hover:shadow-green-500/10'}`}
               >
                 <div className="flex h-20">
                   {palette.colors.map((color, colorIndex) => (
@@ -358,6 +368,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       <Footer variant="full" />
+
+      {lightboxPalette && (
+        <PaletteLightbox
+          palette={lightboxPalette}
+          isOpen={!!lightboxPalette}
+          onClose={() => setLightboxPalette(null)}
+        />
+      )}
     </div>
   );
 };
