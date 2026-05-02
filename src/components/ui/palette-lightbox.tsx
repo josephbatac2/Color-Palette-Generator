@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ColorPalette } from '../../types/color';
 import { ColorUtils } from '../../utils/colorUtils';
 import { X, Copy, Check } from 'lucide-react';
@@ -9,21 +9,43 @@ interface PaletteLightboxProps {
   onClose: () => void;
 }
 
+interface CopyState {
+  colorIndex: number;
+  format: string;
+}
+
+const FORMAT_LABELS: Record<string, string> = {
+  hex: 'HEX',
+  rgb: 'RGB',
+  cmyk: 'CMYK',
+  oklch: 'OKLCH',
+};
+
+function getColorFormats(color: { hex: string; rgb: { r: number; g: number; b: number } }) {
+  const cmyk = ColorUtils.rgbToCmyk(color.rgb.r, color.rgb.g, color.rgb.b);
+  const oklch = ColorUtils.rgbToOklch(color.rgb.r, color.rgb.g, color.rgb.b);
+
+  return {
+    hex: color.hex.toUpperCase(),
+    rgb: `rgb(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b})`,
+    cmyk: `cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`,
+    oklch: `oklch(${oklch.L} ${oklch.C} ${oklch.h})`,
+  };
+}
+
 export const PaletteLightbox: React.FC<PaletteLightboxProps> = ({ palette, isOpen, onClose }) => {
-  const [copiedIndex, setCopiedIndex] = React.useState<number | null>(null);
+  const [copied, setCopied] = useState<CopyState | null>(null);
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      
+
       const handleEscape = (e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-          onClose();
-        }
+        if (e.key === 'Escape') onClose();
       };
-      
+
       document.addEventListener('keydown', handleEscape);
-      
+
       return () => {
         document.body.style.overflow = 'unset';
         document.removeEventListener('keydown', handleEscape);
@@ -31,29 +53,19 @@ export const PaletteLightbox: React.FC<PaletteLightboxProps> = ({ palette, isOpe
     }
   }, [isOpen, onClose]);
 
-  const copyToClipboard = (text: string, index: number) => {
+  const copyToClipboard = (text: string, colorIndex: number, format: string) => {
     navigator.clipboard.writeText(text);
-    setCopiedIndex(index);
-    setTimeout(() => setCopiedIndex(null), 2000);
+    setCopied({ colorIndex, format });
+    setTimeout(() => setCopied(null), 2000);
   };
 
   if (!isOpen) return null;
 
   return (
-    <div 
+    <div
       className="fixed z-50 bg-black/90 backdrop-blur-sm animate-in fade-in-0 duration-300"
       onClick={onClose}
-      style={{ 
-        top: 0, 
-        left: 0, 
-        right: 0, 
-        bottom: 0, 
-        width: '100vw', 
-        height: '100vh',
-        position: 'fixed',
-        margin: 0,
-        padding: 0
-      }}
+      style={{ top: 0, left: 0, right: 0, bottom: 0, width: '100vw', height: '100vh', position: 'fixed', margin: 0, padding: 0 }}
     >
       <div className="absolute top-4 right-4 z-10">
         <button
@@ -63,99 +75,102 @@ export const PaletteLightbox: React.FC<PaletteLightboxProps> = ({ palette, isOpe
           <X className="w-8 h-8" />
         </button>
       </div>
-      
-      <div 
-        className="w-full h-full flex flex-col justify-center p-8 animate-in zoom-in-95 duration-300"
+
+      <div
+        className="w-full h-full overflow-y-auto p-8 animate-in zoom-in-95 duration-300"
         onClick={onClose}
       >
-        <div className="text-center mb-12" onClick={(e) => e.stopPropagation()}>
-          <h2 className="text-6xl font-bold text-white mb-4 drop-shadow-lg">
-            {palette.name}
-          </h2>
-          <p className="text-white/80 text-2xl">
-            {palette.colors.length} colors • Click any color to copy
-          </p>
-        </div>
-        
-        {/* Large Color Display */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-12 max-w-none mx-auto px-8" onClick={(e) => e.stopPropagation()}>
-          {palette.colors.map((color, index) => {
-            const contrastWithWhite = ColorUtils.calculateContrastRatio(color, ColorUtils.createColor(0, 0, 100));
-            const textColor = contrastWithWhite.ratio > 4.5 ? 'white' : 'black';
-            
-            return (
+        <div className="max-w-6xl mx-auto" onClick={(e) => e.stopPropagation()}>
+          {/* Header */}
+          <div className="text-center mb-10 pt-8">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">
+              {palette.name}
+            </h2>
+            <p className="text-white/70 text-lg">
+              {palette.colors.length} colors — click any value to copy
+            </p>
+          </div>
+
+          {/* Color Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-10">
+            {palette.colors.map((color, index) => {
+              const formats = getColorFormats(color);
+              const contrastWithWhite = ColorUtils.calculateContrastRatio(color, ColorUtils.createColor(0, 0, 100));
+              const textColor = contrastWithWhite.ratio > 4.5 ? 'white' : 'black';
+
+              return (
+                <div key={index} className="flex flex-col gap-3">
+                  {/* Color Swatch */}
+                  <div
+                    className="w-full h-28 rounded-xl shadow-xl border-2 border-white/15 flex items-end justify-center pb-3"
+                    style={{ backgroundColor: color.hex }}
+                  >
+                    <span
+                      className="font-mono text-sm font-bold px-3 py-1 rounded-md backdrop-blur-sm"
+                      style={{ color: textColor, backgroundColor: textColor === 'white' ? 'rgba(0,0,0,0.25)' : 'rgba(255,255,255,0.25)' }}
+                    >
+                      {color.hex.toUpperCase()}
+                    </span>
+                  </div>
+
+                  {/* Format Cards */}
+                  <div className="flex flex-col gap-1.5">
+                    {(['hex', 'rgb', 'cmyk', 'oklch'] as const).map((format) => {
+                      const isCopied = copied?.colorIndex === index && copied?.format === format;
+                      return (
+                        <button
+                          key={format}
+                          onClick={() => copyToClipboard(formats[format], index, format)}
+                          className={`group flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-left transition-all duration-200
+                            ${isCopied
+                              ? 'bg-green-500/30 border border-green-400/50'
+                              : 'bg-white/8 border border-white/10 hover:bg-white/15 hover:border-white/20'
+                            }`}
+                        >
+                          <div className="flex items-center gap-2 min-w-0">
+                            <span className="text-white/40 text-[10px] font-semibold uppercase tracking-wider w-10 flex-shrink-0">
+                              {FORMAT_LABELS[format]}
+                            </span>
+                            <span className="text-white/90 font-mono text-xs truncate">
+                              {formats[format]}
+                            </span>
+                          </div>
+                          <span className="flex-shrink-0">
+                            {isCopied ? (
+                              <Check className="w-3.5 h-3.5 text-green-400" />
+                            ) : (
+                              <Copy className="w-3.5 h-3.5 text-white/30 group-hover:text-white/70 transition-colors" />
+                            )}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Palette Strip */}
+          <div className="flex rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 h-32 mb-10">
+            {palette.colors.map((color, index) => (
               <div
                 key={index}
-                className="group cursor-pointer transition-all duration-300 hover:scale-110"
+                className="flex-1 cursor-pointer hover:scale-110 transition-transform duration-300"
+                style={{ backgroundColor: color.hex }}
                 onClick={(e) => {
                   e.stopPropagation();
-                  copyToClipboard(color.hex, index);
+                  copyToClipboard(color.hex, index, 'hex');
                 }}
-              >
-                <div
-                  className="w-full p-20 h-56 rounded-2xl shadow-2xl border-4 border-white/20 relative overflow-hidden"
-                  style={{ backgroundColor: color.hex }}
-                >
-                  <div 
-                    className="absolute inset-0 flex flex-col justify-between p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/20"
-                    style={{ color: textColor }}
-                  >
-                    
-                    
-                    <div className="text-center">
-                      <div className="font-mono text-[16px] font-bold mb-3">{color.hex}</div>
-                      <div className="text-[8px] opacity-90 bg-black/20 rounded-lg px-3 py-2 backdrop-blur-sm mb-2">
-                        RGB({color.rgb.r}, {color.rgb.g}, {color.rgb.b})
-                      </div>
-                      <div className="text-[8px] opacity-90 bg-black/20 rounded-lg px-3 py-2 backdrop-blur-sm">
-                        HSL({color.h}°, {color.s}%, {color.l}%)
-                      </div>
-                    </div>
-                    
-                    <div className="self-center">
-                      <div className="w-12 h-12 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                        {copiedIndex === index ? (
-                          <Check className="w-6 h-6" />
-                        ) : (
-                          <Copy className="w-6 h-6" />
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-4 text-center">
-                  <div className="text-white font-mono text-[10px] font-semibold">
-                    {color.hex}
-                  </div>
-                  <div className="text-white/70 text-[11px]">
-                    {copiedIndex === index ? 'Copied!' : 'Click to copy'}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        
-        {/* Palette Strip */}
-        <div className="flex rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 h-40 max-w-none mx-8" onClick={(e) => e.stopPropagation()}>
-          {palette.colors.map((color, index) => (
-            <div
-              key={index}
-              className="flex-1 cursor-pointer hover:scale-110 transition-transform duration-300"
-              style={{ backgroundColor: color.hex }}
-              onClick={(e) => {
-                e.stopPropagation();
-                copyToClipboard(color.hex, index);
-              }}
-            />
-          ))}
-        </div>
-        
-        <div className="text-center mt-12" onClick={(e) => e.stopPropagation()}>
-          <p className="text-white/60 text-xl">
-            Click anywhere outside to close
-          </p>
+              />
+            ))}
+          </div>
+
+          <div className="text-center pb-8">
+            <p className="text-white/50 text-base">
+              Click anywhere outside to close
+            </p>
+          </div>
         </div>
       </div>
     </div>

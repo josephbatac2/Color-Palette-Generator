@@ -196,6 +196,69 @@ export class ColorUtils {
   }
 
   /**
+   * Convert RGB to CMYK
+   */
+  static rgbToCmyk(r: number, g: number, b: number): { c: number; m: number; y: number; k: number } {
+    const rN = r / 255;
+    const gN = g / 255;
+    const bN = b / 255;
+
+    const k = 1 - Math.max(rN, gN, bN);
+    if (k === 1) return { c: 0, m: 0, y: 0, k: 100 };
+
+    const c = ((1 - rN - k) / (1 - k)) * 100;
+    const m = ((1 - gN - k) / (1 - k)) * 100;
+    const y = ((1 - bN - k) / (1 - k)) * 100;
+
+    return {
+      c: Math.round(c),
+      m: Math.round(m),
+      y: Math.round(y),
+      k: Math.round(k * 100),
+    };
+  }
+
+  /**
+   * Convert RGB to OKLCH
+   */
+  static rgbToOklch(r: number, g: number, b: number): { L: number; C: number; h: number } {
+    // Linearize sRGB
+    const linearize = (c: number) => {
+      c /= 255;
+      return c >= 0.04045 ? Math.pow((c + 0.055) / 1.055, 2.4) : c / 12.92;
+    };
+    const lr = linearize(r);
+    const lg = linearize(g);
+    const lb = linearize(b);
+
+    // sRGB -> OKLab via linear RGB -> OKLab
+    // Linear sRGB to LMS (using OKLab M1 matrix)
+    const l_ = 0.4122214708 * lr + 0.5363385400 * lg + 0.0514459940 * lb;
+    const m_ = 0.2119034980 * lr + 0.6806996000 * lg + 0.1073969600 * lb;
+    const s_ = 0.0883024610 * lr + 0.2817188376 * lg + 0.6299787000 * lb;
+
+    const l_c = Math.cbrt(l_);
+    const m_c = Math.cbrt(m_);
+    const s_c = Math.cbrt(s_);
+
+    // OKLab
+    const L = 0.2104542553 * l_c + 0.7936177850 * m_c - 0.0040720468 * s_c;
+    const a = 1.9779984951 * l_c - 2.4285922050 * m_c + 0.4505937099 * s_c;
+    const bOk = 0.0259040371 * l_c + 0.7827717662 * m_c - 0.8086757660 * s_c;
+
+    // OKLab -> OKLCH
+    const C = Math.sqrt(a * a + bOk * bOk);
+    let h = Math.atan2(bOk, a) * (180 / Math.PI);
+    if (h < 0) h += 360;
+
+    return {
+      L: Math.round(L * 1000) / 1000,
+      C: Math.round(C * 1000) / 1000,
+      h: Math.round(h * 10) / 10,
+    };
+  }
+
+  /**
    * Simulate color blindness
    */
   static simulateColorBlindness(color: Color, type: string): Color {
