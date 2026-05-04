@@ -151,6 +151,12 @@ const categories = [
     name: 'Father\'s Day',
     color: 'linear-gradient(135deg, #1a3a52 0%, #8b7355 100%)',
     textColor: 'text-white'
+  },
+  {
+    id: 'summervibes',
+    name: 'Summer Vibes',
+    color: 'linear-gradient(135deg, #ff6b35 0%, #ffd700 50%, #00c9a7 100%)',
+    textColor: 'text-black'
   }
 ];
 
@@ -4788,8 +4794,131 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   },
 ];
 
+const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Sunset Beach',
+    type: 'curated',
+    category: 'summervibes',
+    colors: [
+      ColorUtils.createColor(15, 95, 60),
+      ColorUtils.createColor(25, 90, 65),
+      ColorUtils.createColor(35, 100, 70),
+      ColorUtils.createColor(45, 95, 75),
+      ColorUtils.createColor(55, 85, 80),
+    ],
+  },
+  {
+    name: 'Tropical Punch',
+    type: 'curated',
+    category: 'summervibes',
+    colors: [
+      ColorUtils.createColor(350, 90, 55),
+      ColorUtils.createColor(20, 95, 60),
+      ColorUtils.createColor(45, 100, 65),
+      ColorUtils.createColor(160, 80, 45),
+      ColorUtils.createColor(190, 85, 50),
+    ],
+  },
+  {
+    name: 'Poolside Glow',
+    type: 'curated',
+    category: 'summervibes',
+    colors: [
+      ColorUtils.createColor(195, 90, 50),
+      ColorUtils.createColor(185, 80, 60),
+      ColorUtils.createColor(175, 70, 70),
+      ColorUtils.createColor(50, 95, 75),
+      ColorUtils.createColor(40, 90, 85),
+    ],
+  },
+  {
+    name: 'Citrus Burst',
+    type: 'curated',
+    category: 'summervibes',
+    colors: [
+      ColorUtils.createColor(55, 100, 55),
+      ColorUtils.createColor(45, 95, 60),
+      ColorUtils.createColor(35, 90, 55),
+      ColorUtils.createColor(120, 75, 45),
+      ColorUtils.createColor(90, 85, 50),
+    ],
+  },
+  {
+    name: 'Coral Reef',
+    type: 'curated',
+    category: 'summervibes',
+    colors: [
+      ColorUtils.createColor(5, 85, 65),
+      ColorUtils.createColor(15, 80, 70),
+      ColorUtils.createColor(190, 75, 55),
+      ColorUtils.createColor(175, 70, 45),
+      ColorUtils.createColor(160, 65, 40),
+    ],
+  },
+  {
+    name: 'Lemonade Stand',
+    type: 'curated',
+    category: 'summervibes',
+    colors: [
+      ColorUtils.createColor(50, 90, 85),
+      ColorUtils.createColor(55, 85, 75),
+      ColorUtils.createColor(60, 80, 65),
+      ColorUtils.createColor(120, 50, 80),
+      ColorUtils.createColor(100, 40, 90),
+    ],
+  },
+  {
+    name: 'Boardwalk Nights',
+    type: 'curated',
+    category: 'summervibes',
+    colors: [
+      ColorUtils.createColor(250, 60, 20),
+      ColorUtils.createColor(270, 50, 30),
+      ColorUtils.createColor(340, 70, 45),
+      ColorUtils.createColor(20, 80, 55),
+      ColorUtils.createColor(45, 90, 65),
+    ],
+  },
+  {
+    name: 'Surf & Sand',
+    type: 'curated',
+    category: 'summervibes',
+    colors: [
+      ColorUtils.createColor(200, 70, 75),
+      ColorUtils.createColor(190, 60, 80),
+      ColorUtils.createColor(40, 40, 88),
+      ColorUtils.createColor(35, 35, 78),
+      ColorUtils.createColor(25, 30, 68),
+    ],
+  },
+  {
+    name: 'Watermelon Slice',
+    type: 'curated',
+    category: 'summervibes',
+    colors: [
+      ColorUtils.createColor(350, 85, 45),
+      ColorUtils.createColor(355, 75, 55),
+      ColorUtils.createColor(120, 70, 40),
+      ColorUtils.createColor(130, 60, 50),
+      ColorUtils.createColor(45, 80, 70),
+    ],
+  },
+  {
+    name: 'Island Breeze',
+    type: 'curated',
+    category: 'summervibes',
+    colors: [
+      ColorUtils.createColor(180, 80, 45),
+      ColorUtils.createColor(170, 70, 55),
+      ColorUtils.createColor(160, 60, 65),
+      ColorUtils.createColor(50, 90, 75),
+      ColorUtils.createColor(30, 85, 80),
+    ],
+  },
+];
+
 // Merge all palettes
-const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes, ...stpatricksPalettes, ...fathersDayPalettes];
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes, ...stpatricksPalettes, ...fathersDayPalettes, ...summerVibesPalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
