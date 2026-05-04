@@ -157,6 +157,12 @@ const categories = [
     name: 'Summer Vibes',
     color: 'linear-gradient(135deg, #ff6b35 0%, #ffd700 50%, #00c9a7 100%)',
     textColor: 'text-black'
+  },
+  {
+    id: 'springclean',
+    name: 'Spring Clean',
+    color: 'linear-gradient(135deg, #a8e6cf 0%, #dcedc1 50%, #ffd3b6 100%)',
+    textColor: 'text-black'
   }
 ];
 
@@ -4917,8 +4923,131 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   },
 ];
 
+const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Fresh Linen',
+    type: 'curated',
+    category: 'springclean',
+    colors: [
+      ColorUtils.createColor(210, 15, 95),
+      ColorUtils.createColor(200, 20, 90),
+      ColorUtils.createColor(190, 25, 85),
+      ColorUtils.createColor(180, 30, 80),
+      ColorUtils.createColor(170, 35, 75),
+    ],
+  },
+  {
+    name: 'Dewdrop Morning',
+    type: 'curated',
+    category: 'springclean',
+    colors: [
+      ColorUtils.createColor(160, 50, 88),
+      ColorUtils.createColor(150, 45, 82),
+      ColorUtils.createColor(140, 40, 76),
+      ColorUtils.createColor(200, 30, 92),
+      ColorUtils.createColor(190, 25, 86),
+    ],
+  },
+  {
+    name: 'Mint Wash',
+    type: 'curated',
+    category: 'springclean',
+    colors: [
+      ColorUtils.createColor(160, 60, 85),
+      ColorUtils.createColor(155, 55, 78),
+      ColorUtils.createColor(150, 50, 70),
+      ColorUtils.createColor(145, 45, 62),
+      ColorUtils.createColor(140, 40, 55),
+    ],
+  },
+  {
+    name: 'Petal Soft',
+    type: 'curated',
+    category: 'springclean',
+    colors: [
+      ColorUtils.createColor(340, 40, 90),
+      ColorUtils.createColor(345, 35, 85),
+      ColorUtils.createColor(350, 30, 80),
+      ColorUtils.createColor(355, 25, 75),
+      ColorUtils.createColor(0, 20, 70),
+    ],
+  },
+  {
+    name: 'Lemon Fresh',
+    type: 'curated',
+    category: 'springclean',
+    colors: [
+      ColorUtils.createColor(55, 70, 90),
+      ColorUtils.createColor(50, 65, 82),
+      ColorUtils.createColor(45, 60, 74),
+      ColorUtils.createColor(120, 35, 88),
+      ColorUtils.createColor(110, 30, 80),
+    ],
+  },
+  {
+    name: 'Breeze & Bloom',
+    type: 'curated',
+    category: 'springclean',
+    colors: [
+      ColorUtils.createColor(200, 40, 88),
+      ColorUtils.createColor(160, 45, 82),
+      ColorUtils.createColor(340, 35, 85),
+      ColorUtils.createColor(50, 50, 88),
+      ColorUtils.createColor(30, 40, 92),
+    ],
+  },
+  {
+    name: 'Sage & Stone',
+    type: 'curated',
+    category: 'springclean',
+    colors: [
+      ColorUtils.createColor(140, 25, 65),
+      ColorUtils.createColor(145, 20, 55),
+      ColorUtils.createColor(30, 10, 75),
+      ColorUtils.createColor(35, 15, 65),
+      ColorUtils.createColor(200, 15, 80),
+    ],
+  },
+  {
+    name: 'Cloud White',
+    type: 'curated',
+    category: 'springclean',
+    colors: [
+      ColorUtils.createColor(210, 20, 97),
+      ColorUtils.createColor(200, 15, 93),
+      ColorUtils.createColor(190, 10, 89),
+      ColorUtils.createColor(180, 8, 85),
+      ColorUtils.createColor(170, 5, 81),
+    ],
+  },
+  {
+    name: 'Sprout & Clay',
+    type: 'curated',
+    category: 'springclean',
+    colors: [
+      ColorUtils.createColor(130, 45, 55),
+      ColorUtils.createColor(125, 40, 65),
+      ColorUtils.createColor(25, 35, 70),
+      ColorUtils.createColor(20, 30, 60),
+      ColorUtils.createColor(15, 25, 50),
+    ],
+  },
+  {
+    name: 'Window Light',
+    type: 'curated',
+    category: 'springclean',
+    colors: [
+      ColorUtils.createColor(45, 50, 92),
+      ColorUtils.createColor(50, 45, 85),
+      ColorUtils.createColor(160, 35, 80),
+      ColorUtils.createColor(200, 25, 90),
+      ColorUtils.createColor(340, 20, 88),
+    ],
+  },
+];
+
 // Merge all palettes
-const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes, ...stpatricksPalettes, ...fathersDayPalettes, ...summerVibesPalettes];
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes, ...stpatricksPalettes, ...fathersDayPalettes, ...summerVibesPalettes, ...springCleanPalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
