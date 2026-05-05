@@ -13,6 +13,7 @@ import { Footer } from './ui/footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
+import { ColorValuesCard } from './ui/color-values-card';
 import { Palette, Wand2, Save, Eye, Shield, Sparkles, Sun, Moon } from 'lucide-react';
 
 export const ColorPaletteGenerator: React.FC = () => {
@@ -208,6 +209,7 @@ export const ColorPaletteGenerator: React.FC = () => {
                       isAlreadySaved={isCurrentPaletteSaved}
                       showActions={true}
                     />
+                    <ColorValuesCard colors={currentPalette.colors} />
                   </>
                 ) : (
                   <div className={`p-12 text-center rounded-xl backdrop-blur-xl flex-1 flex flex-col items-center justify-center border ${theme === 'dark' ? 'bg-white/10 border-white/20' : 'bg-white border-gray-200 shadow-sm'}`}>
