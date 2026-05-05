@@ -51,7 +51,7 @@ export const ColorPaletteGenerator: React.FC = () => {
   };
 
   return (
-    <div className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-900 via-green-900 to-slate-900' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100'}`}>
+    <div className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-teal-950 to-slate-900' : 'bg-gradient-to-br from-teal-50 via-sky-50 to-amber-50'}`}>
       {/* Theme Toggle */}
       <div className="fixed bottom-6 left-6 z-50">
         <Button
@@ -67,9 +67,10 @@ export const ColorPaletteGenerator: React.FC = () => {
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className={`absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl ${theme === 'dark' ? 'bg-gradient-to-br from-green-400/20 to-lime-400/20' : 'bg-gradient-to-br from-green-200/40 to-lime-200/40'}`}></div>
-        <div className={`absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl ${theme === 'dark' ? 'bg-gradient-to-br from-pink-400/20 to-orange-400/20' : 'bg-gradient-to-br from-pink-200/40 to-orange-200/40'}`}></div>
-        <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl animate-pulse delay-2000 ${theme === 'dark' ? 'bg-gradient-to-br from-cyan-400/10 to-blue-400/10' : 'bg-gradient-to-br from-cyan-200/30 to-blue-200/30'}`}></div>
+        <div className={`absolute -top-40 -right-40 w-96 h-96 rounded-full blur-3xl ${theme === 'dark' ? 'bg-gradient-to-br from-teal-400/25 to-emerald-400/25' : 'bg-gradient-to-br from-teal-200/50 to-emerald-200/50'}`}></div>
+        <div className={`absolute -bottom-40 -left-40 w-96 h-96 rounded-full blur-3xl ${theme === 'dark' ? 'bg-gradient-to-br from-rose-400/20 to-amber-400/20' : 'bg-gradient-to-br from-rose-200/50 to-amber-200/50'}`}></div>
+        <div className={`absolute top-1/3 left-1/4 w-80 h-80 rounded-full blur-3xl ${theme === 'dark' ? 'bg-gradient-to-br from-sky-400/15 to-cyan-400/15' : 'bg-gradient-to-br from-sky-200/40 to-cyan-200/40'}`}></div>
+        <div className={`absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full blur-3xl animate-pulse ${theme === 'dark' ? 'bg-gradient-to-br from-amber-400/10 to-orange-400/10' : 'bg-gradient-to-br from-amber-200/35 to-orange-200/35'}`}></div>
       </div>
 
       {/* Header */}
