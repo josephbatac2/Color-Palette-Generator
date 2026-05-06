@@ -67,7 +67,7 @@ export const PaletteLightbox: React.FC<PaletteLightboxProps> = ({ palette, isOpe
       onClick={onClose}
       style={{ top: 0, left: 0, right: 0, bottom: 0, width: '100vw', height: '100vh', position: 'fixed', margin: 0, padding: 0 }}
     >
-      <div className="absolute top-4 right-4 z-10">
+      <div className="absolute top-6 right-6 z-10">
         <button
           onClick={onClose}
           className="p-3 rounded-full bg-white/20 hover:bg-white/30 text-white transition-colors shadow-2xl backdrop-blur-md"
@@ -77,12 +77,12 @@ export const PaletteLightbox: React.FC<PaletteLightboxProps> = ({ palette, isOpe
       </div>
 
       <div
-        className="w-full h-full overflow-y-auto p-8 animate-in zoom-in-95 duration-300"
+        className="w-full h-full overflow-y-auto p-8 pt-28 animate-in zoom-in-95 duration-300"
         onClick={onClose}
       >
         <div className="max-w-6xl mx-auto" onClick={(e) => e.stopPropagation()}>
           {/* Header */}
-          <div className="text-center mb-10 pt-8">
+          <div className="text-center mb-10">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">
               {palette.name}
             </h2>
@@ -102,11 +102,11 @@ export const PaletteLightbox: React.FC<PaletteLightboxProps> = ({ palette, isOpe
                 <div key={index} className="flex flex-col gap-3">
                   {/* Color Swatch */}
                   <div
-                    className="w-full h-28 rounded-xl shadow-xl border-2 border-white/15 flex items-end justify-center pb-3"
+                    className="w-full h-40 rounded-xl shadow-xl border-2 border-white/15 flex items-end justify-center pb-4"
                     style={{ backgroundColor: color.hex }}
                   >
                     <span
-                      className="font-mono text-sm font-bold px-3 py-1 rounded-md backdrop-blur-sm"
+                      className="font-mono text-sm font-bold px-3 py-1.5 rounded-md backdrop-blur-sm"
                       style={{ color: textColor, backgroundColor: textColor === 'white' ? 'rgba(0,0,0,0.25)' : 'rgba(255,255,255,0.25)' }}
                     >
                       {color.hex.toUpperCase()}
@@ -152,7 +152,7 @@ export const PaletteLightbox: React.FC<PaletteLightboxProps> = ({ palette, isOpe
           </div>
 
           {/* Palette Strip */}
-          <div className="flex rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 h-32 mb-10">
+          <div className="flex rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 h-44 mb-10">
             {palette.colors.map((color, index) => (
               <div
                 key={index}

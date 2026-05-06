@@ -5159,7 +5159,7 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
           {filteredPalettes.map((palette, index) => (
             <Card key={index} className="overflow-hidden bg-white/90 backdrop-blur-xl border-white/20 hover:shadow-2xl hover:shadow-black/10 transition-all duration-300 group transform hover:scale-[1.02]">
               <div 
-                className="flex h-24 cursor-pointer relative overflow-hidden"
+                className="flex h-36 cursor-pointer relative overflow-hidden"
                 onClick={() => openLightbox(palette)}
               >
                 {palette.colors.map((color, colorIndex) => (
