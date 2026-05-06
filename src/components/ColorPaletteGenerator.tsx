@@ -63,7 +63,7 @@ export const ColorPaletteGenerator: React.FC = () => {
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-0">
 
       {/* Header */}
-      <header className={`backdrop-blur-xl sticky top-0 z-20 shadow-lg ${theme === 'dark' ? 'border-b border-white/10 bg-slate-950/80 shadow-black/30' : 'border-b border-gray-200 bg-white/70 shadow-gray-200/50'}`}>
+      <header className={`backdrop-blur-xl sticky top-0 z-20 shadow-lg ${theme === 'dark' ? 'bg-slate-950/80 shadow-black/30' : 'bg-white/70 shadow-gray-200/50'}`}>
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             {/* Logo - Left */}
@@ -79,24 +79,24 @@ export const ColorPaletteGenerator: React.FC = () => {
 
             {/* Navigation - Right */}
             <nav className="flex items-center gap-1">
-              <TabsList className={`h-11 gap-0.5 rounded-xl px-1 ${theme === 'dark' ? 'bg-white/10 border-white/20' : 'bg-gray-100 border-gray-200'}`}>
-                <TabsTrigger value="curated" className={`flex items-center gap-1.5 px-3 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 data-[state=active]:text-white hover:text-gray-100' : 'text-gray-600 data-[state=active]:text-white hover:text-gray-800'}`}>
+              <TabsList className={`h-11 gap-0.5 rounded-xl px-1.5 ${theme === 'dark' ? 'bg-white/10 border border-white/15' : 'bg-gray-100 border border-gray-200'}`}>
+                <TabsTrigger value="curated" className={`flex items-center gap-1.5 px-4 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 hover:bg-white/10 hover:text-gray-100 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700' : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700'}`}>
                   <Sparkles className="w-4 h-4" />
                   <span className="hidden md:inline">Curated</span>
                 </TabsTrigger>
-                <TabsTrigger value="generator" className={`flex items-center gap-1.5 px-3 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 data-[state=active]:text-white hover:text-gray-100' : 'text-gray-600 data-[state=active]:text-white hover:text-gray-800'}`}>
+                <TabsTrigger value="generator" className={`flex items-center gap-1.5 px-4 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 hover:bg-white/10 hover:text-gray-100 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700' : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700'}`}>
                   <Palette className="w-4 h-4" />
                   <span className="hidden md:inline">Generator</span>
                 </TabsTrigger>
-                <TabsTrigger value="saved" className={`flex items-center gap-1.5 px-3 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 data-[state=active]:text-white hover:text-gray-100' : 'text-gray-600 data-[state=active]:text-white hover:text-gray-800'}`}>
+                <TabsTrigger value="saved" className={`flex items-center gap-1.5 px-4 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 hover:bg-white/10 hover:text-gray-100 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700' : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700'}`}>
                   <Save className="w-4 h-4" />
                   <span className="hidden md:inline">Saved</span>
                 </TabsTrigger>
-                <TabsTrigger value="accessibility" className={`flex items-center gap-1.5 px-3 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 data-[state=active]:text-white hover:text-gray-100' : 'text-gray-600 data-[state=active]:text-white hover:text-gray-800'}`}>
+                <TabsTrigger value="accessibility" className={`flex items-center gap-1.5 px-4 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 hover:bg-white/10 hover:text-gray-100 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700' : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700'}`}>
                   <Shield className="w-4 h-4" />
                   <span className="hidden md:inline">A11y</span>
                 </TabsTrigger>
-                <TabsTrigger value="simulator" className={`flex items-center gap-1.5 px-3 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 data-[state=active]:text-white hover:text-gray-100' : 'text-gray-600 data-[state=active]:text-white hover:text-gray-800'}`}>
+                <TabsTrigger value="simulator" className={`flex items-center gap-1.5 px-4 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 hover:bg-white/10 hover:text-gray-100 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700' : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700'}`}>
                   <Eye className="w-4 h-4" />
                   <span className="hidden md:inline">Vision</span>
                 </TabsTrigger>
