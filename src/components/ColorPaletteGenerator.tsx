@@ -52,19 +52,6 @@ export const ColorPaletteGenerator: React.FC = () => {
 
   return (
     <div className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-teal-950 to-slate-900' : 'bg-gradient-to-br from-teal-50 via-sky-50 to-amber-50'}`}>
-      {/* Theme Toggle */}
-      <div className="fixed bottom-6 left-6 z-50">
-        <Button
-          onClick={toggleTheme}
-          variant="outline"
-          size="icon"
-          className={`w-12 h-12 rounded-full shadow-lg transition-all ${theme === 'dark' ? 'bg-gray-700 border-gray-500 text-white hover:bg-gray-600' : 'bg-white border-gray-300 text-gray-900 hover:bg-gray-50'}`}
-          aria-label="Toggle dark mode"
-        >
-          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-        </Button>
-      </div>
-
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className={`absolute -top-40 -right-40 w-96 h-96 rounded-full blur-3xl ${theme === 'dark' ? 'bg-gradient-to-br from-teal-400/25 to-emerald-400/25' : 'bg-gradient-to-br from-teal-200/50 to-emerald-200/50'}`}></div>
@@ -74,53 +61,63 @@ export const ColorPaletteGenerator: React.FC = () => {
       </div>
 
       {/* Header */}
-      <div className={`backdrop-blur-xl sticky top-0 z-10 shadow-lg ${theme === 'dark' ? 'border-b border-white/10 bg-white/5 shadow-black/20' : 'border-b border-gray-200 bg-white/50 shadow-gray-200'}`}>
-        <div className="container mx-auto px-6 py-6">
-          <div className="flex flex-col items-center gap-3 text-center">
+      <header className={`backdrop-blur-xl sticky top-0 z-20 shadow-lg ${theme === 'dark' ? 'border-b border-white/10 bg-slate-950/80 shadow-black/30' : 'border-b border-gray-200 bg-white/70 shadow-gray-200/50'}`}>
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo - Left */}
+            <a href="/" title="Color Palette Generator" className="flex items-center gap-3 flex-shrink-0 group">
+              <div className={`p-1.5 rounded-xl shadow-lg transition-transform group-hover:scale-105 ${theme === 'dark' ? 'bg-white/10' : 'bg-white border border-gray-200'}`}>
+                <img src="/logo.png" alt="Color Palette Generator" className="w-12 h-12 rounded-lg" />
+              </div>
+              <div className="hidden sm:block">
+                <span className={`text-xl font-bold leading-tight block ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Color Palette</span>
+                <span className={`text-xs font-medium leading-tight block ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>Generator</span>
+              </div>
+            </a>
 
-          {/* Logo */}
-          <div className={`inline-flex items-center gap-3 mb-8 p-4 backdrop-blur-xl rounded-2xl shadow-2xl ${theme === 'dark' ? 'bg-white/10 border border-white/20' : 'bg-white border border-gray-200'}`}>
-            <div className="p-3 bg-gradient-to-br from-white-500 to-purple-600 rounded-xl shadow-lg">
-              <a href="/" title="Color Palette Generator" target="_self">
-              <img src="/logo.png" alt="Color Palette Generator" className="w-16 h-16 rounded-xl shadow-lg" />
-              </a>
-            </div>
-            <span className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Color Palette Generator</span>
-          </div>
+            {/* Navigation - Right */}
+            <nav className="flex items-center gap-1">
+              <TabsList className={`h-11 gap-0.5 rounded-xl px-1 ${theme === 'dark' ? 'bg-white/10 border-white/20' : 'bg-gray-100 border-gray-200'}`}>
+                <TabsTrigger value="curated" className={`flex items-center gap-1.5 px-3 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 data-[state=active]:text-white hover:text-gray-100' : 'text-gray-600 data-[state=active]:text-white hover:text-gray-800'}`}>
+                  <Sparkles className="w-4 h-4" />
+                  <span className="hidden md:inline">Curated</span>
+                </TabsTrigger>
+                <TabsTrigger value="generator" className={`flex items-center gap-1.5 px-3 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 data-[state=active]:text-white hover:text-gray-100' : 'text-gray-600 data-[state=active]:text-white hover:text-gray-800'}`}>
+                  <Palette className="w-4 h-4" />
+                  <span className="hidden md:inline">Generator</span>
+                </TabsTrigger>
+                <TabsTrigger value="saved" className={`flex items-center gap-1.5 px-3 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 data-[state=active]:text-white hover:text-gray-100' : 'text-gray-600 data-[state=active]:text-white hover:text-gray-800'}`}>
+                  <Save className="w-4 h-4" />
+                  <span className="hidden md:inline">Saved</span>
+                </TabsTrigger>
+                <TabsTrigger value="accessibility" className={`flex items-center gap-1.5 px-3 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 data-[state=active]:text-white hover:text-gray-100' : 'text-gray-600 data-[state=active]:text-white hover:text-gray-800'}`}>
+                  <Shield className="w-4 h-4" />
+                  <span className="hidden md:inline">A11y</span>
+                </TabsTrigger>
+                <TabsTrigger value="simulator" className={`flex items-center gap-1.5 px-3 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 data-[state=active]:text-white hover:text-gray-100' : 'text-gray-600 data-[state=active]:text-white hover:text-gray-800'}`}>
+                  <Eye className="w-4 h-4" />
+                  <span className="hidden md:inline">Vision</span>
+                </TabsTrigger>
+              </TabsList>
 
-            
-            <p className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-              Create beautiful, accessible color palettes with advanced harmony algorithms
-            </p>
+              {/* Theme Toggle in Header */}
+              <Button
+                onClick={toggleTheme}
+                variant="outline"
+                size="icon"
+                className={`w-11 h-11 rounded-xl transition-all flex-shrink-0 ${theme === 'dark' ? 'bg-white/10 border-white/20 text-gray-300 hover:bg-white/20 hover:text-white' : 'bg-white border-gray-300 text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
+                aria-label="Toggle dark mode"
+              >
+                {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              </Button>
+            </nav>
           </div>
         </div>
-      </div>
+      </header>
 
       <main id="main-content" className="container mx-auto px-6 py-8 relative z-10">
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
-          <TabsList className={`grid w-full max-w-2xl mx-auto grid-cols-5 h-12 backdrop-blur-xl shadow-xl ${theme === 'dark' ? 'bg-white/10 shadow-black/20 border border-white/20' : 'bg-white shadow-gray-200 border border-gray-200'}`}>
-            <TabsTrigger value="curated" className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-gray-200 data-[state=active]:text-white' : 'text-gray-700 data-[state=active]:text-gray-900'}`}>
-              <Sparkles className="w-4 h-4" />
-              <span className="hidden sm:inline">Curated</span>
-            </TabsTrigger>
-            <TabsTrigger value="generator" className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-gray-200 data-[state=active]:text-white' : 'text-gray-700 data-[state=active]:text-gray-900'}`}>
-              <Palette className="w-4 h-4" />
-              <span className="hidden sm:inline">Generator</span>
-            </TabsTrigger>
-            <TabsTrigger value="saved" className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-gray-200 data-[state=active]:text-white' : 'text-gray-700 data-[state=active]:text-gray-900'}`}>
-              <Save className="w-4 h-4" />
-              <span className="hidden sm:inline">Saved</span>
-            </TabsTrigger>
-            <TabsTrigger value="accessibility" className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-gray-200 data-[state=active]:text-white' : 'text-gray-700 data-[state=active]:text-gray-900'}`}>
-              <Shield className="w-4 h-4" />
-              <span className="hidden sm:inline">A11y</span>
-            </TabsTrigger>
-            <TabsTrigger value="simulator" className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-gray-200 data-[state=active]:text-white' : 'text-gray-700 data-[state=active]:text-gray-900'}`}>
-              <Eye className="w-4 h-4" />
-              <span className="hidden sm:inline">Vision</span>
-            </TabsTrigger>
-          </TabsList>
 
           <TabsContent value="curated" className="space-y-6">
             <div className="text-center mb-8">
