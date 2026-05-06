@@ -60,6 +60,8 @@ export const ColorPaletteGenerator: React.FC = () => {
         <div className={`absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full blur-3xl animate-pulse ${theme === 'dark' ? 'bg-gradient-to-br from-amber-400/10 to-orange-400/10' : 'bg-gradient-to-br from-amber-200/35 to-orange-200/35'}`}></div>
       </div>
 
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-0">
+
       {/* Header */}
       <header className={`backdrop-blur-xl sticky top-0 z-20 shadow-lg ${theme === 'dark' ? 'border-b border-white/10 bg-slate-950/80 shadow-black/30' : 'border-b border-gray-200 bg-white/70 shadow-gray-200/50'}`}>
         <div className="container mx-auto px-6">
@@ -116,8 +118,6 @@ export const ColorPaletteGenerator: React.FC = () => {
       </header>
 
       <main id="main-content" className="container mx-auto px-6 py-8 relative z-10">
-
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
 
           <TabsContent value="curated" className="space-y-6">
             <div className="text-center mb-8">
@@ -325,9 +325,10 @@ export const ColorPaletteGenerator: React.FC = () => {
               </Card>
             )}
           </TabsContent>
-        </Tabs>
       </main>
-      
+
+      </Tabs>
+
       <Footer variant="full" className="mt-16" />
     </div>
   );
