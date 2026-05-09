@@ -132,8 +132,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
 
           {/* Description — normal size, comfortable line-height */}
           <p className="text-base md:text-lg font-normal leading-relaxed text-gray-200 mb-8 max-w-lg">
-            Advanced harmony algorithms, accessibility checking, and color blindness simulation —
-            built for designers and developers.
+            Craft palettes that feel right with smart color harmonies, check contrast for every audience,
+            and preview how your work looks through different eyes. Made for the people who care about color.
           </p>
 
           {/* Attribution + GitHub */}
