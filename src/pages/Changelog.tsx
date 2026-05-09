@@ -34,6 +34,40 @@ export const Changelog: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         </header>
 
         <main className="space-y-12">
+          {/* v1.4.0 - May 9, 2026 */}
+          <section>
+            <div className="mb-4">
+              <h2 className="text-2xl font-semibold text-white">v1.4.0</h2>
+              <time className="text-sm text-green-300 font-medium">May 9, 2026</time>
+            </div>
+            <ul className="space-y-3 text-gray-200">
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Refined User Interface:</strong> Redesigned header layout, modernized the UI theme styling, and improved contrast across the app. Updated product tagline for a sharper identity.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Enhanced Palette Generator:</strong> Added a new Color Values card to the generator for better insights and fixed the layout for Lightbox and Palette UI.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Spring Clean Palettes:</strong> Introduced 10 fresh, new Spring Clean palettes.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Visual Upgrades & Fixes:</strong> Updated background gradients and orbs, resolved issues with the Radix Tabs component structure, and fixed category pill counts.
+                </span>
+              </li>
+            </ul>
+          </section>
+
           {/* v1.3.1 - April 5, 2026 */}
           <section>
             <div className="mb-4">

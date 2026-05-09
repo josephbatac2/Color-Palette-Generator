@@ -1,5 +1,12 @@
 # Internal Changelog
 
+## v1.4.0 - May 9, 2026
+### Technical Updates
+- **UI Enhancements**: Updated product tagline, redesigned header layout, and fixed UI theme styling & contrast.
+- **Component Refactoring**: Fixed Radix Tabs component structure, fixed Lightbox & Palette UI Layout, and updated `ColorPaletteGenerator.tsx`.
+- **New Features**: Added Color Values card to the generator and introduced 10 new "Spring Clean" palettes.
+- **Visuals & Bug Fixes**: Updated background gradients and orbs, and fixed category pill counts for new categories.
+
 ## v1.3.1 - April 5, 2026
 ### Technical Updates
 - **WCAG Enhancements**: Integrated a major accessibility sweep. Changed footer colors and stat components (`LandingPage.tsx`) for strict WCAG AA/AAA compliance using opaque combinations like \`text-gray-200\` against \`bg-gray-900\`. Fixed issue with skip-link (\`#main-content\`) not being present on wrapper divs. Added missing semantic roles to footer.

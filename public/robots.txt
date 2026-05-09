@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://colourpalettes.techhive.net/sitemap.xml
+
+# Last updated: 2026-05-09
+# App version: 1.4.0

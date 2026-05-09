@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-1.3.1-blueviolet?style=for-the-badge&logo=appveyor" alt="Version" />
+  <img src="https://img.shields.io/badge/Version-1.4.0-blueviolet?style=for-the-badge&logo=appveyor" alt="Version" />
   <img src="https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
   <img src="https://img.shields.io/badge/TypeScript-5.5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Vite-7.0-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
@@ -59,12 +59,13 @@
 
 ---
 
-## 🚀 Recent Updates (April 2026)
+## 🚀 Recent Updates (May 2026)
 
-> **v1.3.1**: The Accessibility Sweep & Hero Polish
-> - **WCAG Contrast Sweep**: Thorough contrast improvements across stats, headers, footer navigation. Colors perfectly match WCAG AA/AAA guidelines to support low-vision users.
-> - **Hero Revamp**: Sleeker glassmorphic hero style, enhanced alignment, optimized fonts.
-> - **SEO & RSS**: Added `sitemap.xml`, `robots.txt`, and active RSS feeds. Built a dedicated Changelog history page.
+> **v1.4.0**: UI Refresh & Feature Expansion
+> - **Refined User Interface**: Redesigned header layout, modernized the UI theme styling, and improved contrast across the app.
+> - **Enhanced Palette Generator**: Added a new Color Values card to the generator for better insights and fixed the layout for Lightbox and Palette UI.
+> - **Spring Clean Palettes**: Introduced 10 fresh, new Spring Clean palettes.
+> - **General Fixes**: Resolved issues with the Radix Tabs component structure, fixed category pill counts, and updated background gradients/orbs.
 
 Read the full history in our <a href="https://colourpalettes.techhive.net/changelog">Changelog</a>.
 

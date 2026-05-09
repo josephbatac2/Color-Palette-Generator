@@ -5,6 +5,23 @@
     <link>https://colourpalettes.techhive.net/changelog</link>
     <description>Recent updates, new features, and bug fixes for the Color Palette Generator.</description>
     <language>en-us</language>
+    <lastBuildDate>Sat, 09 May 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://colourpalettes.techhive.net/changelog/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>v1.4.0 - May 9, 2026</title>
+      <link>https://colourpalettes.techhive.net/changelog#v1.4.0</link>
+      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://colourpalettes.techhive.net/changelog#v1.4.0</guid>
+      <description><![CDATA[
+        <ul>
+          <li><strong>Refined User Interface</strong>: Redesigned header layout, modernized the UI theme styling, and improved contrast across the app.</li>
+          <li><strong>Enhanced Palette Generator</strong>: Added a new Color Values card to the generator for better insights and fixed the layout for Lightbox and Palette UI.</li>
+          <li><strong>Spring Clean Palettes</strong>: Introduced 10 fresh, new Spring Clean palettes.</li>
+          <li><strong>Visual Upgrades & Fixes</strong>: Updated background gradients and orbs, resolved issues with the Radix Tabs component structure, and fixed category pill counts.</li>
+        </ul>
+      ]]></description>
+    </item>
     
     <item>
       <title>v1.3.1 - April 5, 2026</title>
