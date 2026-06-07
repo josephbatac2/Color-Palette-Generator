@@ -272,6 +272,19 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             </Button>
           </div>
 
+          {/* Hero Stats */}
+          <div className="w-full max-w-xl grid grid-cols-4 gap-4 mb-8">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center px-3 py-4 bg-white/10 border border-white/15 rounded-xl backdrop-blur-xl"
+              >
+                <span className="text-2xl md:text-3xl font-bold text-white">{stat.number}</span>
+                <span className="text-[11px] md:text-xs text-gray-300 mt-1 leading-tight text-center">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+
           {/* Band rotation indicator */}
           <div className="flex items-center gap-4 text-gray-400 text-xs">
             <span>Palettes shift every few seconds</span>
