@@ -22,7 +22,7 @@ export const Changelog: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           </div>
           
           <a
-            href="/changelog/rss.xml"
+            href="/changelog/rss"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 hover:bg-orange-500/30 transition-all focus:outline-none focus:ring-2 focus:ring-orange-400"
@@ -34,6 +34,46 @@ export const Changelog: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         </header>
 
         <main className="space-y-12">
+          {/* v1.4.1 - June 8, 2026 */}
+          <section id="v1.4.1">
+            <div className="mb-4">
+              <h2 className="text-2xl font-semibold text-white">v1.4.1</h2>
+              <time className="text-sm text-green-300 font-medium">June 8, 2026</time>
+            </div>
+            <ul className="space-y-3 text-gray-200">
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Clearer Project Summary:</strong> Refreshed the public overview so visitors can quickly understand what the app does and why it is useful.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Updated History Page:</strong> Added this checkpoint to the update history while keeping every previous release visible.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Easier Feed Subscription:</strong> Refreshed the subscribe option so people can follow future updates from the changelog.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Version Visibility:</strong> The footer now makes it easier to open the app history from the displayed version and Changelog link.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Publishing Refresh:</strong> Search and feed information now reflect the latest checkpoint.
+                </span>
+              </li>
+            </ul>
+          </section>
+
           {/* v1.4.0 - May 9, 2026 */}
           <section>
             <div className="mb-4">

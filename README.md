@@ -7,133 +7,77 @@
 <h1 align="center">Color Palette Generator</h1>
 
 <p align="center">
-  <em>A professional-grade color palette generator with advanced harmony algorithms, strict accessibility checking, and realistic color blindness simulation.</em>
+  A professional color palette tool for creating beautiful, practical, and accessible color systems.
 </p>
 
 <p align="center">
-  <a href="https://colourpalettes.techhive.net/"><strong>View Live App</strong></a> ·
-  <a href="https://colourpalettes.techhive.net/changelog"><strong>Changelog / Updates</strong></a> ·
+  <a href="https://colourpalettes.techhive.net/"><strong>View Live App</strong></a>
+  &nbsp;|&nbsp;
+  <a href="https://colourpalettes.techhive.net/changelog"><strong>Changelog / Updates</strong></a>
+  &nbsp;|&nbsp;
   <a href="https://github.com/josephbatac2/Color-Palette-Generator/issues">Report Bug</a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-1.4.0-blueviolet?style=for-the-badge&logo=appveyor" alt="Version" />
+  <a href="https://colourpalettes.techhive.net/changelog">
+    <img src="https://img.shields.io/badge/Version-1.4.1-blueviolet?style=for-the-badge&logo=appveyor" alt="Version 1.4.1" />
+  </a>
   <img src="https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
   <img src="https://img.shields.io/badge/TypeScript-5.5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Vite-7.0-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
   <img src="https://img.shields.io/badge/License-MIT-success?style=for-the-badge" alt="License" />
 </p>
 
----
+<hr />
 
-## ✨ Key Features
+<section>
+  <h2>High-Level Summary</h2>
+  <p>
+    Color Palette Generator helps designers, developers, and brand builders create
+    usable color palettes with color harmony guidance, accessibility checks, color
+    blindness previews, curated palettes, persistent saved palettes, and clean export
+    options.
+  </p>
+</section>
 
-### 🎨 Advanced Color Generation
-| Feature | Description |
-| :--- | :--- |
-| **6 Harmony Types** | Monochromatic, Analogous, Complementary, Triadic, Tetradic, and Split-Complementary |
-| **Glowing Picker** | Large, prominent color picker with visually stunning feedback and animations |
-| **Live Preview** | Instant color updates reflecting instantly throughout the UI |
-| **Versatile Input** | Supports Native color picker, HEX input string, and HSL sliders |
+<section>
+  <h2>What It Provides</h2>
+  <ul>
+    <li>Color palette generation based on common color harmony patterns.</li>
+    <li>Accessibility-aware contrast checking for practical design decisions.</li>
+    <li>Color blindness simulations to support more inclusive visual systems.</li>
+    <li>Curated palette collections for faster creative direction.</li>
+    <li>Saved palette management and export options for production work.</li>
+    <li>A public changelog and feed for tracking product updates.</li>
+  </ul>
+</section>
 
-### 🌈 Curated Palette Collection
-| Capability | Details |
-| :--- | :--- |
-| **160+ Palettes** | High-quality palettes designed across 8 visual categories |
-| **Industry Themes** | Web, Brand, Nature, Vintage, Modern, Pastel, Bold, and Monochrome |
-| **1-Click Selection** | Load, tweak, and save any curated palette directly to your workspace |
+<section>
+  <h2>Latest Checkpoint</h2>
+  <p>
+    <strong>v1.4.1 - June 8, 2026:</strong> Refreshed the public project summary,
+    update history, changelog feed, publishing metadata, and footer version link
+    for the latest checkpoint.
+  </p>
+  <p>
+    Read the full update history in the
+    <a href="https://colourpalettes.techhive.net/changelog">public changelog</a>.
+  </p>
+</section>
 
-### ♿ Accessibility & Inclusion
-| Tool | Functionality |
-| :--- | :--- |
-| **WCAG Checker** | Automatic contrast ratio analysis strictly against AA & AAA standards |
-| **Blindness Simulator**| Realtime previews for Protanopia, Deuteranopia, Tritanopia, and Achromatopsia |
-| **Compliance Reports** | Detailed breakdown of text vs background compliance levels |
+<hr />
 
-### 💾 Palette Management
-| Feature | Details |
-| :--- | :--- |
-| **Save & Organize** | Personal palette collections with resilient persistent browser storage |
-| **Code Export** | Export your palettes heavily formatted as CSS variables, SCSS, or raw JSON |
-| **Quick Copy** | One-click copy interactions to grab HEX, RGB, or HSL values instantly |
-
----
-
-## 🚀 Recent Updates (May 2026)
-
-> **v1.4.0**: UI Refresh & Feature Expansion
-> - **Refined User Interface**: Redesigned header layout, modernized the UI theme styling, and improved contrast across the app.
-> - **Enhanced Palette Generator**: Added a new Color Values card to the generator for better insights and fixed the layout for Lightbox and Palette UI.
-> - **Spring Clean Palettes**: Introduced 10 fresh, new Spring Clean palettes.
-> - **General Fixes**: Resolved issues with the Radix Tabs component structure, fixed category pill counts, and updated background gradients/orbs.
-
-Read the full history in our <a href="https://colourpalettes.techhive.net/changelog">Changelog</a>.
-
----
-
-## 🛠 Technology Stack
-Our application is built on top of modern open-source toolchains designed for speed and reliability:
-
-- **Frontend Core**: React 18 with TypeScript 5
-- **Styling**: Tailwind CSS v3 (custom glass morphism pipelines)
-- **UI Architecture**: Radix UI headless components
-- **Module Bundler**: Vite (lightning fast HMR and optimized builds)
-- **Icons**: Lucide React
-
----
-
-## 🎨 Color Theory Algorithms
-
-The generator builds palettes around foundational color science formulas. We manipulate hue degrees, saturation, and lightness directly:
-- **Monochromatic**: Manipulated lightness levels matching a single root hue.
-- **Analogous**: Neighboring spaces around the root color (`±30°`).
-- **Complementary**: A perfect opposite contrast (`+180°`).
-- **Triadic**: High-volume contrast matching three evenly distributed points (`120°`).
-
----
-
-## 🔧 Getting Started
-
-Want to run the project locally? It's straightforward:
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/josephbatac2/Color-Palette-Generator.git
-cd Color-Palette-Generator
-
-# 2. Install dependencies
-npm install
-
-# 3. Start the development server (runs typically on localhost:5173)
-npm run dev
-```
-
-### Production Build
-```bash
-# Build optimized static files
-npm run build
-
-# Preview the local build
-npm run preview
-```
-
----
-
-## 🤝 Contribution & License
-This project is open-sourced under the **MIT License**. Feel absolutely free to clone, edit, commercialize, or build upon this project.
-
-An open-source contribution supported by [Kulay Canada](https://kulay.ca).
-
----
-
-## 👨‍💻 Created By
-
-**AJ Batac / @ajbatac**
-- 🌐 [Portfolio](https://ajbatac.github.io/?=colorpalettegen)
-- 💻 [GitHub](https://github.com/josephbatac2/Color-Palette-Generator)
-- 👔 [LinkedIn](https://www.linkedin.com/in/ajbatac/)
-
-<p align="center">
-  <br>
-  <em>Built with ❤️ for designers, developers, and anyone who loves beautiful colors.</em>
-</p>
+<section>
+  <h2>Project</h2>
+  <p>
+    Created by <strong>AJ Batac / @ajbatac</strong>. An open-source contribution
+    supported by <a href="https://kulay.ca">Kulay Canada</a>.
+  </p>
+  <p>
+    <a href="https://ajbatac.github.io/?=colorpalettegen">Portfolio</a>
+    &nbsp;|&nbsp;
+    <a href="https://github.com/josephbatac2/Color-Palette-Generator">GitHub</a>
+    &nbsp;|&nbsp;
+    <a href="https://www.linkedin.com/in/ajbatac/">LinkedIn</a>
+  </p>
+</section>
