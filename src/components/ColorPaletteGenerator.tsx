@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ColorHarmony } from '../types/color';
 import { ColorUtils } from '../utils/colorUtils';
 import { useColorPalette } from '../hooks/useColorPalette';
@@ -14,7 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { ColorValuesCard } from './ui/color-values-card';
-import { Palette, Wand2, Save, Eye, Shield, Sparkles, Sun, Moon } from 'lucide-react';
+import { Palette, Wand2, Save, Eye, Shield, Sparkles, Sun, Moon, Image as ImageIcon } from 'lucide-react';
 
 export const ColorPaletteGenerator: React.FC = () => {
   const {
@@ -33,6 +33,9 @@ export const ColorPaletteGenerator: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const [selectedHarmony, setSelectedHarmony] = useState<ColorHarmony>('analogous');
   const [activeTab, setActiveTab] = useState<string>('curated');
+  const [isProcessingImage, setIsProcessingImage] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const generatorRef = useRef<HTMLDivElement>(null);
 
   const handleGeneratePalette = () => {
     const palette = generatePalette(selectedHarmony);
@@ -49,6 +52,125 @@ export const ColorPaletteGenerator: React.FC = () => {
     loadPalette(palette);
     setActiveTab('generator');
   };
+
+  const processImageFile = (file: File) => {
+    setIsProcessingImage(true);
+    console.log('Processing image file:', file.name, file.type, file.size);
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+
+    img.onload = () => {
+      console.log('Image loaded, dimensions:', img.width, 'x', img.height);
+      try {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        if (!ctx) {
+          console.error('Failed to get canvas context');
+          setIsProcessingImage(false);
+          URL.revokeObjectURL(url);
+          return;
+        }
+
+        const maxDimension = 200;
+        const scale = Math.min(maxDimension / img.width, maxDimension / img.height, 1);
+        canvas.width = img.width * scale;
+        canvas.height = img.height * scale;
+
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        console.log('Image data extracted, processing colors...');
+        const extractedColors = ColorUtils.extractColorsFromImage(imageData, 5);
+        const paletteColors = ColorUtils.createPaletteFromExtractedColors(extractedColors);
+        console.log('Palette colors extracted:', paletteColors.length);
+
+        const palette: ColorPalette = {
+          id: crypto.randomUUID(),
+          name: 'Image Extracted Palette',
+          colors: paletteColors,
+          type: 'custom',
+          createdAt: new Date(),
+        };
+
+        loadPalette(palette);
+
+        if (paletteColors.length > 0) {
+          updateBaseColor(paletteColors[0]);
+        }
+
+        console.log('Palette loaded successfully');
+        setIsProcessingImage(false);
+        URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error('Error processing image:', error);
+        setIsProcessingImage(false);
+        URL.revokeObjectURL(url);
+      }
+    };
+
+    img.onerror = (error) => {
+      console.error('Image load error:', error);
+      setIsProcessingImage(false);
+      URL.revokeObjectURL(url);
+    };
+
+    img.src = url;
+  };
+
+  const handlePaste = async (e: ClipboardEvent) => {
+    if (activeTab !== 'generator') return;
+
+    const items = e.clipboardData?.items;
+    if (!items) return;
+
+    for (const item of Array.from(items)) {
+      if (item.type.startsWith('image/')) {
+        e.preventDefault();
+        const file = item.getAsFile();
+        if (file) processImageFile(file);
+        break;
+      }
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    if (activeTab !== 'generator') return;
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    if (activeTab !== 'generator') return;
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    if (activeTab !== 'generator') return;
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+
+    const files = e.dataTransfer?.files;
+    if (!files) return;
+
+    for (const file of Array.from(files)) {
+      if (file.type.startsWith('image/')) {
+        processImageFile(file);
+        break;
+      }
+    }
+  };
+
+  // Add paste event listener
+  useEffect(() => {
+    window.addEventListener('paste', handlePaste);
+    return () => {
+      window.removeEventListener('paste', handlePaste);
+    };
+  }, [activeTab]);
 
   return (
     <div className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-teal-950 to-slate-900' : 'bg-gradient-to-br from-teal-50 via-sky-50 to-amber-50'}`}>
@@ -177,6 +299,40 @@ export const ColorPaletteGenerator: React.FC = () => {
                     color={baseColor}
                     onChange={updateBaseColor}
                   />
+                </div>
+
+                {/* Image Drop Zone */}
+                <div
+                  onDragOver={handleDragOver}
+                  onDragLeave={handleDragLeave}
+                  onDrop={handleDrop}
+                  className={`p-6 rounded-xl backdrop-blur-xl border-2 border-dashed transition-all duration-200 ${
+                    isDragging
+                      ? 'border-teal-500 bg-teal-500/20 scale-105'
+                      : isProcessingImage
+                        ? 'border-teal-500 bg-teal-500/10'
+                        : theme === 'dark'
+                          ? 'border-white/20 bg-white/5 hover:border-white/30'
+                          : 'border-gray-300 bg-gray-50 hover:border-gray-400'
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className={`p-3 rounded-xl ${theme === 'dark' ? 'bg-white/10' : 'bg-white border border-gray-200'}`}>
+                      {isProcessingImage ? (
+                        <div className="w-6 h-6 border-2 border-teal-500 border-t-transparent rounded-full animate-spin"></div>
+                      ) : (
+                        <ImageIcon className={`w-6 h-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`} />
+                      )}
+                    </div>
+                    <div className="flex-1">
+                      <p className={`font-medium ${theme === 'dark' ? 'text-gray-100' : 'text-gray-900'}`}>
+                        {isProcessingImage ? 'Extracting colors...' : isDragging ? 'Drop image here...' : 'Paste or drop an image'}
+                      </p>
+                      <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
+                        Copy & paste (Ctrl+V) or drag & drop any image
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Step 3: Generate Button */}

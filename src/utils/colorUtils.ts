@@ -263,9 +263,9 @@ export class ColorUtils {
    */
   static simulateColorBlindness(color: Color, type: string): Color {
     const { r, g, b } = color.rgb;
-    
+
     let newR, newG, newB;
-    
+
     switch (type) {
       case 'protanopia': // Red-blind
         newR = 0.567 * r + 0.433 * g;
@@ -289,8 +289,108 @@ export class ColorUtils {
       default:
         return color;
     }
-    
+
     const hsl = this.rgbToHsl(Math.round(newR), Math.round(newG), Math.round(newB));
     return this.createColor(hsl.h, hsl.s, hsl.l);
+  }
+
+  /**
+   * Extract dominant colors from an image using color quantization
+   * @param imageData - ImageData from canvas context
+   * @param colorCount - Number of colors to extract (default 5)
+   * @returns Array of Color objects sorted by frequency
+   */
+  static extractColorsFromImage(imageData: ImageData, colorCount: number = 5): Color[] {
+    const { data, width, height } = imageData;
+    const pixels: number[][] = [];
+
+    // Sample every 10th pixel for performance (adjust for quality vs speed)
+    const step = 4;
+    for (let i = 0; i < data.length; i += 4 * step) {
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      const a = data[i + 3];
+
+      // Skip transparent or near-transparent pixels
+      if (a < 128) continue;
+
+      // Skip very dark or very light colors (they're often not visually interesting)
+      const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
+      if (luminance < 10 || luminance > 245) continue;
+
+      pixels.push([r, g, b]);
+    }
+
+    if (pixels.length === 0) {
+      return [this.createColor(220, 70, 50)]; // Fallback color
+    }
+
+    // Use simple quantization: group similar colors together
+    const colorMap = new Map<string, { count: number; r: number; g: number; b: number }>();
+    const quantization = 20; // Color bucket size
+
+    for (const [r, g, b] of pixels) {
+      // Round to nearest quantization bucket
+      const bucketR = Math.round(r / quantization) * quantization;
+      const bucketG = Math.round(g / quantization) * quantization;
+      const bucketB = Math.round(b / quantization) * quantization;
+
+      const key = `${bucketR}-${bucketG}-${bucketB}`;
+      const existing = colorMap.get(key);
+
+      if (existing) {
+        existing.count++;
+        // Average the color values
+        existing.r = Math.round((existing.r * (existing.count - 1) + r) / existing.count);
+        existing.g = Math.round((existing.g * (existing.count - 1) + g) / existing.count);
+        existing.b = Math.round((existing.b * (existing.count - 1) + b) / existing.count);
+      } else {
+        colorMap.set(key, { count: 1, r, g, b });
+      }
+    }
+
+    // Sort by frequency and take top colors
+    const sortedColors = Array.from(colorMap.values())
+      .sort((a, b) => b.count - a.count)
+      .slice(0, colorCount);
+
+    // Convert to Color objects
+    const colors: Color[] = [];
+    for (const { r, g, b } of sortedColors) {
+      const hsl = this.rgbToHsl(r, g, b);
+      colors.push(this.createColor(hsl.h, hsl.s, hsl.l));
+    }
+
+    // If we didn't get enough colors, pad with variations
+    while (colors.length < colorCount && colors.length > 0) {
+      const base = colors[0];
+      const newL = Math.max(10, Math.min(90, base.l + (colors.length * 15) - 30));
+      colors.push(this.createColor(base.h, base.s, newL));
+    }
+
+    return colors;
+  }
+
+  /**
+   * Create a palette from extracted image colors
+   * Uses the dominant colors as the palette
+   */
+  static createPaletteFromExtractedColors(extractedColors: Color[]): Color[] {
+    if (extractedColors.length === 0) {
+      return [this.createColor(220, 70, 50)];
+    }
+
+    // Sort by lightness for better visual ordering
+    const sorted = [...extractedColors].sort((a, b) => b.l - a.l);
+
+    // Ensure we have at least 5 colors by generating variations if needed
+    while (sorted.length < 5) {
+      const base = sorted[sorted.length - 1];
+      const newL = Math.max(10, Math.min(90, base.l - 10));
+      sorted.push(this.createColor(base.h, base.s, newL));
+    }
+
+    return sorted.slice(0, 5);
   }
 }
