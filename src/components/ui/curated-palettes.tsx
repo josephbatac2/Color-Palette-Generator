@@ -163,6 +163,12 @@ const categories = [
     name: 'Spring Clean',
     color: 'linear-gradient(135deg, #a8e6cf 0%, #dcedc1 50%, #ffd3b6 100%)',
     textColor: 'text-black'
+  },
+  {
+    id: 'technosynth',
+    name: 'Techno & Synth',
+    color: 'linear-gradient(135deg, #ff00ff 0%, #00ffff 50%, #ff00ff 100%)',
+    textColor: 'text-white'
   }
 ];
 
@@ -7026,8 +7032,372 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   },
 ];
 
+// Techno & Synth Palettes - 30 cyberpunk/synthwave inspired palettes
+const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+  {
+    name: 'Neon Nights',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(300, 100, 50),
+      ColorUtils.createColor(180, 100, 50),
+      ColorUtils.createColor(280, 80, 30),
+      ColorUtils.createColor(320, 90, 40),
+      ColorUtils.createColor(200, 85, 45),
+    ],
+  },
+  {
+    name: 'Synthwave Sunset',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(330, 100, 60),
+      ColorUtils.createColor(280, 100, 50),
+      ColorUtils.createColor(200, 100, 40),
+      ColorUtils.createColor(180, 80, 35),
+      ColorUtils.createColor(320, 90, 45),
+    ],
+  },
+  {
+    name: 'Cyber Grid',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(180, 100, 50),
+      ColorUtils.createColor(280, 70, 20),
+      ColorUtils.createColor(300, 90, 60),
+      ColorUtils.createColor(260, 80, 40),
+      ColorUtils.createColor(190, 85, 30),
+    ],
+  },
+  {
+    name: 'Retro Future',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(320, 100, 55),
+      ColorUtils.createColor(260, 90, 45),
+      ColorUtils.createColor(30, 100, 50),
+      ColorUtils.createColor(180, 100, 40),
+      ColorUtils.createColor(290, 85, 35),
+    ],
+  },
+  {
+    name: 'Digital Rain',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(120, 100, 40),
+      ColorUtils.createColor(180, 100, 50),
+      ColorUtils.createColor(150, 80, 30),
+      ColorUtils.createColor(280, 60, 25),
+      ColorUtils.createColor(200, 90, 35),
+    ],
+  },
+  {
+    name: 'Outrun Dreams',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(280, 100, 40),
+      ColorUtils.createColor(320, 100, 50),
+      ColorUtils.createColor(200, 100, 45),
+      ColorUtils.createColor(180, 80, 55),
+      ColorUtils.createColor(30, 90, 50),
+    ],
+  },
+  {
+    name: 'Terminal Glow',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(120, 100, 50),
+      ColorUtils.createColor(100, 90, 40),
+      ColorUtils.createColor(180, 70, 35),
+      ColorUtils.createColor(280, 50, 25),
+      ColorUtils.createColor(160, 80, 45),
+    ],
+  },
+  {
+    name: 'Vapor Trail',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(300, 85, 70),
+      ColorUtils.createColor(180, 100, 80),
+      ColorUtils.createColor(280, 90, 55),
+      ColorUtils.createColor(320, 80, 60),
+      ColorUtils.createColor(200, 85, 75),
+    ],
+  },
+  {
+    name: 'Midnight Club',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(260, 100, 25),
+      ColorUtils.createColor(180, 100, 50),
+      ColorUtils.createColor(280, 90, 60),
+      ColorUtils.createColor(300, 80, 40),
+      ColorUtils.createColor(200, 70, 30),
+    ],
+  },
+  {
+    name: 'Hologram',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(180, 100, 85),
+      ColorUtils.createColor(280, 60, 80),
+      ColorUtils.createColor(200, 80, 75),
+      ColorUtils.createColor(300, 50, 85),
+      ColorUtils.createColor(260, 70, 70),
+    ],
+  },
+  {
+    name: 'Blade Runner',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(330, 100, 60),
+      ColorUtils.createColor(180, 80, 35),
+      ColorUtils.createColor(280, 70, 20),
+      ColorUtils.createColor(200, 90, 45),
+      ColorUtils.createColor(30, 100, 55),
+    ],
+  },
+  {
+    name: 'Neon City',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(300, 100, 55),
+      ColorUtils.createColor(180, 100, 45),
+      ColorUtils.createColor(270, 90, 35),
+      ColorUtils.createColor(320, 80, 60),
+      ColorUtils.createColor(210, 85, 40),
+    ],
+  },
+  {
+    name: 'Laser Grid',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(180, 100, 50),
+      ColorUtils.createColor(300, 100, 50),
+      ColorUtils.createColor(260, 100, 40),
+      ColorUtils.createColor(200, 90, 45),
+      ColorUtils.createColor(280, 85, 55),
+    ],
+  },
+  {
+    name: 'Chrome Dreams',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(210, 30, 90),
+      ColorUtils.createColor(280, 80, 50),
+      ColorUtils.createColor(300, 90, 40),
+      ColorUtils.createColor(180, 70, 60),
+      ColorUtils.createColor(260, 60, 70),
+    ],
+  },
+  {
+    name: 'Electro Pulse',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(280, 100, 60),
+      ColorUtils.createColor(180, 100, 50),
+      ColorUtils.createColor(320, 100, 55),
+      ColorUtils.createColor(200, 90, 45),
+      ColorUtils.createColor(300, 85, 35),
+    ],
+  },
+  {
+    name: 'Digital Sunset',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(330, 100, 55),
+      ColorUtils.createColor(30, 100, 50),
+      ColorUtils.createColor(280, 90, 40),
+      ColorUtils.createColor(200, 80, 45),
+      ColorUtils.createColor(320, 85, 60),
+    ],
+  },
+  {
+    name: 'Night Drive',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(240, 50, 15),
+      ColorUtils.createColor(280, 100, 50),
+      ColorUtils.createColor(180, 90, 55),
+      ColorUtils.createColor(300, 80, 40),
+      ColorUtils.createColor(210, 70, 20),
+    ],
+  },
+  {
+    name: 'Cyberpunk Alley',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(300, 100, 45),
+      ColorUtils.createColor(180, 80, 40),
+      ColorUtils.createColor(260, 90, 30),
+      ColorUtils.createColor(320, 85, 55),
+      ColorUtils.createColor(200, 75, 35),
+    ],
+  },
+  {
+    name: 'Synth Spectrum',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(320, 100, 50),
+      ColorUtils.createColor(260, 100, 50),
+      ColorUtils.createColor(200, 100, 50),
+      ColorUtils.createColor(280, 90, 45),
+      ColorUtils.createColor(180, 85, 40),
+    ],
+  },
+  {
+    name: 'Retro Wave',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(280, 100, 45),
+      ColorUtils.createColor(320, 100, 55),
+      ColorUtils.createColor(180, 80, 50),
+      ColorUtils.createColor(30, 90, 60),
+      ColorUtils.createColor(260, 85, 40),
+    ],
+  },
+  {
+    name: 'Data Stream',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(180, 100, 45),
+      ColorUtils.createColor(120, 90, 50),
+      ColorUtils.createColor(280, 70, 35),
+      ColorUtils.createColor(200, 85, 40),
+      ColorUtils.createColor(160, 80, 55),
+    ],
+  },
+  {
+    name: 'Techno Glow',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(300, 100, 55),
+      ColorUtils.createColor(180, 100, 60),
+      ColorUtils.createColor(260, 90, 50),
+      ColorUtils.createColor(200, 85, 45),
+      ColorUtils.createColor(280, 80, 40),
+    ],
+  },
+  {
+    name: 'Future Bass',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(290, 100, 55),
+      ColorUtils.createColor(190, 100, 50),
+      ColorUtils.createColor(320, 90, 45),
+      ColorUtils.createColor(210, 80, 40),
+      ColorUtils.createColor(270, 85, 35),
+    ],
+  },
+  {
+    name: 'Hyperreal',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(180, 90, 85),
+      ColorUtils.createColor(280, 80, 75),
+      ColorUtils.createColor(300, 70, 65),
+      ColorUtils.createColor(200, 60, 80),
+      ColorUtils.createColor(260, 75, 60),
+    ],
+  },
+  {
+    name: 'Matrix Code',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(120, 100, 30),
+      ColorUtils.createColor(120, 90, 50),
+      ColorUtils.createColor(180, 80, 40),
+      ColorUtils.createColor(150, 70, 35),
+      ColorUtils.createColor(280, 50, 20),
+    ],
+  },
+  {
+    name: 'Chrome Heart',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(200, 20, 95),
+      ColorUtils.createColor(280, 100, 50),
+      ColorUtils.createColor(180, 100, 45),
+      ColorUtils.createColor(300, 90, 55),
+      ColorUtils.createColor(260, 70, 70),
+    ],
+  },
+  {
+    name: 'Electric Storm',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(270, 100, 50),
+      ColorUtils.createColor(210, 100, 50),
+      ColorUtils.createColor(180, 100, 55),
+      ColorUtils.createColor(290, 90, 45),
+      ColorUtils.createColor(200, 85, 40),
+    ],
+  },
+  {
+    name: 'Neon Jungle',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(140, 100, 45),
+      ColorUtils.createColor(300, 100, 50),
+      ColorUtils.createColor(180, 90, 55),
+      ColorUtils.createColor(280, 85, 40),
+      ColorUtils.createColor(200, 100, 35),
+    ],
+  },
+  {
+    name: 'Plasma Field',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(280, 100, 55),
+      ColorUtils.createColor(180, 95, 50),
+      ColorUtils.createColor(320, 90, 60),
+      ColorUtils.createColor(200, 90, 45),
+      ColorUtils.createColor(260, 85, 35),
+    ],
+  },
+  {
+    name: 'Wave Rider',
+    type: 'curated',
+    category: 'technosynth',
+    colors: [
+      ColorUtils.createColor(300, 100, 50),
+      ColorUtils.createColor(200, 100, 45),
+      ColorUtils.createColor(280, 90, 55),
+      ColorUtils.createColor(180, 85, 40),
+      ColorUtils.createColor(260, 80, 30),
+    ],
+  },
+];
+
 // Merge all palettes
-const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes, ...stpatricksPalettes, ...fathersDayPalettes, ...summerVibesPalettes, ...springCleanPalettes];
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes, ...stpatricksPalettes, ...fathersDayPalettes, ...summerVibesPalettes, ...springCleanPalettes, ...technoSynthPalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
