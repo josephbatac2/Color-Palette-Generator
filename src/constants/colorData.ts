@@ -14,12 +14,12 @@ export interface VisionType {
 }
 
 export const PALETTE_CATEGORIES: PaletteCategory[] = [
-  { name: "All Palettes", count: 561 },
+  { name: "All Palettes", count: 591 },
   { name: "Blues & Teals", count: 24 },
   { name: "Greens & Nature", count: 21 },
   { name: "Reds & Pinks", count: 20 },
   { name: "Purples & Violets", count: 19 },
-  { name: "Oranges & Yellows", count: 22 },
+  { name: "Oranges & Yellows", count: 52 },
   { name: "Neutrals & Grays", count: 18 },
   { name: "Vibrant & Neon", count: 19 },
   { name: "Pastels & Soft", count: 30 },
