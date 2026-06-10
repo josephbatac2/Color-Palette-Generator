@@ -7494,6 +7494,7 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                       if (category.id === 'fathersday') return palette.category === 'fathersday';
                       if (category.id === 'summervibes') return palette.category === 'summervibes';
                       if (category.id === 'springclean') return palette.category === 'springclean';
+                      if (category.id === 'technosynth') return palette.category === 'technosynth';
                       return false;
                     }).length;
                     return count;
