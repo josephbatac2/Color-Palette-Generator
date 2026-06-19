@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { Palette, Sparkles, Eye, Shield, Download, ArrowRight, Play, Zap, Heart, Github, Sun, Moon } from 'lucide-react';
+import { Palette, Sparkles, Eye, Shield, Download, ArrowRight, Play, Zap, Heart, Github, Sun, Moon, Wand2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Footer } from './ui/footer';
@@ -264,11 +264,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <Button
               onClick={onGetStarted}
-              className="px-8 py-3 text-base font-semibold bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 shadow-2xl shadow-green-500/40 hover:shadow-green-500/50 transform hover:scale-[1.03] transition-all duration-300"
+              size="xlg"
+              className="relative px-10 py-6 text-lg font-bold bg-gradient-to-r from-green-500 via-lime-500 to-emerald-500 hover:from-green-400 hover:via-lime-400 hover:to-emerald-400 shadow-2xl shadow-green-500/50 hover:shadow-green-400/60 transform hover:scale-[1.05] transition-all duration-300 animate-pulse-glow group overflow-hidden"
             >
-              <Play className="w-4 h-4 mr-2" aria-hidden="true" />
-              Get Started
-              <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
+              <span className="absolute inset-0 bg-white/20 group-hover:bg-white/30 transition-colors" />
+              <Wand2 className="w-5 h-5 mr-2 relative z-10" aria-hidden="true" />
+              <span className="relative z-10">Generate Your Palette</span>
+              <ArrowRight className="w-5 h-5 ml-2 relative z-10 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Button>
           </div>
 

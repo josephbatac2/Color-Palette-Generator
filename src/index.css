@@ -42,3 +42,24 @@
   outline: 3px solid #93c5fd;
   outline-offset: 2px;
 }
+
+/* ─── Pulse Glow Animation for CTA ─────────────────────────── */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.4), 0 0 40px rgba(34, 197, 94, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.6), 0 0 60px rgba(34, 197, 94, 0.3), 0 0 80px rgba(132, 204, 22, 0.2);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-glow {
+    animation: none;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+  }
+}
