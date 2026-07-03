@@ -226,7 +226,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             <span className="font-bold bg-gradient-to-r from-green-300 via-lime-300 to-emerald-300 bg-clip-text text-transparent">
               stunning
             </span>{' '}
-            color palettes
+            <span className="multicolor-underline">color palettes</span>
           </h1>
 
           {/* Description */}

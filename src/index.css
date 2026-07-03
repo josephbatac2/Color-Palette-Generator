@@ -63,3 +63,52 @@
     box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
   }
 }
+
+/* ─── Multicolor Underline Animation ─────────────────────────── */
+@keyframes rainbow-underline {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.multicolor-underline {
+  position: relative;
+  display: inline;
+}
+
+.multicolor-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #ef4444,
+    #f97316,
+    #eab308,
+    #22c55e,
+    #14b8a6,
+    #3b82f6,
+    #8b5cf6,
+    #ec4899,
+    #ef4444
+  );
+  background-size: 200% 100%;
+  border-radius: 2px;
+  animation: rainbow-underline 4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .multicolor-underline::after {
+    animation: none;
+    background: linear-gradient(90deg, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6, #ec4899);
+  }
+}
