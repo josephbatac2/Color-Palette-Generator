@@ -5604,6 +5604,106 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
       ColorUtils.createColor(220, 75, 48),
     ],
   },
+  {
+    name: 'Lavender Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(270, 60, 70),
+      ColorUtils.createColor(45, 75, 65),
+      ColorUtils.createColor(90, 70, 60),
+    ],
+  },
+  {
+    name: 'Crimson Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(350, 95, 55),
+      ColorUtils.createColor(155, 85, 48),
+      ColorUtils.createColor(185, 80, 52),
+    ],
+  },
+  {
+    name: 'Gold Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(45, 90, 60),
+      ColorUtils.createColor(195, 80, 50),
+      ColorUtils.createColor(225, 75, 55),
+    ],
+  },
+  {
+    name: 'Cyan Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(185, 90, 50),
+      ColorUtils.createColor(355, 85, 58),
+      ColorUtils.createColor(25, 80, 55),
+    ],
+  },
+  {
+    name: 'Rose Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(330, 80, 65),
+      ColorUtils.createColor(75, 70, 55),
+      ColorUtils.createColor(105, 75, 50),
+    ],
+  },
+  {
+    name: 'Amber Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(35, 95, 55),
+      ColorUtils.createColor(175, 85, 48),
+      ColorUtils.createColor(215, 80, 52),
+    ],
+  },
+  {
+    name: 'Violet Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(260, 85, 58),
+      ColorUtils.createColor(35, 90, 60),
+      ColorUtils.createColor(65, 85, 55),
+    ],
+  },
+  {
+    name: 'Mint Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(150, 70, 60),
+      ColorUtils.createColor(15, 85, 65),
+      ColorUtils.createColor(345, 80, 58),
+    ],
+  },
+  {
+    name: 'Azure Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(210, 90, 55),
+      ColorUtils.createColor(70, 85, 58),
+      ColorUtils.createColor(100, 80, 52),
+    ],
+  },
+  {
+    name: 'Peach Split',
+    type: 'curated',
+    category: 'split-complementary',
+    colors: [
+      ColorUtils.createColor(25, 85, 72),
+      ColorUtils.createColor(165, 65, 65),
+      ColorUtils.createColor(195, 70, 62),
+    ],
+  },
 ];
 
 // Tetradic Palettes - 10 palettes with 4 colors evenly spaced on color wheel
@@ -5718,6 +5818,116 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
       ColorUtils.createColor(210, 80, 50),
     ],
   },
+  {
+    name: 'Autumn Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(15, 90, 55),
+      ColorUtils.createColor(105, 80, 48),
+      ColorUtils.createColor(195, 75, 45),
+      ColorUtils.createColor(285, 85, 58),
+    ],
+  },
+  {
+    name: 'Spring Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(85, 75, 55),
+      ColorUtils.createColor(175, 70, 50),
+      ColorUtils.createColor(265, 70, 58),
+      ColorUtils.createColor(355, 75, 60),
+    ],
+  },
+  {
+    name: 'Berry Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(340, 85, 50),
+      ColorUtils.createColor(70, 80, 45),
+      ColorUtils.createColor(160, 85, 42),
+      ColorUtils.createColor(250, 90, 55),
+    ],
+  },
+  {
+    name: 'Citrus Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(50, 95, 58),
+      ColorUtils.createColor(140, 90, 50),
+      ColorUtils.createColor(230, 85, 52),
+      ColorUtils.createColor(320, 80, 55),
+    ],
+  },
+  {
+    name: 'Oceanic Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(200, 85, 52),
+      ColorUtils.createColor(290, 75, 55),
+      ColorUtils.createColor(20, 90, 58),
+      ColorUtils.createColor(110, 80, 48),
+    ],
+  },
+  {
+    name: 'Garden Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(100, 70, 50),
+      ColorUtils.createColor(190, 65, 48),
+      ColorUtils.createColor(280, 70, 52),
+      ColorUtils.createColor(10, 75, 55),
+    ],
+  },
+  {
+    name: 'Regal Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(260, 95, 45),
+      ColorUtils.createColor(350, 90, 55),
+      ColorUtils.createColor(80, 85, 50),
+      ColorUtils.createColor(170, 90, 48),
+    ],
+  },
+  {
+    name: 'Dawn Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(355, 80, 75),
+      ColorUtils.createColor(85, 70, 70),
+      ColorUtils.createColor(175, 65, 68),
+      ColorUtils.createColor(265, 75, 72),
+    ],
+  },
+  {
+    name: 'Dusk Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(280, 50, 40),
+      ColorUtils.createColor(10, 55, 45),
+      ColorUtils.createColor(100, 50, 42),
+      ColorUtils.createColor(190, 48, 50),
+    ],
+  },
+  {
+    name: 'Electric Tetradic',
+    type: 'curated',
+    category: 'tetradic',
+    colors: [
+      ColorUtils.createColor(310, 100, 60),
+      ColorUtils.createColor(40, 100, 58),
+      ColorUtils.createColor(130, 95, 55),
+      ColorUtils.createColor(220, 100, 62),
+    ],
+  },
 ];
 
 // Square Palettes - 10 palettes with color balance and harmony
@@ -5830,6 +6040,116 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
       ColorUtils.createColor(120, 75, 50),
       ColorUtils.createColor(210, 80, 50),
       ColorUtils.createColor(300, 85, 55),
+    ],
+  },
+  {
+    name: 'Meadow Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(80, 70, 55),
+      ColorUtils.createColor(170, 65, 52),
+      ColorUtils.createColor(260, 68, 58),
+      ColorUtils.createColor(350, 72, 60),
+    ],
+  },
+  {
+    name: 'Desert Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(25, 80, 65),
+      ColorUtils.createColor(115, 55, 58),
+      ColorUtils.createColor(205, 50, 55),
+      ColorUtils.createColor(295, 60, 62),
+    ],
+  },
+  {
+    name: 'Arctic Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(190, 70, 75),
+      ColorUtils.createColor(280, 65, 78),
+      ColorUtils.createColor(10, 60, 80),
+      ColorUtils.createColor(100, 55, 72),
+    ],
+  },
+  {
+    name: 'Ember Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(5, 95, 55),
+      ColorUtils.createColor(95, 90, 52),
+      ColorUtils.createColor(185, 85, 50),
+      ColorUtils.createColor(275, 95, 58),
+    ],
+  },
+  {
+    name: 'Canopy Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(130, 80, 42),
+      ColorUtils.createColor(220, 75, 48),
+      ColorUtils.createColor(310, 70, 52),
+      ColorUtils.createColor(40, 85, 58),
+    ],
+  },
+  {
+    name: 'Lagoon Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(175, 90, 48),
+      ColorUtils.createColor(265, 85, 55),
+      ColorUtils.createColor(355, 90, 60),
+      ColorUtils.createColor(85, 80, 52),
+    ],
+  },
+  {
+    name: 'Vineyard Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(285, 65, 45),
+      ColorUtils.createColor(15, 70, 50),
+      ColorUtils.createColor(105, 60, 48),
+      ColorUtils.createColor(195, 55, 52),
+    ],
+  },
+  {
+    name: 'Blossom Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(320, 80, 88),
+      ColorUtils.createColor(50, 75, 85),
+      ColorUtils.createColor(140, 70, 82),
+      ColorUtils.createColor(230, 72, 88),
+    ],
+  },
+  {
+    name: 'Canyon Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(15, 85, 60),
+      ColorUtils.createColor(105, 80, 55),
+      ColorUtils.createColor(195, 75, 52),
+      ColorUtils.createColor(285, 82, 58),
+    ],
+  },
+  {
+    name: 'Galaxy Square',
+    type: 'curated',
+    category: 'square',
+    colors: [
+      ColorUtils.createColor(250, 75, 45),
+      ColorUtils.createColor(340, 70, 52),
+      ColorUtils.createColor(70, 65, 55),
+      ColorUtils.createColor(160, 72, 50),
     ],
   },
 ];
