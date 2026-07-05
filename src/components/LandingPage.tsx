@@ -272,6 +272,18 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               <span className="relative z-10">Generate Your Palette</span>
               <ArrowRight className="w-5 h-5 ml-2 relative z-10 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Button>
+            <Button
+              onClick={() => {
+                window.history.pushState({}, '', '/converter');
+                window.dispatchEvent(new PopStateEvent('popstate'));
+              }}
+              size="xlg"
+              variant="outline"
+              className="px-8 py-6 text-lg font-semibold bg-white/10 border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 group"
+            >
+              <Palette className="w-5 h-5 mr-2" aria-hidden="true" />
+              <span>Color Converter</span>
+            </Button>
           </div>
 
           {/* Hero Stats */}

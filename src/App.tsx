@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import { LandingPage } from './components/LandingPage';
 import { ColorPaletteGenerator } from './components/ColorPaletteGenerator';
 import { Changelog } from './pages/Changelog';
+import { ColorConverter } from './pages/ColorConverter';
 
 function App() {
   const [showApp, setShowApp] = useState(false);
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
-  // Simple routing for changelog
+  // Simple routing for changelog and converter
   useEffect(() => {
     const handlePopState = () => setCurrentPath(window.location.pathname);
     window.addEventListener('popstate', handlePopState);
@@ -16,11 +17,22 @@ function App() {
 
   if (currentPath === '/changelog') {
     return (
-      <Changelog 
+      <Changelog
         onBack={() => {
           window.history.pushState({}, '', '/');
           setCurrentPath('/');
-        }} 
+        }}
+      />
+    );
+  }
+
+  if (currentPath === '/converter') {
+    return (
+      <ColorConverter
+        onBack={() => {
+          window.history.pushState({}, '', '/');
+          setCurrentPath('/');
+        }}
       />
     );
   }
