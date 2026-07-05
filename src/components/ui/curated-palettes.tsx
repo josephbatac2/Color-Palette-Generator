@@ -5196,6 +5196,106 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
       ColorUtils.createColor(265, 80, 50),
     ],
   },
+  {
+    name: 'Coral Mint Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(0, 75, 70),
+      ColorUtils.createColor(120, 60, 65),
+      ColorUtils.createColor(240, 70, 75),
+    ],
+  },
+  {
+    name: 'Citrus Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(45, 95, 60),
+      ColorUtils.createColor(165, 85, 45),
+      ColorUtils.createColor(285, 80, 65),
+    ],
+  },
+  {
+    name: 'Arctic Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(190, 70, 60),
+      ColorUtils.createColor(310, 65, 70),
+      ColorUtils.createColor(70, 55, 55),
+    ],
+  },
+  {
+    name: 'Dusk Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(320, 60, 55),
+      ColorUtils.createColor(80, 50, 60),
+      ColorUtils.createColor(200, 55, 50),
+    ],
+  },
+  {
+    name: 'Berry Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(340, 85, 55),
+      ColorUtils.createColor(100, 70, 50),
+      ColorUtils.createColor(220, 75, 60),
+    ],
+  },
+  {
+    name: 'Meadow Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(80, 65, 55),
+      ColorUtils.createColor(200, 70, 50),
+      ColorUtils.createColor(320, 60, 45),
+    ],
+  },
+  {
+    name: 'Autumn Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(25, 85, 55),
+      ColorUtils.createColor(145, 70, 60),
+      ColorUtils.createColor(265, 65, 65),
+    ],
+  },
+  {
+    name: 'Tropical Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(350, 90, 65),
+      ColorUtils.createColor(110, 80, 55),
+      ColorUtils.createColor(230, 85, 60),
+    ],
+  },
+  {
+    name: 'Mystic Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(260, 70, 55),
+      ColorUtils.createColor(20, 75, 60),
+      ColorUtils.createColor(140, 65, 50),
+    ],
+  },
+  {
+    name: 'Golden Triadic',
+    type: 'curated',
+    category: 'triadic',
+    colors: [
+      ColorUtils.createColor(40, 85, 60),
+      ColorUtils.createColor(160, 75, 55),
+      ColorUtils.createColor(280, 70, 65),
+    ],
+  },
 ];
 
 // Analogous Scheme Palettes - 10 palettes with colors next to each other on color wheel
@@ -5298,6 +5398,106 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
       ColorUtils.createColor(50, 100, 58),
       ColorUtils.createColor(70, 95, 62),
       ColorUtils.createColor(90, 85, 60),
+    ],
+  },
+  {
+    name: 'Lavender Dreams Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(270, 60, 75),
+      ColorUtils.createColor(285, 55, 80),
+      ColorUtils.createColor(300, 50, 85),
+    ],
+  },
+  {
+    name: 'Seafoam Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(160, 70, 65),
+      ColorUtils.createColor(175, 60, 70),
+      ColorUtils.createColor(190, 55, 75),
+    ],
+  },
+  {
+    name: 'Terracotta Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(15, 75, 65),
+      ColorUtils.createColor(30, 70, 60),
+      ColorUtils.createColor(45, 65, 55),
+    ],
+  },
+  {
+    name: 'Teal Gradient Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(175, 70, 45),
+      ColorUtils.createColor(190, 65, 55),
+      ColorUtils.createColor(205, 60, 60),
+    ],
+  },
+  {
+    name: 'Rose Petals Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(330, 70, 80),
+      ColorUtils.createColor(345, 65, 75),
+      ColorUtils.createColor(0, 60, 70),
+    ],
+  },
+  {
+    name: 'Pine Forest Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(130, 50, 35),
+      ColorUtils.createColor(145, 45, 40),
+      ColorUtils.createColor(160, 40, 45),
+    ],
+  },
+  {
+    name: 'Peach Sorbet Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(25, 85, 85),
+      ColorUtils.createColor(40, 80, 80),
+      ColorUtils.createColor(55, 75, 75),
+    ],
+  },
+  {
+    name: 'Midnight Blue Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(220, 55, 25),
+      ColorUtils.createColor(235, 50, 30),
+      ColorUtils.createColor(250, 45, 35),
+    ],
+  },
+  {
+    name: 'Spring Meadow Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(85, 70, 60),
+      ColorUtils.createColor(100, 65, 65),
+      ColorUtils.createColor(115, 60, 70),
+    ],
+  },
+  {
+    name: 'Apricot Glow Analogous',
+    type: 'curated',
+    category: 'analogous-scheme',
+    colors: [
+      ColorUtils.createColor(30, 90, 75),
+      ColorUtils.createColor(45, 85, 70),
+      ColorUtils.createColor(60, 80, 65),
     ],
   },
 ];

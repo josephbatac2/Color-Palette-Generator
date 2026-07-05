@@ -14,7 +14,7 @@ export interface VisionType {
 }
 
 export const PALETTE_CATEGORIES: PaletteCategory[] = [
-  { name: "All Palettes", count: 621 },
+  { name: "All Palettes", count: 641 },
   { name: "Blues & Teals", count: 24 },
   { name: "Greens & Nature", count: 21 },
   { name: "Reds & Pinks", count: 20 },
@@ -28,8 +28,8 @@ export const PALETTE_CATEGORIES: PaletteCategory[] = [
   { name: "Blacks & Whites", count: 49 },
   { name: "Warm & Cool", count: 40 },
   { name: "Teal & Orange", count: 30 },
-  { name: "Triadic", count: 10 },
-  { name: "Analogous", count: 10 },
+  { name: "Triadic", count: 20 },
+  { name: "Analogous", count: 20 },
   { name: "Split-Complementary", count: 10 },
   { name: "Tetradic", count: 10 },
   { name: "Square", count: 10 },

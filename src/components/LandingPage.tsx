@@ -87,7 +87,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     },
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "470 Curated Palettes",
+      title: "641 Curated Palettes",
       description: "Professional color combinations across 20+ categories",
     },
     {
@@ -324,7 +324,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               </span>
             </h2>
             <p className={`text-base md:text-lg max-w-xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-              Hand-picked color combinations from our library of 470+ professional palettes
+              Hand-picked color combinations from our library of 641+ professional palettes
             </p>
           </div>
 
