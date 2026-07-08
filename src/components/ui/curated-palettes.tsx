@@ -9303,8 +9303,8 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
               <div className="p-4 bg-white/50 backdrop-blur-sm">
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">{palette.name}</h4>
-                    <p className="text-sm text-gray-500">{palette.colors.length} colors</p>
+                    <h4 className="font-semibold text-gray-900 mb-1 dark:text-black dark:font-light">{palette.name}</h4>
+                    <p className="text-sm text-gray-500 dark:text-black dark:font-light">{palette.colors.length} colors</p>
                   </div>
                   <div className="flex items-center gap-1">
                     <Sparkles className="w-4 h-4 text-yellow-500" />
@@ -9340,8 +9340,8 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
             <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-gray-100/50 to-gray-200/50 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg shadow-black/5">
               <Sparkles className="w-10 h-10 text-gray-400" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No Palettes Found</h3>
-            <p className="text-gray-600">Try selecting a different category</p>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2 dark:text-black dark:font-light">No Palettes Found</h3>
+            <p className="text-gray-600 dark:text-black dark:font-light">Try selecting a different category</p>
           </div>
         )}
       </div>
