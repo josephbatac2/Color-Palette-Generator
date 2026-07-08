@@ -8621,25 +8621,25 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
       <div className={`${className}`}>
         {/* Category Pills */}
         <div className="mb-14">
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap gap-1.5 sm:gap-3 justify-center">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 ${
+                className={`px-2.5 py-1 sm:px-6 sm:py-3 rounded-full font-medium text-[11px] sm:text-sm transition-all duration-300 shadow-sm sm:shadow-lg hover:shadow-md sm:hover:shadow-xl transform hover:scale-102 sm:hover:scale-105 ${
                   selectedCategory === category.id
-                    ? 'ring-4 ring-white/50 scale-105'
-                    : 'hover:ring-2 hover:ring-white/30'
+                    ? 'ring-2 sm:ring-4 ring-white/50 scale-102 sm:scale-105'
+                    : 'hover:ring-1 sm:hover:ring-2 hover:ring-white/30'
                 } ${category.textColor}`}
                 style={{
                   background: category.color,
                   boxShadow: selectedCategory === category.id
-                    ? '0 10px 25px rgba(0,0,0,0.2)'
-                    : '0 4px 15px rgba(0,0,0,0.1)'
+                    ? '0 4px 12px rgba(0,0,0,0.2)'
+                    : '0 1px 4px rgba(0,0,0,0.1)'
                 }}
               >
                 {category.name}
-                <span className="ml-2 opacity-75">
+                <span className="ml-1 sm:ml-2 opacity-75 hidden xs:inline sm:inline">
                   ({category.id === 'all' ? allPalettes.length : (() => {
                     const count = allPalettes.filter(palette => {
                       if (category.id === 'blues') return palette.category === 'blues' || palette.category === 'teals';
