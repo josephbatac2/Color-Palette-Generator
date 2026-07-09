@@ -14,15 +14,15 @@ export interface VisionType {
 }
 
 export const PALETTE_CATEGORIES: PaletteCategory[] = [
-  { name: "All Palettes", count: 921 },
+  { name: "All Palettes", count: 1061 },
   { name: "Blues & Teals", count: 24 },
-  { name: "Greens & Nature", count: 41 },
-  { name: "Reds & Pinks", count: 40 },
-  { name: "Purples & Violets", count: 39 },
-  { name: "Oranges & Yellows", count: 72 },
-  { name: "Neutrals & Grays", count: 38 },
-  { name: "Vibrant & Neon", count: 39 },
-  { name: "Pastels & Soft", count: 100 },
+  { name: "Greens & Nature", count: 61 },
+  { name: "Reds & Pinks", count: 60 },
+  { name: "Purples & Violets", count: 59 },
+  { name: "Oranges & Yellows", count: 92 },
+  { name: "Neutrals & Grays", count: 58 },
+  { name: "Vibrant & Neon", count: 59 },
+  { name: "Pastels & Soft", count: 120 },
   { name: "Complementary", count: 60 },
   { name: "Holiday & Seasonal", count: 49 },
   { name: "Blacks & Whites", count: 49 },
