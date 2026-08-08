@@ -1,0 +1,39 @@
+# Color Palette Generator
+
+> A professional-grade color palette generator with advanced harmony algorithms, accessibility checking, and color blindness simulation. Built with React, TypeScript, and modern web technologies.
+
+## Overview
+
+Color Palette Generator is a web application that helps designers and developers create beautiful, accessible color palettes. It features advanced color harmony algorithms (complementary, analogous, triadic, tetradic, split-complementary, monochromatic), accessibility checking with WCAG contrast ratios, and color blindness simulation.
+
+## Key Features
+
+- Color palette generation with multiple harmony types
+- Accessibility checker with WCAG AA/AAA contrast ratio validation
+- Color blindness simulator (protanopia, deuteranopia, tritanopia, achromatopsia)
+- Curated palette library with over 1,800 palettes across 25 categories
+- Color converter (HEX, RGB, HSL, CMYK, OKLCH)
+- Lightbox palette viewer
+- Theme-aware dark/light mode
+
+## Canonical URL
+
+https://colourpalettes.techhive.net/
+
+## Pages
+
+- [Home](https://colourpalettes.techhive.net/)
+- [Color Converter](https://colourpalettes.techhive.net/converter)
+- [Changelog](https://colourpalettes.techhive.net/changelog)
+
+## Version
+
+1.5.0 (August 8, 2026)
+
+## RSS Feed
+
+https://colourpalettes.techhive.net/changelog/rss.xml
+
+## Sitemap
+
+https://colourpalettes.techhive.net/sitemap.xml

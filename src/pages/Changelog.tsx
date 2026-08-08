@@ -34,6 +34,40 @@ export const Changelog: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         </header>
 
         <main className="space-y-12">
+          {/* v1.5.0 - August 8, 2026 */}
+          <section id="v1.5.0">
+            <div className="mb-4">
+              <h2 className="text-2xl font-semibold text-white">v1.5.0</h2>
+              <time className="text-sm text-green-300 font-medium">August 8, 2026</time>
+            </div>
+            <ul className="space-y-3 text-gray-200">
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Massively Expanded Palette Library:</strong> Added 750 new curated palettes across 25 categories, bringing the total to over 1,800 palettes for even more inspiration.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Category-Tailored Colors:</strong> Each category received 30 new palettes with colors specifically tuned to its theme, from warm reds and pastels to vibrant neons and seasonal collections.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Consistent Results:</strong> The new palettes are generated deterministically, so you see the same curated selections every time you visit.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Updated Category Counts:</strong> The browse buttons now reflect the expanded library with accurate palette counts per category.
+                </span>
+              </li>
+            </ul>
+          </section>
+
           {/* v1.4.1 - June 8, 2026 */}
           <section id="v1.4.1">
             <div className="mb-4">

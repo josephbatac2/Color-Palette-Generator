@@ -20,7 +20,7 @@
 
 <p align="center">
   <a href="https://colourpalettes.techhive.net/changelog">
-    <img src="https://img.shields.io/badge/Version-1.4.1-blueviolet?style=for-the-badge&logo=appveyor" alt="Version 1.4.1" />
+    <img src="https://img.shields.io/badge/Version-1.5.0-blueviolet?style=for-the-badge&logo=appveyor" alt="Version 1.5.0" />
   </a>
   <img src="https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
   <img src="https://img.shields.io/badge/TypeScript-5.5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
@@ -55,9 +55,10 @@
 <section>
   <h2>Latest Checkpoint</h2>
   <p>
-    <strong>v1.4.1 - June 8, 2026:</strong> Refreshed the public project summary,
-    update history, changelog feed, publishing metadata, and footer version link
-    for the latest checkpoint.
+    <strong>v1.5.0 - August 8, 2026:</strong> Massively expanded the curated palette
+    library with 750 new palettes across 25 categories, bringing the total to over
+    1,800 palettes. Each category received 30 new, deterministic palettes tailored
+    to its color theme.
   </p>
   <p>
     Read the full update history in the

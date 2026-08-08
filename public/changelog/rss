@@ -5,8 +5,23 @@
     <link>https://colourpalettes.techhive.net/changelog</link>
     <description>Recent updates, new features, and bug fixes for the Color Palette Generator.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 08 Aug 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://colourpalettes.techhive.net/changelog/rss" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>v1.5.0 - August 8, 2026</title>
+      <link>https://colourpalettes.techhive.net/changelog#v1.5.0</link>
+      <pubDate>Sat, 08 Aug 2026 00:00:00 GMT</pubDate>
+      <guid>https://colourpalettes.techhive.net/changelog#v1.5.0</guid>
+      <description><![CDATA[
+        <ul>
+          <li><strong>Massively Expanded Palette Library</strong>: Added 750 new curated palettes across 25 categories, bringing the total to over 1,800 palettes for even more inspiration.</li>
+          <li><strong>Category-Tailored Colors</strong>: Each category received 30 new palettes with colors specifically tuned to its theme, from warm reds and pastels to vibrant neons and seasonal collections.</li>
+          <li><strong>Consistent Results</strong>: The new palettes are generated deterministically, so you see the same curated selections every time you visit.</li>
+          <li><strong>Updated Category Counts</strong>: The browse buttons now reflect the expanded library with accurate palette counts per category.</li>
+        </ul>
+      ]]></description>
+    </item>
 
     <item>
       <title>v1.4.1 - June 8, 2026</title>

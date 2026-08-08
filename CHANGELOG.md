@@ -1,5 +1,93 @@
 # Internal Changelog
 
+## v1.5.0 - August 8, 2026
+### Checkpoint Scope
+- **Release Type**: Minor feature release — expanded curated palette library with 750 new palettes.
+- **Primary Goal**: Massively expand the palette gallery from 1,061 to 1,811 palettes by generating 30 deterministic palettes per category across 25 categories.
+
+### Technical Updates
+- **New Palette Generator Module**: Created a deterministic, seeded palette generation utility that produces category-appropriate color palettes using a seeded PRNG (mulberry32) and per-category color recipes.
+  - Path: `src/utils/paletteGenerator.ts`
+  - Important code:
+    ```typescript
+    function mulberry32(seed: number): () => number {
+      let a = seed;
+      return () => {
+        a |= 0; a = (a + 0x6D2B79F5) | 0;
+        let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+    ```
+  - Each category has a dedicated recipe function that constrains hue ranges, saturation, and lightness to produce visually coherent palettes. For example, reds use hue 340-20, pastels use low saturation (20-45%) with high lightness (70-88%), and triadic uses 120-degree hue spacing.
+  - Colors are created via `ColorUtils.createColor(h, s, l)` which returns a full `Color` object with `hex`, `rgb`, `hsl` fields.
+
+- **Curated Palettes Integration**: Wired the generated palettes into the curated palettes component by merging them with the existing hand-curated palettes.
+  - Path: `src/components/ui/curated-palettes.tsx`
+  - Important code:
+    ```typescript
+    import { generateAllPalettes } from '../../utils/paletteGenerator';
+    import { curatedPalettes as handCurated } from '../../constants/colorData';
+    const allPalettes = [...handCurated, ...generateAllPalettes()];
+    ```
+  - Category button counts are computed dynamically from `allPalettes`, so they update automatically.
+
+- **Category Counts Updated**: Updated the static palette category counts in the color data constants to reflect the new totals (used for landing page stats).
+  - Path: `src/constants/colorData.ts`
+  - Important code:
+    ```typescript
+    export const PALETTE_CATEGORIES: PaletteCategory[] = [
+      { name: "All Palettes", count: 1811 },
+      { name: "Blues & Teals", count: 54 },
+      // ... 25 categories updated with new counts
+    ];
+    ```
+
+- **Version Bump**: Updated the app version from `1.4.1` to `1.5.0`.
+  - Paths: `package.json`, `package-lock.json`, `README.md`, `src/components/ui/footer.tsx`, `public/robots.txt`.
+  - Important code:
+    ```json
+    "version": "1.5.0"
+    ```
+
+- **Public Changelog Entry**: Added the new `v1.5.0` public changelog entry without removing prior entries. The public copy omits source paths, file names, and implementation details.
+  - Path: `src/pages/Changelog.tsx`
+  - Important code:
+    ```tsx
+    <section id="v1.5.0">
+    ```
+
+- **RSS Feed Update**: Added a `v1.5.0` item to both RSS feed files and refreshed `lastBuildDate`.
+  - Paths: `public/changelog/rss.xml`, `public/changelog/rss`.
+
+- **Sitemap and Robots Refresh**: Updated publishing metadata dates and version comments.
+  - Paths: `public/sitemap.xml`, `public/robots.txt`.
+  - Important code:
+    ```xml
+    <lastmod>2026-08-08</lastmod>
+    ```
+
+- **LLMs.txt**: Created an `llms.txt` file at the project root using the canonical URL for LLM discoverability.
+  - Path: `public/llms.txt`
+
+### Files Modified
+- `package.json`
+- `package-lock.json`
+- `README.md`
+- `CHANGELOG.md`
+- `src/components/ui/footer.tsx`
+- `src/pages/Changelog.tsx`
+- `public/sitemap.xml`
+- `public/robots.txt`
+- `public/changelog/rss.xml`
+- `public/changelog/rss`
+- `public/llms.txt` (new)
+
+### Build Verification
+- `npm run build` passes successfully with no errors.
+- 1571 modules transformed, output bundle ~558 kB (146 kB gzipped).
+
 ## v1.4.1 - June 8, 2026
 ### Checkpoint Scope
 - **Release Type**: Patch checkpoint release for documentation, public update history, feed metadata, and visible versioning.
