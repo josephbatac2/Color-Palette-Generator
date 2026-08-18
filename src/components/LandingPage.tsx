@@ -87,8 +87,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     },
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "781 Curated Palettes",
-      description: "Professional color combinations across 20+ categories",
+      title: "2,500+ Curated Palettes",
+      description: "Professional color combinations across 25+ categories",
     },
     {
       icon: <Shield className="w-6 h-6" />,
@@ -116,9 +116,26 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       { name: 'Desert Sand', colors: [ColorUtils.createColor(35, 50, 85), ColorUtils.createColor(30, 55, 70), ColorUtils.createColor(25, 60, 55), ColorUtils.createColor(20, 65, 40), ColorUtils.createColor(15, 70, 25)] },
       { name: 'Matrix Code', colors: [ColorUtils.createColor(120, 100, 25), ColorUtils.createColor(125, 90, 35), ColorUtils.createColor(130, 80, 45), ColorUtils.createColor(135, 70, 55), ColorUtils.createColor(140, 60, 65)] },
       { name: 'Toxic Waste', colors: [ColorUtils.createColor(80, 100, 45), ColorUtils.createColor(90, 95, 50), ColorUtils.createColor(100, 90, 55), ColorUtils.createColor(110, 85, 60), ColorUtils.createColor(120, 80, 65)] },
+      { name: 'Lavender Fields', colors: [ColorUtils.createColor(270, 50, 85), ColorUtils.createColor(275, 55, 75), ColorUtils.createColor(280, 60, 65), ColorUtils.createColor(285, 65, 55), ColorUtils.createColor(290, 70, 45)] },
+      { name: 'Coral Reef', colors: [ColorUtils.createColor(10, 80, 75), ColorUtils.createColor(15, 85, 70), ColorUtils.createColor(20, 90, 65), ColorUtils.createColor(25, 95, 60), ColorUtils.createColor(30, 100, 55)] },
+      { name: 'Forest Harmony', colors: [ColorUtils.createColor(120, 40, 30), ColorUtils.createColor(130, 50, 40), ColorUtils.createColor(140, 60, 50), ColorUtils.createColor(150, 70, 60), ColorUtils.createColor(160, 80, 70)] },
+      { name: 'Midnight Sky', colors: [ColorUtils.createColor(240, 100, 10), ColorUtils.createColor(235, 90, 20), ColorUtils.createColor(230, 80, 30), ColorUtils.createColor(225, 70, 40), ColorUtils.createColor(220, 60, 50)] },
+      { name: 'Golden Hour', colors: [ColorUtils.createColor(45, 90, 85), ColorUtils.createColor(45, 90, 70), ColorUtils.createColor(45, 90, 55), ColorUtils.createColor(45, 90, 40), ColorUtils.createColor(45, 90, 25)] },
+      { name: 'Rose Gold', colors: [ColorUtils.createColor(15, 60, 80), ColorUtils.createColor(20, 70, 75), ColorUtils.createColor(25, 80, 70), ColorUtils.createColor(30, 90, 65), ColorUtils.createColor(35, 100, 60)] },
+      { name: 'Mint Fresh', colors: [ColorUtils.createColor(160, 60, 85), ColorUtils.createColor(165, 55, 75), ColorUtils.createColor(170, 50, 65), ColorUtils.createColor(175, 45, 55), ColorUtils.createColor(180, 40, 45)] },
+      { name: 'Wine Cellar', colors: [ColorUtils.createColor(340, 80, 25), ColorUtils.createColor(345, 70, 35), ColorUtils.createColor(350, 60, 45), ColorUtils.createColor(355, 50, 55), ColorUtils.createColor(0, 40, 65)] },
+      { name: 'Steel Blue', colors: [ColorUtils.createColor(210, 40, 80), ColorUtils.createColor(215, 50, 70), ColorUtils.createColor(220, 60, 60), ColorUtils.createColor(225, 70, 50), ColorUtils.createColor(230, 80, 40)] },
+      { name: 'Pumpkin Spice', colors: [ColorUtils.createColor(25, 100, 60), ColorUtils.createColor(20, 95, 55), ColorUtils.createColor(15, 90, 50), ColorUtils.createColor(10, 85, 45), ColorUtils.createColor(5, 80, 40)] },
+      { name: 'Berry Smoothie', colors: [ColorUtils.createColor(330, 80, 70), ColorUtils.createColor(320, 85, 65), ColorUtils.createColor(310, 90, 60), ColorUtils.createColor(300, 95, 55), ColorUtils.createColor(290, 100, 50)] },
+      { name: 'Sage Garden', colors: [ColorUtils.createColor(90, 30, 80), ColorUtils.createColor(100, 40, 75), ColorUtils.createColor(110, 50, 70), ColorUtils.createColor(120, 60, 65), ColorUtils.createColor(130, 70, 60)] },
+      { name: 'Plum Orchard', colors: [ColorUtils.createColor(300, 60, 70), ColorUtils.createColor(310, 70, 65), ColorUtils.createColor(320, 80, 60), ColorUtils.createColor(330, 90, 55), ColorUtils.createColor(340, 100, 50)] },
+      { name: 'Nordic Minimalism', colors: [ColorUtils.createColor(210, 15, 90), ColorUtils.createColor(200, 20, 85), ColorUtils.createColor(190, 25, 80), ColorUtils.createColor(180, 30, 75), ColorUtils.createColor(170, 35, 70)] },
+      { name: 'Tangerine Dream', colors: [ColorUtils.createColor(30, 100, 70), ColorUtils.createColor(25, 95, 65), ColorUtils.createColor(20, 90, 60), ColorUtils.createColor(15, 85, 55), ColorUtils.createColor(10, 80, 50)] },
+      { name: 'Glacier Bay', colors: [ColorUtils.createColor(190, 60, 95), ColorUtils.createColor(200, 70, 90), ColorUtils.createColor(210, 80, 85), ColorUtils.createColor(220, 90, 80), ColorUtils.createColor(230, 100, 75)] },
+      { name: 'Burgundy Velvet', colors: [ColorUtils.createColor(330, 100, 20), ColorUtils.createColor(335, 90, 30), ColorUtils.createColor(340, 80, 40), ColorUtils.createColor(345, 70, 50), ColorUtils.createColor(350, 60, 60)] },
     ];
     const shuffled = [...allShowcase].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 6);
+    return shuffled.slice(0, 12);
   }, []);
 
   const stats = calculateStats();
@@ -336,7 +353,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               </span>
             </h2>
             <p className={`text-base md:text-lg max-w-xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-              Hand-picked color combinations from our library of 781+ professional palettes
+              Hand-picked color combinations from our library of 2,500+ professional palettes
             </p>
           </div>
 
