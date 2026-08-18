@@ -128,45 +128,78 @@ export class ColorUtils {
    */
   static generateHarmony(baseColor: Color, harmony: ColorHarmony): Color[] {
     const colors: Color[] = [baseColor];
-    
+    const { h, s, l } = baseColor;
+
     switch (harmony) {
       case 'monochromatic':
         for (let i = 1; i < 5; i++) {
-          const newL = Math.max(10, Math.min(90, baseColor.l + (i * 15) - 30));
-          colors.push(this.createColor(baseColor.h, baseColor.s, newL));
+          const newL = Math.max(10, Math.min(90, l + (i * 15) - 30));
+          colors.push(this.createColor(h, s, newL));
         }
         break;
-        
-      case 'analogous':
-        for (let i = 1; i < 5; i++) {
-          const newH = (baseColor.h + (i * 30)) % 360;
-          colors.push(this.createColor(newH, baseColor.s, baseColor.l));
+
+      case 'analogous': {
+        const offsets = [-45, -22, 22, 45];
+        for (const off of offsets) {
+          const newH = ((h + off) % 360 + 360) % 360;
+          const newL = Math.max(10, Math.min(90, l + (off > 0 ? 5 : -5)));
+          colors.push(this.createColor(newH, s, newL));
         }
         break;
-        
-      case 'complementary':
-        colors.push(this.createColor((baseColor.h + 180) % 360, baseColor.s, baseColor.l));
-        colors.push(this.createColor(baseColor.h, baseColor.s, Math.max(10, baseColor.l - 20)));
-        colors.push(this.createColor((baseColor.h + 180) % 360, baseColor.s, Math.max(10, baseColor.l - 20)));
+      }
+
+      case 'complementary': {
+        const compH = (h + 180) % 360;
+        colors.push(this.createColor(h, s, Math.max(10, l - 20)));
+        colors.push(this.createColor(compH, s, l));
+        colors.push(this.createColor(compH, s, Math.max(10, l - 20)));
+        colors.push(this.createColor(h, s, Math.min(90, l + 15)));
         break;
-        
-      case 'triadic':
-        colors.push(this.createColor((baseColor.h + 120) % 360, baseColor.s, baseColor.l));
-        colors.push(this.createColor((baseColor.h + 240) % 360, baseColor.s, baseColor.l));
+      }
+
+      case 'split-complementary': {
+        const h1 = (h + 150) % 360;
+        const h2 = (h + 210) % 360;
+        colors.push(this.createColor(h1, s, l));
+        colors.push(this.createColor(h2, s, l));
+        colors.push(this.createColor(h, s, Math.max(10, l - 20)));
+        colors.push(this.createColor(h1, s, Math.min(90, l + 15)));
         break;
-        
-      case 'tetradic':
-        colors.push(this.createColor((baseColor.h + 90) % 360, baseColor.s, baseColor.l));
-        colors.push(this.createColor((baseColor.h + 180) % 360, baseColor.s, baseColor.l));
-        colors.push(this.createColor((baseColor.h + 270) % 360, baseColor.s, baseColor.l));
+      }
+
+      case 'triadic': {
+        const h1 = (h + 120) % 360;
+        const h2 = (h + 240) % 360;
+        colors.push(this.createColor(h1, s, l));
+        colors.push(this.createColor(h2, s, l));
+        colors.push(this.createColor(h, s, Math.max(10, l - 20)));
+        colors.push(this.createColor(h1, s, Math.min(90, l + 15)));
         break;
-        
-      case 'split-complementary':
-        colors.push(this.createColor((baseColor.h + 150) % 360, baseColor.s, baseColor.l));
-        colors.push(this.createColor((baseColor.h + 210) % 360, baseColor.s, baseColor.l));
+      }
+
+      case 'tetradic': {
+        const h1 = (h + 60) % 360;
+        const h2 = (h + 180) % 360;
+        const h3 = (h + 240) % 360;
+        colors.push(this.createColor(h1, s, l));
+        colors.push(this.createColor(h2, s, l));
+        colors.push(this.createColor(h3, s, l));
+        colors.push(this.createColor(h, s, Math.max(10, l - 20)));
         break;
+      }
+
+      case 'square': {
+        const h1 = (h + 90) % 360;
+        const h2 = (h + 180) % 360;
+        const h3 = (h + 270) % 360;
+        colors.push(this.createColor(h1, s, l));
+        colors.push(this.createColor(h2, s, l));
+        colors.push(this.createColor(h3, s, l));
+        colors.push(this.createColor(h, s, Math.max(10, l - 20)));
+        break;
+      }
     }
-    
+
     return colors;
   }
 

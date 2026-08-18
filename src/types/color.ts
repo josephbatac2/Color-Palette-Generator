@@ -20,9 +20,10 @@ export type ColorHarmony =
   | 'monochromatic'
   | 'analogous'
   | 'complementary'
+  | 'split-complementary'
   | 'triadic'
   | 'tetradic'
-  | 'split-complementary';
+  | 'square';
 
 export interface ContrastRatio {
   ratio: number;

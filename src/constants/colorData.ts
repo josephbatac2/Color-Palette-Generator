@@ -44,11 +44,12 @@ export const PALETTE_CATEGORIES: PaletteCategory[] = [
 ];
 
 export const HARMONY_TYPES: HarmonyType[] = [
-  { name: "Complementary", type: "complementary" },
-  { name: "Triadic", type: "triadic" },
+  { name: "Monochromatic", type: "monochromatic" },
   { name: "Analogous", type: "analogous" },
-  { name: "Tetradic", type: "tetradic" },
+  { name: "Complementary", type: "complementary" },
   { name: "Split-Complementary", type: "split-complementary" },
+  { name: "Triadic", type: "triadic" },
+  { name: "Tetradic", type: "tetradic" },
   { name: "Square", type: "square" }
 ];
 
