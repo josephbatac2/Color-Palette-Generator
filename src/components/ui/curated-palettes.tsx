@@ -6,6 +6,7 @@ import { Button } from './button';
 import { PaletteLightbox } from './palette-lightbox';
 import { ScrollArea } from './scroll-area';
 import { Sparkles } from 'lucide-react';
+import { generateAllPalettes } from '../../utils/paletteGenerator';
 
 interface CuratedPalettesProps {
   onPaletteSelect: (palette: ColorPalette) => void;
@@ -10865,7 +10866,8 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
 ];
 
 // Merge all palettes
-const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes, ...stpatricksPalettes, ...fathersDayPalettes, ...summerVibesPalettes, ...springCleanPalettes, ...technoSynthPalettes];
+const generatedPalettes = generateAllPalettes(30);
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes, ...stpatricksPalettes, ...fathersDayPalettes, ...summerVibesPalettes, ...springCleanPalettes, ...technoSynthPalettes, ...generatedPalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
