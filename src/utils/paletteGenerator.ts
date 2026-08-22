@@ -143,7 +143,7 @@ function generatePalette(recipe: CategoryRecipe, index: number): CuratedPalette 
   };
 }
 
-export function generateAllPalettes(countPerCategory = 30): CuratedPalette[] {
+export function generateAllPalettes(countPerCategory = 50): CuratedPalette[] {
   const all: CuratedPalette[] = [];
   for (const recipe of recipes) {
     for (let i = 0; i < countPerCategory; i++) {
@@ -153,7 +153,7 @@ export function generateAllPalettes(countPerCategory = 30): CuratedPalette[] {
   return all;
 }
 
-export function getGeneratedCategoryCounts(countPerCategory = 30): Record<string, number> {
+export function getGeneratedCategoryCounts(countPerCategory = 50): Record<string, number> {
   const counts: Record<string, number> = {};
   for (const recipe of recipes) {
     counts[recipe.categoryId] = countPerCategory;
