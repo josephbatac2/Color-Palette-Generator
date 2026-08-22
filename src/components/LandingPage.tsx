@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { Palette, Sparkles, Eye, Shield, Download, ArrowRight, Play, Zap, Heart, Github, Sun, Moon, Wand2 } from 'lucide-react';
+import { Palette, Layers, Eye, Shield, Download, ArrowRight, Play, Zap, Heart, Github, Sun, Moon, Wand2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Footer } from './ui/footer';
@@ -86,7 +86,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       description: "Advanced color theory algorithms for perfect palettes",
     },
     {
-      icon: <Sparkles className="w-6 h-6" />,
+      icon: <Layers className="w-6 h-6" />,
       title: "2,500+ Curated Palettes",
       description: "Professional color combinations across 25+ categories",
     },
@@ -391,7 +391,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               size="lg"
               className="px-10 py-4 text-base font-semibold bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 shadow-xl shadow-green-500/25 hover:shadow-green-500/40 transform hover:scale-105 transition-all duration-300"
             >
-              <Sparkles className="w-5 h-5 mr-2" aria-hidden="true" />
               Browse All Palettes
               <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
             </Button>

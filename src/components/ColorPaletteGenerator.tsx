@@ -14,7 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { ColorValuesCard } from './ui/color-values-card';
-import { Palette, Wand2, Save, Eye, Shield, Sparkles, Sun, Moon, Image as ImageIcon } from 'lucide-react';
+import { Palette, Wand2, Save, Eye, Shield, Layers, Sun, Moon, Image as ImageIcon } from 'lucide-react';
 
 export const ColorPaletteGenerator: React.FC = () => {
   const {
@@ -203,7 +203,7 @@ export const ColorPaletteGenerator: React.FC = () => {
             <nav className="flex items-center gap-1">
               <TabsList className={`h-11 gap-0.5 rounded-xl px-1.5 ${theme === 'dark' ? 'bg-white/10 border border-white/15' : 'bg-gray-100 border border-gray-200'}`}>
                 <TabsTrigger value="curated" className={`flex items-center gap-1.5 px-4 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 hover:bg-white/10 hover:text-gray-100 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700' : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700'}`}>
-                  <Sparkles className="w-4 h-4" />
+                  <Layers className="w-4 h-4" />
                   <span className="hidden md:inline">Curated</span>
                 </TabsTrigger>
                 <TabsTrigger value="generator" className={`flex items-center gap-1.5 px-4 h-9 rounded-lg text-sm font-medium ${theme === 'dark' ? 'text-gray-300 hover:bg-white/10 hover:text-gray-100 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700' : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900 data-[state=active]:bg-teal-600 data-[state=active]:text-white data-[state=active]:hover:bg-teal-700'}`}>

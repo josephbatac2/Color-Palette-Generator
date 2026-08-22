@@ -5,7 +5,7 @@ import { Card } from './card';
 import { Button } from './button';
 import { PaletteLightbox } from './palette-lightbox';
 import { ScrollArea } from './scroll-area';
-import { Sparkles } from 'lucide-react';
+import { Palette } from 'lucide-react';
 import { generateAllPalettes } from '../../utils/paletteGenerator';
 
 interface CuratedPalettesProps {
@@ -11003,7 +11003,6 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                     <p className="text-sm text-gray-500 dark:text-black dark:font-light">{palette.colors.length} colors</p>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Sparkles className="w-4 h-4 text-yellow-500" />
                     <span 
                       className="text-xs px-2 py-1 rounded-full text-white font-medium shadow-sm"
                       style={{ 
@@ -11034,7 +11033,7 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
         {filteredPalettes.length === 0 && (
           <div className="text-center py-16">
             <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-gray-100/50 to-gray-200/50 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg shadow-black/5">
-              <Sparkles className="w-10 h-10 text-gray-400" />
+              <Palette className="w-10 h-10 text-gray-400" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2 dark:text-black dark:font-light">No Palettes Found</h3>
             <p className="text-gray-600 dark:text-black dark:font-light">Try selecting a different category</p>
