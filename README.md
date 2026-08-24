@@ -56,7 +56,7 @@
   <h2>Latest Checkpoint</h2>
   <p>
     <strong>v1.5.1 - August 24, 2026:</strong> Added 1,250 new curated palettes across
-    25 categories, bringing the total to over 2,100 palettes. Each category received
+    25 categories, bringing the total to over 3,300 palettes. Each category received
     50 new palettes with colors specifically tuned to its theme. Also refreshed the
     interface icons and updated the changelog feed.
   </p>

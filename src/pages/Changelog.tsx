@@ -44,7 +44,7 @@ export const Changelog: React.FC<{ onBack: () => void }> = ({ onBack }) => {
               <li className="flex gap-3">
                 <span className="text-green-400 mt-1">•</span>
                 <span>
-                  <strong className="text-white font-semibold">1,250 New Curated Palettes:</strong> Added 50 new palettes to each of 25 categories, bringing the total to over 2,100 palettes for even more creative inspiration.
+                  <strong className="text-white font-semibold">1,250 New Curated Palettes:</strong> Added 50 new palettes to each of 25 categories, bringing the total to over 3,300 palettes for even more creative inspiration.
                 </span>
               </li>
               <li className="flex gap-3">
