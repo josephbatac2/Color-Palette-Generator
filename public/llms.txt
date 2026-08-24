@@ -11,7 +11,7 @@ Color Palette Generator is a web application that helps designers and developers
 - Color palette generation with multiple harmony types
 - Accessibility checker with WCAG AA/AAA contrast ratio validation
 - Color blindness simulator (protanopia, deuteranopia, tritanopia, achromatopsia)
-- Curated palette library with over 1,800 palettes across 25 categories
+- Curated palette library with over 2,100 palettes across 25 categories
 - Color converter (HEX, RGB, HSL, CMYK, OKLCH)
 - Lightbox palette viewer
 - Theme-aware dark/light mode
@@ -28,7 +28,7 @@ https://colourpalettes.techhive.net/
 
 ## Version
 
-1.5.0 (August 8, 2026)
+1.5.1 (August 24, 2026)
 
 ## RSS Feed
 

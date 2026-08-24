@@ -1,5 +1,97 @@
 # Internal Changelog
 
+## v1.5.1 - August 24, 2026
+### Checkpoint Scope
+- **Release Type**: Patch release — expanded curated palette library with 1,250 new palettes and refreshed UI icons.
+- **Primary Goal**: Add 50 new palettes to each of 25 categories (1,250 total), bringing the library from ~1,811 to over 2,100 palettes. Also removed the `Sparkles` icon usage across the app and replaced it with more appropriate icons.
+
+### Technical Updates
+- **Palette Generation Script**: Created a Node.js ES module script that deterministically generates 50 palettes per category using a seeded PRNG and per-category HSL recipes.
+  - Path: `scripts/generate-palettes.mjs`
+  - Important code:
+    ```javascript
+    let seed = 42;
+    function rand() {
+      seed = (seed * 9301 + 49297) % 233280;
+      return seed / 233280;
+    }
+    ```
+  - Each category has a config object with `baseHue`, `hueRange`, `baseSat`, `satRange`, `lightStart`, `lightStep`, and `nameWords`. Special generators exist for complementary, analogous, triadic, split-complementary, tetradic, and square harmony types.
+  - Colors are emitted as `ColorUtils.createColor(h, s, l)` calls matching the existing pattern.
+
+- **Palette Insertion Script**: Created a script that parses the generated output and inserts each block before the closing `];` of the corresponding array in the curated palettes component.
+  - Path: `scripts/insert-palettes.mjs`
+  - Important code:
+    ```javascript
+    const closeIdx = afterDecl.indexOf('\n];');
+    const absoluteCloseIdx = declIdx + closeIdx + 1;
+    insertions.push({ index: absoluteCloseIdx, content: block + '\n' });
+    ```
+  - Insertions are processed bottom-to-top to preserve line offsets.
+
+- **Curated Palettes Expansion**: Appended 1,250 new palette objects across 18 separate arrays in the curated palettes component.
+  - Path: `src/components/ui/curated-palettes.tsx`
+  - Arrays modified: `curatedPalettes` (blues, greens, reds, purples, oranges, neutrals, vibrant, pastels), `complementaryPalettes`, `holidayPalettes`, `blackswhitesPalettes`, `analogousPalettes`, `tealorangePalettes`, `triadicPalettes`, `analogousSchemePalettes`, `splitComplementaryPalettes`, `tetradicPalettes`, `squarePalettes`, `valentinesPalettes`, `mothersDayPalettes`, `stpatricksPalettes`, `fathersDayPalettes`, `summerVibesPalettes`, `springCleanPalettes`, `technoSynthPalettes`
+  - Category counts after expansion: blues 74, greens 91, reds 90, purples 89, oranges 122, neutrals 88, vibrant 89, pastels 150, complementary 109, holidays 99, blackswhites 99, analogous 91, tealorange 80, triadic 70, analogous-scheme 100, split-complementary 70, tetradic 70, square 70, valentines 60, mothersday 60, stpatricks 56, fathersday 91, summervibes 88, springclean 60, technosynth 80.
+
+- **Icon Refresh**: Replaced all `Sparkles` icon imports from `lucide-react` with `Layers` and `Palette` icons across three files.
+  - Paths: `src/components/ColorPaletteGenerator.tsx`, `src/components/LandingPage.tsx`, `src/components/ui/curated-palettes.tsx`
+  - Important code:
+    ```tsx
+    // Before:
+    import { Sparkles } from 'lucide-react';
+    <Sparkles className="w-4 h-4" />
+    // After:
+    import { Layers } from 'lucide-react';
+    <Layers className="w-4 h-4" />
+    ```
+
+- **Version Bump**: Updated the app version from `1.5.0` to `1.5.1`.
+  - Paths: `package.json`, `README.md`, `src/components/ui/footer.tsx`, `public/robots.txt`, `public/llms.txt`.
+  - Important code:
+    ```json
+    "version": "1.5.1"
+    ```
+
+- **Public Changelog Entry**: Added the new `v1.5.1` public changelog entry without removing prior entries. The public copy omits source paths, file names, and implementation details.
+  - Path: `src/pages/Changelog.tsx`
+  - Important code:
+    ```tsx
+    <section id="v1.5.1">
+    ```
+
+- **RSS Feed Update**: Added a `v1.5.1` item to both RSS feed files and refreshed `lastBuildDate`.
+  - Paths: `public/changelog/rss.xml`, `public/changelog/rss`.
+
+- **Sitemap and Robots Refresh**: Updated publishing metadata dates and version comments.
+  - Paths: `public/sitemap.xml`, `public/robots.txt`.
+  - Important code:
+    ```xml
+    <lastmod>2026-08-24</lastmod>
+    ```
+
+- **LLMs.txt Update**: Updated palette count and version number.
+  - Path: `public/llms.txt`
+
+### Files Modified
+- `package.json`
+- `README.md`
+- `CHANGELOG.md`
+- `src/components/ui/footer.tsx`
+- `src/components/ui/curated-palettes.tsx`
+- `src/components/ColorPaletteGenerator.tsx`
+- `src/components/LandingPage.tsx`
+- `src/pages/Changelog.tsx`
+- `public/sitemap.xml`
+- `public/robots.txt`
+- `public/changelog/rss.xml`
+- `public/changelog/rss`
+- `public/llms.txt`
+
+### Build Verification
+- `npm run build` passes successfully with no errors.
+- 1572 modules transformed, output bundle ~811 kB (186 kB gzipped).
+
 ## v1.5.0 - August 8, 2026
 ### Checkpoint Scope
 - **Release Type**: Minor feature release — expanded curated palette library with 750 new palettes.
