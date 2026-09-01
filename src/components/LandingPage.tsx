@@ -8,6 +8,7 @@ import { HARMONY_TYPES, calculateStats } from '../constants/colorData';
 import { ColorUtils } from '../utils/colorUtils';
 import { ColorPalette } from '../types/color';
 import { PaletteLightbox } from './ui/palette-lightbox';
+import { TopPickOfDay } from './ui/top-pick-of-day';
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -87,7 +88,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     },
     {
       icon: <Layers className="w-6 h-6" />,
-      title: "2,500+ Curated Palettes",
+      title: "4,600+ Curated Palettes",
       description: "Professional color combinations across 25+ categories",
     },
     {
@@ -303,6 +304,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             </Button>
           </div>
 
+          {/* Top Pick of the Day */}
+          <div className={`w-full max-w-2xl mx-auto mb-8 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-1000 delay-300`}>
+            <TopPickOfDay />
+          </div>
+
           {/* Hero Stats */}
           <div className="w-full max-w-xl grid grid-cols-4 gap-4 mb-8">
             {stats.map((stat, index) => (
@@ -353,7 +359,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               </span>
             </h2>
             <p className={`text-base md:text-lg max-w-xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-              Hand-picked color combinations from our library of 2,500+ professional palettes
+              Hand-picked color combinations from our library of 4,600+ professional palettes
             </p>
           </div>
 
