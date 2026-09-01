@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { Copy, Check, Share2, Sparkles, RefreshCw, Palette } from 'lucide-react';
+import { Copy, Check, Share2, Star, RefreshCw, Palette } from 'lucide-react';
 import { ColorUtils } from '../../utils/colorUtils';
 import { Color, ColorPalette } from '../../types/color';
 import { PaletteLightbox } from './palette-lightbox';
@@ -195,7 +195,7 @@ export const TopPickOfDay: React.FC<TopPickOfDayProps> = ({ className = '' }) =>
         {/* Badge */}
         <div className="flex items-center justify-center mb-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl">
-            <Sparkles className="w-4 h-4 text-green-300" aria-hidden="true" />
+            <Star className="w-4 h-4 text-green-300" aria-hidden="true" />
             <span className="text-sm font-medium text-white tracking-wide">Top Pick of the Day</span>
             <span className="text-xs text-gray-300 ml-1 hidden sm:inline">· {todayStr}</span>
           </div>
