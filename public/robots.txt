@@ -3,5 +3,5 @@ Allow: /
 
 Sitemap: https://colourpalettes.techhive.net/sitemap.xml
 
-# Last updated: 2026-08-24
-# App version: 1.5.1
+# Last updated: 2026-09-01
+# App version: 1.5.2

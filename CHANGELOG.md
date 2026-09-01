@@ -1,5 +1,61 @@
 # Internal Changelog
 
+## v1.5.2 - September 1, 2026
+### Checkpoint Scope
+- **Release Type**: Patch release — expanded curated palette library with 1,250 new palettes.
+- **Primary Goal**: Add 50 new palettes to each of 25 categories (1,250 total), bringing the file from 2,146 to 3,396 written palettes (4,646 total including runtime-generated).
+
+### Technical Updates
+- **Palette Generation Script**: Created a Node.js ES module script with seed 9999 to deterministically generate 50 palettes per category using per-category HSL recipes.
+  - Path: `scripts/generate-palettes.mjs`
+  - Important code:
+    ```javascript
+    let seed = 9999;
+    function rand() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+    ```
+
+- **Palette Insertion Script**: Parses generated output and inserts each block before the closing `];` of the corresponding array. Insertions processed bottom-to-top to preserve offsets.
+  - Path: `scripts/insert-palettes.mjs`
+
+- **Curated Palettes Expansion**: Appended 1,250 new palette objects across 18 arrays.
+  - Path: `src/components/ui/curated-palettes.tsx`
+  - Category counts after expansion: blues 124, greens 141, reds 140, purples 139, oranges 172, neutrals 138, vibrant 139, pastels 200, complementary 159, holidays 149, blackswhites 149, analogous 141, tealorange 130, triadic 120, analogous-scheme 150, split-complementary 120, tetradic 120, square 120, valentines 110, mothersday 110, stpatricks 106, fathersday 141, summervibes 138, springclean 110, technosynth 130.
+
+- **Category Counts Updated**: Updated `PALETTE_CATEGORIES` in colorData.ts to reflect combined file + generated totals (4,646 total).
+  - Path: `src/constants/colorData.ts`
+
+- **Version Bump**: Updated from `1.5.1` to `1.5.2`.
+  - Paths: `package.json`, `README.md`, `src/components/ui/footer.tsx`, `public/robots.txt`, `public/llms.txt`.
+
+- **Public Changelog Entry**: Added v1.5.2 section to Changelog.tsx.
+  - Path: `src/pages/Changelog.tsx`
+
+- **RSS Feed Update**: Added v1.5.2 item to both RSS files, refreshed lastBuildDate.
+  - Paths: `public/changelog/rss.xml`, `public/changelog/rss`
+
+- **Sitemap and Robots Refresh**: Updated dates to 2026-09-01.
+  - Paths: `public/sitemap.xml`, `public/robots.txt`
+
+- **LLMs.txt Update**: Updated palette count to over 4,600 and version to 1.5.2.
+  - Path: `public/llms.txt`
+
+### Files Modified
+- `package.json`
+- `README.md`
+- `CHANGELOG.md`
+- `src/components/ui/footer.tsx`
+- `src/components/ui/curated-palettes.tsx`
+- `src/constants/colorData.ts`
+- `src/pages/Changelog.tsx`
+- `public/sitemap.xml`
+- `public/robots.txt`
+- `public/changelog/rss.xml`
+- `public/changelog/rss`
+- `public/llms.txt`
+
+### Build Verification
+- `npm run build` passes successfully with no errors.
+
 ## v1.5.1 - August 24, 2026
 ### Checkpoint Scope
 - **Release Type**: Patch release — expanded curated palette library with 1,250 new palettes and refreshed UI icons.
