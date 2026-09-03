@@ -304,11 +304,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             </Button>
           </div>
 
-          {/* Top Picks of the Day */}
-          <div className={`w-full max-w-7xl mx-auto mb-8 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-1000 delay-300`}>
-            <TopPickOfDay />
-          </div>
-
           {/* Hero Stats */}
           <div className="w-full max-w-xl grid grid-cols-4 gap-4 mb-8">
             {stats.map((stat, index) => (
@@ -339,6 +334,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Top Picks of the Day — full-width, matching Explore Curated Palettes */}
+        <div className={`relative z-10 w-full max-w-7xl mx-auto px-6 mb-12 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-1000 delay-300`}>
+          <TopPickOfDay />
         </div>
 
         {/* Scroll hint */}
