@@ -136,7 +136,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       { name: 'Burgundy Velvet', colors: [ColorUtils.createColor(330, 100, 20), ColorUtils.createColor(335, 90, 30), ColorUtils.createColor(340, 80, 40), ColorUtils.createColor(345, 70, 50), ColorUtils.createColor(350, 60, 60)] },
     ];
     const shuffled = [...allShowcase].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 12);
+    return shuffled.slice(0, 20);
   }, []);
 
   const stats = calculateStats();
@@ -363,7 +363,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto mb-12">
             {showcasePalettes.map((palette, index) => (
               <div
                 key={index}
