@@ -305,7 +305,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           </div>
 
           {/* Top Picks of the Day */}
-          <div className={`w-full max-w-5xl mx-auto mb-8 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-1000 delay-300`}>
+          <div className={`w-full max-w-7xl mx-auto mb-8 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-1000 delay-300`}>
             <TopPickOfDay />
           </div>
 
