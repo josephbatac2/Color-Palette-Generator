@@ -198,7 +198,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* Hero Section with 3 palette bands */}
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-center">
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-start gap-12 pt-28 pb-24">
         {/* Top palette band */}
         <div className="absolute top-0 left-0 right-0 h-[30%]">
           {renderPaletteBand('top', 'left')}
@@ -337,7 +337,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
         </div>
 
         {/* Top Picks of the Day — full-width, matching Explore Curated Palettes */}
-        <div className={`relative z-10 w-full max-w-7xl mx-auto px-6 mb-12 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-1000 delay-300`}>
+        <div className={`relative z-10 w-full max-w-7xl mx-auto px-6 mt-2 mb-0 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-1000 delay-300`}>
           <TopPickOfDay />
         </div>
 
