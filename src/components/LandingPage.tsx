@@ -198,7 +198,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* Hero Section with 3 palette bands */}
-      <section className="relative w-full min-h-screen flex items-center justify-center">
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center">
         {/* Top palette band */}
         <div className="absolute top-0 left-0 right-0 h-[30%]">
           {renderPaletteBand('top', 'left')}
