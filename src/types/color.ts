@@ -14,6 +14,7 @@ export interface ColorPalette {
   type: 'generated' | 'curated' | 'custom';
   harmony?: ColorHarmony;
   createdAt: Date;
+  isNew?: boolean;
 }
 
 export type ColorHarmony = 

@@ -7,6 +7,7 @@ import { PaletteLightbox } from './palette-lightbox';
 import { ScrollArea } from './scroll-area';
 import { Palette } from 'lucide-react';
 import { generateAllPalettes } from '../../utils/paletteGenerator';
+import { Badge } from './badge';
 
 interface CuratedPalettesProps {
   onPaletteSelect: (palette: ColorPalette) => void;
@@ -173,7 +174,7 @@ const categories = [
   }
 ];
 
-const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string })[] = [
+const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string; isNew?: boolean })[] = [
   // Blues & Teals
   {
     name: 'Ocean Breeze',
@@ -10840,6 +10841,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Opal Grove',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(189, 58, 88),
@@ -10852,6 +10854,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Dusky Hymn',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(206, 59, 88),
@@ -10864,6 +10867,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Prism Dusk',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(188, 60, 88),
@@ -10876,6 +10880,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Radiant Marble',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(205, 61, 88),
@@ -10888,6 +10893,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Velvet Cascade',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(187, 62, 88),
@@ -10900,6 +10906,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Emerald Bloom',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(204, 63, 88),
@@ -10912,6 +10919,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Rosy Spark',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(186, 64, 88),
@@ -10924,6 +10932,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Astral Echo',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(203, 65, 88),
@@ -10936,6 +10945,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gossamer Haven',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(185, 66, 88),
@@ -10948,6 +10958,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Cosmic Tide',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(202, 67, 88),
@@ -10960,6 +10971,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sapphire Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(184, 68, 88),
@@ -10972,6 +10984,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Azure Canyon',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(201, 69, 88),
@@ -10984,6 +10997,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Moonlit Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(183, 70, 88),
@@ -10996,6 +11010,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Spectral Dawn',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(200, 71, 88),
@@ -11008,6 +11023,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Serene Summit',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(182, 72, 88),
@@ -11020,6 +11036,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Coral Mirage',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(199, 73, 88),
@@ -11032,6 +11049,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crimson Whisper',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(181, 58, 88),
@@ -11044,6 +11062,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sunny Halo',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(198, 59, 88),
@@ -11056,6 +11075,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Iridescent Aura',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(180, 60, 88),
@@ -11068,6 +11088,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Mystic Voyage',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(197, 61, 88),
@@ -11080,6 +11101,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Amber Pulse',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(179, 62, 88),
@@ -11092,6 +11114,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Onyx Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(196, 63, 88),
@@ -11104,6 +11127,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Misty Meadow',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(178, 64, 88),
@@ -11116,6 +11140,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Smoldering Flare',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(195, 65, 88),
@@ -11128,6 +11153,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Ethereal Twilight',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(212, 66, 88),
@@ -11140,6 +11166,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crystal Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(194, 67, 88),
@@ -11152,6 +11179,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Pearl Horizon',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(211, 68, 88),
@@ -11164,6 +11192,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gilded Ember',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(193, 69, 88),
@@ -11176,6 +11205,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Hazy Velvet',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(210, 70, 88),
@@ -11188,6 +11218,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Vibrant Symphony',
     type: 'curated',
+    isNew: true,
     category: 'blues',
     colors: [
       ColorUtils.createColor(192, 71, 88),
@@ -12284,6 +12315,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Onyx Dawn',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(79, 42, 82),
@@ -12296,6 +12328,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Misty Summit',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(96, 42, 82),
@@ -12308,6 +12341,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Smoldering Mirage',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(78, 42, 82),
@@ -12320,6 +12354,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Ethereal Whisper',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(95, 42, 82),
@@ -12332,6 +12367,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crystal Halo',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(77, 42, 82),
@@ -12344,6 +12380,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Pearl Aura',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(94, 42, 82),
@@ -12356,6 +12393,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gilded Voyage',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(76, 42, 82),
@@ -12368,6 +12406,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Hazy Pulse',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(93, 42, 82),
@@ -12380,6 +12419,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Vibrant Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(75, 42, 82),
@@ -12392,6 +12432,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Silver Meadow',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(92, 42, 82),
@@ -12404,6 +12445,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Jade Flare',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(74, 42, 82),
@@ -12416,6 +12458,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Frosted Twilight',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(91, 42, 82),
@@ -12428,6 +12471,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Satin Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(73, 42, 82),
@@ -12440,6 +12484,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Luminous Horizon',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(90, 42, 82),
@@ -12452,6 +12497,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Golden Ember',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(72, 42, 82),
@@ -12464,6 +12510,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Opal Velvet',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(89, 42, 82),
@@ -12476,6 +12523,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Dusky Symphony',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(71, 42, 82),
@@ -12488,6 +12536,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Prism Crest',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(88, 42, 82),
@@ -12500,6 +12549,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Radiant Drift',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(70, 42, 82),
@@ -12512,6 +12562,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Velvet Reverie',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(87, 42, 82),
@@ -12524,6 +12575,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Emerald Reef',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(69, 42, 82),
@@ -12536,6 +12588,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Rosy Shore',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(86, 42, 82),
@@ -12548,6 +12601,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Astral Overture',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(68, 42, 82),
@@ -12560,6 +12614,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gossamer Grove',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(85, 42, 82),
@@ -12572,6 +12627,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Cosmic Hymn',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(102, 42, 82),
@@ -12584,6 +12640,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sapphire Dusk',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(84, 42, 82),
@@ -12596,6 +12653,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Azure Marble',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(101, 42, 82),
@@ -12608,6 +12666,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Moonlit Cascade',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(83, 42, 82),
@@ -12620,6 +12679,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Spectral Bloom',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(100, 42, 82),
@@ -12632,6 +12692,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Serene Spark',
     type: 'curated',
+    isNew: true,
     category: 'greens',
     colors: [
       ColorUtils.createColor(82, 42, 82),
@@ -13728,6 +13789,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Coral Pulse',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(349, 52, 86),
@@ -13740,6 +13802,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crimson Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(6, 52, 86),
@@ -13752,6 +13815,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sunny Meadow',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(348, 52, 86),
@@ -13764,6 +13828,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Iridescent Flare',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(5, 52, 86),
@@ -13776,6 +13841,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Mystic Twilight',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(347, 52, 86),
@@ -13788,6 +13854,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Amber Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(4, 52, 86),
@@ -13800,6 +13867,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Onyx Horizon',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(346, 52, 86),
@@ -13812,6 +13880,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Misty Ember',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(3, 52, 86),
@@ -13824,6 +13893,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Smoldering Velvet',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(345, 52, 86),
@@ -13836,6 +13906,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Ethereal Symphony',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(2, 52, 86),
@@ -13848,6 +13919,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crystal Crest',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(344, 52, 86),
@@ -13860,6 +13932,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Pearl Drift',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(1, 52, 86),
@@ -13872,6 +13945,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gilded Reverie',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(343, 52, 86),
@@ -13884,6 +13958,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Hazy Reef',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(0, 52, 86),
@@ -13896,6 +13971,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Vibrant Shore',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(342, 52, 86),
@@ -13908,6 +13984,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Silver Overture',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(359, 52, 86),
@@ -13920,6 +13997,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Jade Grove',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(341, 52, 86),
@@ -13932,6 +14010,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Frosted Hymn',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(358, 52, 86),
@@ -13944,6 +14023,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Satin Dusk',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(340, 52, 86),
@@ -13956,6 +14036,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Luminous Marble',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(357, 52, 86),
@@ -13968,6 +14049,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Golden Cascade',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(339, 52, 86),
@@ -13980,6 +14062,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Opal Bloom',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(356, 52, 86),
@@ -13992,6 +14075,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Dusky Spark',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(338, 52, 86),
@@ -14004,6 +14088,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Prism Echo',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(355, 52, 86),
@@ -14016,6 +14101,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Radiant Haven',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(12, 52, 86),
@@ -14028,6 +14114,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Velvet Tide',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(354, 52, 86),
@@ -14040,6 +14127,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Emerald Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(11, 52, 86),
@@ -14052,6 +14140,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Rosy Canyon',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(353, 52, 86),
@@ -14064,6 +14153,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Astral Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(10, 52, 86),
@@ -14076,6 +14166,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gossamer Dawn',
     type: 'curated',
+    isNew: true,
     category: 'reds',
     colors: [
       ColorUtils.createColor(352, 52, 86),
@@ -15172,6 +15263,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Rosy Meadow',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(259, 42, 82),
@@ -15184,6 +15276,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Astral Flare',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(276, 42, 82),
@@ -15196,6 +15289,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gossamer Twilight',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(258, 42, 82),
@@ -15208,6 +15302,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Cosmic Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(275, 42, 82),
@@ -15220,6 +15315,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sapphire Horizon',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(257, 42, 82),
@@ -15232,6 +15328,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Azure Ember',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(274, 42, 82),
@@ -15244,6 +15341,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Moonlit Velvet',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(256, 42, 82),
@@ -15256,6 +15354,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Spectral Symphony',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(273, 42, 82),
@@ -15268,6 +15367,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Serene Crest',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(255, 42, 82),
@@ -15280,6 +15380,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Coral Drift',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(272, 42, 82),
@@ -15292,6 +15393,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crimson Reverie',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(254, 42, 82),
@@ -15304,6 +15406,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sunny Reef',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(271, 42, 82),
@@ -15316,6 +15419,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Iridescent Shore',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(253, 42, 82),
@@ -15328,6 +15432,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Mystic Overture',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(270, 42, 82),
@@ -15340,6 +15445,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Amber Grove',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(252, 42, 82),
@@ -15352,6 +15458,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Onyx Hymn',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(269, 42, 82),
@@ -15364,6 +15471,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Misty Dusk',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(251, 42, 82),
@@ -15376,6 +15484,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Smoldering Marble',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(268, 42, 82),
@@ -15388,6 +15497,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Ethereal Cascade',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(250, 42, 82),
@@ -15400,6 +15510,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crystal Bloom',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(267, 42, 82),
@@ -15412,6 +15523,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Pearl Spark',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(249, 42, 82),
@@ -15424,6 +15536,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gilded Echo',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(266, 42, 82),
@@ -15436,6 +15549,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Hazy Haven',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(248, 42, 82),
@@ -15448,6 +15562,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Vibrant Tide',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(265, 42, 82),
@@ -15460,6 +15575,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Silver Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(282, 42, 82),
@@ -15472,6 +15588,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Jade Canyon',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(264, 42, 82),
@@ -15484,6 +15601,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Frosted Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(281, 42, 82),
@@ -15496,6 +15614,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Satin Dawn',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(263, 42, 82),
@@ -15508,6 +15627,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Luminous Summit',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(280, 42, 82),
@@ -15520,6 +15640,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Golden Mirage',
     type: 'curated',
+    isNew: true,
     category: 'purples',
     colors: [
       ColorUtils.createColor(262, 42, 82),
@@ -16616,6 +16737,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Rosy Bloom',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(57, 74, 86),
@@ -16628,6 +16750,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Astral Spark',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(74, 74, 86),
@@ -16640,6 +16763,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gossamer Echo',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(56, 74, 86),
@@ -16652,6 +16776,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Cosmic Haven',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(73, 74, 86),
@@ -16664,6 +16789,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sapphire Tide',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(55, 74, 86),
@@ -16676,6 +16802,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Azure Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(72, 74, 86),
@@ -16688,6 +16815,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Moonlit Canyon',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(54, 74, 86),
@@ -16700,6 +16828,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Spectral Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(71, 74, 86),
@@ -16712,6 +16841,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Serene Dawn',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(53, 74, 86),
@@ -16724,6 +16854,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Coral Summit',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(70, 74, 86),
@@ -16736,6 +16867,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crimson Mirage',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(52, 74, 86),
@@ -16748,6 +16880,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sunny Whisper',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(69, 74, 86),
@@ -16760,6 +16893,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Iridescent Halo',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(51, 74, 86),
@@ -16772,6 +16906,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Mystic Aura',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(68, 74, 86),
@@ -16784,6 +16919,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Amber Voyage',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(50, 74, 86),
@@ -16796,6 +16932,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Onyx Pulse',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(67, 74, 86),
@@ -16808,6 +16945,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Misty Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(49, 74, 86),
@@ -16820,6 +16958,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Smoldering Meadow',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(66, 74, 86),
@@ -16832,6 +16971,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Ethereal Flare',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(48, 74, 86),
@@ -16844,6 +16984,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crystal Twilight',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(65, 74, 86),
@@ -16856,6 +16997,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Pearl Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(47, 74, 86),
@@ -16868,6 +17010,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gilded Horizon',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(64, 74, 86),
@@ -16880,6 +17023,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Hazy Ember',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(46, 74, 86),
@@ -16892,6 +17036,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Vibrant Velvet',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(63, 74, 86),
@@ -16904,6 +17049,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Silver Symphony',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(80, 74, 86),
@@ -16916,6 +17062,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Jade Crest',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(62, 74, 86),
@@ -16928,6 +17075,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Frosted Drift',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(79, 74, 86),
@@ -16940,6 +17088,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Satin Reverie',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(61, 74, 86),
@@ -16952,6 +17101,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Luminous Reef',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(78, 74, 86),
@@ -16964,6 +17114,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Golden Shore',
     type: 'curated',
+    isNew: true,
     category: 'oranges',
     colors: [
       ColorUtils.createColor(60, 74, 86),
@@ -18060,6 +18211,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gilded Twilight',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(39, 5, 92),
@@ -18072,6 +18224,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Hazy Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(56, 5, 92),
@@ -18084,6 +18237,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Vibrant Horizon',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(38, 5, 92),
@@ -18096,6 +18250,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Silver Ember',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(55, 5, 92),
@@ -18108,6 +18263,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Jade Velvet',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(37, 5, 92),
@@ -18120,6 +18276,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Frosted Symphony',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(54, 5, 92),
@@ -18132,6 +18289,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Satin Crest',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(36, 5, 92),
@@ -18144,6 +18302,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Luminous Drift',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(53, 5, 92),
@@ -18156,6 +18315,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Golden Reverie',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(35, 5, 92),
@@ -18168,6 +18328,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Opal Reef',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(52, 5, 92),
@@ -18180,6 +18341,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Dusky Shore',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(34, 5, 92),
@@ -18192,6 +18354,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Prism Overture',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(51, 5, 92),
@@ -18204,6 +18367,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Radiant Grove',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(33, 5, 92),
@@ -18216,6 +18380,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Velvet Hymn',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(50, 5, 92),
@@ -18228,6 +18393,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Emerald Dusk',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(32, 5, 92),
@@ -18240,6 +18406,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Rosy Marble',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(49, 5, 92),
@@ -18252,6 +18419,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Astral Cascade',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(31, 5, 92),
@@ -18264,6 +18432,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gossamer Bloom',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(48, 5, 92),
@@ -18276,6 +18445,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Cosmic Spark',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(30, 5, 92),
@@ -18288,6 +18458,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sapphire Echo',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(47, 5, 92),
@@ -18300,6 +18471,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Azure Haven',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(29, 5, 92),
@@ -18312,6 +18484,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Moonlit Tide',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(46, 5, 92),
@@ -18324,6 +18497,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Spectral Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(28, 5, 92),
@@ -18336,6 +18510,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Serene Canyon',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(45, 5, 92),
@@ -18348,6 +18523,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Coral Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(62, 5, 92),
@@ -18360,6 +18536,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crimson Dawn',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(44, 5, 92),
@@ -18372,6 +18549,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sunny Summit',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(61, 5, 92),
@@ -18384,6 +18562,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Iridescent Mirage',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(43, 5, 92),
@@ -18396,6 +18575,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Mystic Whisper',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(60, 5, 92),
@@ -18408,6 +18588,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Amber Halo',
     type: 'curated',
+    isNew: true,
     category: 'neutrals',
     colors: [
       ColorUtils.createColor(42, 5, 92),
@@ -19504,6 +19685,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Rosy Whisper',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(325, 100, 45),
@@ -19516,6 +19698,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Astral Halo',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(50, 100, 45),
@@ -19528,6 +19711,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gossamer Aura',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(320, 100, 45),
@@ -19540,6 +19724,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Cosmic Voyage',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(45, 100, 45),
@@ -19552,6 +19737,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sapphire Pulse',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(315, 100, 45),
@@ -19564,6 +19750,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Azure Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(40, 100, 45),
@@ -19576,6 +19763,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Moonlit Meadow',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(310, 100, 45),
@@ -19588,6 +19776,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Spectral Flare',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(35, 100, 45),
@@ -19600,6 +19789,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Serene Twilight',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(305, 100, 45),
@@ -19612,6 +19802,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Coral Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(30, 100, 45),
@@ -19624,6 +19815,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crimson Horizon',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(300, 100, 45),
@@ -19636,6 +19828,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sunny Ember',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(25, 100, 45),
@@ -19648,6 +19841,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Iridescent Velvet',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(295, 100, 45),
@@ -19660,6 +19854,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Mystic Symphony',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(20, 100, 45),
@@ -19672,6 +19867,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Amber Crest',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(290, 100, 45),
@@ -19684,6 +19880,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Onyx Drift',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(15, 100, 45),
@@ -19696,6 +19893,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Misty Reverie',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(285, 100, 45),
@@ -19708,6 +19906,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Smoldering Reef',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(10, 100, 45),
@@ -19720,6 +19919,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Ethereal Shore',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(280, 100, 45),
@@ -19732,6 +19932,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crystal Overture',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(5, 100, 45),
@@ -19744,6 +19945,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Pearl Grove',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(275, 100, 45),
@@ -19756,6 +19958,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gilded Hymn',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(0, 100, 45),
@@ -19768,6 +19971,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Hazy Dusk',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(270, 100, 45),
@@ -19780,6 +19984,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Vibrant Marble',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(355, 100, 45),
@@ -19792,6 +19997,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Silver Cascade',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(80, 100, 45),
@@ -19804,6 +20010,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Jade Bloom',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(350, 100, 45),
@@ -19816,6 +20023,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Frosted Spark',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(75, 100, 45),
@@ -19828,6 +20036,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Satin Echo',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(345, 100, 45),
@@ -19840,6 +20049,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Luminous Haven',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(70, 100, 45),
@@ -19852,6 +20062,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Golden Tide',
     type: 'curated',
+    isNew: true,
     category: 'vibrant',
     colors: [
       ColorUtils.createColor(340, 100, 45),
@@ -20948,6 +21159,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Rosy Meadow',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(272, 25, 83),
@@ -20960,6 +21172,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Astral Flare',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(355, 25, 83),
@@ -20972,6 +21185,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gossamer Twilight',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(78, 25, 83),
@@ -20984,6 +21198,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Cosmic Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(161, 25, 83),
@@ -20996,6 +21211,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sapphire Horizon',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(244, 25, 83),
@@ -21008,6 +21224,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Azure Ember',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(327, 25, 83),
@@ -21020,6 +21237,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Moonlit Velvet',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(50, 25, 83),
@@ -21032,6 +21250,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Spectral Symphony',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(133, 25, 83),
@@ -21044,6 +21263,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Serene Crest',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(216, 25, 83),
@@ -21056,6 +21276,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Coral Drift',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(299, 25, 83),
@@ -21068,6 +21289,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crimson Reverie',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(22, 25, 83),
@@ -21080,6 +21302,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sunny Reef',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(105, 25, 83),
@@ -21092,6 +21315,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Iridescent Shore',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(188, 25, 83),
@@ -21104,6 +21328,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Mystic Overture',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(271, 25, 83),
@@ -21116,6 +21341,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Amber Grove',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(354, 25, 83),
@@ -21128,6 +21354,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Onyx Hymn',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(77, 25, 83),
@@ -21140,6 +21367,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Misty Dusk',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(160, 25, 83),
@@ -21152,6 +21380,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Smoldering Marble',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(243, 25, 83),
@@ -21164,6 +21393,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Ethereal Cascade',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(326, 25, 83),
@@ -21176,6 +21406,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crystal Bloom',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(49, 25, 83),
@@ -21188,6 +21419,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Pearl Spark',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(132, 25, 83),
@@ -21200,6 +21432,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gilded Echo',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(215, 25, 83),
@@ -21212,6 +21445,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Hazy Haven',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(298, 25, 83),
@@ -21224,6 +21458,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Vibrant Tide',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(21, 25, 83),
@@ -21236,6 +21471,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Silver Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(104, 25, 83),
@@ -21248,6 +21484,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Jade Canyon',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(187, 25, 83),
@@ -21260,6 +21497,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Frosted Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(270, 25, 83),
@@ -21272,6 +21510,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Satin Dawn',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(353, 25, 83),
@@ -21284,6 +21523,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Luminous Summit',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(76, 25, 83),
@@ -21296,6 +21536,7 @@ const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Golden Mirage',
     type: 'curated',
+    isNew: true,
     category: 'pastels',
     colors: [
       ColorUtils.createColor(159, 25, 83),
@@ -23706,6 +23947,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Ethereal Halo',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(21, 68, 59),
@@ -23718,6 +23960,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Crystal Aura',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(38, 68, 59),
@@ -23730,6 +23973,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Pearl Voyage',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(20, 68, 59),
@@ -23742,6 +23986,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Gilded Pulse',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(37, 68, 59),
@@ -23754,6 +23999,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Hazy Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(19, 68, 59),
@@ -23766,6 +24012,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Vibrant Meadow',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(36, 68, 59),
@@ -23778,6 +24025,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Silver Flare',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(18, 68, 59),
@@ -23790,6 +24038,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Jade Twilight',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(35, 68, 59),
@@ -23802,6 +24051,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Frosted Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(17, 68, 59),
@@ -23814,6 +24064,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Satin Horizon',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(34, 68, 59),
@@ -23826,6 +24077,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Luminous Ember',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(16, 68, 59),
@@ -23838,6 +24090,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Golden Velvet',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(33, 68, 59),
@@ -23850,6 +24103,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Opal Symphony',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(15, 68, 59),
@@ -23862,6 +24116,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Dusky Crest',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(32, 68, 59),
@@ -23874,6 +24129,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Prism Drift',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(14, 68, 59),
@@ -23886,6 +24142,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Radiant Reverie',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(31, 68, 59),
@@ -23898,6 +24155,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Velvet Reef',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(13, 68, 59),
@@ -23910,6 +24168,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Emerald Shore',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(30, 68, 59),
@@ -23922,6 +24181,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Rosy Overture',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(12, 68, 59),
@@ -23934,6 +24194,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Astral Grove',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(29, 68, 59),
@@ -23946,6 +24207,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Gossamer Hymn',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(11, 68, 59),
@@ -23958,6 +24220,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Cosmic Dusk',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(28, 68, 59),
@@ -23970,6 +24233,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Sapphire Marble',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(10, 68, 59),
@@ -23982,6 +24246,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Azure Cascade',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(27, 68, 59),
@@ -23994,6 +24259,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Moonlit Bloom',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(44, 68, 59),
@@ -24006,6 +24272,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Spectral Spark',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(26, 68, 59),
@@ -24018,6 +24285,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Serene Echo',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(43, 68, 59),
@@ -24030,6 +24298,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Coral Haven',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(25, 68, 59),
@@ -24042,6 +24311,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Crimson Tide',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(42, 68, 59),
@@ -24054,6 +24324,7 @@ const complementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categor
   {
     name: 'Sunny Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'complementary',
     colors: [
       ColorUtils.createColor(24, 68, 59),
@@ -26361,6 +26632,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gilded Crest',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(9, 74, 39),
@@ -26373,6 +26645,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Hazy Drift',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(26, 74, 39),
@@ -26385,6 +26658,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Vibrant Reverie',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(8, 74, 39),
@@ -26397,6 +26671,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Silver Reef',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(25, 74, 39),
@@ -26409,6 +26684,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Jade Shore',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(7, 74, 39),
@@ -26421,6 +26697,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Frosted Overture',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(24, 74, 39),
@@ -26433,6 +26710,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Satin Grove',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(6, 74, 39),
@@ -26445,6 +26723,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Luminous Hymn',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(23, 74, 39),
@@ -26457,6 +26736,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Golden Dusk',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(5, 74, 39),
@@ -26469,6 +26749,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Opal Marble',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(22, 74, 39),
@@ -26481,6 +26762,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Dusky Cascade',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(4, 74, 39),
@@ -26493,6 +26775,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Prism Bloom',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(21, 74, 39),
@@ -26505,6 +26788,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Radiant Spark',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(3, 74, 39),
@@ -26517,6 +26801,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Velvet Echo',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(20, 74, 39),
@@ -26529,6 +26814,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Emerald Haven',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(2, 74, 39),
@@ -26541,6 +26827,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Rosy Tide',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(19, 74, 39),
@@ -26553,6 +26840,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Astral Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(1, 74, 39),
@@ -26565,6 +26853,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gossamer Canyon',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(18, 74, 39),
@@ -26577,6 +26866,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Cosmic Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(0, 74, 39),
@@ -26589,6 +26879,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sapphire Dawn',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(17, 74, 39),
@@ -26601,6 +26892,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Azure Summit',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(359, 74, 39),
@@ -26613,6 +26905,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Moonlit Mirage',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(16, 74, 39),
@@ -26625,6 +26918,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Spectral Whisper',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(358, 74, 39),
@@ -26637,6 +26931,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Serene Halo',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(15, 74, 39),
@@ -26649,6 +26944,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Coral Aura',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(32, 74, 39),
@@ -26661,6 +26957,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crimson Voyage',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(14, 74, 39),
@@ -26673,6 +26970,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sunny Pulse',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(31, 74, 39),
@@ -26685,6 +26983,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Iridescent Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(13, 74, 39),
@@ -26697,6 +26996,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Mystic Meadow',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(30, 74, 39),
@@ -26709,6 +27009,7 @@ const holidayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Amber Flare',
     type: 'curated',
+    isNew: true,
     category: 'holidays',
     colors: [
       ColorUtils.createColor(12, 74, 39),
@@ -29006,6 +29307,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Radiant Grove',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29018,6 +29320,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Velvet Hymn',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29030,6 +29333,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Emerald Dusk',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29042,6 +29346,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Rosy Marble',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29054,6 +29359,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Astral Cascade',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29066,6 +29372,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Gossamer Bloom',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29078,6 +29385,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Cosmic Spark',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29090,6 +29398,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Sapphire Echo',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29102,6 +29411,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Azure Haven',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29114,6 +29424,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Moonlit Tide',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29126,6 +29437,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Spectral Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29138,6 +29450,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Serene Canyon',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29150,6 +29463,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Coral Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29162,6 +29476,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Crimson Dawn',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29174,6 +29489,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Sunny Summit',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29186,6 +29502,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Iridescent Mirage',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29198,6 +29515,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Mystic Whisper',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29210,6 +29528,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Amber Halo',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29222,6 +29541,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Onyx Aura',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29234,6 +29554,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Misty Voyage',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29246,6 +29567,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Smoldering Pulse',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29258,6 +29580,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Ethereal Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29270,6 +29593,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Crystal Meadow',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29282,6 +29606,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Pearl Flare',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29294,6 +29619,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Gilded Twilight',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29306,6 +29632,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Hazy Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29318,6 +29645,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Vibrant Horizon',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29330,6 +29658,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Silver Ember',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29342,6 +29671,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Jade Velvet',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -29354,6 +29684,7 @@ const blackswhitesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category
   {
     name: 'Frosted Symphony',
     type: 'curated',
+    isNew: true,
     category: 'blackswhites',
     colors: [
       ColorUtils.createColor(0, 0, 95),
@@ -31546,6 +31877,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Moonlit Voyage',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(31, 74, 65),
@@ -31558,6 +31890,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Spectral Pulse',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(48, 74, 65),
@@ -31570,6 +31903,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Serene Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(30, 74, 65),
@@ -31582,6 +31916,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Coral Meadow',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(47, 74, 65),
@@ -31594,6 +31929,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Crimson Flare',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(29, 74, 65),
@@ -31606,6 +31942,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Sunny Twilight',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(46, 74, 65),
@@ -31618,6 +31955,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Iridescent Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(28, 74, 65),
@@ -31630,6 +31968,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Mystic Horizon',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(45, 74, 65),
@@ -31642,6 +31981,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Amber Ember',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(27, 74, 65),
@@ -31654,6 +31994,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Onyx Velvet',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(44, 74, 65),
@@ -31666,6 +32007,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Misty Symphony',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(26, 74, 65),
@@ -31678,6 +32020,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Smoldering Crest',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(43, 74, 65),
@@ -31690,6 +32033,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Ethereal Drift',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(25, 74, 65),
@@ -31702,6 +32046,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Crystal Reverie',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(42, 74, 65),
@@ -31714,6 +32059,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Pearl Reef',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(24, 74, 65),
@@ -31726,6 +32072,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Gilded Shore',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(41, 74, 65),
@@ -31738,6 +32085,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Hazy Overture',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(23, 74, 65),
@@ -31750,6 +32098,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Vibrant Grove',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(40, 74, 65),
@@ -31762,6 +32111,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Silver Hymn',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(22, 74, 65),
@@ -31774,6 +32124,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Jade Dusk',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(39, 74, 65),
@@ -31786,6 +32137,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Frosted Marble',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(21, 74, 65),
@@ -31798,6 +32150,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Satin Cascade',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(38, 74, 65),
@@ -31810,6 +32163,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Luminous Bloom',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(20, 74, 65),
@@ -31822,6 +32176,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Golden Spark',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(37, 74, 65),
@@ -31834,6 +32189,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Opal Echo',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(54, 74, 65),
@@ -31846,6 +32202,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Dusky Haven',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(36, 74, 65),
@@ -31858,6 +32215,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Prism Tide',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(53, 74, 65),
@@ -31870,6 +32228,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Radiant Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(35, 74, 65),
@@ -31882,6 +32241,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Velvet Canyon',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(52, 74, 65),
@@ -31894,6 +32254,7 @@ const analogousPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: s
   {
     name: 'Emerald Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'analogous',
     colors: [
       ColorUtils.createColor(34, 74, 65),
@@ -33954,6 +34315,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Satin Aura',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(179, 68, 49),
@@ -33966,6 +34328,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Luminous Voyage',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(196, 68, 49),
@@ -33978,6 +34341,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Golden Pulse',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(178, 68, 49),
@@ -33990,6 +34354,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Opal Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(195, 68, 49),
@@ -34002,6 +34367,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Dusky Meadow',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(177, 68, 49),
@@ -34014,6 +34380,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Prism Flare',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(194, 68, 49),
@@ -34026,6 +34393,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Radiant Twilight',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(176, 68, 49),
@@ -34038,6 +34406,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Velvet Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(193, 68, 49),
@@ -34050,6 +34419,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Emerald Horizon',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(175, 68, 49),
@@ -34062,6 +34432,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Rosy Ember',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(192, 68, 49),
@@ -34074,6 +34445,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Astral Velvet',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(174, 68, 49),
@@ -34086,6 +34458,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Gossamer Symphony',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(191, 68, 49),
@@ -34098,6 +34471,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Cosmic Crest',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(173, 68, 49),
@@ -34110,6 +34484,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Sapphire Drift',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(190, 68, 49),
@@ -34122,6 +34497,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Azure Reverie',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(172, 68, 49),
@@ -34134,6 +34510,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Moonlit Reef',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(189, 68, 49),
@@ -34146,6 +34523,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Spectral Shore',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(171, 68, 49),
@@ -34158,6 +34536,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Serene Overture',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(188, 68, 49),
@@ -34170,6 +34549,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Coral Grove',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(170, 68, 49),
@@ -34182,6 +34562,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Crimson Hymn',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(187, 68, 49),
@@ -34194,6 +34575,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Sunny Dusk',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(169, 68, 49),
@@ -34206,6 +34588,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Iridescent Marble',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(186, 68, 49),
@@ -34218,6 +34601,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Mystic Cascade',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(168, 68, 49),
@@ -34230,6 +34614,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Amber Bloom',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(185, 68, 49),
@@ -34242,6 +34627,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Onyx Spark',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(202, 68, 49),
@@ -34254,6 +34640,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Misty Echo',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(184, 68, 49),
@@ -34266,6 +34653,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Smoldering Haven',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(201, 68, 49),
@@ -34278,6 +34666,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Ethereal Tide',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(183, 68, 49),
@@ -34290,6 +34679,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Crystal Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(200, 68, 49),
@@ -34302,6 +34692,7 @@ const tealorangePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Pearl Canyon',
     type: 'curated',
+    isNew: true,
     category: 'tealorange',
     colors: [
       ColorUtils.createColor(182, 68, 49),
@@ -36202,6 +36593,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Rosy Aura',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(222, 78, 49),
@@ -36214,6 +36606,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Astral Voyage',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(305, 78, 49),
@@ -36226,6 +36619,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gossamer Pulse',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(28, 78, 49),
@@ -36238,6 +36632,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Cosmic Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(111, 78, 49),
@@ -36250,6 +36645,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sapphire Meadow',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(194, 78, 49),
@@ -36262,6 +36658,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Azure Flare',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(277, 78, 49),
@@ -36274,6 +36671,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Moonlit Twilight',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(0, 78, 49),
@@ -36286,6 +36684,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Spectral Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(83, 78, 49),
@@ -36298,6 +36697,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Serene Horizon',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(166, 78, 49),
@@ -36310,6 +36710,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Coral Ember',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(249, 78, 49),
@@ -36322,6 +36723,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crimson Velvet',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(332, 78, 49),
@@ -36334,6 +36736,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Sunny Symphony',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(55, 78, 49),
@@ -36346,6 +36749,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Iridescent Crest',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(138, 78, 49),
@@ -36358,6 +36762,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Mystic Drift',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(221, 78, 49),
@@ -36370,6 +36775,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Amber Reverie',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(304, 78, 49),
@@ -36382,6 +36788,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Onyx Reef',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(27, 78, 49),
@@ -36394,6 +36801,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Misty Shore',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(110, 78, 49),
@@ -36406,6 +36814,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Smoldering Overture',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(193, 78, 49),
@@ -36418,6 +36827,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Ethereal Grove',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(276, 78, 49),
@@ -36430,6 +36840,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Crystal Hymn',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(359, 78, 49),
@@ -36442,6 +36853,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Pearl Dusk',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(82, 78, 49),
@@ -36454,6 +36866,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Gilded Marble',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(165, 78, 49),
@@ -36466,6 +36879,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Hazy Cascade',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(248, 78, 49),
@@ -36478,6 +36892,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Vibrant Bloom',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(331, 78, 49),
@@ -36490,6 +36905,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Silver Spark',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(54, 78, 49),
@@ -36502,6 +36918,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Jade Echo',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(137, 78, 49),
@@ -36514,6 +36931,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Frosted Haven',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(220, 78, 49),
@@ -36526,6 +36944,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Satin Tide',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(303, 78, 49),
@@ -36538,6 +36957,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Luminous Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(26, 78, 49),
@@ -36550,6 +36970,7 @@ const triadicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: str
   {
     name: 'Golden Canyon',
     type: 'curated',
+    isNew: true,
     category: 'triadic',
     colors: [
       ColorUtils.createColor(109, 78, 49),
@@ -38752,6 +39173,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Coral Voyage',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(342, 63, 55),
@@ -38764,6 +39186,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Crimson Pulse',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(65, 63, 55),
@@ -38776,6 +39199,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Sunny Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(148, 63, 55),
@@ -38788,6 +39212,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Iridescent Meadow',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(231, 63, 55),
@@ -38800,6 +39225,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Mystic Flare',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(314, 63, 55),
@@ -38812,6 +39238,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Amber Twilight',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(37, 63, 55),
@@ -38824,6 +39251,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Onyx Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(120, 63, 55),
@@ -38836,6 +39264,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Misty Horizon',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(203, 63, 55),
@@ -38848,6 +39277,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Smoldering Ember',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(286, 63, 55),
@@ -38860,6 +39290,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Ethereal Velvet',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(9, 63, 55),
@@ -38872,6 +39303,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Crystal Symphony',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(92, 63, 55),
@@ -38884,6 +39316,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Pearl Crest',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(175, 63, 55),
@@ -38896,6 +39329,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Gilded Drift',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(258, 63, 55),
@@ -38908,6 +39342,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Hazy Reverie',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(341, 63, 55),
@@ -38920,6 +39355,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Vibrant Reef',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(64, 63, 55),
@@ -38932,6 +39368,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Silver Shore',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(147, 63, 55),
@@ -38944,6 +39381,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Jade Overture',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(230, 63, 55),
@@ -38956,6 +39394,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Frosted Grove',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(313, 63, 55),
@@ -38968,6 +39407,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Satin Hymn',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(36, 63, 55),
@@ -38980,6 +39420,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Luminous Dusk',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(119, 63, 55),
@@ -38992,6 +39433,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Golden Marble',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(202, 63, 55),
@@ -39004,6 +39446,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Opal Cascade',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(285, 63, 55),
@@ -39016,6 +39459,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Dusky Bloom',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(8, 63, 55),
@@ -39028,6 +39472,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Prism Spark',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(91, 63, 55),
@@ -39040,6 +39485,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Radiant Echo',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(174, 63, 55),
@@ -39052,6 +39498,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Velvet Haven',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(257, 63, 55),
@@ -39064,6 +39511,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Emerald Tide',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(340, 63, 55),
@@ -39076,6 +39524,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Rosy Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(63, 63, 55),
@@ -39088,6 +39537,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Astral Canyon',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(146, 63, 55),
@@ -39100,6 +39550,7 @@ const analogousSchemePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { categ
   {
     name: 'Gossamer Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'analogous-scheme',
     colors: [
       ColorUtils.createColor(229, 63, 55),
@@ -41000,6 +41451,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Rosy Hymn',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(139, 68, 49),
@@ -41012,6 +41464,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Astral Dusk',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(222, 68, 49),
@@ -41024,6 +41477,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Gossamer Marble',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(305, 68, 49),
@@ -41036,6 +41490,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Cosmic Cascade',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(28, 68, 49),
@@ -41048,6 +41503,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Sapphire Bloom',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(111, 68, 49),
@@ -41060,6 +41516,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Azure Spark',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(194, 68, 49),
@@ -41072,6 +41529,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Moonlit Echo',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(277, 68, 49),
@@ -41084,6 +41542,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Spectral Haven',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(0, 68, 49),
@@ -41096,6 +41555,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Serene Tide',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(83, 68, 49),
@@ -41108,6 +41568,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Coral Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(166, 68, 49),
@@ -41120,6 +41581,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Crimson Canyon',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(249, 68, 49),
@@ -41132,6 +41594,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Sunny Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(332, 68, 49),
@@ -41144,6 +41607,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Iridescent Dawn',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(55, 68, 49),
@@ -41156,6 +41620,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Mystic Summit',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(138, 68, 49),
@@ -41168,6 +41633,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Amber Mirage',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(221, 68, 49),
@@ -41180,6 +41646,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Onyx Whisper',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(304, 68, 49),
@@ -41192,6 +41659,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Misty Halo',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(27, 68, 49),
@@ -41204,6 +41672,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Smoldering Aura',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(110, 68, 49),
@@ -41216,6 +41685,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Ethereal Voyage',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(193, 68, 49),
@@ -41228,6 +41698,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Crystal Pulse',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(276, 68, 49),
@@ -41240,6 +41711,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Pearl Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(359, 68, 49),
@@ -41252,6 +41724,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Gilded Meadow',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(82, 68, 49),
@@ -41264,6 +41737,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Hazy Flare',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(165, 68, 49),
@@ -41276,6 +41750,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Vibrant Twilight',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(248, 68, 49),
@@ -41288,6 +41763,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Silver Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(331, 68, 49),
@@ -41300,6 +41776,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Jade Horizon',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(54, 68, 49),
@@ -41312,6 +41789,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Frosted Ember',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(137, 68, 49),
@@ -41324,6 +41802,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Satin Velvet',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(220, 68, 49),
@@ -41336,6 +41815,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Luminous Symphony',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(303, 68, 49),
@@ -41348,6 +41828,7 @@ const splitComplementaryPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { ca
   {
     name: 'Golden Crest',
     type: 'curated',
+    isNew: true,
     category: 'split-complementary',
     colors: [
       ColorUtils.createColor(26, 68, 49),
@@ -43268,6 +43749,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Gilded Aura',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(276, 74, 49),
@@ -43280,6 +43762,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Hazy Voyage',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(359, 74, 49),
@@ -43292,6 +43775,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Vibrant Pulse',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(82, 74, 49),
@@ -43304,6 +43788,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Silver Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(165, 74, 49),
@@ -43316,6 +43801,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Jade Meadow',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(248, 74, 49),
@@ -43328,6 +43814,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Frosted Flare',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(331, 74, 49),
@@ -43340,6 +43827,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Satin Twilight',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(54, 74, 49),
@@ -43352,6 +43840,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Luminous Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(137, 74, 49),
@@ -43364,6 +43853,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Golden Horizon',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(220, 74, 49),
@@ -43376,6 +43866,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Opal Ember',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(303, 74, 49),
@@ -43388,6 +43879,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Dusky Velvet',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(26, 74, 49),
@@ -43400,6 +43892,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Prism Symphony',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(109, 74, 49),
@@ -43412,6 +43905,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Radiant Crest',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(192, 74, 49),
@@ -43424,6 +43918,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Velvet Drift',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(275, 74, 49),
@@ -43436,6 +43931,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Emerald Reverie',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(358, 74, 49),
@@ -43448,6 +43944,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Rosy Reef',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(81, 74, 49),
@@ -43460,6 +43957,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Astral Shore',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(164, 74, 49),
@@ -43472,6 +43970,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Gossamer Overture',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(247, 74, 49),
@@ -43484,6 +43983,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Cosmic Grove',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(330, 74, 49),
@@ -43496,6 +43996,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Sapphire Hymn',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(53, 74, 49),
@@ -43508,6 +44009,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Azure Dusk',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(136, 74, 49),
@@ -43520,6 +44022,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Moonlit Marble',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(219, 74, 49),
@@ -43532,6 +44035,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Spectral Cascade',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(302, 74, 49),
@@ -43544,6 +44048,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Serene Bloom',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(25, 74, 49),
@@ -43556,6 +44061,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Coral Spark',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(108, 74, 49),
@@ -43568,6 +44074,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Crimson Echo',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(191, 74, 49),
@@ -43580,6 +44087,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Sunny Haven',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(274, 74, 49),
@@ -43592,6 +44100,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Iridescent Tide',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(357, 74, 49),
@@ -43604,6 +44113,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Mystic Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(80, 74, 49),
@@ -43616,6 +44126,7 @@ const tetradicPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: st
   {
     name: 'Amber Canyon',
     type: 'curated',
+    isNew: true,
     category: 'tetradic',
     colors: [
       ColorUtils.createColor(163, 74, 49),
@@ -45536,6 +46047,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Onyx Hymn',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(170, 78, 49),
@@ -45548,6 +46060,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Misty Dusk',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(253, 78, 49),
@@ -45560,6 +46073,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Smoldering Marble',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(336, 78, 49),
@@ -45572,6 +46086,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Ethereal Cascade',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(59, 78, 49),
@@ -45584,6 +46099,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Crystal Bloom',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(142, 78, 49),
@@ -45596,6 +46112,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Pearl Spark',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(225, 78, 49),
@@ -45608,6 +46125,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Gilded Echo',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(308, 78, 49),
@@ -45620,6 +46138,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Hazy Haven',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(31, 78, 49),
@@ -45632,6 +46151,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Vibrant Tide',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(114, 78, 49),
@@ -45644,6 +46164,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Silver Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(197, 78, 49),
@@ -45656,6 +46177,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Jade Canyon',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(280, 78, 49),
@@ -45668,6 +46190,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Frosted Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(3, 78, 49),
@@ -45680,6 +46203,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Satin Dawn',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(86, 78, 49),
@@ -45692,6 +46216,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Luminous Summit',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(169, 78, 49),
@@ -45704,6 +46229,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Golden Mirage',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(252, 78, 49),
@@ -45716,6 +46242,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Opal Whisper',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(335, 78, 49),
@@ -45728,6 +46255,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Dusky Halo',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(58, 78, 49),
@@ -45740,6 +46268,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Prism Aura',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(141, 78, 49),
@@ -45752,6 +46281,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Radiant Voyage',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(224, 78, 49),
@@ -45764,6 +46294,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Velvet Pulse',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(307, 78, 49),
@@ -45776,6 +46307,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Emerald Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(30, 78, 49),
@@ -45788,6 +46320,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Rosy Meadow',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(113, 78, 49),
@@ -45800,6 +46333,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Astral Flare',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(196, 78, 49),
@@ -45812,6 +46346,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Gossamer Twilight',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(279, 78, 49),
@@ -45824,6 +46359,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Cosmic Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(2, 78, 49),
@@ -45836,6 +46372,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Sapphire Horizon',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(85, 78, 49),
@@ -45848,6 +46385,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Azure Ember',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(168, 78, 49),
@@ -45860,6 +46398,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Moonlit Velvet',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(251, 78, 49),
@@ -45872,6 +46411,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Spectral Symphony',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(334, 78, 49),
@@ -45884,6 +46424,7 @@ const squarePalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: stri
   {
     name: 'Serene Crest',
     type: 'curated',
+    isNew: true,
     category: 'square',
     colors: [
       ColorUtils.createColor(57, 78, 49),
@@ -47703,6 +48244,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Satin Whisper',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(339, 62, 75),
@@ -47715,6 +48257,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Luminous Halo',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(356, 62, 75),
@@ -47727,6 +48270,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Golden Aura',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(338, 62, 75),
@@ -47739,6 +48283,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Opal Voyage',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(355, 62, 75),
@@ -47751,6 +48296,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Dusky Pulse',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(337, 62, 75),
@@ -47763,6 +48309,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Prism Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(354, 62, 75),
@@ -47775,6 +48322,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Radiant Meadow',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(336, 62, 75),
@@ -47787,6 +48335,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Velvet Flare',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(353, 62, 75),
@@ -47799,6 +48348,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Emerald Twilight',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(335, 62, 75),
@@ -47811,6 +48361,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Rosy Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(352, 62, 75),
@@ -47823,6 +48374,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Astral Horizon',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(334, 62, 75),
@@ -47835,6 +48387,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Gossamer Ember',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(351, 62, 75),
@@ -47847,6 +48400,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Cosmic Velvet',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(333, 62, 75),
@@ -47859,6 +48413,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Sapphire Symphony',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(350, 62, 75),
@@ -47871,6 +48426,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Azure Crest',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(332, 62, 75),
@@ -47883,6 +48439,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Moonlit Drift',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(349, 62, 75),
@@ -47895,6 +48452,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Spectral Reverie',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(331, 62, 75),
@@ -47907,6 +48465,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Serene Reef',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(348, 62, 75),
@@ -47919,6 +48478,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Coral Shore',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(330, 62, 75),
@@ -47931,6 +48491,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Crimson Overture',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(347, 62, 75),
@@ -47943,6 +48504,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Sunny Grove',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(329, 62, 75),
@@ -47955,6 +48517,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Iridescent Hymn',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(346, 62, 75),
@@ -47967,6 +48530,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Mystic Dusk',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(328, 62, 75),
@@ -47979,6 +48543,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Amber Marble',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(345, 62, 75),
@@ -47991,6 +48556,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Onyx Cascade',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(2, 62, 75),
@@ -48003,6 +48569,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Misty Bloom',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(344, 62, 75),
@@ -48015,6 +48582,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Smoldering Spark',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(1, 62, 75),
@@ -48027,6 +48595,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Ethereal Echo',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(343, 62, 75),
@@ -48039,6 +48608,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Crystal Haven',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(0, 62, 75),
@@ -48051,6 +48621,7 @@ const valentinesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Pearl Tide',
     type: 'curated',
+    isNew: true,
     category: 'valentines',
     colors: [
       ColorUtils.createColor(342, 62, 75),
@@ -49870,6 +50441,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Satin Echo',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(329, 43, 75),
@@ -49882,6 +50454,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Luminous Haven',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(346, 43, 75),
@@ -49894,6 +50467,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Golden Tide',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(328, 43, 75),
@@ -49906,6 +50480,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Opal Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(345, 43, 75),
@@ -49918,6 +50493,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Dusky Canyon',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(327, 43, 75),
@@ -49930,6 +50506,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Prism Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(344, 43, 75),
@@ -49942,6 +50519,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Radiant Dawn',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(326, 43, 75),
@@ -49954,6 +50532,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Velvet Summit',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(343, 43, 75),
@@ -49966,6 +50545,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Emerald Mirage',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(325, 43, 75),
@@ -49978,6 +50558,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Rosy Whisper',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(342, 43, 75),
@@ -49990,6 +50571,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Astral Halo',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(324, 43, 75),
@@ -50002,6 +50584,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Gossamer Aura',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(341, 43, 75),
@@ -50014,6 +50597,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Cosmic Voyage',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(323, 43, 75),
@@ -50026,6 +50610,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Sapphire Pulse',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(340, 43, 75),
@@ -50038,6 +50623,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Azure Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(322, 43, 75),
@@ -50050,6 +50636,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Moonlit Meadow',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(339, 43, 75),
@@ -50062,6 +50649,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Spectral Flare',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(321, 43, 75),
@@ -50074,6 +50662,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Serene Twilight',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(338, 43, 75),
@@ -50086,6 +50675,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Coral Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(320, 43, 75),
@@ -50098,6 +50688,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Crimson Horizon',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(337, 43, 75),
@@ -50110,6 +50701,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Sunny Ember',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(319, 43, 75),
@@ -50122,6 +50714,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Iridescent Velvet',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(336, 43, 75),
@@ -50134,6 +50727,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Mystic Symphony',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(318, 43, 75),
@@ -50146,6 +50740,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Amber Crest',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(335, 43, 75),
@@ -50158,6 +50753,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Onyx Drift',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(352, 43, 75),
@@ -50170,6 +50766,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Misty Reverie',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(334, 43, 75),
@@ -50182,6 +50779,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Smoldering Reef',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(351, 43, 75),
@@ -50194,6 +50792,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Ethereal Shore',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(333, 43, 75),
@@ -50206,6 +50805,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Crystal Overture',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(350, 43, 75),
@@ -50218,6 +50818,7 @@ const mothersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Pearl Grove',
     type: 'curated',
+    isNew: true,
     category: 'mothersday',
     colors: [
       ColorUtils.createColor(332, 43, 75),
@@ -51989,6 +52590,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Satin Hymn',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(119, 62, 39),
@@ -52001,6 +52603,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Luminous Dusk',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(136, 62, 39),
@@ -52013,6 +52616,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Golden Marble',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(118, 62, 39),
@@ -52025,6 +52629,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Opal Cascade',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(135, 62, 39),
@@ -52037,6 +52642,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Dusky Bloom',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(117, 62, 39),
@@ -52049,6 +52655,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Prism Spark',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(134, 62, 39),
@@ -52061,6 +52668,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Radiant Echo',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(116, 62, 39),
@@ -52073,6 +52681,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Velvet Haven',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(133, 62, 39),
@@ -52085,6 +52694,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Emerald Tide',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(115, 62, 39),
@@ -52097,6 +52707,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Rosy Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(132, 62, 39),
@@ -52109,6 +52720,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Astral Canyon',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(114, 62, 39),
@@ -52121,6 +52733,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Gossamer Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(131, 62, 39),
@@ -52133,6 +52746,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Cosmic Dawn',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(113, 62, 39),
@@ -52145,6 +52759,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Sapphire Summit',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(130, 62, 39),
@@ -52157,6 +52772,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Azure Mirage',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(112, 62, 39),
@@ -52169,6 +52785,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Moonlit Whisper',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(129, 62, 39),
@@ -52181,6 +52798,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Spectral Halo',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(111, 62, 39),
@@ -52193,6 +52811,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Serene Aura',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(128, 62, 39),
@@ -52205,6 +52824,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Coral Voyage',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(110, 62, 39),
@@ -52217,6 +52837,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Crimson Pulse',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(127, 62, 39),
@@ -52229,6 +52850,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Sunny Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(109, 62, 39),
@@ -52241,6 +52863,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Iridescent Meadow',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(126, 62, 39),
@@ -52253,6 +52876,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Mystic Flare',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(108, 62, 39),
@@ -52265,6 +52889,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Amber Twilight',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(125, 62, 39),
@@ -52277,6 +52902,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Onyx Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(142, 62, 39),
@@ -52289,6 +52915,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Misty Horizon',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(124, 62, 39),
@@ -52301,6 +52928,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Smoldering Ember',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(141, 62, 39),
@@ -52313,6 +52941,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Ethereal Velvet',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(123, 62, 39),
@@ -52325,6 +52954,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Crystal Symphony',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(140, 62, 39),
@@ -52337,6 +52967,7 @@ const stpatricksPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Pearl Crest',
     type: 'curated',
+    isNew: true,
     category: 'stpatricks',
     colors: [
       ColorUtils.createColor(122, 62, 39),
@@ -54528,6 +55159,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Satin Reverie',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(209, 33, 25),
@@ -54540,6 +55172,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Luminous Reef',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(226, 33, 25),
@@ -54552,6 +55185,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Golden Shore',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(208, 33, 25),
@@ -54564,6 +55198,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Opal Overture',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(225, 33, 25),
@@ -54576,6 +55211,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Dusky Grove',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(207, 33, 25),
@@ -54588,6 +55224,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Prism Hymn',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(224, 33, 25),
@@ -54600,6 +55237,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Radiant Dusk',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(206, 33, 25),
@@ -54612,6 +55250,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Velvet Marble',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(223, 33, 25),
@@ -54624,6 +55263,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Emerald Cascade',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(205, 33, 25),
@@ -54636,6 +55276,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Rosy Bloom',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(222, 33, 25),
@@ -54648,6 +55289,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Astral Spark',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(204, 33, 25),
@@ -54660,6 +55302,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Gossamer Echo',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(221, 33, 25),
@@ -54672,6 +55315,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Cosmic Haven',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(203, 33, 25),
@@ -54684,6 +55328,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Sapphire Tide',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(220, 33, 25),
@@ -54696,6 +55341,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Azure Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(202, 33, 25),
@@ -54708,6 +55354,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Moonlit Canyon',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(219, 33, 25),
@@ -54720,6 +55367,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Spectral Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(201, 33, 25),
@@ -54732,6 +55380,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Serene Dawn',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(218, 33, 25),
@@ -54744,6 +55393,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Coral Summit',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(200, 33, 25),
@@ -54756,6 +55406,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Crimson Mirage',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(217, 33, 25),
@@ -54768,6 +55419,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Sunny Whisper',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(199, 33, 25),
@@ -54780,6 +55432,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Iridescent Halo',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(216, 33, 25),
@@ -54792,6 +55445,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Mystic Aura',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(198, 33, 25),
@@ -54804,6 +55458,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Amber Voyage',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(215, 33, 25),
@@ -54816,6 +55471,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Onyx Pulse',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(232, 33, 25),
@@ -54828,6 +55484,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Misty Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(214, 33, 25),
@@ -54840,6 +55497,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Smoldering Meadow',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(231, 33, 25),
@@ -54852,6 +55510,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Ethereal Flare',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(213, 33, 25),
@@ -54864,6 +55523,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Crystal Twilight',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(230, 33, 25),
@@ -54876,6 +55536,7 @@ const fathersDayPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: 
   {
     name: 'Pearl Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'fathersday',
     colors: [
       ColorUtils.createColor(212, 33, 25),
@@ -57031,6 +57692,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Iridescent Hymn',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(189, 73, 59),
@@ -57043,6 +57705,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Mystic Dusk',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(206, 73, 59),
@@ -57055,6 +57718,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Amber Marble',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(188, 73, 59),
@@ -57067,6 +57731,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Onyx Cascade',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(205, 73, 59),
@@ -57079,6 +57744,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Misty Bloom',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(187, 73, 59),
@@ -57091,6 +57757,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Smoldering Spark',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(204, 73, 59),
@@ -57103,6 +57770,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Ethereal Echo',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(186, 73, 59),
@@ -57115,6 +57783,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Crystal Haven',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(203, 73, 59),
@@ -57127,6 +57796,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Pearl Tide',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(185, 73, 59),
@@ -57139,6 +57809,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Gilded Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(202, 73, 59),
@@ -57151,6 +57822,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Hazy Canyon',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(184, 73, 59),
@@ -57163,6 +57835,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Vibrant Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(201, 73, 59),
@@ -57175,6 +57848,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Silver Dawn',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(183, 73, 59),
@@ -57187,6 +57861,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Jade Summit',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(200, 73, 59),
@@ -57199,6 +57874,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Frosted Mirage',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(182, 73, 59),
@@ -57211,6 +57887,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Satin Whisper',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(199, 73, 59),
@@ -57223,6 +57900,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Luminous Halo',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(181, 73, 59),
@@ -57235,6 +57913,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Golden Aura',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(198, 73, 59),
@@ -57247,6 +57926,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Opal Voyage',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(180, 73, 59),
@@ -57259,6 +57939,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Dusky Pulse',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(197, 73, 59),
@@ -57271,6 +57952,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Prism Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(179, 73, 59),
@@ -57283,6 +57965,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Radiant Meadow',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(196, 73, 59),
@@ -57295,6 +57978,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Velvet Flare',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(178, 73, 59),
@@ -57307,6 +57991,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Emerald Twilight',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(195, 73, 59),
@@ -57319,6 +58004,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Rosy Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(212, 73, 59),
@@ -57331,6 +58017,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Astral Horizon',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(194, 73, 59),
@@ -57343,6 +58030,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Gossamer Ember',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(211, 73, 59),
@@ -57355,6 +58043,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Cosmic Velvet',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(193, 73, 59),
@@ -57367,6 +58056,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Sapphire Symphony',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(210, 73, 59),
@@ -57379,6 +58069,7 @@ const summerVibesPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Azure Crest',
     type: 'curated',
+    isNew: true,
     category: 'summervibes',
     colors: [
       ColorUtils.createColor(192, 73, 59),
@@ -59198,6 +59889,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Iridescent Hymn',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(149, 24, 79),
@@ -59210,6 +59902,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Mystic Dusk',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(166, 24, 79),
@@ -59222,6 +59915,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Amber Marble',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(148, 24, 79),
@@ -59234,6 +59928,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Onyx Cascade',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(165, 24, 79),
@@ -59246,6 +59941,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Misty Bloom',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(147, 24, 79),
@@ -59258,6 +59954,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Smoldering Spark',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(164, 24, 79),
@@ -59270,6 +59967,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Ethereal Echo',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(146, 24, 79),
@@ -59282,6 +59980,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Crystal Haven',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(163, 24, 79),
@@ -59294,6 +59993,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Pearl Tide',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(145, 24, 79),
@@ -59306,6 +60006,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Gilded Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(162, 24, 79),
@@ -59318,6 +60019,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Hazy Canyon',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(144, 24, 79),
@@ -59330,6 +60032,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Vibrant Glimmer',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(161, 24, 79),
@@ -59342,6 +60045,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Silver Dawn',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(143, 24, 79),
@@ -59354,6 +60058,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Jade Summit',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(160, 24, 79),
@@ -59366,6 +60071,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Frosted Mirage',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(142, 24, 79),
@@ -59378,6 +60084,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Satin Whisper',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(159, 24, 79),
@@ -59390,6 +60097,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Luminous Halo',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(141, 24, 79),
@@ -59402,6 +60110,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Golden Aura',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(158, 24, 79),
@@ -59414,6 +60123,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Opal Voyage',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(140, 24, 79),
@@ -59426,6 +60136,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Dusky Pulse',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(157, 24, 79),
@@ -59438,6 +60149,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Prism Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(139, 24, 79),
@@ -59450,6 +60162,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Radiant Meadow',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(156, 24, 79),
@@ -59462,6 +60175,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Velvet Flare',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(138, 24, 79),
@@ -59474,6 +60188,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Emerald Twilight',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(155, 24, 79),
@@ -59486,6 +60201,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Rosy Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(172, 24, 79),
@@ -59498,6 +60214,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Astral Horizon',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(154, 24, 79),
@@ -59510,6 +60227,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Gossamer Ember',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(171, 24, 79),
@@ -59522,6 +60240,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Cosmic Velvet',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(153, 24, 79),
@@ -59534,6 +60253,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Sapphire Symphony',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(170, 24, 79),
@@ -59546,6 +60266,7 @@ const springCleanPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Azure Crest',
     type: 'curated',
+    isNew: true,
     category: 'springclean',
     colors: [
       ColorUtils.createColor(152, 24, 79),
@@ -61606,6 +62327,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Iridescent Aura',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(324, 100, 45),
@@ -61618,6 +62340,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Mystic Voyage',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(32, 100, 45),
@@ -61630,6 +62353,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Amber Pulse',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(320, 100, 45),
@@ -61642,6 +62366,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Onyx Tapestry',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(28, 100, 45),
@@ -61654,6 +62379,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Misty Meadow',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(316, 100, 45),
@@ -61666,6 +62392,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Smoldering Flare',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(24, 100, 45),
@@ -61678,6 +62405,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Ethereal Twilight',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(312, 100, 45),
@@ -61690,6 +62418,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Crystal Lagoon',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(20, 100, 45),
@@ -61702,6 +62431,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Pearl Horizon',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(308, 100, 45),
@@ -61714,6 +62444,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Gilded Ember',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(16, 100, 45),
@@ -61726,6 +62457,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Hazy Velvet',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(304, 100, 45),
@@ -61738,6 +62470,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Vibrant Symphony',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(12, 100, 45),
@@ -61750,6 +62483,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Silver Crest',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(300, 100, 45),
@@ -61762,6 +62496,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Jade Drift',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(8, 100, 45),
@@ -61774,6 +62509,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Frosted Reverie',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(296, 100, 45),
@@ -61786,6 +62522,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Satin Reef',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(4, 100, 45),
@@ -61798,6 +62535,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Luminous Shore',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(292, 100, 45),
@@ -61810,6 +62548,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Golden Overture',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(0, 100, 45),
@@ -61822,6 +62561,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Opal Grove',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(288, 100, 45),
@@ -61834,6 +62574,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Dusky Hymn',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(356, 100, 45),
@@ -61846,6 +62587,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Prism Dusk',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(284, 100, 45),
@@ -61858,6 +62600,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Radiant Marble',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(352, 100, 45),
@@ -61870,6 +62613,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Velvet Cascade',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(280, 100, 45),
@@ -61882,6 +62626,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Emerald Bloom',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(348, 100, 45),
@@ -61894,6 +62639,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Rosy Spark',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(56, 100, 45),
@@ -61906,6 +62652,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Astral Echo',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(344, 100, 45),
@@ -61918,6 +62665,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Gossamer Haven',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(52, 100, 45),
@@ -61930,6 +62678,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Cosmic Tide',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(340, 100, 45),
@@ -61942,6 +62691,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Sapphire Lullaby',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(48, 100, 45),
@@ -61954,6 +62704,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
   {
     name: 'Azure Canyon',
     type: 'curated',
+    isNew: true,
     category: 'technosynth',
     colors: [
       ColorUtils.createColor(336, 100, 45),
@@ -61977,18 +62728,24 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   const [lightboxPalette, setLightboxPalette] = React.useState<ColorPalette | null>(null);
   const [isLightboxOpen, setIsLightboxOpen] = React.useState(false);
   
-  const filteredPalettes = selectedCategory === 'all' 
-    ? allPalettes 
-    : allPalettes.filter(palette => {
-        if (selectedCategory === 'blues') return palette.category === 'blues' || palette.category === 'teals';
-        if (selectedCategory === 'greens') return palette.category === 'greens' || palette.category === 'nature';
-        if (selectedCategory === 'reds') return palette.category === 'reds' || palette.category === 'pinks';
-        if (selectedCategory === 'purples') return palette.category === 'purples' || palette.category === 'violets';
-        if (selectedCategory === 'oranges') return palette.category === 'oranges' || palette.category === 'yellows';
-        if (selectedCategory === 'neutrals') return palette.category === 'neutrals' || palette.category === 'grays';
-        if (selectedCategory === 'vibrant') return palette.category === 'vibrant' || palette.category === 'neon';
-        return palette.category === selectedCategory;
-      });
+  const categoryFilter = (palette: typeof allPalettes[number]) => {
+    if (selectedCategory === 'blues') return palette.category === 'blues' || palette.category === 'teals';
+    if (selectedCategory === 'greens') return palette.category === 'greens' || palette.category === 'nature';
+    if (selectedCategory === 'reds') return palette.category === 'reds' || palette.category === 'pinks';
+    if (selectedCategory === 'purples') return palette.category === 'purples' || palette.category === 'violets';
+    if (selectedCategory === 'oranges') return palette.category === 'oranges' || palette.category === 'yellows';
+    if (selectedCategory === 'neutrals') return palette.category === 'neutrals' || palette.category === 'grays';
+    if (selectedCategory === 'vibrant') return palette.category === 'vibrant' || palette.category === 'neon';
+    return palette.category === selectedCategory;
+  };
+
+  const filteredPalettes = (selectedCategory === 'all' ? allPalettes : allPalettes.filter(categoryFilter))
+    .slice()
+    .sort((a, b) => {
+      const aNew = a.isNew ? 1 : 0;
+      const bNew = b.isNew ? 1 : 0;
+      return bNew - aNew;
+    });
 
   const handlePaletteSelect = (palette: Omit<ColorPalette, 'id' | 'createdAt'>) => {
     const fullPalette: ColorPalette = {
@@ -62099,7 +62856,12 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
               <div className="p-4 bg-white/50 backdrop-blur-sm">
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1 dark:text-black dark:font-light">{palette.name}</h4>
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <h4 className="font-semibold text-gray-900 dark:text-black dark:font-light">{palette.name}</h4>
+                      {palette.isNew && (
+                        <Badge variant="default" className="text-[9px] px-1.5 py-0 h-4 gap-0">NEW</Badge>
+                      )}
+                    </div>
                     <p className="text-sm text-gray-500 dark:text-black dark:font-light">{palette.colors.length} colors</p>
                   </div>
                   <div className="flex items-center gap-1">
