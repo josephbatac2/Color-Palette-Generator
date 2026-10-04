@@ -232,10 +232,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           <a
             href="/"
             title="Color Palette Generator"
-            className="inline-flex items-center gap-3 mb-8 px-5 py-3 bg-white/10 border border-white/20 rounded-2xl shadow-xl backdrop-blur-xl hover:bg-white/15 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:rounded-2xl"
+            className="inline-flex flex-col items-center gap-1 mb-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:rounded-2xl"
           >
-            <img src="/logo.png" alt="" className="w-10 h-10 rounded-lg shadow-lg" />
-            <span className="text-lg font-medium text-white tracking-wide">Color Palette Generator</span>
+            <img src="/logo.png" alt="" className="w-16 h-16 transition-transform hover:scale-105" />
+            <span className="text-xs font-roboto text-white/80 tracking-wide">Color Palette Generator</span>
           </a>
 
           {/* Headline */}
