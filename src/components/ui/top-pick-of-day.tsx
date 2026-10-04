@@ -89,12 +89,10 @@ function generateDailyPalette(seed: number): PickPalette {
   return { name, category, colors };
 }
 
-function generateThreePicks(baseSeed: number): PickPalette[] {
-  return [
-    generateDailyPalette(baseSeed),
-    generateDailyPalette(baseSeed + 7777),
-    generateDailyPalette(baseSeed + 15554),
-  ];
+function generateNinePicks(baseSeed: number): PickPalette[] {
+  return Array.from({ length: 9 }, (_, i) =>
+    generateDailyPalette(baseSeed + i * 7777)
+  );
 }
 
 function getContrastColor(hex: string): string {
@@ -246,7 +244,7 @@ export const TopPickOfDay: React.FC<TopPicksOfDayProps> = ({ className = '' }) =
   const dateSeed = useMemo(() => getDateSeed(), []);
 
   useEffect(() => {
-    setPicks(generateThreePicks(dateSeed));
+    setPicks(generateNinePicks(dateSeed));
   }, [dateSeed]);
 
   useEffect(() => {
@@ -308,7 +306,7 @@ export const TopPickOfDay: React.FC<TopPicksOfDayProps> = ({ className = '' }) =
     setShuffled(true);
     setTimeout(() => {
       const newSeed = dateSeed + Math.floor(Math.random() * 100000);
-      setPicks(generateThreePicks(newSeed));
+      setPicks(generateNinePicks(newSeed));
       setShuffled(false);
     }, 400);
   }, [dateSeed]);
@@ -355,9 +353,9 @@ export const TopPickOfDay: React.FC<TopPicksOfDayProps> = ({ className = '' }) =
           </button>
         </div>
 
-        {/* 3 compact cards in a row */}
+        {/* 9 compact cards in a grid */}
         <div
-          className={`grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 transition-all duration-500 ${
+          className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 transition-all duration-500 ${
             shuffled ? 'opacity-40 scale-[0.98]' : 'opacity-100 scale-100'
           }`}
         >
