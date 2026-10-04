@@ -234,7 +234,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             title="Color Palette Generator"
             className="inline-flex flex-col items-center gap-1 mb-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:rounded-2xl"
           >
-            <img src="/logo.png" alt="" className="w-16 h-16 transition-transform hover:scale-105" />
+            <img src="/logo.png" alt="" className="w-32 h-32 transition-transform hover:scale-105" />
             <span className="text-xs font-roboto text-white/80 tracking-wide">Color Palette Generator</span>
           </a>
 
