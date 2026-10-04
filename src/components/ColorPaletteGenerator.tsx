@@ -189,14 +189,9 @@ export const ColorPaletteGenerator: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             {/* Logo - Left */}
-            <a href="/" title="Color Palette Generator" className="flex items-center gap-3 flex-shrink-0 group">
-              <div className={`p-1.5 rounded-xl shadow-lg transition-transform group-hover:scale-105 ${theme === 'dark' ? 'bg-white/10' : 'bg-white border border-gray-200'}`}>
-                <img src="/logo.png" alt="Color Palette Generator" className="w-12 h-12 rounded-lg" />
-              </div>
-              <div className="hidden sm:block">
-                <span className={`text-xl font-bold leading-tight block ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Color Palette</span>
-                <span className={`text-xs font-medium leading-tight block ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>Generator</span>
-              </div>
+            <a href="/" title="Color Palette Generator" className="flex flex-col items-center gap-1 flex-shrink-0 group">
+              <img src="/logo.png" alt="Color Palette Generator" className="w-16 h-16 transition-transform group-hover:scale-105" />
+              <span className={`text-xs font-roboto leading-tight ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>Color Palette Generator</span>
             </a>
 
             {/* Navigation - Right */}

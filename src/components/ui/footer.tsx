@@ -99,17 +99,15 @@ export const Footer: React.FC<FooterProps> = ({ variant = 'full', className = ''
         {/* Top row: logo + social nav */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
-          <div className="flex items-center gap-3">
-            <div className="p-3 bg-gradient-to-br from-white/10 to-purple-600/30 rounded-xl shadow-lg">
-              <a href="/" title="Color Palette Generator" target="_self">
-                <img
-                  src="/logo.png"
-                  alt="Color Palette Generator home"
-                  className="w-16 h-16 rounded-xl shadow-lg"
-                />
-              </a>
-            </div>
-            <span className={`font-semibold text-lg ${headingText}`}>Color Palette Generator</span>
+          <div className="flex flex-col items-center gap-1">
+            <a href="/" title="Color Palette Generator" target="_self">
+              <img
+                src="/logo.png"
+                alt="Color Palette Generator home"
+                className="w-16 h-16 transition-transform hover:scale-105"
+              />
+            </a>
+            <span className={`text-xs font-roboto ${headingText}`}>Color Palette Generator</span>
           </div>
 
           {/* Nav / socials */}
