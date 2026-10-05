@@ -5,9 +5,10 @@ import { Card } from './card';
 import { Button } from './button';
 import { PaletteLightbox } from './palette-lightbox';
 import { ScrollArea } from './scroll-area';
-import { Palette } from 'lucide-react';
+import { Palette, Eye } from 'lucide-react';
 import { generateAllPalettes } from '../../utils/paletteGenerator';
 import { Badge } from './badge';
+import { usePaletteViews, makePaletteKey } from '../../hooks/usePaletteViews';
 
 interface CuratedPalettesProps {
   onPaletteSelect: (palette: ColorPalette) => void;
@@ -62878,6 +62879,7 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>('toppicks');
   const [lightboxPalette, setLightboxPalette] = React.useState<ColorPalette | null>(null);
   const [isLightboxOpen, setIsLightboxOpen] = React.useState(false);
+  const { viewCounts, recordView } = usePaletteViews();
   
   const categoryFilter = (palette: typeof allPalettes[number]) => {
     if (selectedCategory === 'toppicks') return palette.category === 'toppicks';
@@ -62924,6 +62926,7 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
       id: crypto.randomUUID(),
       createdAt: new Date(),
     };
+    recordView(palette.name, palette.category);
     setLightboxPalette(fullPalette);
     setIsLightboxOpen(true);
   };
@@ -63026,6 +63029,16 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                       )}
                     </div>
                     <p className="text-sm text-gray-500 dark:text-black dark:font-light">{palette.colors.length} colors</p>
+                    {(() => {
+                      const views = viewCounts[makePaletteKey(palette.name, palette.category)] || 0;
+                      if (views <= 10) return null;
+                      return (
+                        <p className="text-xs text-gray-400 dark:text-gray-500 flex items-center gap-1 mt-0.5">
+                          <Eye className="w-3 h-3" />
+                          {views.toLocaleString()} views
+                        </p>
+                      );
+                    })()}
                   </div>
                   <div className="flex items-center gap-1">
                     <span 
