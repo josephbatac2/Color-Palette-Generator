@@ -187,7 +187,7 @@ export const ColorPaletteGenerator: React.FC = () => {
       {/* Header */}
       <header className={`backdrop-blur-xl sticky top-0 z-20 shadow-lg ${theme === 'dark' ? 'bg-slate-950/80 shadow-black/30' : 'bg-white/70 shadow-gray-200/50'}`}>
         <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-28 py-4">
             {/* Logo - Left */}
             <a href="/" title="Color Palette Generator" className="flex flex-col items-center gap-1 flex-shrink-0 group">
               <img src="/logo.png" alt="Color Palette Generator" className="w-16 h-16 transition-transform group-hover:scale-105" />

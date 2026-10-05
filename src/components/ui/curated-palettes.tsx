@@ -17,6 +17,12 @@ interface CuratedPalettesProps {
 // Category definitions with their representative colors
 const categories = [
   { 
+    id: 'toppicks', 
+    name: 'Top Picks', 
+    color: 'linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%)',
+    textColor: 'text-white'
+  },
+  { 
     id: 'all', 
     name: 'All Palettes', 
     color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
@@ -175,6 +181,151 @@ const categories = [
 ];
 
 const curatedPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category: string; isNew?: boolean })[] = [
+  // Top Picks — hand-picked best palettes
+  {
+    name: 'Aurora Borealis',
+    type: 'curated',
+    category: 'toppicks',
+    colors: [
+      ColorUtils.createColor(160, 70, 55),
+      ColorUtils.createColor(190, 80, 50),
+      ColorUtils.createColor(220, 75, 45),
+      ColorUtils.createColor(260, 80, 40),
+      ColorUtils.createColor(290, 85, 50),
+    ],
+  },
+  {
+    name: 'Sunset on the Bay',
+    type: 'curated',
+    category: 'toppicks',
+    colors: [
+      ColorUtils.createColor(15, 90, 65),
+      ColorUtils.createColor(30, 85, 60),
+      ColorUtils.createColor(200, 70, 55),
+      ColorUtils.createColor(220, 80, 40),
+      ColorUtils.createColor(240, 85, 25),
+    ],
+  },
+  {
+    name: 'Forest at Dawn',
+    type: 'curated',
+    category: 'toppicks',
+    colors: [
+      ColorUtils.createColor(80, 50, 75),
+      ColorUtils.createColor(120, 55, 50),
+      ColorUtils.createColor(140, 60, 35),
+      ColorUtils.createColor(30, 70, 55),
+      ColorUtils.createColor(15, 80, 70),
+    ],
+  },
+  {
+    name: 'Desert Mirage',
+    type: 'curated',
+    category: 'toppicks',
+    colors: [
+      ColorUtils.createColor(35, 75, 80),
+      ColorUtils.createColor(25, 80, 65),
+      ColorUtils.createColor(15, 85, 50),
+      ColorUtils.createColor(350, 70, 40),
+      ColorUtils.createColor(280, 50, 30),
+    ],
+  },
+  {
+    name: 'Ocean Cliff',
+    type: 'curated',
+    category: 'toppicks',
+    colors: [
+      ColorUtils.createColor(195, 80, 75),
+      ColorUtils.createColor(205, 70, 55),
+      ColorUtils.createColor(215, 80, 35),
+      ColorUtils.createColor(25, 75, 50),
+      ColorUtils.createColor(40, 70, 35),
+    ],
+  },
+  {
+    name: 'Lavender Meadow',
+    type: 'curated',
+    category: 'toppicks',
+    colors: [
+      ColorUtils.createColor(280, 40, 85),
+      ColorUtils.createColor(260, 50, 70),
+      ColorUtils.createColor(140, 50, 60),
+      ColorUtils.createColor(120, 60, 45),
+      ColorUtils.createColor(100, 55, 30),
+    ],
+  },
+  {
+    name: 'Coral Lagoon',
+    type: 'curated',
+    category: 'toppicks',
+    colors: [
+      ColorUtils.createColor(10, 75, 80),
+      ColorUtils.createColor(20, 80, 65),
+      ColorUtils.createColor(175, 70, 55),
+      ColorUtils.createColor(190, 80, 45),
+      ColorUtils.createColor(210, 85, 30),
+    ],
+  },
+  {
+    name: 'Midnight Garden',
+    type: 'curated',
+    category: 'toppicks',
+    colors: [
+      ColorUtils.createColor(260, 60, 20),
+      ColorUtils.createColor(280, 50, 30),
+      ColorUtils.createColor(130, 40, 25),
+      ColorUtils.createColor(100, 50, 35),
+      ColorUtils.createColor(60, 60, 50),
+    ],
+  },
+  {
+    name: 'Rose Quartz Glow',
+    type: 'curated',
+    category: 'toppicks',
+    colors: [
+      ColorUtils.createColor(340, 35, 90),
+      ColorUtils.createColor(350, 45, 80),
+      ColorUtils.createColor(0, 50, 70),
+      ColorUtils.createColor(20, 55, 55),
+      ColorUtils.createColor(40, 60, 40),
+    ],
+  },
+  {
+    name: 'Golden Autumn',
+    type: 'curated',
+    category: 'toppicks',
+    colors: [
+      ColorUtils.createColor(45, 85, 75),
+      ColorUtils.createColor(35, 80, 60),
+      ColorUtils.createColor(20, 75, 45),
+      ColorUtils.createColor(10, 80, 35),
+      ColorUtils.createColor(0, 70, 25),
+    ],
+  },
+  {
+    name: 'Spring Blossom',
+    type: 'curated',
+    category: 'toppicks',
+    colors: [
+      ColorUtils.createColor(340, 50, 85),
+      ColorUtils.createColor(100, 45, 70),
+      ColorUtils.createColor(130, 50, 55),
+      ColorUtils.createColor(60, 60, 75),
+      ColorUtils.createColor(180, 40, 85),
+    ],
+  },
+  {
+    name: 'Urban Twilight',
+    type: 'curated',
+    category: 'toppicks',
+    colors: [
+      ColorUtils.createColor(220, 25, 25),
+      ColorUtils.createColor(230, 30, 40),
+      ColorUtils.createColor(240, 35, 55),
+      ColorUtils.createColor(25, 50, 60),
+      ColorUtils.createColor(40, 60, 75),
+    ],
+  },
   // Blues & Teals
   {
     name: 'Ocean Breeze',
@@ -62724,11 +62875,12 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
   className,
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>('toppicks');
   const [lightboxPalette, setLightboxPalette] = React.useState<ColorPalette | null>(null);
   const [isLightboxOpen, setIsLightboxOpen] = React.useState(false);
   
   const categoryFilter = (palette: typeof allPalettes[number]) => {
+    if (selectedCategory === 'toppicks') return palette.category === 'toppicks';
     if (selectedCategory === 'blues') return palette.category === 'blues' || palette.category === 'teals';
     if (selectedCategory === 'greens') return palette.category === 'greens' || palette.category === 'nature';
     if (selectedCategory === 'reds') return palette.category === 'reds' || palette.category === 'pinks';
@@ -62739,8 +62891,18 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
     return palette.category === selectedCategory;
   };
 
-  const filteredPalettes = (selectedCategory === 'all' ? allPalettes : allPalettes.filter(categoryFilter))
-    .slice()
+  const shuffle = <T,>(arr: T[]): T[] => {
+    const result = [...arr];
+    for (let i = result.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [result[i], result[j]] = [result[j], result[i]];
+    }
+    return result;
+  };
+
+  const filteredPalettes = shuffle(
+    selectedCategory === 'all' ? allPalettes : allPalettes.filter(categoryFilter)
+  )
     .sort((a, b) => {
       const aNew = a.isNew ? 1 : 0;
       const bNew = b.isNew ? 1 : 0;
@@ -62804,6 +62966,7 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                       if (category.id === 'oranges') return palette.category === 'oranges' || palette.category === 'yellows';
                       if (category.id === 'neutrals') return palette.category === 'neutrals' || palette.category === 'grays';
                       if (category.id === 'vibrant') return palette.category === 'vibrant' || palette.category === 'neon';
+                      if (category.id === 'toppicks') return palette.category === 'toppicks';
                       if (category.id === 'pastels') return palette.category === 'pastels';
                       if (category.id === 'complementary') return palette.category === 'complementary';
                       if (category.id === 'holidays') return palette.category === 'holidays';
