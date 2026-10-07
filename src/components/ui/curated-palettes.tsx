@@ -62869,7 +62869,7 @@ const technoSynthPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
 ];
 
 // Merge all palettes
-const generatedPalettes = generateAllPalettes(50);
+const generatedPalettes = generateAllPalettes(80);
 const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes, ...stpatricksPalettes, ...fathersDayPalettes, ...summerVibesPalettes, ...springCleanPalettes, ...technoSynthPalettes, ...generatedPalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
