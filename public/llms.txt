@@ -28,7 +28,7 @@ https://colourpalettes.techhive.net/
 
 ## Version
 
-1.5.2 (September 1, 2026)
+1.6.0 (October 5, 2026)
 
 ## RSS Feed
 

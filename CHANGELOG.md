@@ -1,5 +1,112 @@
 # Internal Changelog
 
+## v1.6.0 - October 5, 2026
+### Checkpoint Scope
+- **Release Type**: Minor feature release — added per-palette view counter with Supabase persistence.
+- **Primary Goal**: Track how many times each curated palette is viewed and display the count on palette cards once it exceeds 10 views.
+
+### Technical Updates
+- **Supabase Database Table**: Created `palette_views` table to persist cumulative view counts per palette.
+  - Migration path: `supabase/migrations/20261005203431_create_palette_views.sql`
+  - Schema: `id` (uuid PK), `palette_key` (text, unique), `views` (integer, default 1), `updated_at` (timestamptz).
+  - RLS enabled with anon+authenticated CRUD policies (single-tenant, no auth).
+  - Unique index on `palette_key` to ensure one row per palette.
+  - Important SQL:
+    ```sql
+    CREATE TABLE IF NOT EXISTS palette_views (
+      id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+      palette_key text NOT NULL,
+      views integer NOT NULL DEFAULT 1,
+      updated_at timestamptz DEFAULT now()
+    );
+    ALTER TABLE palette_views ENABLE ROW LEVEL SECURITY;
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_palette_views_key ON palette_views (palette_key);
+    ```
+
+- **Supabase Client Singleton**: Created a shared Supabase client instance.
+  - Path: `src/lib/supabase.ts`
+  - Important code:
+    ```typescript
+    import { createClient } from '@supabase/supabase-js';
+    export const supabase = createClient(
+      import.meta.env.VITE_SUPABASE_URL,
+      import.meta.env.VITE_SUPABASE_ANON_KEY
+    );
+    ```
+
+- **View Tracking Hook**: Created a React hook that fetches all view counts on mount, optimistically increments locally, and batch-flushes increments to Supabase every 5 seconds.
+  - Path: `src/hooks/usePaletteViews.ts`
+  - Uses `sessionStorage` for caching and batching to avoid duplicate counts within a session.
+  - `makePaletteKey(name, category)` generates a stable key: `${category}:${name}` lowercased and sanitized.
+  - Important code:
+    ```typescript
+    const BATCH_FLUSH_DELAY = 5000;
+    // Optimistic local increment
+    setViewCounts(prev => ({ ...prev, [key]: (prev[key] || 0) + 1 }));
+    // Batch flush — upsert accumulated view increments
+    const interval = setInterval(flush, BATCH_FLUSH_DELAY);
+    ```
+
+- **Curated Palettes Integration**: Wired the view counter into the palette card grid.
+  - Path: `src/components/ui/curated-palettes.tsx`
+  - Added imports for `usePaletteViews`, `makePaletteKey`, and `Eye` icon from `lucide-react`.
+  - `recordView()` called in `openLightbox()` when a user opens a palette detail view.
+  - View count displayed below the palette name only when `views > 10`, using an eye icon with formatted count (e.g. "247 views").
+  - Important code:
+    ```tsx
+    const { viewCounts, recordView } = usePaletteViews();
+    // In openLightbox:
+    recordView(palette.name, palette.category);
+    // In card render:
+    const views = viewCounts[makePaletteKey(palette.name, palette.category)] || 0;
+    if (views <= 10) return null;
+    return (
+      <p className="text-xs text-gray-400 flex items-center gap-1 mt-0.5">
+        <Eye className="w-3 h-3" />
+        {views.toLocaleString()} views
+      </p>
+    );
+    ```
+
+- **Dependency**: Added `@supabase/supabase-js` to project dependencies.
+  - Path: `package.json`
+
+- **Version Bump**: Updated from `1.5.2` to `1.6.0`.
+  - Paths: `package.json`, `README.md`, `src/components/ui/footer.tsx`, `public/robots.txt`, `public/llms.txt`.
+
+- **Public Changelog Entry**: Added v1.6.0 section to the public changelog page without removing prior entries.
+  - Path: `src/pages/Changelog.tsx`
+
+- **RSS Feed Update**: Added v1.6.0 item to both RSS feed files and refreshed `lastBuildDate`.
+  - Paths: `public/changelog/rss.xml`, `public/changelog/rss`
+
+- **Sitemap and Robots Refresh**: Updated dates to 2026-10-05.
+  - Paths: `public/sitemap.xml`, `public/robots.txt`
+
+- **LLMs.txt Update**: Updated version to 1.6.0.
+  - Path: `public/llms.txt`
+
+### Files Modified
+- `package.json`
+- `README.md`
+- `CHANGELOG.md`
+- `src/components/ui/footer.tsx`
+- `src/pages/Changelog.tsx`
+- `public/sitemap.xml`
+- `public/robots.txt`
+- `public/changelog/rss.xml`
+- `public/changelog/rss`
+- `public/llms.txt`
+
+### New Files
+- `src/lib/supabase.ts`
+- `src/hooks/usePaletteViews.ts`
+- `supabase/migrations/20261005203431_create_palette_views.sql`
+
+### Build Verification
+- `npm run build` passes successfully with no errors.
+- 1617 modules transformed.
+
 ## v1.5.2 - September 1, 2026
 ### Checkpoint Scope
 - **Release Type**: Patch release — expanded curated palette library with 1,250 new palettes.

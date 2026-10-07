@@ -5,8 +5,21 @@
     <link>https://colourpalettes.techhive.net/changelog</link>
     <description>Recent updates, new features, and bug fixes for the Color Palette Generator.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://colourpalettes.techhive.net/changelog/rss" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>v1.6.0 - October 5, 2026</title>
+      <link>https://colourpalettes.techhive.net/changelog#v1.6.0</link>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://colourpalettes.techhive.net/changelog#v1.6.0</guid>
+      <description><![CDATA[
+        <ul>
+          <li><strong>Palette View Counter</strong>: The gallery now tracks how many times each palette has been viewed. Once a palette surpasses 10 views, a view count badge appears on its card, helping you discover the most popular palettes.</li>
+          <li><strong>Popular Palettes Surface Naturally</strong>: View counts are shared across all visitors and persist over time, so the most-loved palettes naturally stand out as more people browse.</li>
+        </ul>
+      ]]></description>
+    </item>
 
     <item>
       <title>v1.5.2 - September 1, 2026</title>

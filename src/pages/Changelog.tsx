@@ -34,6 +34,28 @@ export const Changelog: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         </header>
 
         <main className="space-y-12">
+          {/* v1.6.0 - October 5, 2026 */}
+          <section id="v1.6.0">
+            <div className="mb-4">
+              <h2 className="text-2xl font-semibold text-white">v1.6.0</h2>
+              <time className="text-sm text-green-300 font-medium">October 5, 2026</time>
+            </div>
+            <ul className="space-y-3 text-gray-200">
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Palette View Counter:</strong> The gallery now tracks how many times each palette has been viewed. Once a palette surpasses 10 views, a view count badge appears on its card, helping you discover the most popular palettes.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-400 mt-1">•</span>
+                <span>
+                  <strong className="text-white font-semibold">Popular Palettes Surface Naturally:</strong> View counts are shared across all visitors and persist over time, so the most-loved palettes naturally stand out as more people browse.
+                </span>
+              </li>
+            </ul>
+          </section>
+
           {/* v1.5.2 - September 1, 2026 */}
           <section id="v1.5.2">
             <div className="mb-4">
