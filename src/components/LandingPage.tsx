@@ -259,7 +259,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           </p>
 
           {/* Attribution + GitHub */}
-          <div className="flex flex-col items-center gap-3 mb-8">
+          <div className="flex flex-col items-center gap-3 mb-10">
             <p className="text-sm text-gray-300">
               An open-source contribution by{' '}
               <a
@@ -283,8 +283,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             </a>
           </div>
 
-          {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+          {/* Primary CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center w-full mb-5">
             <Button
               onClick={onGetStarted}
               size="xlg"
@@ -296,33 +296,47 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               <ArrowRight className="w-5 h-5 ml-2 relative z-10 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Button>
             <Button
+              onClick={onGetStarted}
+              size="xlg"
+              variant="outline"
+              className="px-8 py-6 text-lg font-semibold bg-white/10 border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 group backdrop-blur-xl"
+            >
+              <Layers className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" aria-hidden="true" />
+              <span>Browse All Palettes</span>
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            </Button>
+          </div>
+
+          {/* Secondary CTAs */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center w-full mb-10">
+            <Button
+              onClick={showRandomPalette}
+              size="lg"
+              className="px-6 py-4 text-base font-bold bg-gradient-to-r from-red-500 via-red-400 to-orange-400 hover:from-red-400 hover:via-red-300 hover:to-orange-300 shadow-xl shadow-red-500/40 hover:shadow-orange-400/50 border-2 border-white/20 hover:border-white/40 transform hover:scale-[1.04] transition-all duration-300 group overflow-hidden"
+            >
+              <Shuffle className="w-4 h-4 mr-2 group-hover:rotate-180 transition-transform duration-500 relative z-10" aria-hidden="true" />
+              <span className="relative z-10">Show me a random palette</span>
+            </Button>
+            <Button
               onClick={() => {
                 window.history.pushState({}, '', '/converter');
                 window.dispatchEvent(new PopStateEvent('popstate'));
               }}
-              size="xlg"
+              size="lg"
               variant="outline"
-              className="px-8 py-6 text-lg font-semibold bg-white/10 border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 group"
+              className="px-6 py-4 text-base font-semibold bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 group backdrop-blur-xl"
             >
-              <Palette className="w-5 h-5 mr-2" aria-hidden="true" />
+              <Palette className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" aria-hidden="true" />
               <span>Color Converter</span>
-            </Button>
-            <Button
-              onClick={showRandomPalette}
-              size="xlg"
-              className="px-8 py-6 text-lg font-bold bg-gradient-to-r from-red-500 via-red-400 to-orange-400 hover:from-red-400 hover:via-red-300 hover:to-orange-300 shadow-2xl shadow-red-500/50 hover:shadow-orange-400/60 border-2 border-white/20 hover:border-white/40 transform hover:scale-[1.05] transition-all duration-300 group overflow-hidden"
-            >
-              <Shuffle className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-500 relative z-10" aria-hidden="true" />
-              <span className="relative z-10">Show me a random palette</span>
             </Button>
           </div>
 
           {/* Hero Stats */}
-          <div className="w-full max-w-xl grid grid-cols-4 gap-4 mb-8">
+          <div className="w-full max-w-xl grid grid-cols-4 gap-3 mb-8">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center px-3 py-4 bg-white/10 border border-white/15 rounded-xl backdrop-blur-xl"
+                className="flex flex-col items-center px-2 py-4 bg-white/10 border border-white/15 rounded-xl backdrop-blur-xl hover:bg-white/15 hover:border-white/25 transition-all duration-300"
               >
                 <span className="text-2xl md:text-3xl font-bold text-white">{stat.number}</span>
                 <span className="text-[11px] md:text-xs text-gray-300 mt-1 leading-tight text-center">{stat.label}</span>
