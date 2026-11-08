@@ -298,12 +298,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             <Button
               onClick={onGetStarted}
               size="xlg"
-              variant="outline"
-              className="px-8 py-6 text-lg font-semibold bg-white/10 border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 group backdrop-blur-xl"
+              className="relative px-8 py-6 text-lg font-bold bg-gradient-to-r from-violet-600 via-purple-500 to-fuchsia-500 hover:from-violet-500 hover:via-purple-400 hover:to-fuchsia-400 shadow-2xl shadow-violet-500/50 hover:shadow-fuchsia-400/60 transform hover:scale-[1.05] transition-all duration-300 group overflow-hidden"
             >
-              <Layers className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" aria-hidden="true" />
-              <span>Browse All Palettes</span>
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              <span className="absolute inset-0 bg-white/20 group-hover:bg-white/30 transition-colors" />
+              <Layers className="w-5 h-5 mr-2 relative z-10 group-hover:scale-110 transition-transform" aria-hidden="true" />
+              <span className="relative z-10">Browse All Palettes</span>
+              <ArrowRight className="w-5 h-5 ml-2 relative z-10 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Button>
           </div>
 
@@ -323,11 +323,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
                 window.dispatchEvent(new PopStateEvent('popstate'));
               }}
               size="lg"
-              variant="outline"
-              className="px-6 py-4 text-base font-semibold bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 group backdrop-blur-xl"
+              className="px-6 py-4 text-base font-bold bg-gradient-to-r from-amber-400 via-yellow-400 to-yellow-300 hover:from-amber-300 hover:via-yellow-300 hover:to-yellow-200 shadow-xl shadow-yellow-500/40 hover:shadow-yellow-400/50 text-yellow-950 transform hover:scale-[1.04] transition-all duration-300 group overflow-hidden"
             >
-              <Palette className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" aria-hidden="true" />
-              <span>Color Converter</span>
+              <Palette className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform relative z-10" aria-hidden="true" />
+              <span className="relative z-10">Color Converter</span>
             </Button>
           </div>
 
