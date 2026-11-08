@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { Palette, Layers, Eye, Shield, Download, ArrowRight, Play, Zap, Heart, Github, Sun, Moon, Wand2 } from 'lucide-react';
+import { Palette, Layers, Eye, Shield, Download, ArrowRight, Play, Zap, Heart, Github, Sun, Moon, Wand2, Shuffle } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Footer } from './ui/footer';
@@ -151,6 +151,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     });
   }, []);
 
+  const showRandomPalette = useCallback(() => {
+    const random = showcasePalettes[Math.floor(Math.random() * showcasePalettes.length)];
+    openLightbox(random);
+  }, [showcasePalettes, openLightbox]);
+
   const renderPaletteBand = (band: 'top' | 'mid' | 'bottom', direction: 'left' | 'right') => {
     const colors = PALETTE_BANDS[band][bandIndices[band]];
     const isExiting = transitioning[band];
@@ -301,6 +306,15 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             >
               <Palette className="w-5 h-5 mr-2" aria-hidden="true" />
               <span>Color Converter</span>
+            </Button>
+            <Button
+              onClick={showRandomPalette}
+              size="xlg"
+              variant="outline"
+              className="px-8 py-6 text-lg font-semibold bg-white/10 border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 group"
+            >
+              <Shuffle className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-500" aria-hidden="true" />
+              <span>Show me a random palette</span>
             </Button>
           </div>
 
