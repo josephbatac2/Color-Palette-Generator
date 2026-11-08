@@ -310,11 +310,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             <Button
               onClick={showRandomPalette}
               size="xlg"
-              variant="outline"
-              className="px-8 py-6 text-lg font-semibold bg-white/10 border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 group"
+              className="px-8 py-6 text-lg font-bold bg-gradient-to-r from-red-500 via-red-400 to-orange-400 hover:from-red-400 hover:via-red-300 hover:to-orange-300 shadow-2xl shadow-red-500/50 hover:shadow-orange-400/60 border-2 border-white/20 hover:border-white/40 transform hover:scale-[1.05] transition-all duration-300 group overflow-hidden"
             >
-              <Shuffle className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-500" aria-hidden="true" />
-              <span>Show me a random palette</span>
+              <Shuffle className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-500 relative z-10" aria-hidden="true" />
+              <span className="relative z-10">Show me a random palette</span>
             </Button>
           </div>
 
