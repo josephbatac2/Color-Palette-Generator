@@ -7,6 +7,7 @@ import { PaletteLightbox } from './palette-lightbox';
 import { ScrollArea } from './scroll-area';
 import { Palette, Eye } from 'lucide-react';
 import { generateAllPalettes } from '../../utils/paletteGenerator';
+import { generateAllHarmonyPalettes } from '../../utils/harmonyPalettes';
 import { Badge } from './badge';
 import { usePaletteViews, makePaletteKey } from '../../hooks/usePaletteViews';
 
@@ -177,6 +178,12 @@ const categories = [
     id: 'technosynth',
     name: 'Techno & Synth',
     color: 'linear-gradient(135deg, #ff00ff 0%, #00ffff 50%, #ff00ff 100%)',
+    textColor: 'text-white'
+  },
+  {
+    id: 'monochromatic',
+    name: 'Monochromatic',
+    color: 'linear-gradient(135deg, #3b82f6 0%, #93c5fd 50%, #dbeafe 100%)',
     textColor: 'text-white'
   }
 ];
@@ -63004,7 +63011,8 @@ const newAdditionPalettes: (Omit<ColorPalette, 'id' | 'createdAt'> & { category:
 
 // Merge all palettes
 const generatedPalettes = generateAllPalettes(85);
-const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes, ...stpatricksPalettes, ...fathersDayPalettes, ...summerVibesPalettes, ...springCleanPalettes, ...technoSynthPalettes, ...newAdditionPalettes, ...generatedPalettes];
+const harmonyPalettes = generateAllHarmonyPalettes(50);
+const allPalettes = [...curatedPalettes, ...complementaryPalettes, ...holidayPalettes, ...blackswhitesPalettes, ...analogousPalettes, ...tealorangePalettes, ...triadicPalettes, ...analogousSchemePalettes, ...splitComplementaryPalettes, ...tetradicPalettes, ...squarePalettes, ...valentinesPalettes, ...mothersDayPalettes, ...stpatricksPalettes, ...fathersDayPalettes, ...summerVibesPalettes, ...springCleanPalettes, ...technoSynthPalettes, ...newAdditionPalettes, ...harmonyPalettes, ...generatedPalettes];
 
 export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
   onPaletteSelect,
@@ -63122,6 +63130,7 @@ export const CuratedPalettes: React.FC<CuratedPalettesProps> = ({
                       if (category.id === 'summervibes') return palette.category === 'summervibes';
                       if (category.id === 'springclean') return palette.category === 'springclean';
                       if (category.id === 'technosynth') return palette.category === 'technosynth';
+                      if (category.id === 'monochromatic') return palette.category === 'monochromatic';
                       return false;
                     }).length;
                     return count;
