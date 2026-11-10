@@ -88,8 +88,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     },
     {
       icon: <Layers className="w-6 h-6" />,
-      title: "4,600+ Curated Palettes",
-      description: "Professional color combinations across 25+ categories",
+      title: "7,700+ Curated Palettes",
+      description: "Professional color combinations across 27 categories including 7 harmony types",
     },
     {
       icon: <Shield className="w-6 h-6" />,
@@ -385,7 +385,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               </span>
             </h2>
             <p className={`text-base md:text-lg max-w-xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-              Hand-picked color combinations from our library of 4,600+ professional palettes
+              Hand-picked color combinations from our library of 7,700+ professional palettes
             </p>
           </div>
 
