@@ -331,14 +331,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           </div>
 
           {/* Hero Stats */}
-          <div className="w-full max-w-xl grid grid-cols-4 gap-3 mb-8">
+          <div className="w-full max-w-2xl grid grid-cols-4 gap-6 mb-8">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center px-2 py-4 bg-white/10 border border-white/15 rounded-xl backdrop-blur-xl hover:bg-white/15 hover:border-white/25 transition-all duration-300"
+                className="flex flex-col items-center"
               >
-                <span className="text-2xl md:text-3xl font-bold text-white">{stat.number}</span>
-                <span className="text-[11px] md:text-xs text-gray-300 mt-1 leading-tight text-center">{stat.label}</span>
+                <span className="text-4xl md:text-5xl font-bold text-white tracking-tight">{stat.number}</span>
+                <span className="text-xs md:text-sm text-gray-400 mt-2 leading-tight text-center">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -478,8 +478,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2 text-white">{stat.number}</div>
-                <div className="text-sm md:text-base text-gray-200">{stat.label}</div>
+                <div className="text-5xl md:text-6xl font-bold mb-3 text-white tracking-tight">{stat.number}</div>
+                <div className="text-sm md:text-base text-gray-400">{stat.label}</div>
               </div>
             ))}
           </div>
