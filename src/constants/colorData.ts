@@ -14,7 +14,7 @@ export interface VisionType {
 }
 
 export const PALETTE_CATEGORIES: PaletteCategory[] = [
-  { name: "All Palettes", count: 7725 },
+  { name: "All Palettes", count: 8425 },
   { name: "Blues & Teals", count: 283 },
   { name: "Greens & Nature", count: 300 },
   { name: "Reds & Pinks", count: 299 },
@@ -23,16 +23,16 @@ export const PALETTE_CATEGORIES: PaletteCategory[] = [
   { name: "Neutrals & Grays", count: 297 },
   { name: "Vibrant & Neon", count: 298 },
   { name: "Pastels & Soft", count: 359 },
-  { name: "Complementary", count: 368 },
+  { name: "Complementary", count: 468 },
   { name: "Holiday & Seasonal", count: 308 },
   { name: "Blacks & Whites", count: 308 },
   { name: "Warm & Cool", count: 300 },
   { name: "Teal & Orange", count: 289 },
-  { name: "Triadic", count: 329 },
-  { name: "Analogous", count: 359 },
-  { name: "Split-Complementary", count: 329 },
-  { name: "Tetradic", count: 329 },
-  { name: "Square", count: 329 },
+  { name: "Triadic", count: 429 },
+  { name: "Analogous", count: 459 },
+  { name: "Split-Complementary", count: 429 },
+  { name: "Tetradic", count: 429 },
+  { name: "Square", count: 429 },
   { name: "Valentines & Love", count: 269 },
   { name: "Mother's Day", count: 269 },
   { name: "Father's Day", count: 300 },
@@ -41,7 +41,7 @@ export const PALETTE_CATEGORIES: PaletteCategory[] = [
   { name: "Summer Vibes", count: 297 },
   { name: "Spring Clean", count: 269 },
   { name: "Techno & Synth", count: 289 },
-  { name: "Monochromatic", count: 50 }
+  { name: "Monochromatic", count: 150 }
 ];
 
 export const HARMONY_TYPES: HarmonyType[] = [

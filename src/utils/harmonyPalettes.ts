@@ -198,7 +198,7 @@ function generateHarmonyPalette(recipe: HarmonyRecipe, index: number): HarmonyPa
   };
 }
 
-export function generateAllHarmonyPalettes(countPerType = 50): HarmonyPalette[] {
+export function generateAllHarmonyPalettes(countPerType = 150): HarmonyPalette[] {
   const all: HarmonyPalette[] = [];
   for (const recipe of recipes) {
     for (let i = 0; i < countPerType; i++) {
